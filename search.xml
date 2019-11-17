@@ -1,41 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test03</title>
-    <url>/2019/11/16/test03/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p>Elegant in code, simple in core</p>
-</blockquote>
-
-<div class="note [class]">
-            <p>Any content (support inline tags too.io).</p>
+    <title>Hexo升级历程</title>
+    <url>/2019/11/17/Hexo%E5%8D%87%E7%BA%A7%E5%8E%86%E7%A8%8B/</url>
+    <content><![CDATA[<p>从2019年9月下旬突然想要创建自己的网站，发现可以通过hexo便捷地搭建自己的网站，这里记录了hexo的升级之路。</p>
+<a id="more"></a>
+<h2 id="hexo-1"><a href="#hexo-1" class="headerlink" title=" hexo 1 "></a><center style="color: red"> hexo 1 </center></h2><div class="note success [no-icon]">
+            <p>初始版hexo，主题为默认的landscape<br><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/hexo%E5%8D%87%E7%BA%A71.png" alt="hexo 1.0"></p>
           </div>
+<h2 id="hexo-2"><a href="#hexo-2" class="headerlink" title=" hexo 2 "></a><center style="color: red"> hexo 2 </center></h2><div class="tabs" id="hexo-2"><ul class="nav-tabs"><li class="tab active"><a href="#hexo-2-1">hexo 2.0</a></li><li class="tab"><a href="#hexo-2-2">hexo 2.1</a></li></ul><div class="tab-content"><div class="tab-pane active" id="hexo-2-1"><ul>
+<li><strong>更换hexo主题，更换为next主题</strong></li>
+<li><strong>将hexo部署到github上</strong></li>
+<li><strong>将github的静态网页解析到个人域名sunfove.xyz上</strong><br><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/hexo%E5%8D%87%E7%BA%A72.png" alt="hexo 2.0"><div class="note primary">
+          <p>百度网盘：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMXZob3VxejhyMzV5SUdjeHVwQ3QtWmc=" title="https://pan.baidu.com/s/1vhouqz8r35yIGcxupCt-Zg">https://pan.baidu.com/s/1vhouqz8r35yIGcxupCt-Zg<i class="fa fa-external-link"></i></span><br>提取码：ppaj </p>
+        </div>
+</li>
+</ul></div><div class="tab-pane" id="hexo-2-2"><ul>
+<li><strong>为了提高网站速度，将hexo部署到coding上</strong></li>
+<li><strong>next主题优化，美化主题</strong></li>
+<li>**valine评论系统，tidio匿名聊天系统（降低了网页响应速度，禁用了）</li>
+<li><strong>将网站部署到个人腾讯云服务器上</strong><br><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/hexo%E5%8D%87%E7%BA%A73.png" alt="hexo 2.1">**<div class="note primary">
+          <p>百度网盘：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMU9OMG4xVGFaOE5JbVctQTJ3X0NOdXc=" title="https://pan.baidu.com/s/1ON0n1TaZ8NImW-A2w_CNuw">https://pan.baidu.com/s/1ON0n1TaZ8NImW-A2w_CNuw<i class="fa fa-external-link"></i></span><br>提取码：82k4 </p>
+        </div>
+</li>
+</ul></div></div></div> 
 
 
-
-<p>Lorem <span class="label default">ipsum</span> <span class="label primary">dolor sit</span> amet, consectetur <span class="label success">adipiscing elit,</span><br>sed <span class="label info">do eiusmod</span> tempor incididunt ut labore et dolore magna aliqua.</p>
-<video src="https://example.com/sample.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
-<a class="btn" href="#">Text</a>
-
-<span class="exturl" data-url="aHR0cHM6Ly9zdW5mb3ZlLnh5eg==" title="sunfove的网站"><i class="fa fa-moon-o"></i>明明如月<i class="fa fa-external-link"></i></span>
-
-
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="/images/S.png" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="/images/S.png" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="/images/S.png" alt></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><img src="/images/S.png" alt></div></div></div></div>]]></content>
-  </entry>
-  <entry>
-    <title>test02</title>
-    <url>/2019/11/15/test02/</url>
-    <content><![CDATA[<p>wsocksR<br> 1.4 EasyConnect<br> 1.5 IObitUninstaller<br> 1.6  网易邮箱大师<br> 1.7 微信<br> 1.8 TIM<br> 1.9 火绒安全<br> 1.10 360压缩<br> 1.11 360看图<br> 1.12 Internet Download Manager<br> 1.13 百度网盘<br> <img src="/images/alipay.png" alt></p>
-]]></content>
+<h2 id="hexo-3"><a href="#hexo-3" class="headerlink" title=" hexo 3 "></a><center style="color: red"> hexo 3 </center></h2><div class="tabs" id="hexo-3"><ul class="nav-tabs"><li class="tab active"><a href="#hexo-3-1">hexo 3.0</a></li><li class="tab"><a href="#hexo-3-2">hexo 3.1（配置中）</a></li></ul><div class="tab-content"><div class="tab-pane active" id="hexo-3-1"><ul>
+<li><strong>切换了next主题中的风格，由Pisces更换为Gemini</strong></li>
+<li><strong>增加了相关推荐</strong></li>
+<li><strong>配置tags功能</strong><br><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/hexo%E5%8D%87%E7%BA%A74.png" alt="hexo 3.0"><div class="note primary">
+          <p>百度网盘：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTJibjBXNTZkdGdLZ3pPbUo4cG9YYUE=" title="https://pan.baidu.com/s/12bn0W56dtgKgzOmJ8poXaA">https://pan.baidu.com/s/12bn0W56dtgKgzOmJ8poXaA<i class="fa fa-external-link"></i></span><br>提取码：c1if </p>
+        </div>
+</li>
+</ul></div><div class="tab-pane" id="hexo-3-2"><ul>
+<li><strong>增加日历（占位置，禁用了）</strong></li>
+<li><strong>添加相册</strong></li>
+<li><strong>增加分享功能（位置和图标待优化）</strong><br><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/hexo%E5%8D%87%E7%BA%A75.png" alt="hexo 3.1"></li>
+</ul></div></div></div> ]]></content>
       <categories>
-        <category>test</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>test</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>test01</title>
-    <url>/2019/11/15/test01/</url>
+    <title>十月读书笔记</title>
+    <url>/2019/11/08/%E5%8D%81%E6%9C%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E5%8D%81%E6%9C%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.jpg" alt></p>
+<a id="more"></a>
+<p>十月份一本书都没有看完。<br>一直在看的是余秋雨的《借我一生》，选择看这本书，是受到谢春花《借我》的影响，喜欢借我两个字，现在也正在听着水木年华的《借我一生》。自然，余秋雨所写内容全然不同与以上两首歌。<br>他表述了从小到大成长历程中的各个人物，重要的不重要的时间，看到的听到的，体验的，都铸就了他勇于担当的性格。动荡的年代里，生存已经是很大的困难，苟活、委曲求全是常事，但余秋雨仍能坚守准则。历史给他打上印记不是仇恨和愤懑，而是力求变革的责任感。文中某些文字着实震撼到我，这里摘抄部分：</p>
+<blockquote>
+<ol>
+<li>妈妈不止一次地说“身子请的采桑，手劲大的搬磨，识水性的过河……我识字，这些事本分要做。”</li>
+<li>天下有很多关键时刻的援救，是被援救者所不知道的。这正像，天下有很多关键时刻的伤害，是被伤害者所不知道的。世事繁杂，时间匆匆，重者隐之，轻者现显之，真言如风，伪言如磐，真正知道的究竟能有多少？</li>
+<li>“我知道，气恶人太恶，气世事不公。其实都没有什么好气，恶人当然会恶，世事从来不公。最大的不公，你气都没法气。你看我是个孩子死了九个，都死在我面前，我去气谁？”</li>
+<li>人生的路，靠自己一步步去走，真正能保护你的，是你自己的人格选择和文化选择。那么反过来，真正能伤害你的，也是一样，自己的选择。</li>
+<li>学术是一场一旦进入就很难停步的苦役。</li>
+<li>个人名誉确实已不重要。在整个民族的人格文化还没有重新建立的时候，个人的名誉算什么呢？<br>于是，故意不作任何洗刷，成了我深入文化领域的一个决绝举动，近似破釜沉舟。我让自己在屡屡传言中形象模糊，以便让仕途成为陌路。<br>这就是说，我让自己的文化行为，失去文化以外的退路。</li>
+</ol>
+</blockquote>
+<p>余之话，句句警醒，虽然已经过了“为中华之崛起而读书”的时代，可以通过读书追求个人生活的充裕，但仍要尽自己能力，做一些有价值之事。<br>此外，十月看完了《电磁学》，读了汪曾祺的两篇小散文《七里茶坊》和《听遛鸟人谈戏》，汪曾祺和余秋雨都是很有经历的人，两个人的风格相差很大，不过都很欣赏。</p>
+<blockquote>
+<p>世界先爱了我，我便不能不爱它。——汪曾祺</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo中插入数学公式</title>
+    <url>/2019/10/18/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<html><head></head><body><p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F.bmp" alt></p>
+<a id="more"></a>
+<p>Hexo中插入数学公式时会出现显示问题，这里借用mathjax插件和writage工具来实现hexo中插入数学公式。<br>首先，安装hexo-math</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-math --save</span><br></pre></td></tr></tbody></table></figure>
+<p>在站点配置文件下添加：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">math:</span><br><span class="line">  engine: 'mathjax' </span><br><span class="line">  mathjax:</span><br></pre></td></tr></tbody></table></figure>
+<p>在主题配置文件下修改：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">math:</span><br><span class="line">  enable: true</span><br><span class="line">  engine: mathjax</span><br><span class="line"></span><br><span class="line">mathjax:</span><br><span class="line">  enable: true</span><br><span class="line">  cdn: //cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML</span><br></pre></td></tr></tbody></table></figure>
+<p>其中 per_page 根据提示，表示默认不加载 mathjax/katex 脚本，如果设置为 false，则是每篇文章都会去加载 mathjax 脚本，这里我设置为 true，然后在需要加载的文章抬头添加 mathjax: true 。<br>公式可以通过Latex语法规则编辑，同时也可以通过<span class="exturl" data-url="aHR0cDovL3d3dy53cml0YWdlLmNvbS8=" title="http://www.writage.com/">Writage<i class="fa fa-external-link"></i></span>插件，将Word中编辑好的公式，转化成markdown格式后使用。</p>
+<blockquote>
+<p>参考： <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLnV1azQuY29tLzIwMTkvMDUvMDkvaGV4byVFNCVCOCVBRCVFNiU4RiU5MiVFNSU4NSVBNSVFNiU5NSVCMCVFNSVBRCVBNiVFNSU4NSVBQyVFNSVCQyU4Ri8=" title="https://blog.uuk4.com/2019/05/09/hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">hexo中插入数学公式<i class="fa fa-external-link"></i></span><br>    <span class="exturl" data-url="aHR0cDovL3d3dy53cml0YWdlLmNvbS8=" title="http://www.writage.com/">writage官网<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+</body></html>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>光速及折射率表达式推导</title>
+    <url>/2019/10/17/%E6%8A%98%E5%B0%84%E7%8E%87%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8E%A8%E5%AF%BC/</url>
     <content><![CDATA[<html><head><style type="text/css">
                             .mjpage .MJX-monospace {
                             font-family: monospace
@@ -108,131 +172,1235 @@
                             min-width: 0;
                             min-height: 0;
                             width: 100%
-                            }</style></head><body><p>进入设置–&gt;主题–&gt;添加桌面图标，将计算机添加到桌面，并重命名；<br>桌面任务栏设置，小任务栏按钮；<br>更改账户设置–&gt;改用Microsoft账户登录，<br>系统重装系统后待装软件：<br><img src="/images/S.png" alt></p>
-<ol>
-<li><p>系统软件<br>1.1 输入法：搜狗输入法<br>1.2 浏览器：Chrome</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">1.3 ShadowsocksR</span><br><span class="line">1.4 EasyConnect</span><br><span class="line">1.5 IObitUninstaller</span><br><span class="line">1.6  网易邮箱大师</span><br><span class="line">1.7 微信</span><br><span class="line">1.8 TIM</span><br></pre></td></tr></tbody></table></figure>
-<p>1.9 火绒安全<br>1.10 360压缩<br>1.11 360看图<br>1.12 Internet Download Manager<br>1.13 百度网盘<br>1.14 有道云笔记<br>1.15 webstorm</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="32.155ex" height="6.343ex" style="vertical-align: -2.505ex;" viewbox="0 -1652.5 13844.3 2730.8" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title"> \frac{\partial u}{\partial t} = h^2 \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right) </title>
+                            }</style></head><body><p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E5%85%89%E9%80%9F%E5%8F%8A%E6%8A%98%E5%B0%84%E7%8E%87%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8E%A8%E5%AF%BC.jpg" alt></p>
+<a id="more"></a>
+<p>在没有自由电荷和传导电流的情况下，麦克斯韦方程组表达式如下：</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="10.441ex" height="2.176ex" style="vertical-align: -0.338ex;" viewbox="0 -791.3 4495.5 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title"> \nabla \bullet \mathbf{D} = 0 </title>
 <defs aria-hidden="true">
-<path stroke-width="1" id="E1-MJMAIN-2202" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"/>
-<path stroke-width="1" id="E1-MJMATHI-75" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
-<path stroke-width="1" id="E1-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+<path stroke-width="1" id="E1-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E1-MJMAIN-2219" d="M55 251Q55 328 112 386T249 444T386 388T444 249Q444 171 388 113T250 55Q170 55 113 112T55 251Z"/>
+<path stroke-width="1" id="E1-MJMAINB-44" d="M39 624V686H270H310H408Q500 686 545 680T638 649Q768 584 805 438Q817 388 817 338Q817 171 702 75Q628 17 515 2Q504 1 270 0H39V62H147V624H39ZM655 337Q655 370 655 390T650 442T639 494T616 540T580 580T526 607T451 623Q443 624 368 624H298V62H377H387H407Q445 62 472 65T540 83T606 129Q629 156 640 195T653 262T655 337Z"/>
 <path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
-<path stroke-width="1" id="E1-MJMATHI-68" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"/>
-<path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
-<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
-<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
-<path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/>
-<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
-<path stroke-width="1" id="E1-MJMATHI-7A" d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z"/>
-<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
-<path stroke-width="1" id="E1-MJSZ3-28" d="M701 -940Q701 -943 695 -949H664Q662 -947 636 -922T591 -879T537 -818T475 -737T412 -636T350 -511T295 -362T250 -186T221 17T209 251Q209 962 573 1361Q596 1386 616 1405T649 1437T664 1450H695Q701 1444 701 1441Q701 1436 681 1415T629 1356T557 1261T476 1118T400 927T340 675T308 359Q306 321 306 250Q306 -139 400 -430T690 -924Q701 -936 701 -940Z"/>
-<path stroke-width="1" id="E1-MJSZ3-29" d="M34 1438Q34 1446 37 1448T50 1450H56H71Q73 1448 99 1423T144 1380T198 1319T260 1238T323 1137T385 1013T440 864T485 688T514 485T526 251Q526 134 519 53Q472 -519 162 -860Q139 -885 119 -904T86 -936T71 -949H56Q43 -949 39 -947T34 -937Q88 -883 140 -813Q428 -430 428 251Q428 453 402 628T338 922T245 1146T145 1309T46 1425Q44 1427 42 1429T39 1433T36 1436L34 1438Z"/>
+<path stroke-width="1" id="E1-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
 </defs>
 <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-MJMAIN-2207" x="0" y="0"/>
+ <use xlink:href="#E1-MJMAIN-2219" x="1055" y="0"/>
+ <use xlink:href="#E1-MJMAINB-44" x="1778" y="0"/>
+ <use xlink:href="#E1-MJMAIN-3D" x="2938" y="0"/>
+ <use xlink:href="#E1-MJMAIN-30" x="3995" y="0"/>
+</g>
+</svg></span></p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="10.293ex" height="2.176ex" style="vertical-align: -0.338ex;" viewbox="0 -791.3 4431.5 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-2-Title">
+<title id="MathJax-SVG-2-Title"> \nabla \bullet \mathbf{B} = 0 </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E2-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E2-MJMAIN-2219" d="M55 251Q55 328 112 386T249 444T386 388T444 249Q444 171 388 113T250 55Q170 55 113 112T55 251Z"/>
+<path stroke-width="1" id="E2-MJMAINB-42" d="M720 510Q720 476 704 448T665 404T619 377T580 362L564 359L583 356Q602 353 632 342T690 312Q712 292 725 276Q752 235 752 189V183Q752 160 741 125Q698 18 547 2Q543 1 288 0H39V62H147V624H39V686H264H409Q502 686 542 681T624 655Q720 607 720 510ZM563 513Q563 553 548 578T518 611T486 622Q479 624 385 624H293V382H375Q458 383 467 385Q563 405 563 513ZM590 192Q590 307 505 329Q504 330 503 330L398 331H293V62H391H400H444Q496 62 528 75T580 131Q590 155 590 192Z"/>
+<path stroke-width="1" id="E2-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E2-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E2-MJMAIN-2207" x="0" y="0"/>
+ <use xlink:href="#E2-MJMAIN-2219" x="1055" y="0"/>
+ <use xlink:href="#E2-MJMAINB-42" x="1778" y="0"/>
+ <use xlink:href="#E2-MJMAIN-3D" x="2874" y="0"/>
+ <use xlink:href="#E2-MJMAIN-30" x="3931" y="0"/>
+</g>
+</svg></span></p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="15.495ex" height="5.509ex" style="vertical-align: -2.005ex;" viewbox="0 -1508.9 6671.5 2372" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-3-Title">
+<title id="MathJax-SVG-3-Title"> \nabla \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t} </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E3-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E3-MJMAIN-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"/>
+<path stroke-width="1" id="E3-MJMAINB-45" d="M723 286Q721 284 700 145T677 3V0H39V62H147V618H39V680H660V676Q662 670 675 552T691 428V424H629V428Q629 429 627 448T618 494T601 541Q574 593 527 605T382 618H374H304V384H336Q338 384 347 384T361 384T376 386T392 390T407 397T421 407T432 423Q442 444 443 482V501H505V205H443V224Q442 258 435 278T411 307T380 318T336 322H304V62H375H394Q429 62 449 62T497 66T541 76T577 95T609 126T632 170T651 232Q661 287 661 289H723V286Z"/>
+<path stroke-width="1" id="E3-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E3-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
+<path stroke-width="1" id="E3-MJMAIN-2202" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"/>
+<path stroke-width="1" id="E3-MJMAINB-42" d="M720 510Q720 476 704 448T665 404T619 377T580 362L564 359L583 356Q602 353 632 342T690 312Q712 292 725 276Q752 235 752 189V183Q752 160 741 125Q698 18 547 2Q543 1 288 0H39V62H147V624H39V686H264H409Q502 686 542 681T624 655Q720 607 720 510ZM563 513Q563 553 548 578T518 611T486 622Q479 624 385 624H293V382H375Q458 383 467 385Q563 405 563 513ZM590 192Q590 307 505 329Q504 330 503 330L398 331H293V62H391H400H444Q496 62 528 75T580 131Q590 155 590 192Z"/>
+<path stroke-width="1" id="E3-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E3-MJMAIN-2207" x="0" y="0"/>
+ <use xlink:href="#E3-MJMAIN-D7" x="1055" y="0"/>
+ <use xlink:href="#E3-MJMAINB-45" x="2056" y="0"/>
+ <use xlink:href="#E3-MJMAIN-3D" x="3090" y="0"/>
+ <use xlink:href="#E3-MJMAIN-2212" x="4147" y="0"/>
+<g transform="translate(4925,0)">
 <g transform="translate(120,0)">
-<rect stroke="none" width="1260" height="60" x="0" y="220"/>
+<rect stroke="none" width="1506" height="60" x="0" y="220"/>
 <g transform="translate(60,676)">
- <use xlink:href="#E1-MJMAIN-2202" x="0" y="0"/>
- <use xlink:href="#E1-MJMATHI-75" x="567" y="0"/>
+ <use xlink:href="#E3-MJMAIN-2202" x="0" y="0"/>
+ <use xlink:href="#E3-MJMAINB-42" x="567" y="0"/>
 </g>
-<g transform="translate(165,-736)">
- <use xlink:href="#E1-MJMAIN-2202" x="0" y="0"/>
- <use xlink:href="#E1-MJMATHI-74" x="567" y="0"/>
-</g>
-</g>
- <use xlink:href="#E1-MJMAIN-3D" x="1777" y="0"/>
-<g transform="translate(2834,0)">
- <use xlink:href="#E1-MJMATHI-68" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="815" y="583"/>
-</g>
-<g transform="translate(4031,0)">
- <use xlink:href="#E1-MJSZ3-28"/>
-<g transform="translate(736,0)">
-<g transform="translate(120,0)">
-<rect stroke="none" width="1724" height="60" x="0" y="220"/>
-<g transform="translate(60,676)">
- <use xlink:href="#E1-MJMAIN-2202" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="817" y="513"/>
- <use xlink:href="#E1-MJMATHI-75" x="1032" y="0"/>
-</g>
-<g transform="translate(65,-780)">
- <use xlink:href="#E1-MJMAIN-2202" x="0" y="0"/>
-<g transform="translate(567,0)">
- <use xlink:href="#E1-MJMATHI-78" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="809" y="408"/>
+<g transform="translate(288,-736)">
+ <use xlink:href="#E3-MJMAIN-2202" x="0" y="0"/>
+ <use xlink:href="#E3-MJMATHI-74" x="567" y="0"/>
 </g>
 </g>
-</g>
-</g>
- <use xlink:href="#E1-MJMAIN-2B" x="2923" y="0"/>
-<g transform="translate(3701,0)">
-<g transform="translate(342,0)">
-<rect stroke="none" width="1724" height="60" x="0" y="220"/>
-<g transform="translate(60,676)">
- <use xlink:href="#E1-MJMAIN-2202" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="817" y="513"/>
- <use xlink:href="#E1-MJMATHI-75" x="1032" y="0"/>
-</g>
-<g transform="translate(101,-780)">
- <use xlink:href="#E1-MJMAIN-2202" x="0" y="0"/>
-<g transform="translate(567,0)">
- <use xlink:href="#E1-MJMATHI-79" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="706" y="408"/>
-</g>
-</g>
-</g>
-</g>
- <use xlink:href="#E1-MJMAIN-2B" x="6111" y="0"/>
-<g transform="translate(6889,0)">
-<g transform="translate(342,0)">
-<rect stroke="none" width="1724" height="60" x="0" y="220"/>
-<g transform="translate(60,676)">
- <use xlink:href="#E1-MJMAIN-2202" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="817" y="513"/>
- <use xlink:href="#E1-MJMATHI-75" x="1032" y="0"/>
-</g>
-<g transform="translate(116,-780)">
- <use xlink:href="#E1-MJMAIN-2202" x="0" y="0"/>
-<g transform="translate(567,0)">
- <use xlink:href="#E1-MJMATHI-7A" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="663" y="408"/>
-</g>
-</g>
-</g>
-</g>
- <use xlink:href="#E1-MJSZ3-29" x="9076" y="-1"/>
 </g>
 </g>
 </svg></span></p>
-</li>
-</ol>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="15.978ex" height="5.509ex" style="vertical-align: -2.005ex;" viewbox="0 -1508.9 6879.5 2372" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-4-Title">
+<title id="MathJax-SVG-4-Title"> \nabla \times \mathbf{H} = - \frac{\partial\mathbf{D}}{\partial t} </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E4-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E4-MJMAIN-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"/>
+<path stroke-width="1" id="E4-MJMAINB-48" d="M400 0Q376 3 226 3Q75 3 51 0H39V62H147V624H39V686H51Q75 683 226 683Q376 683 400 686H412V624H304V388H595V624H487V686H499Q523 683 673 683Q824 683 848 686H860V624H752V62H860V0H848Q824 3 674 3Q523 3 499 0H487V62H595V326H304V62H412V0H400Z"/>
+<path stroke-width="1" id="E4-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E4-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
+<path stroke-width="1" id="E4-MJMAIN-2202" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"/>
+<path stroke-width="1" id="E4-MJMAINB-44" d="M39 624V686H270H310H408Q500 686 545 680T638 649Q768 584 805 438Q817 388 817 338Q817 171 702 75Q628 17 515 2Q504 1 270 0H39V62H147V624H39ZM655 337Q655 370 655 390T650 442T639 494T616 540T580 580T526 607T451 623Q443 624 368 624H298V62H377H387H407Q445 62 472 65T540 83T606 129Q629 156 640 195T653 262T655 337Z"/>
+<path stroke-width="1" id="E4-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E4-MJMAIN-2207" x="0" y="0"/>
+ <use xlink:href="#E4-MJMAIN-D7" x="1055" y="0"/>
+ <use xlink:href="#E4-MJMAINB-48" x="2056" y="0"/>
+ <use xlink:href="#E4-MJMAIN-3D" x="3234" y="0"/>
+ <use xlink:href="#E4-MJMAIN-2212" x="4291" y="0"/>
+<g transform="translate(5069,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="1570" height="60" x="0" y="220"/>
+<g transform="translate(60,676)">
+ <use xlink:href="#E4-MJMAIN-2202" x="0" y="0"/>
+ <use xlink:href="#E4-MJMAINB-44" x="567" y="0"/>
+</g>
+<g transform="translate(320,-736)">
+ <use xlink:href="#E4-MJMAIN-2202" x="0" y="0"/>
+ <use xlink:href="#E4-MJMATHI-74" x="567" y="0"/>
+</g>
+</g>
+</g>
+</g>
+</svg></span></p>
+<p>其中，</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.039ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 7336.3 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-5-Title">
+<title id="MathJax-SVG-5-Title"> \mathbf{D} = \varepsilon\mathbf{E} = \varepsilon_{0}\varepsilon_{r}\mathbf{E} </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E5-MJMAINB-44" d="M39 624V686H270H310H408Q500 686 545 680T638 649Q768 584 805 438Q817 388 817 338Q817 171 702 75Q628 17 515 2Q504 1 270 0H39V62H147V624H39ZM655 337Q655 370 655 390T650 442T639 494T616 540T580 580T526 607T451 623Q443 624 368 624H298V62H377H387H407Q445 62 472 65T540 83T606 129Q629 156 640 195T653 262T655 337Z"/>
+<path stroke-width="1" id="E5-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E5-MJMATHI-3B5" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"/>
+<path stroke-width="1" id="E5-MJMAINB-45" d="M723 286Q721 284 700 145T677 3V0H39V62H147V618H39V680H660V676Q662 670 675 552T691 428V424H629V428Q629 429 627 448T618 494T601 541Q574 593 527 605T382 618H374H304V384H336Q338 384 347 384T361 384T376 386T392 390T407 397T421 407T432 423Q442 444 443 482V501H505V205H443V224Q442 258 435 278T411 307T380 318T336 322H304V62H375H394Q429 62 449 62T497 66T541 76T577 95T609 126T632 170T651 232Q661 287 661 289H723V286Z"/>
+<path stroke-width="1" id="E5-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+<path stroke-width="1" id="E5-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E5-MJMAINB-44" x="0" y="0"/>
+ <use xlink:href="#E5-MJMAIN-3D" x="1160" y="0"/>
+ <use xlink:href="#E5-MJMATHI-3B5" x="2216" y="0"/>
+ <use xlink:href="#E5-MJMAINB-45" x="2683" y="0"/>
+ <use xlink:href="#E5-MJMAIN-3D" x="3717" y="0"/>
+<g transform="translate(4773,0)">
+ <use xlink:href="#E5-MJMATHI-3B5" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E5-MJMAIN-30" x="659" y="-213"/>
+</g>
+<g transform="translate(5694,0)">
+ <use xlink:href="#E5-MJMATHI-3B5" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E5-MJMATHI-72" x="659" y="-213"/>
+</g>
+ <use xlink:href="#E5-MJMAINB-45" x="6579" y="0"/>
+</g>
+</svg></span></p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="18.514ex" height="2.676ex" style="vertical-align: -0.838ex;" viewbox="0 -791.3 7971.3 1152.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-6-Title">
+<title id="MathJax-SVG-6-Title"> \mathbf{B} = \mu\mathbf{H} = \mu_{0}\mu_{r}\mathbf{H} </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E6-MJMAINB-42" d="M720 510Q720 476 704 448T665 404T619 377T580 362L564 359L583 356Q602 353 632 342T690 312Q712 292 725 276Q752 235 752 189V183Q752 160 741 125Q698 18 547 2Q543 1 288 0H39V62H147V624H39V686H264H409Q502 686 542 681T624 655Q720 607 720 510ZM563 513Q563 553 548 578T518 611T486 622Q479 624 385 624H293V382H375Q458 383 467 385Q563 405 563 513ZM590 192Q590 307 505 329Q504 330 503 330L398 331H293V62H391H400H444Q496 62 528 75T580 131Q590 155 590 192Z"/>
+<path stroke-width="1" id="E6-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E6-MJMATHI-3BC" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"/>
+<path stroke-width="1" id="E6-MJMAINB-48" d="M400 0Q376 3 226 3Q75 3 51 0H39V62H147V624H39V686H51Q75 683 226 683Q376 683 400 686H412V624H304V388H595V624H487V686H499Q523 683 673 683Q824 683 848 686H860V624H752V62H860V0H848Q824 3 674 3Q523 3 499 0H487V62H595V326H304V62H412V0H400Z"/>
+<path stroke-width="1" id="E6-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+<path stroke-width="1" id="E6-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E6-MJMAINB-42" x="0" y="0"/>
+ <use xlink:href="#E6-MJMAIN-3D" x="1096" y="0"/>
+ <use xlink:href="#E6-MJMATHI-3BC" x="2152" y="0"/>
+ <use xlink:href="#E6-MJMAINB-48" x="2756" y="0"/>
+ <use xlink:href="#E6-MJMAIN-3D" x="3934" y="0"/>
+<g transform="translate(4990,0)">
+ <use xlink:href="#E6-MJMATHI-3BC" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E6-MJMAIN-30" x="853" y="-213"/>
+</g>
+<g transform="translate(6048,0)">
+ <use xlink:href="#E6-MJMATHI-3BC" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-72" x="853" y="-213"/>
+</g>
+ <use xlink:href="#E6-MJMAINB-48" x="7070" y="0"/>
+</g>
+</svg></span></p>
+<p>对<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="15.495ex" height="5.509ex" style="vertical-align: -2.005ex;" viewbox="0 -1508.9 6671.5 2372" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-7-Title">
+<title id="MathJax-SVG-7-Title">\nabla \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E7-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E7-MJMAIN-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"/>
+<path stroke-width="1" id="E7-MJMAINB-45" d="M723 286Q721 284 700 145T677 3V0H39V62H147V618H39V680H660V676Q662 670 675 552T691 428V424H629V428Q629 429 627 448T618 494T601 541Q574 593 527 605T382 618H374H304V384H336Q338 384 347 384T361 384T376 386T392 390T407 397T421 407T432 423Q442 444 443 482V501H505V205H443V224Q442 258 435 278T411 307T380 318T336 322H304V62H375H394Q429 62 449 62T497 66T541 76T577 95T609 126T632 170T651 232Q661 287 661 289H723V286Z"/>
+<path stroke-width="1" id="E7-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E7-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
+<path stroke-width="1" id="E7-MJMAIN-2202" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"/>
+<path stroke-width="1" id="E7-MJMAINB-42" d="M720 510Q720 476 704 448T665 404T619 377T580 362L564 359L583 356Q602 353 632 342T690 312Q712 292 725 276Q752 235 752 189V183Q752 160 741 125Q698 18 547 2Q543 1 288 0H39V62H147V624H39V686H264H409Q502 686 542 681T624 655Q720 607 720 510ZM563 513Q563 553 548 578T518 611T486 622Q479 624 385 624H293V382H375Q458 383 467 385Q563 405 563 513ZM590 192Q590 307 505 329Q504 330 503 330L398 331H293V62H391H400H444Q496 62 528 75T580 131Q590 155 590 192Z"/>
+<path stroke-width="1" id="E7-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E7-MJMAIN-2207" x="0" y="0"/>
+ <use xlink:href="#E7-MJMAIN-D7" x="1055" y="0"/>
+ <use xlink:href="#E7-MJMAINB-45" x="2056" y="0"/>
+ <use xlink:href="#E7-MJMAIN-3D" x="3090" y="0"/>
+ <use xlink:href="#E7-MJMAIN-2212" x="4147" y="0"/>
+<g transform="translate(4925,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="1506" height="60" x="0" y="220"/>
+<g transform="translate(60,676)">
+ <use xlink:href="#E7-MJMAIN-2202" x="0" y="0"/>
+ <use xlink:href="#E7-MJMAINB-42" x="567" y="0"/>
+</g>
+<g transform="translate(288,-736)">
+ <use xlink:href="#E7-MJMAIN-2202" x="0" y="0"/>
+ <use xlink:href="#E7-MJMATHI-74" x="567" y="0"/>
+</g>
+</g>
+</g>
+</g>
+</svg></span>两遍取旋度，可得：</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="55.626ex" height="6.009ex" style="vertical-align: -2.171ex;" viewbox="0 -1652.5 23950.2 2587.3" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-8-Title">
+<title id="MathJax-SVG-8-Title"> \nabla \times \left( \nabla \times \mathbf{E} \right) = - \nabla \times \frac{\partial\mathbf{B}}{\partial t} = - \frac{\partial}{\partial t}\left( \nabla \times \mathbf{B} \right) = - \text{εμ}\frac{\partial^{2}\mathbf{E}}{\partial t^{2}} </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E8-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E8-MJMAIN-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"/>
+<path stroke-width="1" id="E8-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
+<path stroke-width="1" id="E8-MJMAINB-45" d="M723 286Q721 284 700 145T677 3V0H39V62H147V618H39V680H660V676Q662 670 675 552T691 428V424H629V428Q629 429 627 448T618 494T601 541Q574 593 527 605T382 618H374H304V384H336Q338 384 347 384T361 384T376 386T392 390T407 397T421 407T432 423Q442 444 443 482V501H505V205H443V224Q442 258 435 278T411 307T380 318T336 322H304V62H375H394Q429 62 449 62T497 66T541 76T577 95T609 126T632 170T651 232Q661 287 661 289H723V286Z"/>
+<path stroke-width="1" id="E8-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
+<path stroke-width="1" id="E8-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E8-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
+<path stroke-width="1" id="E8-MJMAIN-2202" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"/>
+<path stroke-width="1" id="E8-MJMAINB-42" d="M720 510Q720 476 704 448T665 404T619 377T580 362L564 359L583 356Q602 353 632 342T690 312Q712 292 725 276Q752 235 752 189V183Q752 160 741 125Q698 18 547 2Q543 1 288 0H39V62H147V624H39V686H264H409Q502 686 542 681T624 655Q720 607 720 510ZM563 513Q563 553 548 578T518 611T486 622Q479 624 385 624H293V382H375Q458 383 467 385Q563 405 563 513ZM590 192Q590 307 505 329Q504 330 503 330L398 331H293V62H391H400H444Q496 62 528 75T580 131Q590 155 590 192Z"/>
+<path stroke-width="1" id="E8-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+<path stroke-width="1" id="E8-MJMATHI-3B5" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"/>
+<path stroke-width="1" id="E8-MJMATHI-3BC" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"/>
+<path stroke-width="1" id="E8-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E8-MJMAIN-2207" x="0" y="0"/>
+ <use xlink:href="#E8-MJMAIN-D7" x="1055" y="0"/>
+<g transform="translate(2056,0)">
+ <use xlink:href="#E8-MJMAIN-28" x="0" y="0"/>
+ <use xlink:href="#E8-MJMAIN-2207" x="389" y="0"/>
+ <use xlink:href="#E8-MJMAIN-D7" x="1445" y="0"/>
+ <use xlink:href="#E8-MJMAINB-45" x="2445" y="0"/>
+ <use xlink:href="#E8-MJMAIN-29" x="3202" y="0"/>
+</g>
+ <use xlink:href="#E8-MJMAIN-3D" x="5926" y="0"/>
+ <use xlink:href="#E8-MJMAIN-2212" x="6982" y="0"/>
+ <use xlink:href="#E8-MJMAIN-2207" x="7760" y="0"/>
+ <use xlink:href="#E8-MJMAIN-D7" x="8816" y="0"/>
+<g transform="translate(9595,0)">
+<g transform="translate(342,0)">
+<rect stroke="none" width="1506" height="60" x="0" y="220"/>
+<g transform="translate(60,676)">
+ <use xlink:href="#E8-MJMAIN-2202" x="0" y="0"/>
+ <use xlink:href="#E8-MJMAINB-42" x="567" y="0"/>
+</g>
+<g transform="translate(288,-736)">
+ <use xlink:href="#E8-MJMAIN-2202" x="0" y="0"/>
+ <use xlink:href="#E8-MJMATHI-74" x="567" y="0"/>
+</g>
+</g>
+</g>
+ <use xlink:href="#E8-MJMAIN-3D" x="11841" y="0"/>
+ <use xlink:href="#E8-MJMAIN-2212" x="12897" y="0"/>
+<g transform="translate(13675,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="1049" height="60" x="0" y="220"/>
+ <use xlink:href="#E8-MJMAIN-2202" x="240" y="676"/>
+<g transform="translate(60,-736)">
+ <use xlink:href="#E8-MJMAIN-2202" x="0" y="0"/>
+ <use xlink:href="#E8-MJMATHI-74" x="567" y="0"/>
+</g>
+</g>
+</g>
+<g transform="translate(14964,0)">
+ <use xlink:href="#E8-MJMAIN-28" x="0" y="0"/>
+ <use xlink:href="#E8-MJMAIN-2207" x="389" y="0"/>
+ <use xlink:href="#E8-MJMAIN-D7" x="1445" y="0"/>
+ <use xlink:href="#E8-MJMAINB-42" x="2445" y="0"/>
+ <use xlink:href="#E8-MJMAIN-29" x="3264" y="0"/>
+</g>
+ <use xlink:href="#E8-MJMAIN-3D" x="18896" y="0"/>
+ <use xlink:href="#E8-MJMAIN-2212" x="19952" y="0"/>
+<g transform="translate(20731,0)">
+ <use xlink:href="#E8-MJMATHI-3B5"/>
+ <use xlink:href="#E8-MJMATHI-3BC" x="466" y="0"/>
+</g>
+<g transform="translate(21801,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="1908" height="60" x="0" y="220"/>
+<g transform="translate(60,676)">
+ <use xlink:href="#E8-MJMAIN-2202" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMAIN-32" x="817" y="513"/>
+ <use xlink:href="#E8-MJMAINB-45" x="1032" y="0"/>
+</g>
+<g transform="translate(262,-780)">
+ <use xlink:href="#E8-MJMAIN-2202" x="0" y="0"/>
+<g transform="translate(567,0)">
+ <use xlink:href="#E8-MJMATHI-74" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMAIN-32" x="511" y="408"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg></span></p>
+<p>利用矢量分析公式和<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.579ex" height="5.176ex" style="vertical-align: -1.838ex;" viewbox="0 -1437.2 8860.4 2228.5" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-9-Title">
+<title id="MathJax-SVG-9-Title">\nabla \bullet \mathbf{E}\mathbf{=}\frac{\mathbf{1}}{\varepsilon}\nabla \bullet \mathbf{D} = 0</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E9-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E9-MJMAIN-2219" d="M55 251Q55 328 112 386T249 444T386 388T444 249Q444 171 388 113T250 55Q170 55 113 112T55 251Z"/>
+<path stroke-width="1" id="E9-MJMAINB-45" d="M723 286Q721 284 700 145T677 3V0H39V62H147V618H39V680H660V676Q662 670 675 552T691 428V424H629V428Q629 429 627 448T618 494T601 541Q574 593 527 605T382 618H374H304V384H336Q338 384 347 384T361 384T376 386T392 390T407 397T421 407T432 423Q442 444 443 482V501H505V205H443V224Q442 258 435 278T411 307T380 318T336 322H304V62H375H394Q429 62 449 62T497 66T541 76T577 95T609 126T632 170T651 232Q661 287 661 289H723V286Z"/>
+<path stroke-width="1" id="E9-MJMAINB-3D" d="M87 333Q64 343 64 362Q64 383 84 391Q89 393 448 393H807Q808 392 811 390T817 386T823 381T827 374T829 363Q829 345 807 333H87ZM87 109Q64 118 64 139Q64 159 86 168Q89 169 448 169H807L812 166Q816 163 818 162T823 157T827 149T829 139Q829 118 807 109H87Z"/>
+<path stroke-width="1" id="E9-MJMAINB-31" d="M481 0L294 3Q136 3 109 0H96V62H227V304Q227 546 225 546Q169 529 97 529H80V591H97Q231 591 308 647L319 655H333Q355 655 359 644Q361 640 361 351V62H494V0H481Z"/>
+<path stroke-width="1" id="E9-MJMATHI-3B5" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"/>
+<path stroke-width="1" id="E9-MJMAINB-44" d="M39 624V686H270H310H408Q500 686 545 680T638 649Q768 584 805 438Q817 388 817 338Q817 171 702 75Q628 17 515 2Q504 1 270 0H39V62H147V624H39ZM655 337Q655 370 655 390T650 442T639 494T616 540T580 580T526 607T451 623Q443 624 368 624H298V62H377H387H407Q445 62 472 65T540 83T606 129Q629 156 640 195T653 262T655 337Z"/>
+<path stroke-width="1" id="E9-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E9-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E9-MJMAIN-2207" x="0" y="0"/>
+ <use xlink:href="#E9-MJMAIN-2219" x="1055" y="0"/>
+ <use xlink:href="#E9-MJMAINB-45" x="1778" y="0"/>
+ <use xlink:href="#E9-MJMAINB-3D" x="2534" y="0"/>
+<g transform="translate(3429,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="695" height="60" x="0" y="220"/>
+ <use xlink:href="#E9-MJMAINB-31" x="60" y="676"/>
+ <use xlink:href="#E9-MJMATHI-3B5" x="114" y="-686"/>
+</g>
+</g>
+ <use xlink:href="#E9-MJMAIN-2207" x="4364" y="0"/>
+ <use xlink:href="#E9-MJMAIN-2219" x="5420" y="0"/>
+ <use xlink:href="#E9-MJMAINB-44" x="6143" y="0"/>
+ <use xlink:href="#E9-MJMAIN-3D" x="7303" y="0"/>
+ <use xlink:href="#E9-MJMAIN-30" x="8359" y="0"/>
+</g>
+</svg></span>，可得：</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="40.661ex" height="3.176ex" style="vertical-align: -0.838ex;" viewbox="0 -1006.6 17506.7 1367.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-10-Title">
+<title id="MathJax-SVG-10-Title"> \nabla \times \left( \nabla \times \mathbf{E} \right)\mathbf{=}\nabla\left( \nabla \bullet \mathbf{E} \right)\mathbf{-}\nabla^{2}\mathbf{E} = \nabla^{2}\mathbf{E} </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E10-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E10-MJMAIN-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"/>
+<path stroke-width="1" id="E10-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
+<path stroke-width="1" id="E10-MJMAINB-45" d="M723 286Q721 284 700 145T677 3V0H39V62H147V618H39V680H660V676Q662 670 675 552T691 428V424H629V428Q629 429 627 448T618 494T601 541Q574 593 527 605T382 618H374H304V384H336Q338 384 347 384T361 384T376 386T392 390T407 397T421 407T432 423Q442 444 443 482V501H505V205H443V224Q442 258 435 278T411 307T380 318T336 322H304V62H375H394Q429 62 449 62T497 66T541 76T577 95T609 126T632 170T651 232Q661 287 661 289H723V286Z"/>
+<path stroke-width="1" id="E10-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
+<path stroke-width="1" id="E10-MJMAINB-3D" d="M87 333Q64 343 64 362Q64 383 84 391Q89 393 448 393H807Q808 392 811 390T817 386T823 381T827 374T829 363Q829 345 807 333H87ZM87 109Q64 118 64 139Q64 159 86 168Q89 169 448 169H807L812 166Q816 163 818 162T823 157T827 149T829 139Q829 118 807 109H87Z"/>
+<path stroke-width="1" id="E10-MJMAIN-2219" d="M55 251Q55 328 112 386T249 444T386 388T444 249Q444 171 388 113T250 55Q170 55 113 112T55 251Z"/>
+<path stroke-width="1" id="E10-MJMAINB-2212" d="M119 221Q96 230 96 251T116 279Q121 281 448 281H775Q776 280 779 278T785 274T791 269T795 262T797 251Q797 230 775 221H119Z"/>
+<path stroke-width="1" id="E10-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E10-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E10-MJMAIN-2207" x="0" y="0"/>
+ <use xlink:href="#E10-MJMAIN-D7" x="1055" y="0"/>
+<g transform="translate(2056,0)">
+ <use xlink:href="#E10-MJMAIN-28" x="0" y="0"/>
+ <use xlink:href="#E10-MJMAIN-2207" x="389" y="0"/>
+ <use xlink:href="#E10-MJMAIN-D7" x="1445" y="0"/>
+ <use xlink:href="#E10-MJMAINB-45" x="2445" y="0"/>
+ <use xlink:href="#E10-MJMAIN-29" x="3202" y="0"/>
+</g>
+ <use xlink:href="#E10-MJMAINB-3D" x="5815" y="0"/>
+ <use xlink:href="#E10-MJMAIN-2207" x="6709" y="0"/>
+<g transform="translate(7709,0)">
+ <use xlink:href="#E10-MJMAIN-28" x="0" y="0"/>
+ <use xlink:href="#E10-MJMAIN-2207" x="389" y="0"/>
+ <use xlink:href="#E10-MJMAIN-2219" x="1445" y="0"/>
+ <use xlink:href="#E10-MJMAINB-45" x="2167" y="0"/>
+ <use xlink:href="#E10-MJMAIN-29" x="2924" y="0"/>
+</g>
+ <use xlink:href="#E10-MJMAINB-2212" x="11190" y="0"/>
+<g transform="translate(12084,0)">
+ <use xlink:href="#E10-MJMAIN-2207" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E10-MJMAIN-32" x="1178" y="583"/>
+</g>
+ <use xlink:href="#E10-MJMAINB-45" x="13372" y="0"/>
+ <use xlink:href="#E10-MJMAIN-3D" x="14406" y="0"/>
+<g transform="translate(15462,0)">
+ <use xlink:href="#E10-MJMAIN-2207" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E10-MJMAIN-32" x="1178" y="583"/>
+</g>
+ <use xlink:href="#E10-MJMAINB-45" x="16750" y="0"/>
+</g>
+</svg></span></p>
+<p>由此可得：</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="18.561ex" height="6.009ex" style="vertical-align: -2.171ex;" viewbox="0 -1652.5 7991.7 2587.3" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-11-Title">
+<title id="MathJax-SVG-11-Title"> \nabla^{2}\mathbf{E}\mathbf{-}\text{εμ}\frac{\partial^{2}\mathbf{E}}{\partial t^{2}} = 0 </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E11-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E11-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E11-MJMAINB-45" d="M723 286Q721 284 700 145T677 3V0H39V62H147V618H39V680H660V676Q662 670 675 552T691 428V424H629V428Q629 429 627 448T618 494T601 541Q574 593 527 605T382 618H374H304V384H336Q338 384 347 384T361 384T376 386T392 390T407 397T421 407T432 423Q442 444 443 482V501H505V205H443V224Q442 258 435 278T411 307T380 318T336 322H304V62H375H394Q429 62 449 62T497 66T541 76T577 95T609 126T632 170T651 232Q661 287 661 289H723V286Z"/>
+<path stroke-width="1" id="E11-MJMAINB-2212" d="M119 221Q96 230 96 251T116 279Q121 281 448 281H775Q776 280 779 278T785 274T791 269T795 262T797 251Q797 230 775 221H119Z"/>
+<path stroke-width="1" id="E11-MJMATHI-3B5" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"/>
+<path stroke-width="1" id="E11-MJMATHI-3BC" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"/>
+<path stroke-width="1" id="E11-MJMAIN-2202" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"/>
+<path stroke-width="1" id="E11-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+<path stroke-width="1" id="E11-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E11-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E11-MJMAIN-2207" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E11-MJMAIN-32" x="1178" y="583"/>
+ <use xlink:href="#E11-MJMAINB-45" x="1287" y="0"/>
+ <use xlink:href="#E11-MJMAINB-2212" x="2043" y="0"/>
+<g transform="translate(2938,0)">
+ <use xlink:href="#E11-MJMATHI-3B5"/>
+ <use xlink:href="#E11-MJMATHI-3BC" x="466" y="0"/>
+</g>
+<g transform="translate(4008,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="1908" height="60" x="0" y="220"/>
+<g transform="translate(60,676)">
+ <use xlink:href="#E11-MJMAIN-2202" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E11-MJMAIN-32" x="817" y="513"/>
+ <use xlink:href="#E11-MJMAINB-45" x="1032" y="0"/>
+</g>
+<g transform="translate(262,-780)">
+ <use xlink:href="#E11-MJMAIN-2202" x="0" y="0"/>
+<g transform="translate(567,0)">
+ <use xlink:href="#E11-MJMATHI-74" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E11-MJMAIN-32" x="511" y="408"/>
+</g>
+</g>
+</g>
+</g>
+ <use xlink:href="#E11-MJMAIN-3D" x="6434" y="0"/>
+ <use xlink:href="#E11-MJMAIN-30" x="7491" y="0"/>
+</g>
+</svg></span></p>
+<p>或</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="18.258ex" height="6.009ex" style="vertical-align: -2.171ex;" viewbox="0 -1652.5 7861.1 2587.3" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-12-Title">
+<title id="MathJax-SVG-12-Title"> \nabla^{2}\mathbf{E}\mathbf{-}v^{2}\frac{\partial^{2}\mathbf{E}}{\partial t^{2}} = 0 </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E12-MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"/>
+<path stroke-width="1" id="E12-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E12-MJMAINB-45" d="M723 286Q721 284 700 145T677 3V0H39V62H147V618H39V680H660V676Q662 670 675 552T691 428V424H629V428Q629 429 627 448T618 494T601 541Q574 593 527 605T382 618H374H304V384H336Q338 384 347 384T361 384T376 386T392 390T407 397T421 407T432 423Q442 444 443 482V501H505V205H443V224Q442 258 435 278T411 307T380 318T336 322H304V62H375H394Q429 62 449 62T497 66T541 76T577 95T609 126T632 170T651 232Q661 287 661 289H723V286Z"/>
+<path stroke-width="1" id="E12-MJMAINB-2212" d="M119 221Q96 230 96 251T116 279Q121 281 448 281H775Q776 280 779 278T785 274T791 269T795 262T797 251Q797 230 775 221H119Z"/>
+<path stroke-width="1" id="E12-MJMATHI-76" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
+<path stroke-width="1" id="E12-MJMAIN-2202" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"/>
+<path stroke-width="1" id="E12-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+<path stroke-width="1" id="E12-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E12-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E12-MJMAIN-2207" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E12-MJMAIN-32" x="1178" y="583"/>
+ <use xlink:href="#E12-MJMAINB-45" x="1287" y="0"/>
+ <use xlink:href="#E12-MJMAINB-2212" x="2043" y="0"/>
+<g transform="translate(2938,0)">
+ <use xlink:href="#E12-MJMATHI-76" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E12-MJMAIN-32" x="686" y="583"/>
+</g>
+<g transform="translate(3877,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="1908" height="60" x="0" y="220"/>
+<g transform="translate(60,676)">
+ <use xlink:href="#E12-MJMAIN-2202" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E12-MJMAIN-32" x="817" y="513"/>
+ <use xlink:href="#E12-MJMAINB-45" x="1032" y="0"/>
+</g>
+<g transform="translate(262,-780)">
+ <use xlink:href="#E12-MJMAIN-2202" x="0" y="0"/>
+<g transform="translate(567,0)">
+ <use xlink:href="#E12-MJMATHI-74" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E12-MJMAIN-32" x="511" y="408"/>
+</g>
+</g>
+</g>
+</g>
+ <use xlink:href="#E12-MJMAIN-3D" x="6304" y="0"/>
+ <use xlink:href="#E12-MJMAIN-30" x="7360" y="0"/>
+</g>
+</svg></span></p>
+<p>其中，<br><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="9.483ex" height="6.176ex" style="vertical-align: -2.838ex;" viewbox="0 -1437.2 4083.1 2659.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-13-Title">
+<title id="MathJax-SVG-13-Title">v = \frac{1}{\sqrt{\text{εμ}}}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E13-MJMATHI-76" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
+<path stroke-width="1" id="E13-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E13-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+<path stroke-width="1" id="E13-MJMATHI-3B5" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"/>
+<path stroke-width="1" id="E13-MJMATHI-3BC" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"/>
+<path stroke-width="1" id="E13-MJMAIN-221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E13-MJMATHI-76" x="0" y="0"/>
+ <use xlink:href="#E13-MJMAIN-3D" x="763" y="0"/>
+<g transform="translate(1541,0)">
+<g transform="translate(397,0)">
+<rect stroke="none" width="2023" height="60" x="0" y="220"/>
+ <use xlink:href="#E13-MJMAIN-31" x="761" y="676"/>
+<g transform="translate(60,-705)">
+ <use xlink:href="#E13-MJMAIN-221A" x="0" y="-176"/>
+<rect stroke="none" width="1070" height="60" x="833" y="565"/>
+<g transform="translate(833,0)">
+ <use xlink:href="#E13-MJMATHI-3B5"/>
+ <use xlink:href="#E13-MJMATHI-3BC" x="466" y="0"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg></span><br>表示电磁波传播速度，电磁波真空中的传播速度为<br><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="34.447ex" height="6.176ex" style="vertical-align: -2.838ex;" viewbox="0 -1437.2 14831.3 2659.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-14-Title">
+<title id="MathJax-SVG-14-Title">c = \frac{1}{\sqrt{\varepsilon_{0}\mu_{0}}} = 2.997924 \times 10^{8}\ m/s</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E14-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"/>
+<path stroke-width="1" id="E14-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E14-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+<path stroke-width="1" id="E14-MJMATHI-3B5" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"/>
+<path stroke-width="1" id="E14-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+<path stroke-width="1" id="E14-MJMATHI-3BC" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"/>
+<path stroke-width="1" id="E14-MJMAIN-221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"/>
+<path stroke-width="1" id="E14-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+<path stroke-width="1" id="E14-MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"/>
+<path stroke-width="1" id="E14-MJMAIN-39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"/>
+<path stroke-width="1" id="E14-MJMAIN-37" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z"/>
+<path stroke-width="1" id="E14-MJMAIN-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"/>
+<path stroke-width="1" id="E14-MJMAIN-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"/>
+<path stroke-width="1" id="E14-MJMAIN-38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"/>
+<path stroke-width="1" id="E14-MJMATHI-6D" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+<path stroke-width="1" id="E14-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"/>
+<path stroke-width="1" id="E14-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E14-MJMATHI-63" x="0" y="0"/>
+ <use xlink:href="#E14-MJMAIN-3D" x="711" y="0"/>
+<g transform="translate(1489,0)">
+<g transform="translate(397,0)">
+<rect stroke="none" width="2931" height="60" x="0" y="220"/>
+ <use xlink:href="#E14-MJMAIN-31" x="1215" y="676"/>
+<g transform="translate(60,-705)">
+ <use xlink:href="#E14-MJMAIN-221A" x="0" y="-176"/>
+<rect stroke="none" width="1977" height="60" x="833" y="565"/>
+<g transform="translate(833,0)">
+ <use xlink:href="#E14-MJMATHI-3B5" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E14-MJMAIN-30" x="659" y="-213"/>
+<g transform="translate(920,0)">
+ <use xlink:href="#E14-MJMATHI-3BC" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E14-MJMAIN-30" x="853" y="-213"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+ <use xlink:href="#E14-MJMAIN-3D" x="5216" y="0"/>
+<g transform="translate(6272,0)">
+ <use xlink:href="#E14-MJMAIN-32"/>
+ <use xlink:href="#E14-MJMAIN-2E" x="500" y="0"/>
+ <use xlink:href="#E14-MJMAIN-39" x="779" y="0"/>
+ <use xlink:href="#E14-MJMAIN-39" x="1279" y="0"/>
+ <use xlink:href="#E14-MJMAIN-37" x="1780" y="0"/>
+ <use xlink:href="#E14-MJMAIN-39" x="2280" y="0"/>
+ <use xlink:href="#E14-MJMAIN-32" x="2781" y="0"/>
+ <use xlink:href="#E14-MJMAIN-34" x="3281" y="0"/>
+</g>
+ <use xlink:href="#E14-MJMAIN-D7" x="10277" y="0"/>
+<g transform="translate(11277,0)">
+ <use xlink:href="#E14-MJMAIN-31"/>
+ <use xlink:href="#E14-MJMAIN-30" x="500" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E14-MJMAIN-38" x="1415" y="583"/>
+</g>
+ <use xlink:href="#E14-MJMATHI-6D" x="12982" y="0"/>
+ <use xlink:href="#E14-MJMAIN-2F" x="13861" y="0"/>
+ <use xlink:href="#E14-MJMATHI-73" x="14361" y="0"/>
+</g>
+</svg></span></p>
+<p>折射率表达式为：</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="15.924ex" height="4.676ex" style="vertical-align: -1.838ex;" viewbox="0 -1221.9 6856.1 2013.3" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-15-Title">
+<title id="MathJax-SVG-15-Title">n = \frac{c}{v} = {\sqrt{\varepsilon_{r}\mu_{r}}} </title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E15-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/>
+<path stroke-width="1" id="E15-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E15-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"/>
+<path stroke-width="1" id="E15-MJMATHI-76" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/>
+<path stroke-width="1" id="E15-MJMATHI-3B5" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"/>
+<path stroke-width="1" id="E15-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+<path stroke-width="1" id="E15-MJMATHI-3BC" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"/>
+<path stroke-width="1" id="E15-MJMAIN-221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E15-MJMATHI-6E" x="0" y="0"/>
+ <use xlink:href="#E15-MJMAIN-3D" x="878" y="0"/>
+<g transform="translate(1656,0)">
+<g transform="translate(397,0)">
+<rect stroke="none" width="605" height="60" x="0" y="220"/>
+ <use xlink:href="#E15-MJMATHI-63" x="86" y="676"/>
+ <use xlink:href="#E15-MJMATHI-76" x="60" y="-686"/>
+</g>
+</g>
+ <use xlink:href="#E15-MJMAIN-3D" x="3057" y="0"/>
+<g transform="translate(4114,0)">
+ <use xlink:href="#E15-MJMAIN-221A" x="0" y="-206"/>
+<rect stroke="none" width="1908" height="60" x="833" y="535"/>
+<g transform="translate(833,0)">
+ <use xlink:href="#E15-MJMATHI-3B5" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E15-MJMATHI-72" x="659" y="-213"/>
+<g transform="translate(885,0)">
+ <use xlink:href="#E15-MJMATHI-3BC" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E15-MJMATHI-72" x="853" y="-213"/>
+</g>
+</g>
+</g>
+</g>
+</svg></span><br>其中<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.057ex" height="2.009ex" style="vertical-align: -0.671ex;" viewbox="0 -576.1 885.8 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-16-Title">
+<title id="MathJax-SVG-16-Title">\varepsilon_{r}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E16-MJMATHI-3B5" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"/>
+<path stroke-width="1" id="E16-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E16-MJMATHI-3B5" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E16-MJMATHI-72" x="659" y="-213"/>
+</g>
+</svg></span>和<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.375ex" height="2.176ex" style="vertical-align: -0.838ex;" viewbox="0 -576.1 1022.8 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-17-Title">
+<title id="MathJax-SVG-17-Title">\mu_{r}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E17-MJMATHI-3BC" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"/>
+<path stroke-width="1" id="E17-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E17-MJMATHI-3BC" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E17-MJMATHI-72" x="853" y="-213"/>
+</g>
+</svg></span>分别表示材料的相对介电系数和相对磁导率。</p>
 </body></html>]]></content>
       <categories>
-        <category>test</category>
+        <category>学习</category>
       </categories>
       <tags>
-        <tag>test</tag>
+        <tag>电动力学</tag>
+        <tag>折射率</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2019/11/15/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==" title="https://hexo.io/">Hexo<i class="fa fa-external-link"></i></span>! This is your very first post. Check <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv" title="https://hexo.io/docs/">documentation<i class="fa fa-external-link"></i></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=" title="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fa fa-external-link"></i></span> or you can ask me on <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==" title="https://github.com/hexojs/hexo/issues">GitHub<i class="fa fa-external-link"></i></span>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s" title="https://hexo.io/docs/writing.html">Writing<i class="fa fa-external-link"></i></span></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=" title="https://hexo.io/docs/server.html">Server<i class="fa fa-external-link"></i></span></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s" title="https://hexo.io/docs/generating.html">Generating<i class="fa fa-external-link"></i></span></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s" title="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fa fa-external-link"></i></span></p>
+    <title>琐碎011</title>
+    <url>/2019/10/17/%E7%90%90%E7%A2%8E011/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E011.png" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;不充实同时又没有什么意义的一天，除了坚持跑步，看书，其他时间不是在睡觉就是在看视频，不禁让我想起了胡适的日记——“打牌”。<br>&emsp;&emsp;跑步的时候我在考虑一些事情，类如修行，控制欲望。却没有得到好的解答，也许这些问题应该静下来慢慢思考，不适合已经发挥大部分气力跑步的时候再去思考，现在的我也不适合思考，心情不够平静，也不想平复。<br>&emsp;&emsp;那些真正修养高的人，是如何将自己的心理调节到一个平衡的状态的，面对简单可得的诱惑，常能坚持本心，我自知远不能如此，我只是在犹豫，我不能控制自己不去在乎别人的眼光。这让我在跑步的时候想到牵驴子的父与子的寓言，骑着不是，不骑也不是，总会有人看不惯你的行为，不管对错。这不正是我的样子，卷到了别人的眼光之中，究竟自己想争取的却没有花费心思和精力，却总是借口说，我不喜欢做事有这么强的目的性。实则，我没能找到自己的位置，过于在乎一些虚无的东西，活的太轻，不能脚踏实地。</p>
 ]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>琐碎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>纳米锥电场分布</title>
+    <url>/2019/10/15/%E7%BA%B3%E7%B1%B3%E9%94%A5%E7%94%B5%E5%9C%BA%E5%88%86%E5%B8%83/</url>
+    <content><![CDATA[<p>利用FDTD Solutions得到纳米锥的仿真数据，输出到Matlab中重新作图。<br>输入结果示意图：<br><img src="https://upload-images.jianshu.io/upload_images/763395-bd9cd79185160f7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="纳米锥电场平方的分布"></p>
+<blockquote>
+<p>百度云盘链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMUxqejQtTjNsRmdTUTU0MDF5SWE3elE=" title="https://pan.baidu.com/s/1Ljz4-N3lFgSQ5401yIa7zQ">https://pan.baidu.com/s/1Ljz4-N3lFgSQ5401yIa7zQ<i class="fa fa-external-link"></i></span><br>提取码：sfp4</p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 将FDTD数据导入到Matlab中绘制电场分布图，对应文件：cone20191014.m</span></span><br><span class="line">X = x*<span class="number">10</span>^<span class="number">9</span>;  <span class="comment">%x是FDTD输出的x坐标</span></span><br><span class="line">Y = y*<span class="number">10</span>^<span class="number">9</span>;  <span class="comment">%x是FDTD输出的y坐标</span></span><br><span class="line">h = pcolor(X,Y,E2.');  <span class="comment">%E2是FDTD输出的电场平方</span></span><br><span class="line">set(h,<span class="string">'LineStyle'</span>,<span class="string">'none'</span>);      <span class="comment">%线型设置为无 </span></span><br><span class="line">axis equal  <span class="comment">%x，y的尺寸等比例</span></span><br><span class="line"> axis([<span class="number">-40</span> <span class="number">40</span> <span class="number">-40</span> <span class="number">40</span>])  <span class="comment">%规定x，y取值范围</span></span><br><span class="line">set(gca,<span class="string">"FontSize"</span>,<span class="number">25</span>,<span class="string">"Fontweight"</span>,<span class="string">'bold'</span>)  设定当前图层字体大小，粗细</span><br><span class="line">set(gca,<span class="string">'XTick'</span>,(<span class="number">-40</span>:<span class="number">20</span>:<span class="number">40</span>))  <span class="comment">%设定x方向的刻度标注</span></span><br><span class="line">set(gca,<span class="string">'YTick'</span>,(<span class="number">-40</span>:<span class="number">20</span>:<span class="number">40</span>))  <span class="comment">%设定y方向的刻度标注</span></span><br><span class="line">shading interp  <span class="comment">%对曲面或图形对象的颜色着色进行色彩的插值处理，使色彩平滑过渡</span></span><br><span class="line">xlabel(<span class="string">'x (nm)'</span>)  <span class="comment">%x标题</span></span><br><span class="line">ylabel(<span class="string">'y (nm)'</span>)  <span class="comment">%y标题</span></span><br><span class="line">colorbar  <span class="comment">%显示colorbar</span></span><br><span class="line">colormap jet  <span class="comment">%colorbar类型选择为jet</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>软件</category>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+        <tag>FDTD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎010</title>
+    <url>/2019/10/14/%E7%90%90%E7%A2%8E010/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E010.png" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;《琐碎》记事已经有十篇了，回看这段时间的记录，能够明显地感觉到每一个都是过于匆忙，似乎完全是为了完成一些任务，并没有认真在写，对所写内容也极为不负责任，错别字和语句不通顺一大堆不说，内容也是十分空洞无味，有的自己看着都会觉着起鸡皮疙瘩，更不必说作为一个公开的博客来让别人来看了。自己都不满意，还要心存侥幸，这种心理极为可怕，难以成事，必须要改。<br>&emsp;&emsp;鉴于此，博客的更新必须遵循如下原则：</p>
+<blockquote>
+<ul>
+<li>宁缺毋滥。如果实在没有心境去写，干脆就不要写，或者说自己日记本上随便写写，既然想要做成博客，就要对自己的博客内容负责，如果自己都嫌弃，何以能谈分享。</li>
+<li>有条理。记事、写感想要有逻辑，不能想到什么写什么，如果遵循写作当时的思考方式，乱七八糟，想到哪里就写到哪里，事后看也许会不容易回忆起当时的想法，更不必说如果别人来看，会是何等厌烦——何必来迁就。</li>
+<li>成体系。考虑到博客内容还很少，分类杂乱且分类下的中内容寥寥无几也能理解，但是每个分类一旦建立，就要有它存在的意义，不能随随便便，爱怎么分类怎么分类，也不能建了一个分类而不添加新内容，不然乱糟糟的，好好一个博客就成了垃圾桶。</li>
+</ul>
+</blockquote>
+<p>&emsp;&emsp;以上，要谨记。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>琐碎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎009</title>
+    <url>/2019/10/12/%E7%90%90%E7%A2%8E009/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E009.png" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;老家门前就是大山，准确的是，应该是小山丘，只有一百多米高，对我来说，也已经是堂堂正正的山，这山上什么东西都有。在我爸妈小时候，这个山上还有野猪、狼等大型的动物，等到我小时候，只能看到兔子，等我长的再大点，只能看到刺猬了，还有很多被毒死的野鸡的尸体。山上有铁矿、铅矿，近几年据说又发现了金矿，山顶现在仍然可以捡到很多小贝壳，可以想见以前都是在海底，多了不知道多少年，慢慢挤压上来变成了一座座山。山上时常能挖到明清的钱币，有一次要修路，挖土机挖出了不少好东西，我记得有人去捡，但是又不让捡，但这段回忆不清晰了，说不清到底有没有什么宝贝。据说隋唐名将罗成的墓就是在这边，这也不知道从何得知，也没法求证。<br>&emsp;&emsp;山连着山，绵延十几里路都是，叫十里长山，我还因此出过笑话。小学的时候，学到一篇课文：十里长街送总理，我当时很激动，以为我们这里就是，当时我不知道叫十里长山，想着原来他们都是送过总理的，为什么不听提起过呢，过了不知道多久，我才知道，原来送总理的地方是在北京，还不服得向妈妈求证，妈妈没笑，我自己笑了。<br>&emsp;&emsp;令我还念想着的，除了山上的贝壳，还有山崖下的壁画，我看着像极了那种很古老的壁画，像是用白色的石灰画的，现在不知道还有没有，我总想着，有一天，我请个地理专家回家里看看，研究一番，也许能发现点有意思的东西。<br>&emsp;&emsp;说到底，总吸引人的还是满山的水果，也不全是水果，也有一些农作物，但基本都是摘了就能吃。从春天开始，花生和豌豆一起种下去，豌豆结的早，可以直接吃，又甜又嫩，吃着难以停下来，也可以卤着吃，适合全家人一块吃，是看电视的点心一样。花生也非常好吃，生吃味道最好，脆而多汁，我爸常说生花生补血的，多吃点好，所以他经常买，买了也不管什么造血不造血了，基本都是被他炸了下酒。桑葚、杏子、桃子，时间差的不远，我家山上桃树最多，基本每家都有半亩地的桃树，当然针对那些勤劳的人，都是山荒，自己开出来的。桑葚树不多，我带过的第一所小学那里就有两棵，非常高大，有人爬到去摘，我和我姐要么让朋友帮我们摘了扔下来，要么干脆就吃地上的——熟透了自己掉了，那时候不觉着脏，甜就行了。后来两棵桑葚树枯死了，也再也没有吃过那么甜的桑葚。杏子的种类非常之多，有大白杏，又白又青，不甜，很多人不爱吃，我觉着味道很不错，很脆，也有点酸甜。还有一种羊屎蛋杏，因为样子想羊屎蛋而得名，又小又不甜，像是发育不良，没得吃的时候我也不挑。还有苹果杏，桃杏，都是别人用其它果树裁的，都很有创新，味道都很不错，而且个头也大。因为我太爷爷和我爸都是比较会经营家庭外部环境的人，所以小时候我家声望还不错，有一次我放学偷别人家的杏，拉着另一个小伙伴。结果被发现了，主人追着骂我们，我们赶紧跑，跑到家里还有点担心，会不会到我家来告状。还真给我怕来了，不过待着一大筐的杏子，跟我爸说，小孩喜欢吃随便吃，爬树上摔下来怎么办，这话说的好听，爸听着也没生我气，我只觉着他送的杏子比我在树上摘得好吃多了。桃子吃的最多，可能每天十几个，和我吃苹果的数量差不多。<br>&emsp;&emsp;想记下的还有很多，下次想写了再续上。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>家</tag>
+        <tag>琐碎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎008</title>
+    <url>/2019/10/12/%E7%90%90%E7%A2%8E008/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E008.png" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;本来以为10点多可以完成任务，但是硬是弄到了零点，而且改进并不见得有多少，只是自己比较满意了，我认为我已经让自己信服，可以讲清楚这个ppt了。后面有问题，再多修改，不断提升。我能够接受自己的不足，但内心有点底气不足，如果有时间，还想做得更好。<br>&emsp;&emsp;本来打算直接睡了的，后来想想，我有计划清单，必须完成，就像今晚去跑步的时候，已经要十点了，阿姨过来说该走了，我才刚跑出去没一会，一圈跑下来，阿姨就在前面等着我了，说回去了关门了，我说我再跑一圈，她还是说别跑了，回去了，我没再管，接着急速跑了一圈，累是真的非常累。买了夜宵，花了8.5元，记了账。东西到现在才刚刚吃了，吃了一大半，要不留个明天早饭吧，而且晚上吃太多也不好。<br>&emsp;&emsp;写明日计划，刷牙，玩会手机，睡觉。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>琐碎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎007</title>
+    <url>/2019/10/10/%E7%90%90%E7%A2%8E007/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E007.png" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;我还是不会在高压的环境中适应，过来不管做的怎么样，先尽量找话骂我一顿，我想他是这么过来的，我也会成长。很多话事后觉着还是有道理，但是当时真的是很烦躁，再加上不入耳的语调。面对这种，我不知道如何能做到像姐姐说的不卑不亢，就想是我爸在训我的场景，我能明白我如果争辩会有更差的后果。他们都只会疯狂贬低我，虽然可能他们已经是说话很留情分，在他们眼中，我是更加的不堪与无用。<br>&emsp;&emsp;唯一的办法，我只能让自己变得能够承受这些，我必须不断提升自己，我需要的是自己阶段性的提升，不卑不亢，才会有所体现。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>琐碎</tag>
+        <tag>成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎006</title>
+    <url>/2019/10/09/%E7%90%90%E7%A2%8E006/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E006.jpg" alt><a id="more"></a><br>&emsp;&emsp;自己的时间一点点被掏空，却没有什么收获，这样下去只是在浪费时间和生命，效率也不高，不能再这样下去。必须为自己争取生存的空间，能够为自己的价值奋斗，才是好的开始，才能功不唐捐。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>琐碎</tag>
+        <tag>成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎005</title>
+    <url>/2019/10/08/%E7%90%90%E7%A2%8E005/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E005.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;今天的任务都按照计划完成了，也跑了步。问题在于没能按照时间安排顺利完成，目前看不出太大问题，但是一天下来，如果计划安排的紧凑，那么就会有不少事情做不完，这样推到第二天，不仅影响第二天计划的进行，而且一两次之后，也就不存在什么计划之说了。<br>&emsp;&emsp;不可懒惰，收拾自己。<br>&emsp;&emsp;在与别人交际时，不可以牺牲自己作为沟通的代价，本应该是平等的，不必刻意拉低自己的地位或处境，不可刻意为对方提供好处，尤其是不确定的半虚半实的好处。人各有长短，能相处则是彼此的肯定，如果刻意牺牲自己而换来的交际，时间拉长，身心俱疲，而且很有可能失去这段关系，更可甚者，对方会以此诋毁自己，这种朋友，可不必交。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>思考</tag>
+        <tag>琐碎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎004</title>
+    <url>/2019/10/07/%E7%90%90%E7%A2%8E004/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E004.png" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;今天跑了步，昨天也是，但是记不起前天——10月5号有没有跑，我尽力去想，却没有想起来。那天中午我从租房回到学校，下午去到实验室，应该是安全的一天，老师没有过来，第二天过来的，那我那天做了什么呢。这个年纪就已经这么健忘了么，我也发现自己的状态一点点不好，我的对策呢，忘了这种不好的感觉。<br>&emsp;&emsp;当天下午我把博客上面的内容同步到了简书上，后来看了会文献，想着八号要汇报的话，我今天要看一些，后面慢慢整理。晚上一个同学问我一个Matlab的问题，我回答了他之后，他就回去了，我还没有，我当时还在忙着什么，是正事么，好像不是，似乎是在整理FDTD数据导出的问题，待我去查查那篇博客的日期。果真是10月5日，更新的时间是23:50，想不到搞到了那么晚。这块内容对我完成一个仿真任务比较有用，后面还需要继续看如何处理成3D数据。这下基本清楚了5号一天的行动。没有跑步。<br>&emsp;&emsp;发现真的没什么时间去写这些东西了，老师那边任务一条接一条，考虑到今天状态着实不好，需要更多的休息。<br>&emsp;&emsp;另记一事，今天有人租房，我过去陪他看房，短租，一两个月，我只能让他租20天，我是想抓紧租出去，越拖下去越没钱，所以直接按照每天33的价格租出去。这样他还是没同意，说住不了几天。就没谈成，刚才我跟他发了信息，说500给他租到26号。不知道结果是怎么样，相比于自己，我已经往前跨了一步，后面租不出去再多想办法。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>琐碎</tag>
+        <tag>成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FDTD数据导出到Matlab作图</title>
+    <url>/2019/10/05/FDTD%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%88%B0Matlab%E4%BD%9C%E5%9B%BE/</url>
+    <content><![CDATA[<p>&emsp;&emsp;FDTD计算得到的电场分布，但是FDTD通过另存为jpg或者截屏所得到的图片分辨率很低，得到的图片往往不能直接使用。因此，可以通过脚本输入到Maltab，然后再利用Matlab处理图片并输出。<br>&emsp;&emsp;但是将数据从FDTD输出到Matlab中，并不是想象中那么简单，经历了好几次坑，反复摸索之后，得到了一种比较可行的方案，介绍如下。</p>
+<a id="more"></a>
+<h3 id="1-FDTD原始结果"><a href="#1-FDTD原始结果" class="headerlink" title="1. FDTD原始结果"></a>1. FDTD原始结果</h3><p>&emsp;&emsp;这里我们选用三角纳米片的电场分布仿真结果进行举例。图1是FDTD直接输出的结果（截图），可以明显看出，x方向和y方向的比例并不相同，而且不容易调节成比例尺相同，我目前有两个可行的方案可以解决这个问题，一种是先建立一个方形的图片，利用签字笔在电脑屏幕上画出方形的边界，然后再反复调节FDTD的图片，使其边界和画出的边界重合；第二种方案相对更精准也更方便，借用Snipaste截图软件创建一个方形的贴图，这个好处是这个贴图可以一直置于顶层，然后再调节FDTD中图片的边界即可。这两种方案都是调节好之后进行截图，因为直接另存，图片更加模糊，而且也没有在FDTD Solutions软件中找到可以设置分辨率的选项（FDTD Solutions版本为2018版），因此可以使用高分辨率截图软件或者较高分辨率的软件，然后将图片放到PS或者AI中进行分辨率的进一步调节。FDTD中能够调节的着实比较少，很有必要继续调整。<br><img src="https://upload-images.jianshu.io/upload_images/763395-11e1317a1552e4d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图1 FDTD结果"></p>
+<h3 id="2-FDTD结果导出到Matlab"><a href="#2-FDTD结果导出到Matlab" class="headerlink" title="2. FDTD结果导出到Matlab"></a>2. FDTD结果导出到Matlab</h3><p>&emsp;&emsp;FDTD数据导入到Matlab主要参考Lumerical官网的介绍文档<span class="exturl" data-url="aHR0cHM6Ly9rYi5sdW1lcmljYWwuY29tL3JlZl9zY3JpcHRzX21hdGxhYnNhdmUuaHRtbA==" title="https://kb.lumerical.com/ref_scripts_matlabsave.html">matlabsave<i class="fa fa-external-link"></i></span>。<br>&emsp;&emsp;可以通过如下脚本实现电场的读取：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">E=getresult(&quot;z=0&quot;,&quot;E&quot;);</span><br><span class="line">E2=getelectric(&quot;z=0&quot;);</span><br><span class="line">E1=sqrt(E2);</span><br><span class="line">matlabsave(&quot;tri120.mat&quot;,E,E1);</span><br></pre></td></tr></table></figure>
+<p>其中E得到的是一个struct结果:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">包含以下字段的 struct:</span><br><span class="line"></span><br><span class="line">                  E: [48841×3 double]</span><br><span class="line">  Lumerical_dataset: [1×1 struct]</span><br><span class="line">                  f: 4.2827e+14</span><br><span class="line">             lambda: 7.0000e-07</span><br><span class="line">                  x: [221×1 double]</span><br><span class="line">                  y: [221×1 double]</span><br><span class="line">                  z: 0</span><br></pre></td></tr></table></figure>
+<p>struct中E是一个包含三个x, y, z三个方向的电场分布，是矢量信息，而通过getelectric并开根号得到的是电场的标量数值。值得一说的是，对结构体struct中内容的调用可以采用E.x等命令进行直接读取。<br>值得注意的是，FDTD和Matlab采用的矩阵规则不同，输出后的结果需要进行非共轭转置，才能够和FDTD的结果进行对应。<br>x，y， E 等的信息除了利用getdata或getresult获取以外，也可以通过右键单击，将结果输出到脚本，可以得到相同的效果。<br><img src="https://upload-images.jianshu.io/upload_images/763395-de2f12e21ec76ce7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图2 导出x, y 信息"></p>
+<h3 id="3-Matlab作图"><a href="#3-Matlab作图" class="headerlink" title="3. Matlab作图"></a>3. Matlab作图</h3><p>将电场结果，x，y，z数据导出到matlab中之后，作图可以有多种方案，contour，contourf，pcolor等均可以实现，pcolor更为方便。<img src="https://upload-images.jianshu.io/upload_images/763395-b528ada89cb8a342.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图3 pcolor处理结果">contourf和pcolor的语句如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[C,h] = contourf(E,M)    %counterf, M越大，越精细</span><br><span class="line">h = pcolor(x,y,E)        %pcolor</span><br></pre></td></tr></table></figure>
+<p>如图3为pcolor输出的结果。作图后，仍需进行如下调整：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set(h,&apos;LineStyle&apos;,&apos;none&apos;);     %线型设置为无</span><br><span class="line">colorbar                       %色标</span><br><span class="line">colormap jet                   %色标模式选用jet</span><br><span class="line">axis equal                     %x, y 等比例尺</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9rYi5sdW1lcmljYWwuY29tL3JlZl9zY3JpcHRzX3R1dG9yaWFsX21hdGxhYl8yZF9wbG90dGluZy5odG1s" title="https://kb.lumerical.com/ref_scripts_tutorial_matlab_2d_plotting.html">2D image plots<i class="fa fa-external-link"></i></span><br>&emsp;&emsp;&emsp;<span class="exturl" data-url="aHR0cHM6Ly9rYi5sdW1lcmljYWwuY29tL3JlZl9zY3JpcHRzX21hdGxhYnNhdmUuaHRtbA==" title="https://kb.lumerical.com/ref_scripts_matlabsave.html">matlabsave<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+        <tag>FDTD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎003</title>
+    <url>/2019/10/05/%E7%90%90%E7%A2%8E003/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E003.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;似乎是越长大越会浪费时间了，本是想记录一些简单的事情，不花多久时间，记完之后，可以有更多的时间做其他事情。小时候，每天写日记，开始时爸给我的一个黄色日记本，很小，如同我的年龄一样小，可能只能写下两百字，很工整的写完，不记得用了多少时间，只清楚非常干脆，写便是写，没有多余的动作，现在不同，想记录点事情，总会被一些有点相关的事情干扰，似乎是在做铺垫的工作，铺垫的时间反而长过了记录的时间，究竟哪个更有意义，我很清楚，但似乎又有一些借口，让自己信服，浪费的时间是有一定价值的。如同现在，我写了一堆，却不是我想记录的事情。<br>&emsp;&emsp;睡了一觉之后，开始收拾行李回学校，我的十一假期到此结束。行李不算多，一个箱子加一个书包，举例倒也不远，有三公里，想了想，是晚上借同学的电瓶车还是直接拉着去还是打车或者公交，纠结了一会，想到打车可以报销，就轻松了。<br>叫了一辆出租车，他停在了我对面，非让我走过去，说你直接翻栅栏过来，我又不买橘子，我翻什么栅栏，更何况违反了交通规则，有一定的安全隐患。我让他过来，他则不肯，说你走过来，因为等下车也是这个方向开，我内心一顿烦闷，车往哪里开不行，不能转弯么？我没有说出口，拎着箱子往前走了，走到路口，我看到手机上的记录，他已经开始打表计价，有些更烦了，他这么轻松的就在那里等着计价收钱，让我走。这时候他电话打过来，语气仍然和之前一样很强横，他质问我你往那里走干什么，我开过去，你到马路对面等着。我直接跟他说我现在不去了，你取消一下。我看了半天没看到怎么取消，才不得已让他取消，不然，就算多花钱我也要取消这个订单。分明是自己服务不好，却还是一直质问顾客各种不是。随后，也投诉他提前打表计价，后面的处理我就不清楚了，至少我自己清净了。<br>&emsp;&emsp;这时候，我自己也挺僵硬的，那个位置根本不好打车，车没有位置可以停，我走到了一家宾馆的楼下，尝试叫了一辆，这次我直接给司机打电话，问他我在的位置能不能上车，要在哪里等，他说他看看。我看着距离一点点拉近，最后距离停留在了0m，我却没有看到车在哪里。这时候电话也来了，说他刚才经过了我那里，现在已经在其他地方了，这是什么操作，经过却不停下，过去了才告诉我已经走开了。然后他接着说，如果你不方便的话，可以取消订单重新叫车，我也没太明白这个操作什么意思。我问他不能掉头么，他说行，让我去马路对面等他，我去了马路对面，又告诉我，他去不了马路对面，让我去斜对面等他，我确实看到了他在斜对面，可是为什么斜对面就过不来了？已经走到这一步，我也就过去了，拉着箱子，我甚至觉着他是和第一个司机一伙来捉弄我的。绿灯到了，他直接往前开，没有往旁边停车的意思，然后就在马路上，让我上车，行吧，我把箱子一抱，放在了车里。随后他直接在单行线上调转车头，我对规则也不太清楚，自己也还没有考驾照，但还是觉着行驶的很有问题，随后开始给另一个人打电话。他的语气像个犯了错的小孩，完全不再以后面有个乘客，他们的对话甚至让我觉着他是替别人开的，他根本不懂怎么开车，现在想想，确实也是这样，考虑一些可能的后果，我当时也直接录音了。“这个人我都不想接的，我跟他说让他取消订单，他非不听，我现在都不想开了。”随后向电话另一端介绍了路况，根本说不清，就像我给别人讲PPT一样，应该更糟糕，别人根本听不懂，还有点烦躁。这个车坐得真的有点不舒服了，一遍埋怨我为什么非要上车，怎么不取消订单，“我又不熟悉这一块，让你取消也不取消……”大哥我哪里知道你不清楚路线，你接单干嘛？你不清楚交通规则还一直是理直气壮的说我的不是。<br>&emsp;&emsp;如果是逆行，又被拍到的话，他有可能会被扣分，他这一单拉的就亏大了，虽然不是我的责任，但是我还是有些于心不忍。不过他直接怪我的时候，我当然气愤，想要跟他解释争论一番。他整个路程基本都在打电话，询问是否违规，还拍了几个照片询问，慌张而且不知所措，下车，我还没有付钱，他直接就说，你先下去，这里停不了多久，可那里正是停车点，他应该是难以压制内心的慌乱，只想赶紧确定电话那端的确定答复，以及赶紧离开现场。付了钱，我说了声非常抱歉让你这么麻烦。我一直想投诉他，他的问题是比较多的，不清楚交通规则，驾车打电话、拍照，直接告诉乘客说我不想开了，逆行，但我最终没有给他任何评价，我想他被这个事情搞得已经是一团乱麻了，如果再有麻烦找到他，这一天过得也太艰难了。我点了拉黑该司机，如同第一个司机一样。<br>&emsp;&emsp;事后我一直在想，如果我情商高一点，是不是今天就没有这么多问题，首先是沟通的问题，如果我肯直接表明自己的处境，多与对面沟通，就不会有这么多的麻烦，第二个司机也是这样，他是说“如果你不方便，可以取消订单”，可问题是不方便的是司机本人，他想要掩盖自己能力上的不足，他也没有做到与我好好沟通。另外，如果第二位司机想我埋怨的时候，我能够控制自己的情绪，先站在他的立场，稳定他的情绪，劝他也许没这么糟糕。其实在路上我一直想跟他说我给你加点钱，但又不知道如何说出口，而且如果真的扣分，我能给的钱也远不够他扣的。即使不是自己的责任，能够多站在别人的立场上思考问题，事情也许会轻松一点，至少不会在已经非常糟糕的基础上，让事情变得更加糟糕，甚至是不可控制。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>琐碎</tag>
+        <tag>成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WELCOME</title>
+    <url>/2019/09/29/WELCOME/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/Welcome.jpg" alt><br>&emsp;&emsp;Sunfove的个人网站,主要分享一些软件技巧和个人感悟，欢迎交流。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>九月读书笔记</title>
+    <url>/2019/09/29/%E4%B9%9D%E6%9C%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E4%B9%9D%E6%9C%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;九月份看完了基本书，川端康成的《伊豆的舞女》和《千纸鹤》，王小波的《我的精神家园》，《我的精神家园》刚刚看完，是在写完了第一句话，停了半小时看完的，看的时候也奇怪，本来是显示297页，看着看着，怎么变到了300页，难道后面还有没有加载出来，再看一会，变成了302页，如此，哪里还看得完。结果也只有302页，看完告诉我一共看了五小时看完了，五小时？我怎么感觉看了半个月，确实也是这样，断断续续，半个月过去了，而且大半夜都是中秋回家的火车上看的，得有两个多小时。<br>&emsp;&emsp;起初是看了越哥解说的电影《伊豆的舞女》，就像是自己在经历影片的事情，是“世上最美的初恋”。是一泓山泉流进心里，翻滚着泛着清甜。已经过了那个年纪，更或者说，已经过了那些人。视频解说看了四遍之多，当时还在熬夜帮别人仿真挣生活费，不是很困，但是很累，心理上也很憔悴，不知道往前的路如何。<br>&emsp;&emsp;第二天看了小说，非常短，一会功夫看完了，这种正适合我，看不了太多的字。小说的内容很少，值得回味的东西很多，真的很佩服导演，他让我觉着伊豆的舞女就是那样子的，我不需要自己多遐想。<br>&emsp;&emsp;千纸鹤》和《波千鸟》是一起的，我看完《千纸鹤》就以为已经结束了，停了两天，才往下看，发现是续上的，即使填补了一些遗憾，但还是留下了心病。也不得不佩服川端康成写的精妙。我不想让故事结束，想看看圆满，但再想想，也许写到那里也已经很好的结尾了，后面的就不是遗憾了，甚至看不下去了。<br>&emsp;&emsp;王小波还是挺有意思的，典型的理科思想，有个想法就像做了一道好菜，一定要大家尝尝，不管味道如何，这个菜它新，别人都没试过，你试试看。</p>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎002</title>
+    <url>/2019/09/28/%E7%90%90%E7%A2%8E002/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E002.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;有时候，感受不到乐趣，只是惊恐，为什么非要选择懦弱的那个自己来面对。<br>&emsp;&emsp;我之前不是这个样子，话也说不清楚，是这么一步一步到了这个地步呢，越想越写不下去了，开始觉着这就是我了，我做不到更好了。这也太消极了。今天就是积极不起来。<br>&emsp;&emsp;我的生活充满了阴影，我变得犹犹豫豫不敢说话，是从本科毕业后的那段生活开始记起。考研没有考好，之前考之前心态就已经不行了，我不知道自己需要想要什么，整天很麻木，因为这是我当时找到唯一能够治好我失眠的良药。当时晚上十一二点躺下，准备去睡觉，但是并不困，我想睡着，明天要保持好状态看书，睡不着。丢下手机也一样睡不着，我躺在床上，一趟就是一夜，有时候闭眼累了，就睁开一会，天还没亮，外面偶尔有车经过，他们怎么这么晚了还在活动，我没有因为这个心烦，我很平静，平静到了无欲无求，我感受不到风，也看不到梦，没有声音也没有清晰的图像，时间不知道怎么就走了。天亮了，起床，话也没什么能说，洗漱，吃饭，去学校。中午的时候，可以午睡一会，趴在桌子上，一睡好像就是两个小时，有时候睡完了还是在困，就回去了，打打游戏，很轻松的，又到了晚上，闭上眼睛，还是睡不着，又等到了天亮。这么平静了一个月，心情还是起伏了，我不知道是看到同学们的积极备考还是其他，毕竟他们的积极从没有停止过。我开始麻痹自己的思想，好处是，能治失眠，坏处是，我把不想忘的也忘了，我从平静的没有情绪，到麻木的没有情感。<br>&emsp;&emsp;开始有情感的时候是第二年了，我选择了调剂，暑假有点时间，被爸安排去做暑假工，我找了教育机构，不肯，硬是去闹，说我幼稚，被骗的一愣一愣的，我现在也没有明白当时是楞成了什么样子，因为后来又忘了。一定要去打工，做体力活，这才是正道，我没能理解，却不能反驳，我当然有反驳，只是变本加厉的对待，我忘了自己曾经也能做成一些事情。我就是他说的这么无用，幼稚，谁都强过我，没有一点自理能力。原来我是这样，我认清了我不想走的路，我做到了他口中的那样，一步一步，一句一句。我不再会怎么在高压的环境下喘息，我僵硬的像长疯了的桃树，不结果子，谁见都想叹两句，就知道长，屁用没有，碍眼。<br>&emsp;&emsp;事实上，实际情况并不是这样的，只是我忘了，我一点点的腐烂了，爸只是想拉住我，他心疼又无奈，我都忘了，我忘不掉的却剩下我是最差的，在他眼中。我不能跟他对话，随便说一句，就要教训我两三个小时，更别说如果我一直在他旁边了。<br>&emsp;&emsp;我会想，明天外界会不一样。我会想，明天我会能面对。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>琐碎</tag>
+        <tag>成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>琐碎001</title>
+    <url>/2019/09/28/%E7%90%90%E7%A2%8E001/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%90%90%E7%A2%8E001.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;时间一天天的过得太快，一天下来，能做的事情少之又少，更不用说把事情做成做好了。<br>&emsp;&emsp;目前压在我身上就有4件事情，一是老师布置的调研任务，二是看书备考，三、四、五都是别人的仿真，着急需要结果，我却一拖再拖，思考和计算的时间都太紧张，仿真跨度也很大，有的我也不擅长，不确定能不能做。这些有的是我想做，比如看书，记录生活，有的是不得不做，像老师的任务，剩下的是被逼着去做，不做就没法支撑我的生活，更不用提什么其他的事情了，这样看的话，仿真的重要程度是该提前了。<br>&emsp;&emsp;明天早上完成调研的任务，下午汇报完，想想应该会有新的任务，或者现在的完成程度不够，仍需要补充。事情总是做不完的，只是应该怎么面对。<br>&emsp;&emsp;最近两天事情发生的挺多，变得有点脆弱，晚上的时候去跑步跑了5圈，这是好事情，叶老师之前说的，年轻人要天天跑出一身臭汗。<br>&emsp;&emsp;只要我有一颗向上的心，也撑住这些不大不小的困难，经历过以后的应该会有不同的感受吧。</p>
+]]></content>
+      <categories>
+        <category>琐碎</category>
+      </categories>
+      <tags>
+        <tag>琐碎</tag>
+        <tag>成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>重装系统后软件安装</title>
+    <url>/2019/09/27/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85.jpg" alt></p>
+<a id="more"></a>
+<p>重装系统后常用软件安装参考。</p>
+<h3 id="待卸装软件"><a href="#待卸装软件" class="headerlink" title=" 待卸装软件 "></a><center style="color: red"> 待卸装软件 </center></h3><div class="note danger [no-icon]">
+            <ul><li><strong>使用助手</strong></li><li><strong>office</strong></li><li><strong>onedrive</strong></li><li><strong>反馈中心</strong></li><li><strong>电影和电视</strong></li><li><strong>移动套餐</strong></li><li><strong>skype</strong></li></ul>
+          </div>
+
+<h3 id="基本设置"><a href="#基本设置" class="headerlink" title=" 基本设置 "></a><center style="color: red"> 基本设置 </center></h3><div class="note success [no-icon]">
+            <ul><li><strong>进入设置–&gt;主题–&gt;添加桌面图标，将计算机添加到桌面，并重命名</strong></li><li><strong>桌面任务栏设置，小任务栏按钮</strong></li><li><strong>更改账户设置–&gt;改用Microsoft账户登录</strong></li></ul>
+          </div>
+
+
+<h3 id="待安装软件"><a href="#待安装软件" class="headerlink" title=" 待安装软件 "></a><center style="color: red"> 待安装软件 </center></h3><div class="tabs" id="software-4"><ul class="nav-tabs"><li class="tab active"><a href="#software-4-1">系统工具</a></li><li class="tab"><a href="#software-4-2">科研软件</a></li><li class="tab"><a href="#software-4-3">办公软件</a></li><li class="tab"><a href="#software-4-4">按需安装</a></li></ul><div class="tab-content"><div class="tab-pane active" id="software-4-1"><ul>
+<li><strong>输入法：搜狗输入法</strong></li>
+<li><strong>浏览器：Chrome</strong></li>
+<li><strong>ShadowsocksR</strong></li>
+<li><strong>EasyConnect</strong></li>
+<li><strong>IObitUninstaller</strong></li>
+<li><strong>网易邮箱大师</strong></li>
+<li><strong>微信</strong></li>
+<li><strong>TIM</strong></li>
+<li><strong>火绒安全</strong></li>
+<li><strong>360压缩</strong></li>
+<li><strong>360看图</strong></li>
+<li><strong>Internet Download Manager</strong></li>
+<li><strong>百度网盘</strong></li>
+<li><strong>有道云笔记</strong></li>
+</ul></div><div class="tab-pane" id="software-4-2"><ul>
+<li><strong>FDTD Solutions</strong></li>
+<li><strong>Comsol</strong></li>
+<li><strong>Materials Studio</strong></li>
+</ul></div><div class="tab-pane" id="software-4-3"><ul>
+<li><strong>Office</strong><ul>
+<li>OK插件</li>
+<li>iSlide插件</li>
+</ul>
+</li>
+<li><strong>Aodbe</strong><ul>
+<li>Photoshop</li>
+<li>Acrobat</li>
+</ul>
+</li>
+<li><strong>Matlab</strong></li>
+<li><strong>Endnote</strong></li>
+</ul></div><div class="tab-pane" id="software-4-4"><ul>
+<li><strong>webstorm</strong></li>
+<li><strong>MindManager</strong></li>
+<li><strong>Git</strong></li>
+<li><strong>Potplayer</strong></li>
+<li><strong>Snipaste</strong></li>
+<li><strong>Notepad++</strong></li>
+<li><strong>Everything</strong></li>
+<li><strong>网易云音乐</strong></li>
+</ul></div></div></div> ]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo搭建个人博客</title>
+    <url>/2019/09/24/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>hexo官网： <span class="exturl" data-url="aHR0cDovL2hleG8uaW8=" title="http://hexo.io">http://hexo.io<i class="fa fa-external-link"></i></span><br>github: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhv" title="https://github.com/hexojs/hexo">https://github.com/hexojs/hexo<i class="fa fa-external-link"></i></span><a id="more"></a></p>
+<h3 id="hexo优势"><a href="#hexo优势" class="headerlink" title="hexo优势"></a>hexo优势</h3><p>由于github pages存放的都是静态文件，hexo所做的就是将md文件都放在本地，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到github。<br>hexo具有以下特点：</p>
+<blockquote>
+<ul>
+<li>超快速度：Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染</li>
+<li>支持 Markdown：Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件</li>
+<li>一键部署：只需一条指令即可部署到 GitHub Pages, Heroku 或其他网站。</li>
+<li>丰富的插件：Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript</li>
+</ul>
+</blockquote>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cDovL25vZGVqcy5vcmcv" title="http://nodejs.org/">Node.js<i class="fa fa-external-link"></i></span> (Node.js 版本需不低于 8.6，建议使用 Node.js 10.0 及以上版本)</li>
+<li><span class="exturl" data-url="aHR0cDovL2dpdC1zY20uY29tLw==" title="http://git-scm.com/">Git<i class="fa fa-external-link"></i></span></li>
+</ul>
+<p>如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init </span><br><span class="line">npm install</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>如果您的电脑中尚未安装所需要的程序，请根据hexo官网安装指示完成安装:<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv" title="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/<i class="fa fa-external-link"></i></span>。</p>
+<h3 id="hexo指令"><a href="#hexo指令" class="headerlink" title="hexo指令"></a>hexo指令</h3><p>配置好之后，hexo就可以使用了，常用的hexo命令可访问<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvY29tbWFuZHMuaHRtbA==" title="https://hexo.io/zh-cn/docs/commands.html">hexo指令<i class="fa fa-external-link"></i></span>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br><span class="line">hexo help  # 查看帮助</span><br><span class="line">hexo version  #查看Hexo的版本</span><br></pre></td></tr></table></figure>
+<p>缩写形式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+<p>组合命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s -g #生成并本地预览</span><br><span class="line">hexo d -g #生成并上传</span><br></pre></td></tr></table></figure>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>GitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名GitHub。</p>
+<h3 id="Github简介"><a href="#Github简介" class="headerlink" title="Github简介"></a>Github简介</h3><p>作为开源代码库以及版本控制系统，Github拥有超过900万开发者用户。随着越来越多的应用程序转移到了云上，Github已经成为了管理软件开发以及发现已有代码的首选方法。</p>
+<p>如前所述，作为一个分布式的版本控制系统，在Git中并不存在主库这样的概念，每一份<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlQTQlOEQlRTUlODglQjY=" title="https://baike.baidu.com/item/%E5%A4%8D%E5%88%B6">复制<i class="fa fa-external-link"></i></span>出的库都可以独立使用，任何两个库之间的不一致之处都可以进行合并。</p>
+<h3 id="清空Github仓库内容"><a href="#清空Github仓库内容" class="headerlink" title="清空Github仓库内容"></a>清空Github仓库内容</h3><p>如果想要清空github仓库中的内容，可以先创建分支，然后清空本地master中的文件，保留.git和readme.md，清空后git到远程仓库中，可参考<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM0OTM3ODI2L2FydGljbGUvZGV0YWlscy85MDUxMjQ3NA==" title="https://blog.csdn.net/sinat_34937826/article/details/90512474">Github清空远程仓库<i class="fa fa-external-link"></i></span><br>。</p>
+<h3 id="配置SSH-key"><a href="#配置SSH-key" class="headerlink" title="配置SSH key"></a>配置SSH key</h3><p>为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd ~/. ssh #检查本机已存在的ssh密钥</span><br></pre></td></tr></table></figure>
+<p>如果提示：No such file or directory 说明你是第一次使用git。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮件地址&quot;</span><br></pre></td></tr></table></figure>
+<p>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到 <code>.ssh\id_rsa.pub</code> 文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：<br><img src="https://upload-images.jianshu.io/upload_images/763395-3393bb77d5fa0b4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置SSH key">测试是否成功</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com # 注意邮箱地址不用改</span><br></pre></td></tr></table></figure>
+<p>看到如下提示，说明配置成功。</p>
+<blockquote>
+<p>You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+</blockquote>
+<p>此时你还需要配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;liuxianan&quot;// 你的github用户名，非昵称</span><br><span class="line">$ git config --global user.email  &quot;xxx@qq.com&quot;// 填写你的github注册邮箱</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbGl1eGlhbmFuL3AvYnVpbGQtYmxvZy13ZWJzaXRlLWJ5LWhleG8tZ2l0aHViLmh0bWw=" title="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html">使用hexo+github搭建免费个人博客详细教程<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<h3 id="Deploy到github中"><a href="#Deploy到github中" class="headerlink" title="Deploy到github中"></a>Deploy到github中</h3><p>修改站点配置文件(_config.yml)，修改 depoly ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repo: git@github.com:username/username.github.io.git //替换成自己的邮箱</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>如果不行，安装插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><p>hexo的主题非常之多，可以从官网的<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3RoZW1lcy8=" title="https://hexo.io/themes/">主题<i class="fa fa-external-link"></i></span>中自由选择。这里以next主题为例。<br>主题的下载可以通过git到hexo/theme或者直接download zip然后解压到hexo/theme文件夹。<br>在站点配置文件(_config.yml)中查找theme，<br><img src="https://upload-images.jianshu.io/upload_images/763395-b94f5483f3aa35cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改主题">然后将landscape修改为next或者hexo-theme-next，具体以theme中文件夹名称为主。<br><code>hexo d -g</code>后<code>hexo s</code>并刷新网页，可以看到主题已经更换成了next。</p>
+<h2 id="Next主题修改"><a href="#Next主题修改" class="headerlink" title="Next主题修改"></a>Next主题修改</h2><h3 id="Next安装"><a href="#Next安装" class="headerlink" title="Next安装"></a>Next安装</h3><p>安装next主题：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd hexo</span><br><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<h3 id="语言修改"><a href="#语言修改" class="headerlink" title="语言修改"></a>语言修改</h3><p>在站点文件_config.yml中查找language并将en修改为简体中文（zh-CN）：</p>
+<figure class="highlight plain"><figcaption><span>Site</span></figcaption><table><tr><td class="code"><pre><span class="line">title: 明明如月</span><br><span class="line">subtitle:</span><br><span class="line">description:</span><br><span class="line">keywords:</span><br><span class="line">author: sunfove</span><br><span class="line">language: zh-CN //语言名称要写对</span><br><span class="line">timezone:</span><br></pre></td></tr></table></figure>
+<p>注意更改的语言名称要写对，具体查看主题文件夹下的language文件夹中的名称。</p>
+<h3 id="新建带日期格式的博文"><a href="#新建带日期格式的博文" class="headerlink" title="新建带日期格式的博文"></a>新建带日期格式的博文</h3><p>使用hexo new post “博文名称”生成的博文以博文名称生成文件，当文件太多时不便于管理查看，生成yyyy-MM-dd-博文名称的名称有助于我们管理自己的博文。<br>在站点文件_config.yml中设置博客生成名称:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Writing</span><br><span class="line">new_post_name: :year-:month-:day-:title.md # File name of new posts</span><br></pre></td></tr></table></figure>
+<p>重新执行hexo new post “博文名称”命令，就可以生成yyyy-MM-dd-博文名称.md类型的名称了。</p>
+<h3 id="侧栏头像"><a href="#侧栏头像" class="headerlink" title="侧栏头像"></a>侧栏头像</h3><p>在主题文件_config.yml中搜索：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">avatar:</span><br><span class="line">  # In theme directory (source/images): /images/avatar.gif</span><br><span class="line">  # In site directory (source/uploads): /uploads/avatar.gif</span><br><span class="line">  # You can also use other linking images.</span><br><span class="line">  url: #/images/avatar.gif</span><br><span class="line">  # If true, the avatar would be dispalyed in circle.</span><br><span class="line">  rounded: false</span><br><span class="line">  # If true, the avatar would be rotated with the cursor.</span><br><span class="line">  rotated: false</span><br></pre></td></tr></table></figure>
+<p>在<code>url</code>处添加头像路径，本地图片放到主题文件夹下的<code>source/image</code>中，<code>rounded</code>为是否用圆形头像， <code>rotated</code>为是否旋转头像。</p>
+<h3 id="添加标签和分类"><a href="#添加标签和分类" class="headerlink" title="添加标签和分类"></a>添加标签和分类</h3><p>添加一个 分类 页面，并在菜单中显示页面链接。<br>新建一个页面，命名为 categories 。命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>编辑刚新建的页面，将页面的类型设置为 categories ，主题将自动为这个页面显示所有分类。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>注意：如果有启用多说 或者 Disqus 评论，默认页面也会带有评论。需要关闭的话，请添加字段 <code>comments</code>并将值设置为 <code>false</code>，如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>在菜单中添加链接。编辑主题的_config.yml ，将 menu 中的 <code>categories: /categories</code>注释去掉，如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br></pre></td></tr></table></figure>
+<p>添加标签和这个操作类似，将categories换成tags即可。</p>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lpc3NuYW4vaGV4by10aGVtZS1uZXh0L3dpa2kvJUU1JTg4JTlCJUU1JUJCJUJBJUU1JTg4JTg2JUU3JUIxJUJCJUU5JUExJUI1JUU5JTlEJUEy" title="https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2">创建分类界面<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<h3 id="对文章进行加密"><a href="#对文章进行加密" class="headerlink" title="对文章进行加密"></a>对文章进行加密</h3><p>打开<code>hemes\hexo-theme-next\layout\_partials\head\head.swig</code>，在文件的开头位置找到如下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;meta charset=&quot;UTF-8&quot;/&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;/&gt;</span><br><span class="line">&lt;meta name=&quot;theme-color&quot; content=&quot;&#123;&#123; theme.android_chrome_color &#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>在上边代码的末尾添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    (function()&#123;</span><br><span class="line">        if(&apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</span><br><span class="line">            if (prompt(&apos;请输入文章密码&apos;) !== &apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</span><br><span class="line">                alert(&apos;密码错误！&apos;);</span><br><span class="line">		if (history.length === 1) &#123;</span><br><span class="line">		    window.opener = null;</span><br><span class="line">		    window.open(&apos;&apos;, &apos;_self&apos;);</span><br><span class="line">		    window.close();</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    history.back();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>添加完脚本代码，接下来在想要加密的文章的文件头加上<code>password</code> 属性就行了，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: XXX</span><br><span class="line">date: XXX</span><br><span class="line">tags:</span><br><span class="line">  - XXX</span><br><span class="line">categories:</span><br><span class="line">  - XXX</span><br><span class="line">password: 123</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>这样在打开这篇文章时只有输入了123这个密码才可以打开成功。</p>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9sZXdreS5jbi9wb3N0cy8xNTMwOC5odG1s" title="https://lewky.cn/posts/15308.html">NexT主题个性化 - 对文章进行加密<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<h3 id="Hexo-admin编辑博客"><a href="#Hexo-admin编辑博客" class="headerlink" title="Hexo admin编辑博客"></a>Hexo admin编辑博客</h3><p>如果自己编辑 MD 文件的话，确实比较麻烦，你可以用一些 MD 的编辑器，但是在管理 MD 文件上还是操作不方便。<br>这里推荐使用 hexo-admin，而且编辑完之后可以马上看到效果呢。<br>需要说明的是，hexo-admin 管理是本地用的，就是你需要在本地编辑完之后再上传到 github，而不能直接在线编辑保存，因为 github pages 只支持静态页面的。<br>安装过程：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br></pre></td></tr></table></figure>
+<p>在 hexo-admin 你可以</p>
+<ul>
+<li>Pages - 新加 page；</li>
+<li>Posts - 新加或删除 post；双击一个 post，你可以编辑，预览，新增修改 tags、categories，选择发布或不发布；</li>
+<li>Settings - 一些配置；</li>
+<li>Deploy - 可以直接部署到 github。<br><img src="https://upload-images.jianshu.io/upload_images/763395-73f5a0651ed10df0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hexo admin"></li>
+</ul>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9hbGJlbncuZ2l0aHViLmlvL3Bvc3RzLzRmZmE1YmM2Lw==" title="https://albenw.github.io/posts/4ffa5bc6/">hexo-admin安装使用<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<p>注：按照这个方案配置hexo-admin后，会出现如下警告，但不太影响使用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s -g</span><br><span class="line">(node:12084) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>配置完成后，可以进行认证，详见：<span class="exturl" data-url="aHR0cDovL3d3dy5waWFuc2hlbi5jb20vYXJ0aWNsZS8xMzgyMTk0NTI1Lw==" title="http://www.pianshen.com/article/1382194525/">【hexo】安装并配置admin插件<i class="fa fa-external-link"></i></span>。<br>这样登录admin就需要账号密码验证。<br><img src="https://upload-images.jianshu.io/upload_images/763395-4ef52f38f401978a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hexo admin认证"></p>
+<h3 id="阅读全文"><a href="#阅读全文" class="headerlink" title="阅读全文"></a>阅读全文</h3><p>推荐使用<code>&lt; !--more--&gt;</code> 进行手动截断，网上有很多教程自动截断，但文中包含中文和一些特殊符号的时候，判断可能会失效。自动截断教程可参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC83OGMyMThmOWQxZTc=" title="https://www.jianshu.com/p/78c218f9d1e7">Hexo-设置阅读全文<i class="fa fa-external-link"></i></span>。</p>
+<h3 id="修改标签样式"><a href="#修改标签样式" class="headerlink" title="修改标签样式"></a>修改标签样式</h3><p>修改模板 <code>\themes\hexo-theme-next\layout\_macro/post.swig</code>，搜索 <code></code>，将 <code>#</code>换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
+<h3 id="修改布局模板"><a href="#修改布局模板" class="headerlink" title="修改布局模板"></a>修改布局模板</h3><p>layout 布局模板放在 <code>scaffolds/</code>目录下，文件名称就是layout 名称。每次新建时，Hexo 会尝试在 scaffolds 文件夹中寻找同名文件，并根据其内容建立文章。所以可以在这里添加自己的 layout，作为常用的新建模板使用。同时你也可以编辑现有的 layout，比如 post 的 layout 默认是 <code>scaffolds\post.md</code>。</p>
+<p>这里有一份文章配置信息，可以根据情况修改后作为模板复用，或直接在保存文章的路径新建.md文件中使用：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title:   #文章名</span><br><span class="line">date:   #发表日期</span><br><span class="line">updated:   #更新日期</span><br><span class="line">categories:   #文章分类</span><br><span class="line">tags:   #文章标签，多标签时使用英文逗号隔开</span><br><span class="line">photos:  #如果使用Fancybox（文章头部展示图片），如此设置</span><br><span class="line">- URL1</span><br><span class="line">- URL2</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC8zYThkYmEwNjg1NmE=" title="https://www.jianshu.com/p/3a8dba06856a">Hexo 使用指导<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<h3 id="切换主题风格"><a href="#切换主题风格" class="headerlink" title="切换主题风格"></a>切换主题风格</h3><p>在主题文件_config.yml中查找<code>schemes</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
+<p>4种风格大同小异，你们可以选择自己喜欢的风格。</p>
+<ul>
+<li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
+<li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
+<li>Pisces - 双栏 Scheme，小家碧玉似的清新</li>
+<li>Gemini - 类似Pisces<h3 id="配置浏览进度"><a href="#配置浏览进度" class="headerlink" title="配置浏览进度"></a>配置浏览进度</h3>在主题文件_config.yml中查找<code>scrollpercent</code>，将<code>false</code>改为<code>true</code>。</li>
+</ul>
+<h3 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h3><p>安装插件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
+<p>修改 站点配置 文件:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br></pre></td></tr></table></figure>
+<ul>
+<li>path - file path. By default is search.xml . If the file extension is .json, the output format will be JSON. Otherwise XML format file will be exported.</li>
+<li>field - the search scope you want to search, you can chose:<ul>
+<li>post (Default) - will only covers all the posts of your blog.</li>
+<li>page - will only covers all the pages of your blog.</li>
+<li>all - will covers all the posts and pages of your blog.</li>
+</ul>
+</li>
+<li>content - whether contains the whole content of each article. If false, the generated results only cover title and other meta info without mainbody. By default is true.<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d6cGFuL2hleG8tZ2VuZXJhdG9yLXNlYXJjaA==" title="https://github.com/wzpan/hexo-generator-search">hexo-generator-search<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+</li>
+</ul>
+<p>注：之前只能搜索标题，不能搜索内容，可能是与local admin冲突，去掉admin后，可以正常使用了。后面发现好像是之前post的一个文件格式有问题，加了URL 1和URL 2导致没法搜索。并不是，烦。但是已经不报错了。<br>最后不清楚到底为啥，并不能搜索全文，无论修改成post还是all，都不行。最后在github上找到了一个解决方案，完美解决，感谢。<br>经验证，仅仅采用第二种方案还是不行，必须要同时安装两个插件才可以。<br>使用<code>hexo-generator-search-zip</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-search-zip --save</span><br></pre></td></tr></table></figure>
+<p>配置说明：修改站点文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.json</span><br><span class="line">  zipPath: search.zip</span><br><span class="line">  versionPath: searchVersion.txt</span><br><span class="line">  field: post</span><br></pre></td></tr></table></figure>
+<p>其中field有以下可选，<br>    *   <strong>post</strong> (Default) - will only covers all the posts of your blog.<br>    *   <strong>page</strong> - will only covers all the pages of your blog.<br>    *   <strong>all</strong> - will covers all the posts and pages of your blog.</p>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1N1cGVyS2llcmFuL2hleG8tZ2VuZXJhdG9yLXNlYXJjaC16aXA=" title="https://github.com/SuperKieran/hexo-generator-search-zip">hexo-generator-search-zip<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<h3 id="SiteMap插件"><a href="#SiteMap插件" class="headerlink" title="SiteMap插件"></a>SiteMap插件</h3><p>hexo-generator-sitemap：生成易于搜索引擎搜素的网站地图</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>添加配置信息：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#feed</span><br><span class="line">atom:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure>
+<p>可以在主题配置文件中添加相关配置，可以在页面上显示。<br>比如，添加链接信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">links:</span><br><span class="line">  Feed: /atom.xml</span><br><span class="line">  SiteMap: /sitemap.xml</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9kZDllZjA4YjEyZGY=" title="https://www.jianshu.com/p/dd9ef08b12df">手把手教从零开始在GitHub上使用Hexo搭建博客教程(二)-Hexo参数设置<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<p>注：有点问题，给关了。</p>
+<h3 id="设置菜单及对应页面"><a href="#设置菜单及对应页面" class="headerlink" title="设置菜单及对应页面"></a>设置菜单及对应页面</h3><p>在主题配置文件中查找menu：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  #about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap</span><br><span class="line">  #commonweal: /404/ || heartbeat</span><br></pre></td></tr></table></figure>
+<p>去掉#注释即可显示对应的菜单项，也可自定义新的菜单项。 ||之前的值是目标链接，之后的是分类页面的图标，图标名称来自于FontAwesome icon。若没有配置图标，默认会使用问号图标。<br><img src="https://upload-images.jianshu.io/upload_images/763395-a1f395b8f18e5e2b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Encycolorpedia"></p>
+<p>新添加的菜单需要翻译对应的中文<br>打开hexo/theme/next/languages/zh-CN.yml，在menu下自定义，如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  resources: 资源</span><br></pre></td></tr></table></figure>
+<p>hexo new page “categories”<br>此时在根目录的source文件夹下会生成一个categories文件，文件中有一个index.md文件，修改内容如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2017-12-14 13:05:38</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>注：如果有启用评论，默认页面带有评论。需要关闭的话，添加字段comments并将值设置为false。</p>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTM0NTM4NC9hcnRpY2xlL2RldGFpbHMvODA3ODUzNzM=" title="https://blog.csdn.net/weixin_39345384/article/details/80785373">Hexo框架下用NexT(v7.0+)主题美化博客<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<h3 id="网站图标设置"><a href="#网站图标设置" class="headerlink" title="网站图标设置"></a>网站图标设置</h3><p>图标可以从图标素材网站：iconfont、easyicon上进行下载。<br>下载16x16以及32x32大小的PNG格式图标，置于/themes/next/source/images/下<br>打开<code>themes/next/下的_config.yml</code>，查找favicon</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/favicon-16x16-next.png</span><br><span class="line">  medium: /images/favicon-32x32-next.png</span><br><span class="line">  apple_touch_icon: /images/apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: /images/logo.svg</span><br><span class="line">  #android_manifest: /images/manifest.json</span><br><span class="line">  #ms_browserconfig: /images/browserconfig.xml</span><br></pre></td></tr></table></figure>
+<p>修改small和medium的路径为下载的图标路径</p>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTM0NTM4NC9hcnRpY2xlL2RldGFpbHMvODA3ODUzNzM=" title="https://blog.csdn.net/weixin_39345384/article/details/80785373">Hexo框架下用NexT(v7.0+)主题美化博客<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<h3 id="设定站点建立时间"><a href="#设定站点建立时间" class="headerlink" title="设定站点建立时间"></a>设定站点建立时间</h3><p>打开<code>themes/next/下的_config.yml</code>，查找since</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">footer:</span><br><span class="line">  # Specify the date when the site was setup.</span><br><span class="line">  # If not defined, current year will be used.</span><br><span class="line">  #since: 2019</span><br></pre></td></tr></table></figure>
+<p>如果不设置，默认显示当前年份。</p>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTM0NTM4NC9hcnRpY2xlL2RldGFpbHMvODA3ODUzNzM=" title="https://blog.csdn.net/weixin_39345384/article/details/80785373">Hexo框架下用NexT(v7.0+)主题美化博客<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<h3 id="修改侧栏颜色"><a href="#修改侧栏颜色" class="headerlink" title="修改侧栏颜色"></a>修改侧栏颜色</h3><p>打开<code>\themes\hexo-theme-next\source\css\_schemes\Pisces中的_menu.styl</code>文件，查找background：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.menu-item-active a &#123;</span><br><span class="line">  background: #f9f9f9;</span><br><span class="line">  border-bottom-color: white;</span><br><span class="line">  $badges = hexo-config(&apos;menu_settings.badges&apos;);</span><br></pre></td></tr></table></figure>
+<p>将f9f9f9修改成自己想要的颜色，可从<span class="exturl" data-url="aHR0cHM6Ly9lbmN5Y29sb3JwZWRpYS5jbi8=" title="https://encycolorpedia.cn/">encycolorpedia<i class="fa fa-external-link"></i></span>上查看颜色。</p>
+<h3 id="创建同名文件夹"><a href="#创建同名文件夹" class="headerlink" title="创建同名文件夹"></a>创建同名文件夹</h3><p>新建文章时，在相同目录下创建同名文件夹（便于图片管理）：<br>打开站点配置文件_config.yml，搜索<code>post_asset_folder</code>字段，设置其值为true<br>安装hexo-asset-image：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<p>此时<code>hexo new &quot;fileName&quot;</code>会在<code>/source/_posts</code>目录下创建同名的文件夹<br>只需在 md 文件里使用 <code>![title](图片名.jpg)</code> ，无需路径名就可以插入图片。</p>
+<h3 id="设置博客透明度"><a href="#设置博客透明度" class="headerlink" title="设置博客透明度"></a>设置博客透明度</h3><p>在<code>\themes\hexo-theme-next\source\css\_schemes\Pisces\_layout.styl</code>文件中，查找<code>.content</code>，修改background：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.content-wrap &#123;</span><br><span class="line">  background: rgba(255, 255, 255, 0.8);</span><br></pre></td></tr></table></figure>
+<p>rgba中最后一个参数表示透明度。</p>
+<h3 id="图片点击放大"><a href="#图片点击放大" class="headerlink" title="图片点击放大"></a>图片点击放大</h3><p>图片可点击放大查看，放大后可关闭。打开站点配置文件_config.yml，搜索fancybox字段，设置其值为true<br>进入到theme/text/文件夹下，打开`git bash。</p>
+<h3 id="博客访问量统计"><a href="#博客访问量统计" class="headerlink" title="博客访问量统计"></a>博客访问量统计</h3><p>打开主题配置文件_config.yml，查找busuanzi：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: false</span><br><span class="line">  total_visitors: true</span><br><span class="line">  total_visitors_icon: user</span><br><span class="line">  total_views: true</span><br><span class="line">  total_views_icon: eye</span><br><span class="line">  post_views: true</span><br><span class="line">  post_views_icon: eye</span><br></pre></td></tr></table></figure>
+<p>false改为true即可。</p>
+<h3 id="修改powered标识"><a href="#修改powered标识" class="headerlink" title="修改powered标识"></a>修改powered标识</h3><p>修改文末的“由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==" title="https://hexo.io/">Hexo<i class="fa fa-external-link"></i></span> 强力驱动”，theme版本标志：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  # If not defined, `author` from Hexo `_config.yml` will be used.</span><br><span class="line">  copyright:</span><br><span class="line">  powered:</span><br><span class="line">    # Hexo link (Powered by Hexo).</span><br><span class="line">    enable: true</span><br><span class="line">    # Version info of Hexo after Hexo link (vX.X.X).</span><br><span class="line">    version: true</span><br><span class="line">theme:</span><br><span class="line">    # Theme &amp; scheme info link (Theme - NexT.scheme).</span><br><span class="line">    enable: true</span><br><span class="line">    # Version info of NexT after scheme info (vX.X.X).</span><br><span class="line">    version: true</span><br></pre></td></tr></table></figure>
+<p>false改为true即可。</p>
+<h3 id="统计字数"><a href="#统计字数" class="headerlink" title="统计字数"></a>统计字数</h3><p>使用hexo-symbols-count-time. Symbols count and time to read of articles.Better than <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2llcmh5bmEvaGV4by1yZWFkaW5nLXRpbWU=" title="https://github.com/ierhyna/hexo-reading-time"><code>hexo-reading-time</code><i class="fa fa-external-link"></i></span> and faster than <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3dpbGxpbi9oZXhvLXdvcmRjb3VudA==" title="https://github.com/willin/hexo-wordcount"><code>hexo-worcount</code><i class="fa fa-external-link"></i></span>. No external dependencies.安装：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+<p>在站点配置文件中添加：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br></pre></td></tr></table></figure>
+<p>在主题配置文件中修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true</span><br><span class="line">  item_text_post: true</span><br><span class="line">  item_text_total: false</span><br><span class="line">  awl: 4</span><br><span class="line">  wpm: 275</span><br><span class="line">  suffix: mins.</span><br></pre></td></tr></table></figure>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by1zeW1ib2xzLWNvdW50LXRpbWU=" title="https://github.com/theme-next/hexo-symbols-count-time">https://github.com/theme-next/hexo-symbols-count-time<i class="fa fa-external-link"></i></span></p>
+<h3 id="社交账号"><a href="#社交账号" class="headerlink" title="社交账号"></a>社交账号</h3><p> Usage: <code>Key: permalink || icon</code><br>Key is the link label showing to end users. Value before <code>||</code> delimiter is the target permalink. Value after <code>||</code> delimiter is the name of Font Awesome icon. If icon (with or without delimiter) is not specified, globe icon will be loaded.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/sunfove || github</span><br><span class="line">  E-Mail: mailto:sunfove@gmail.com || envelope</span><br><span class="line">  #Weibo: https://weibo.com/yourname || weibo</span><br><span class="line">  #Google: https://plus.google.com/yourname || google</span><br><span class="line">  #Twitter: https://twitter.com/yourname || twitter</span><br><span class="line">  #FB Page: https://www.facebook.com/yourname || facebook</span><br><span class="line">  #VK Group: https://vk.com/yourname || vk</span><br><span class="line">  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow</span><br><span class="line">  #YouTube: https://youtube.com/yourname || youtube</span><br><span class="line">  #Instagram: https://instagram.com/yourname || instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || skype</span><br></pre></td></tr></table></figure>
+<h3 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h3><p>Blog rolls：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">links_settings:</span><br><span class="line">  icon: link</span><br><span class="line">  title: 友情链接</span><br><span class="line">  # Available values: block | inline</span><br><span class="line">  layout: block</span><br><span class="line">links:</span><br><span class="line">  我的简书: https://www.jianshu.com/u/39e329082972</span><br></pre></td></tr></table></figure>
+<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p>评论系统采用了Valine和Leancloud结合，先在Leancloud申请账号，并创建应用<br><img src="https://upload-images.jianshu.io/upload_images/763395-aef44e197a0d3b38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="LeanCloud中创建的应用"></p>
+<p>进入应用设置，在安全中心绑定域名，然后在应用keys中读取AppID和AppKey，进入主题配置文件中，查找valine，然后按照如下形式填写ID和Key。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version</span><br><span class="line">  appid:  # Your leancloud application appid</span><br><span class="line">  appkey:  # Your leancloud application appkey</span><br><span class="line">  notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki</span><br><span class="line">  verify: false # Verification code</span><br><span class="line">  placeholder: 说两句吧 # Comment box placeholder</span><br><span class="line">  avatar: monsterid # Gravatar style</span><br><span class="line">  guest_info: nick,mail,link # Custom comment header</span><br><span class="line">  pageSize: 10 # Pagination size</span><br><span class="line">  language: # Language, available values: en, zh-cn</span><br><span class="line">  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors&apos; for counter compatibility. Article reading statistic https://valine.js.org/visitor.html</span><br><span class="line">  comment_count: true # If false, comment count will only be displayed in post page, not in home page</span><br><span class="line">  #post_meta_order: 0</span><br></pre></td></tr></table></figure>
+<p>其中Valine 的 avatar 参数用来设置评论头像，avatar 参数可选值如下:<br><img src="https://upload-images.jianshu.io/upload_images/763395-f10b60840dbdb5a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="不同的avatar样式"></p>
+<h3 id="匿名聊天"><a href="#匿名聊天" class="headerlink" title="匿名聊天"></a>匿名聊天</h3><p>按照网上的说明配置Daovoice一直出现问题，后来使用了chatra，十天试用期，之后又尝试了tidio，以下是tidio配置说明。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tidio:</span><br><span class="line">  enable: true</span><br><span class="line">  key:  # Public Key, get it from dashboard. See: https://www.tidiochat.com/panel/settings/developer</span><br></pre></td></tr></table></figure>
+<p>id通过在tidio官网注册账号，然后输入中developer中找到public key，输入即可。但是加载速度似乎特别慢，可能因为服务器在国外的缘故。</p>
+<h3 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h3><p>添加打赏。在主题文件中查找reward：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> reward_settings:</span><br><span class="line">  # If true, reward would be displayed in every article by default.</span><br><span class="line">  # You can show or hide reward in a specific article throuth `reward: true | false` in Front-matter.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: true</span><br><span class="line">  #comment: Donate comment here.</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  #wechatpay: /images/wechatpay.png</span><br><span class="line">  #alipay: /images/alipay.png</span><br><span class="line">  #bitcoin: /images/bitcoin.png</span><br></pre></td></tr></table></figure>
+<h3 id="百度SEO"><a href="#百度SEO" class="headerlink" title="百度SEO"></a>百度SEO</h3><p>在主题配置工具中，查找baidu_push并更改为true：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.</span><br><span class="line">baidu_push: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h3><p>在<span class="exturl" data-url="aHR0cHM6Ly9tdGouYmFpZHUuY29tL3dlYi93ZWxjb21lL2xvZ2lu" title="https://mtj.baidu.com/web/welcome/login">百度统计<i class="fa fa-external-link"></i></span>中注册账号并获取app_id，然后在主题配置文件中查找Baidu Analytics，粘贴到对应位置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Baidu Analytics</span><br><span class="line">baidu_analytics:  # &lt;app_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h3><p>在Hexo生成首页HTML时，将top值高的文章排在前面，达到置顶功能。<br>修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js，在生成文章之前进行文章top值排序。<br>需添加的代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">posts.data = posts.data.sort(function(a, b) &#123;</span><br><span class="line">    if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义</span><br><span class="line">        if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排</span><br><span class="line">        else return b.top - a.top; // 否则按照top值降序排</span><br><span class="line">    &#125;</span><br><span class="line">    else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    else if(!a.top &amp;&amp; b.top) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    else return b.date - a.date; // 都没定义按照文章日期降序排</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>修改完成后，只需要在front-matter中设置需要置顶文章的top值，将会根据top值大小来选择置顶顺序top值越大越靠前。需要注意的是，这个文件不是主题的一部分，也不是Git管理的，备份的时候比较容易忽略。<br>以下是最终的generator.js内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">var pagination = require(&apos;hexo-pagination&apos;);</span><br><span class="line">module.exports = function(locals)&#123;</span><br><span class="line">  var config = this.config;</span><br><span class="line">  var posts = locals.posts;</span><br><span class="line">    posts.data = posts.data.sort(function(a, b) &#123;</span><br><span class="line">        if(a.top &amp;&amp; b.top) &#123;</span><br><span class="line">            if(a.top == b.top) return b.date - a.date;</span><br><span class="line">            else return b.top - a.top;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(a.top &amp;&amp; !b.top) &#123;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(!a.top &amp;&amp; b.top) &#123;</span><br><span class="line">            return 1;</span><br><span class="line">        &#125;</span><br><span class="line">        else return b.date - a.date;</span><br><span class="line">    &#125;);</span><br><span class="line">  var paginationDir = config.pagination_dir || &apos;page&apos;;</span><br><span class="line">  return pagination(&apos;&apos;, posts, &#123;</span><br><span class="line">    perPage: config.index_generator.per_page,</span><br><span class="line">    layout: [&apos;index&apos;, &apos;archive&apos;],</span><br><span class="line">    format: paginationDir + &apos;/%d/&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">      __index: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>设置置顶标志<br>打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到<div class="post-meta">标签下，插入如下代码：</div></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">  &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>我没有修改color而是修改了font size = 2，使得和其他字体大小统一。</p>
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjU1NjE0Ni9hcnRpY2xlL2RldGFpbHMvODA4MzY4NzU=" title="https://blog.csdn.net/weixin_42556146/article/details/80836875">Hexo博客添加文章置顶功能<i class="fa fa-external-link"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F3ZXJ0eTIwMDY5Ni9hcnRpY2xlL2RldGFpbHMvNzkwMTA2Mjk=" title="https://blog.csdn.net/qwerty200696/article/details/79010629">hexo博客优化之文章置顶+置顶标签<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>技能</tag>
+        <tag>兴趣</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab批处理</title>
+    <url>/2019/09/24/Matlab%E6%89%B9%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<font size="4">
+
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">Path = <span class="string">'路径'</span>; <span class="comment">%''中填写路径</span></span><br><span class="line">File = dir(fullfile(Path,<span class="string">'*.mat'</span>));  <span class="comment">%格式</span></span><br><span class="line">FileNames = &#123;File.name&#125;';</span><br><span class="line">Trace = strcat(Path,FileNames(k));</span><br><span class="line">A = load(Trace&#123;<span class="number">1</span>,<span class="number">1</span>&#125;); <span class="comment">%多组数据常采用eval函数</span></span><br></pre></td></tr></table></figure>
+</font>
+]]></content>
+      <categories>
+        <category>软件</category>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>踏青</title>
+    <url>/2019/09/24/%E8%B8%8F%E9%9D%92/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E8%B8%8F%E9%9D%92.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;气候相当宜人，很适合出游踏青，可能就是这样的想法，找到一个漂亮的地方就出发了。<br>&emsp;&emsp;我已经记不得同行的人是谁，也许本身就只有我一个人在感受。<br>&emsp;&emsp;越过山顶的一条很宽的河，前面就是一个一片草地，让人很想躺上去感受一下春天的美妙。我躺下去的地方似乎有些奇怪，土质非常稀松，即使是在河边，这种松软的程度也是让我心中浮想不断。我往后望了一下，过河的人还有一大堆，没有桥，要一个个跨过去，他们有的在抬头看着太阳，有的在撩着自己的头发，春风如梳。<!-- more --><br>我拉住了一个看起来很有分量的中年人，至少从身材上看是这样的，魁梧又微胖，给人一种很可靠的感觉。这人竟然就真的坐下来了。<br>&emsp;&emsp;也许他怎么也不会想到我接下去想要告诉他的事情。我朝着稀疏的土指了指，“你看这里，我怀疑这里有一些奇怪的东西。”<br>&emsp;&emsp;“没什么奇怪的，也许是因为靠近河岸，这种土质很正常。”<br>&emsp;&emsp;“不，你没有仔细看。”我将手伸到里面，从里面逃出来一把，“河边的土怎么会有这种颗粒状的碎块呢？”<br>&emsp;&emsp;他好像很轻易的接受了我的说法，“那挖挖看。”<br>&emsp;&emsp;我警惕得看了一下周围，他们都沉醉在周围的风景里面，没人在乎我俩躺在这里晒太阳。<br>&emsp;&emsp;我们一起挖了一会，已经发现了真相，藏在里面的是尸体，一共有五具，盛放在没有顶的木棺材里，说是棺材，其实就是大堆碎木头了。尸体上甚至可以看到刚开始腐烂，但奇怪的是，并没有闻到强烈的气味。<br>&emsp;&emsp;本来是发现的兴奋，现在突然有些惊恐。把土盖好，我们慢慢离开了那个地方。走下半山腰，我们报了警，主要是我下意识得担心凶手就在附近，观察有没有人发现他的阴谋，如果引起凶手的注意，我们当然也是有危险的。报警以后，心情自然轻松愉悦多了。于是我们随意的聊了起来，他说他从刚才过河的时候就看出来我很不一样，但其实我是怎么过河的我自己也已经记不清楚了，再到后来发现尸体，就更肯定了我的能力。接着他告诉我他是一家软件公司的老板，问我有没有兴趣明天来上班，我当时很是开心，还很生硬的恭维了一句，心想这当然是个好事，可能证实没事做我才闲的到处游玩。老板随后给老婆打了电话，说可能晚点回去。我们边笑边聊，一直到了山脚下，撞见正要上山的警察。<br>&emsp;&emsp;醒来。</p>
+]]></content>
+      <categories>
+        <category>梦</category>
+      </categories>
+      <tags>
+        <tag>梦</tag>
+        <tag>趣事</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>追火车</title>
+    <url>/2019/09/24/%E8%BF%BD%E7%81%AB%E8%BD%A6/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E8%BF%BD%E7%81%AB%E8%BD%A6.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;早上四五点多，和朋友告别，我站在山脚下，等最早的班车。山很高，山上云雾缭绕，在云的背后还有很明亮的光，非常奇幻，我立刻掏出手机拍了一张照片，云动的太快，拍的不清楚，我就跟着云跑。等了好久，六点的公交车终于来了，坐车回了家。<!-- more --><br>&emsp;&emsp;我站在房顶刷牙，突然看到对面有的工厂房顶一直在冒烟，整齐的一排，而平时会发光的工厂广告牌不见了。白色的浓烟，飘了三米左右就开始有规律的变化，当时真把我惊呆了，想到这是做梦也很难遇到的奇怪现象，满满的都是特技，浓烟变成了一个个字母，从上面掉下来，整齐得排列成公司的名字。那心情就像发现了外星人一样惊喜。<br>&emsp;&emsp;这时候火车来了，我站在房顶很慌张，就打算先跳到火车上，再跳到地面，完全意识不到我也可以走楼梯下去。我确实跳到了火车上，但我还没有下去，火车鸣了一声笛就又开走了，我一时没有反应过来，但等我意识到，已经跑了好远了。实在没办法我就打算从火车上跳下来，火车很快，差点把我带倒了，牙刷被甩的很远，大半部分都插到了泥里。我把牙刷拔出来，看着火车，突然慌了，想到我下来了，火车没人控制了。万一停不下来撞到人了怎么办，再一想不是万一，这个火车一定会出事，也可能会撞上另一个火车，那样会有更多人受害，我往前跑了几步，但火车太快，根本追不上，我预见到一场悲剧在路的尽头即将上演。身边开过两辆车，但他们也帮不上忙，也很快消失了。整条路突然寂静，只剩我一个人在那里，我当时很慌，心想警察一定会抓到我，但这确实是我造成的，我把火车丢掉之前没有考虑过后果。<br>&emsp;&emsp;因为心情沉重，回去的路走的非常慢，低着头，又是那种不知何去何从的无奈。最后一刻，我才意识到，火车不是我开的，火车上还有司机，一切事故都不会发生，突然很畅快。<br>&emsp;&emsp;醒来。</p>
+]]></content>
+      <categories>
+        <category>梦</category>
+      </categories>
+      <tags>
+        <tag>梦</tag>
+        <tag>趣事</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>秋夜</title>
+    <url>/2019/09/24/%E7%A7%8B%E5%A4%9C/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E7%A7%8B%E5%A4%9C.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;初秋，深夜，雷雨天。<br>&emsp;&emsp;天空的阴暗让我感到整个人都很压抑，我趴在床上，向外看着这一切，希望不要变得更糟糕。室友还在打打闹闹睡不着。不知过了多久，身边的声音没有了，莫名的是安静背后的一丝忧郁，搭配这个季节，这样的夜晚和天空，刚刚好。<!-- more --><br>&emsp;&emsp;我看到的闪电，却不再是尖锐的切割线，变成了水流一般，我无法先到可以对比的物体，深灰色的边缘在夜空的稀释下显现出了淡紫色，像喷泉一样，一下冲到夜空的中央，又像瀑布，从天幕上倾斜下来，但形状过于不规则和多变，怎么比喻都是不确切的。我没有像往常那么兴奋，可能是因为我回头想要让室友一起看的时候，他们全都睡熟了。<br>&emsp;&emsp;颜色和形状不断变换，像停不下来的烟花晚会。但整个夜空仍然是漆黑的安静，不惊醒别人的好梦。<br>&emsp;&emsp;正在陶醉其中时，看到窗外突然非常亮，但很快就没有了，我能判断是什么发光的东西落下去了。随后，又亮了起来，飘落的异常轻盈，以至于我可以看得非常仔细，是一个金色的”火团”，旁边像漏了电的电线，到处冒着火花，有时候也会跑到别人的窗户上，一场美妙的流光倾泻。<br>&emsp;&emsp;我推开门，企图一探究竟。却发现我的宿舍变成了空中楼阁，下面是望不到底的阶梯，一直通到云里。而地上，是一片片冰的碎片，堆了一地，由于是晚上，也没有发出晶莹的光，我走下去，摸了摸阶梯上的碎片，是雪。可爱的雪，我一捏就融化，透给我一丝冰凉。当时的我，脑海里却只剩一个念头，睡醒该把毛衣翻出来了。<br>&emsp;&emsp;醒来。</p>
+]]></content>
+      <categories>
+        <category>梦</category>
+      </categories>
+      <tags>
+        <tag>梦</tag>
+        <tag>风景</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三个梦</title>
+    <url>/2019/09/24/%E4%B8%89%E4%B8%AA%E6%A2%A6/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E4%B8%89%E4%B8%AA%E6%A2%A6.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;1.爸爸生病了，妈妈带着我去买衣服，骑了好久的车，终于停下来，只是说了一句你爸病了，在医院里，我们去买点东西。当时的感觉就像要发生大灾害了，买些东西备用，我没有多问爸爸怎么了，就跟着妈妈走着。<!-- more -->也许是因为心情太沉重，这次的天空有些阴沉，路上行人到是挺欢乐，聚在一起吃着饭，说说笑笑，不算吵闹。到了商店，我和我妈为了一个几十元钱的东西好不好用争论了好久，最终也没有买下来，最后离开的时候店主多了一句，嘲讽说今天就是看看啊，我才意识到，家里没人挣钱了。爸爸一定病的很严重。袋子里是妈在其他地方给我买的衣服，和爸去年给我买的很像。但妈妈一句不说，带着我骑车走了。 <!-- more --><br>&emsp;&emsp;2.(插曲)和我高中的时候很像，我跟自己找了好几个合理的理由，具体我也记不清，就是那种感觉很像。<br>&emsp;&emsp;3.我独自走在路上，太热了正在擦汗，爸的电话来了，他先叫我一句，然后问一句可放学么。他显得特别轻松欢乐，声音像个孩子，让我一下回到了小时候。那种感觉就如同我很小的时候一个人去山上喊我爸回家吃饭的时候，我喊他：“小笨猪，吃饭了。”我放下手机，蹲在那里抹眼泪。后来爸告诉我，他的右腿下半部分严重骨折，换了新的骨头(3D打印的)，他说医生很照顾，一切都会好起来。。。<br>&emsp;&emsp;醒来</p>
+]]></content>
+      <categories>
+        <category>梦</category>
+      </categories>
+      <tags>
+        <tag>梦</tag>
+        <tag>家</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>梦的开始</title>
+    <url>/2019/09/24/%E6%A2%A6%E7%9A%84%E5%BC%80%E5%A7%8B/</url>
+    <content><![CDATA[<p><img src="https://suncos-01-1254144885.cos.ap-shanghai.myqcloud.com/Hexo/%E6%A2%A6%E7%9A%84%E5%BC%80%E5%A7%8B.jpg" alt></p>
+<a id="more"></a>
+<p>&emsp;&emsp;也许是看惯了这个世界的苍白，我突然想要做回自己，路上的行人在走，我看着看着，觉着好累，就像一个等妈妈回来的小孩子一样着急的等待，等待他们的离开，离开我的视线，但我却也不知道我想要什么，一个简单空白的环境，就像用手轻拨山泉，远离别人眼睛的世界，轻柔的呈现在我面前。<br>&emsp;&emsp;我不愿意或者难以向别人描述梦境的场景，是因为我所体会的更多，但是我能够用语言表达出的甚少，愿意听并且能够明白的也只有一两个，不过其实这也无所谓，我不需要更多的倾听者，我不需要别人懂我，甚至两个都会多；更重要的一方面，梦醒之后，思考的东西不想梦中那样单纯，很多细节难以用文字或者语言描述，因为梦中所经历的情节是别人所没有见过听过甚至认为可能的事情，描述的准确性很成问题，有些时候，我会附加上自己的情感，讲述时候的情感，但这份情感并非是我梦境中所体会的，有时候，我希望它更合理，有时候，我希望它更像一个人的想法，但这些都有些过于苛求，也会成为我心中的针刺，偶尔痛起来，让我感到自己已经不再纯粹，为了取悦别人，我失去了最简单的执着。</p>
+]]></content>
+      <categories>
+        <category>梦</category>
+      </categories>
+      <tags>
+        <tag>梦</tag>
+        <tag>思考</tag>
+      </tags>
   </entry>
 </search>
