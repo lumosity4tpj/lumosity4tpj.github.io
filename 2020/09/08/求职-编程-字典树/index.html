@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: true,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="字典树&#x2F;前缀树 常见思路：构造一棵多叉树，方便遍历或搜索，注意剪枝条件，且有时候直接hash比前缀树更简单 一般场景：用于字符串搜索或者位运算">
+<meta name="keywords" content="求职">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字典树">
+<meta property="og:url" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;08&#x2F;%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%AD%97%E5%85%B8%E6%A0%91&#x2F;index.html">
+<meta property="og:site_name" content="拥">
+<meta property="og:description" content="字典树&#x2F;前缀树 常见思路：构造一棵多叉树，方便遍历或搜索，注意剪枝条件，且有时候直接hash比前缀树更简单 一般场景：用于字符串搜索或者位运算">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="d:&#x2F;projects&#x2F;github&#x2F;my_notes&#x2F;please_job&#x2F;leetcode&#x2F;pics&#x2F;1585401054815.png">
+<meta property="og:updated_time" content="2020-09-08T12:32:50.455Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:&#x2F;projects&#x2F;github&#x2F;my_notes&#x2F;please_job&#x2F;leetcode&#x2F;pics&#x2F;1585401054815.png">
+
+<link rel="canonical" href="https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%AD%97%E5%85%B8%E6%A0%91/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <title>字典树 | 拥</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c4ba07c82d0814584b2781aabe2701b3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">拥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">9</span></a>
+
+  </li>
+        <li class="menu-item menu-item-photo">
+
+    <a href="/photo/" rel="section"><i class="fa fa-fw fa-image"></i>相册</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%AD%97%E5%85%B8%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="lumosity">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拥">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          字典树
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-08 20:18:34 / 修改时间：20:32:50" itemprop="dateCreated datePublished" datetime="2020-09-08T20:18:34+08:00">2020-09-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>11k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="字典树-前缀树"><a href="#字典树-前缀树" class="headerlink" title="字典树/前缀树"></a>字典树/前缀树</h1><p><img src="D:/projects/github/my_notes/please_job/leetcode/pics/1585401054815.png" alt></p>
+<p>常见思路：构造一棵多叉树，方便遍历或搜索，注意剪枝条件，且有时候直接hash比前缀树更简单</p>
+<p>一般场景：用于字符串搜索或者位运算</p>
+<a id="more"></a>
+
+<h5 id="208-实现-Trie-前缀树"><a href="#208-实现-Trie-前缀树" class="headerlink" title="208. 实现 Trie (前缀树)"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvaW1wbGVtZW50LXRyaWUtcHJlZml4LXRyZWUv" title="https://leetcode-cn.com/problems/implement-trie-prefix-tree/">208. 实现 Trie (前缀树)<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Initialize your data structure here.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.Trie = &#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, word: str)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Inserts a word into the trie.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        cur = self.Trie</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">            <span class="comment"># if w not in cur:</span></span><br><span class="line">            <span class="comment">#     cur[w] = &#123;&#125;</span></span><br><span class="line">            <span class="comment"># cur = cur[w]</span></span><br><span class="line">            cur = cur.setdefault(w,&#123;&#125;)</span><br><span class="line">        <span class="comment"># 添加结尾标志</span></span><br><span class="line">        cur[<span class="string">'#'</span>] = word</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, word: str)</span> -&gt; bool:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Returns if the word is in the trie.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        cur = self.Trie</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">            <span class="keyword">if</span> w <span class="keyword">not</span> <span class="keyword">in</span> cur:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            cur = cur[w]</span><br><span class="line">        <span class="comment"># 判断是否到达字典树的叶结点</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span> <span class="keyword">if</span> cur.get(<span class="string">'#'</span>,<span class="number">0</span>) <span class="keyword">else</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">startsWith</span><span class="params">(self, prefix: str)</span> -&gt; bool:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Returns if there is any word in the trie that starts with the given prefix.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        cur = self.Trie</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> prefix:</span><br><span class="line">            <span class="keyword">if</span> w <span class="keyword">not</span> <span class="keyword">in</span> cur:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            cur = cur[w]</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your Trie object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = Trie()</span></span><br><span class="line"><span class="comment"># obj.insert(word)</span></span><br><span class="line"><span class="comment"># param_2 = obj.search(word)</span></span><br><span class="line"><span class="comment"># param_3 = obj.startsWith(prefix)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="211-添加与搜索单词-数据结构设计"><a href="#211-添加与搜索单词-数据结构设计" class="headerlink" title="211. 添加与搜索单词 - 数据结构设计"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvYWRkLWFuZC1zZWFyY2gtd29yZC1kYXRhLXN0cnVjdHVyZS1kZXNpZ24v" title="https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/">211. 添加与搜索单词 - 数据结构设计<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WordDictionary</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Initialize your data structure here.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.Trie = &#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addWord</span><span class="params">(self, word: str)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Adds a word into the data structure.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        cur = self.Trie</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">            cur = cur.setdefault(w,&#123;&#125;)</span><br><span class="line">        cur[<span class="string">'#'</span>] = word</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, word: str)</span> -&gt; bool:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        cur = self.Trie</span><br><span class="line">        <span class="comment"># def helper(word,cur):</span></span><br><span class="line">        <span class="comment">#     if not word:</span></span><br><span class="line">        <span class="comment">#         # return True if cur.get('#') else False</span></span><br><span class="line">        <span class="comment">#         return bool(cur.get('#'))</span></span><br><span class="line">        <span class="comment">#     if word[0]=='.':</span></span><br><span class="line">        <span class="comment">#         for c in cur:</span></span><br><span class="line">        <span class="comment">#             if c!='#' and helper(word[1:],cur[c]):</span></span><br><span class="line">        <span class="comment">#                 return True</span></span><br><span class="line">        <span class="comment">#         return False</span></span><br><span class="line">        <span class="comment">#     else:</span></span><br><span class="line">        <span class="comment">#         if word[0] in cur:</span></span><br><span class="line">        <span class="comment">#             return helper(word[1:],cur[word[0]])</span></span><br><span class="line">        <span class="comment">#         return False</span></span><br><span class="line">        <span class="comment"># return helper(word,cur)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(word,cur,idx)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> idx==len(word):</span><br><span class="line">                <span class="keyword">return</span> <span class="string">'#'</span> <span class="keyword">in</span> cur</span><br><span class="line">            <span class="keyword">if</span> word[idx]==<span class="string">'.'</span>:</span><br><span class="line">                <span class="keyword">for</span> c <span class="keyword">in</span> cur:</span><br><span class="line">                    <span class="keyword">if</span> c!=<span class="string">'#'</span> <span class="keyword">and</span> helper(word,cur[c],idx+<span class="number">1</span>):</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> word[idx] <span class="keyword">in</span> cur:</span><br><span class="line">                    <span class="keyword">return</span> helper(word,cur[word[idx]],idx+<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> helper(word,cur,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your WordDictionary object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = WordDictionary()</span></span><br><span class="line"><span class="comment"># obj.addWord(word)</span></span><br><span class="line"><span class="comment"># param_2 = obj.search(word)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="212-单词搜索-II"><a href="#212-单词搜索-II" class="headerlink" title="212. 单词搜索 II"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvd29yZC1zZWFyY2gtaWkv" title="https://leetcode-cn.com/problems/word-search-ii/">212. 单词搜索 II<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findWords</span><span class="params">(self, board: List[List[str]], words: List[str])</span> -&gt; List[str]:</span></span><br><span class="line">        <span class="comment"># 将words建字典树</span></span><br><span class="line">        Trie = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            cur = Trie</span><br><span class="line">            <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">                cur = cur.setdefault(w,&#123;&#125;)</span><br><span class="line">            cur[<span class="string">'#'</span>] = word</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(i,j,cur,temp)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="string">'#'</span> <span class="keyword">in</span> cur:</span><br><span class="line">                res.append(temp)</span><br><span class="line">                <span class="comment"># 删除已找到的单词结尾，但不能return，因为可能存在以当前单词为前缀的单词</span></span><br><span class="line">                cur.pop(<span class="string">'#'</span>)</span><br><span class="line">            <span class="comment"># 为1则表明已访问</span></span><br><span class="line">            val = board[i][j]</span><br><span class="line">            board[i][j] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> x,y <span class="keyword">in</span> [(i<span class="number">-1</span>,j),(i+<span class="number">1</span>,j),(i,j<span class="number">-1</span>),(i,j+<span class="number">1</span>)]:</span><br><span class="line">                <span class="keyword">if</span> x&gt;=<span class="number">0</span> <span class="keyword">and</span> y&gt;=<span class="number">0</span> <span class="keyword">and</span> x&lt;m <span class="keyword">and</span> y&lt;n <span class="keyword">and</span> board[x][y]!=<span class="number">1</span> <span class="keyword">and</span> board[x][y] <span class="keyword">in</span> cur:</span><br><span class="line">                    dfs(x,y,cur[board[x][y]],temp+board[x][y])</span><br><span class="line">            board[i][j] = val</span><br><span class="line"></span><br><span class="line">        m,n = len(board),len(board[<span class="number">0</span>])</span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                cur = Trie</span><br><span class="line">                <span class="keyword">if</span> board[i][j] <span class="keyword">in</span> cur:</span><br><span class="line">                    dfs(i,j,cur[board[i][j]],board[i][j])</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="comment"># class Solution:</span></span><br><span class="line"><span class="comment">#     def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]:</span></span><br><span class="line"><span class="comment">#         Trie = &#123;&#125;</span></span><br><span class="line"><span class="comment">#         for word in words:</span></span><br><span class="line"><span class="comment">#             cur = Trie</span></span><br><span class="line"><span class="comment">#             for w in word:</span></span><br><span class="line"><span class="comment">#                 cur = cur.setdefault(w,&#123;&#125;)</span></span><br><span class="line"><span class="comment">#             cur['#'] = '#'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#         m = len(board)</span></span><br><span class="line"><span class="comment">#         n = len(board[0])</span></span><br><span class="line"><span class="comment">#         visited = [[False]*n for _ in range(m)]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#         def dfs(i,j,cur,tmp):</span></span><br><span class="line"><span class="comment">#             if board[i][j] in cur:</span></span><br><span class="line"><span class="comment">#                 visited[i][j] = True</span></span><br><span class="line"><span class="comment">#                 if '#' in cur[board[i][j]]:</span></span><br><span class="line"><span class="comment">#                     cur[board[i][j]].pop('#')</span></span><br><span class="line"><span class="comment">#                     # res.add(tmp+board[i][j])</span></span><br><span class="line"><span class="comment">#                     res.append(tmp+board[i][j])</span></span><br><span class="line"><span class="comment">#                 for x,y in [(i-1,j),(i+1,j),(i,j-1),(i,j+1)]:</span></span><br><span class="line"><span class="comment">#                     if x&gt;=0 and y&gt;=0 and x&lt;m and y&lt;n and not visited[x][y]:</span></span><br><span class="line"><span class="comment">#                         dfs(x,y,cur[board[i][j]],tmp+board[i][j])</span></span><br><span class="line"><span class="comment">#                 visited[i][j] = False</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">#         # res = set()</span></span><br><span class="line"><span class="comment">#         res = []</span></span><br><span class="line"><span class="comment">#         for i in range(m):</span></span><br><span class="line"><span class="comment">#             for j in range(n):</span></span><br><span class="line"><span class="comment">#                 cur = Trie</span></span><br><span class="line"><span class="comment">#                 dfs(i,j,cur,'')</span></span><br><span class="line"><span class="comment">#         # return list(res)</span></span><br><span class="line"><span class="comment">#         return res</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="336-回文对"><a href="#336-回文对" class="headerlink" title="336. 回文对"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvcGFsaW5kcm9tZS1wYWlycy8=" title="https://leetcode-cn.com/problems/palindrome-pairs/">336. 回文对<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">palindromePairs</span><span class="params">(self, words: List[str])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="comment"># # 暴力法超时</span></span><br><span class="line">        <span class="comment"># n = len(words)</span></span><br><span class="line">        <span class="comment"># res = []</span></span><br><span class="line">        <span class="comment"># for i in range(n):</span></span><br><span class="line">        <span class="comment">#     for j in range(n):</span></span><br><span class="line">        <span class="comment">#         if i!=j and words[i]+words[j]==(words[i]+words[j])[::-1]:</span></span><br><span class="line">        <span class="comment">#             res.append([i,j])</span></span><br><span class="line">        <span class="comment"># return res</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">## 前缀树+马拉车 太难了！</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># hash</span></span><br><span class="line">        hashmap = &#123;word:i <span class="keyword">for</span> i,word <span class="keyword">in</span> enumerate(words)&#125;</span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i,word <span class="keyword">in</span> enumerate(words):</span><br><span class="line">            reversed_word = word[::<span class="number">-1</span>]</span><br><span class="line">            <span class="comment"># 情况1：直接跟word本身构成回文对</span></span><br><span class="line">            <span class="keyword">if</span> reversed_word <span class="keyword">in</span> hashmap <span class="keyword">and</span> hashmap[reversed_word]!=i:</span><br><span class="line">                res.append([i,hashmap[reversed_word]])</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(len(word)):</span><br><span class="line">                <span class="comment"># 情况2：word+其它构成回文对，即word内部右边为回文对，右边为回文串的中心处</span></span><br><span class="line">                <span class="comment"># left: from 0 to len(word)-1,即''到word[:len(word)-1]</span></span><br><span class="line">                left = word[:j]</span><br><span class="line">                right = word[j:]</span><br><span class="line">                <span class="keyword">if</span> right==right[::<span class="number">-1</span>] <span class="keyword">and</span> left[::<span class="number">-1</span>] <span class="keyword">in</span> hashmap:</span><br><span class="line">                    res.append([i,hashmap[left[::<span class="number">-1</span>]]])</span><br><span class="line">                <span class="comment"># 情况3：其它+word构成回文对，即word内部左边为回文对，左边为回文串的中心处</span></span><br><span class="line">                <span class="comment"># right: from 1 to len(word),即word[1:]到''</span></span><br><span class="line">                left = word[:j+<span class="number">1</span>]</span><br><span class="line">                right = word[j+<span class="number">1</span>:]</span><br><span class="line">                <span class="keyword">if</span> left==left[::<span class="number">-1</span>] <span class="keyword">and</span> right[::<span class="number">-1</span>] <span class="keyword">in</span> hashmap:</span><br><span class="line">                    res.append([hashmap[right[::<span class="number">-1</span>]],i])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<h5 id="421-数组中两个数的最大异或值"><a href="#421-数组中两个数的最大异或值" class="headerlink" title="421. 数组中两个数的最大异或值"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbWF4aW11bS14b3Itb2YtdHdvLW51bWJlcnMtaW4tYW4tYXJyYXkv" title="https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/">421. 数组中两个数的最大异或值<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMaximumXOR</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="comment"># Trie = &#123;&#125;</span></span><br><span class="line">        <span class="comment"># idx = len(bin(max(nums))[2:])</span></span><br><span class="line">        <span class="comment"># for num in nums:</span></span><br><span class="line">        <span class="comment">#     # 二进制位数必须一样，否则下面比较的时候不能确定进入相对应的分支</span></span><br><span class="line">        <span class="comment">#     # num = bin(num)[2:].zfill(32)</span></span><br><span class="line">        <span class="comment">#     num = bin(num)[2:].zfill(idx)</span></span><br><span class="line">        <span class="comment">#     cur = Trie</span></span><br><span class="line">        <span class="comment">#     for n in num:</span></span><br><span class="line">        <span class="comment">#         cur = cur.setdefault(int(n),&#123;&#125;)</span></span><br><span class="line">        <span class="comment"># res = 0</span></span><br><span class="line">        <span class="comment"># for num in nums:</span></span><br><span class="line">        <span class="comment">#     # num = bin(num)[2:].zfill(32)</span></span><br><span class="line">        <span class="comment">#     num = bin(num)[2:].zfill(idx)</span></span><br><span class="line">        <span class="comment">#     cur = Trie</span></span><br><span class="line">        <span class="comment">#     temp = 0</span></span><br><span class="line">        <span class="comment">#     # 从高位开始不同，则异或值越大，若为1,则最好为0；若为0，则最好为1；</span></span><br><span class="line">        <span class="comment">#     for i in range(len(num)):</span></span><br><span class="line">        <span class="comment">#         w = int(num[i])</span></span><br><span class="line">        <span class="comment">#         if w^1 in cur:</span></span><br><span class="line">        <span class="comment">#             cur = cur[w^1]</span></span><br><span class="line">        <span class="comment">#             temp += (1&lt;&lt;(len(num)-1-i))</span></span><br><span class="line">        <span class="comment">#         else:</span></span><br><span class="line">        <span class="comment">#             cur = cur[w]</span></span><br><span class="line">        <span class="comment">#     res = max(res,temp)</span></span><br><span class="line">        <span class="comment"># return res</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Trie = &#123;&#125;</span><br><span class="line">        idx = len(bin(max(nums))[<span class="number">2</span>:])</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="comment"># 二进制位数必须一样，否则下面比较的时候不能确定进入相对应的分支</span></span><br><span class="line">            cur = Trie</span><br><span class="line">            <span class="comment"># for i in range(31,-1,-1):</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(idx,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">                bit = (num&gt;&gt;i) &amp; <span class="number">1</span></span><br><span class="line">                cur = cur.setdefault(bit,&#123;&#125;)</span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            cur = Trie</span><br><span class="line">            temp = <span class="number">0</span></span><br><span class="line">            <span class="comment"># 从高位开始不同，则异或值越大，若为1,则最好为0；若为0，则最好为1；</span></span><br><span class="line">            <span class="comment"># for i in range(31,-1,-1):</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(idx,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">                bit = (num&gt;&gt;i) &amp; <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> bit^<span class="number">1</span> <span class="keyword">in</span> cur:</span><br><span class="line">                    cur = cur[bit^<span class="number">1</span>]</span><br><span class="line">                    temp += (<span class="number">1</span>&lt;&lt;i)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    cur = cur[bit]</span><br><span class="line">            res = max(res,temp)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment"># # hashmap法 容易晕</span></span><br><span class="line">        <span class="comment"># idx = len(bin(max(nums))[2:])</span></span><br><span class="line">        <span class="comment"># res = 0</span></span><br><span class="line">        <span class="comment"># mask = 0</span></span><br><span class="line">        <span class="comment"># for i in range(idx,-1,-1):</span></span><br><span class="line">        <span class="comment">#     # eg: idx=5 ==&gt; mask = 100000 110000 111000 111100 111110 111111</span></span><br><span class="line">        <span class="comment">#     mask = mask | (1&lt;&lt;i)</span></span><br><span class="line">        <span class="comment">#     # 每个元素和mask位与运算</span></span><br><span class="line">        <span class="comment">#     hashmap = &#123;num&amp;mask for num in nums&#125;</span></span><br><span class="line">        <span class="comment">#     # 假设的最大值，即假设将当前位放入异或中，此时需要至少有两个元素在当前位上不同</span></span><br><span class="line">        <span class="comment">#     temp = res | (1&lt;&lt;i)</span></span><br><span class="line">        <span class="comment">#     # 验证假设，t^a=temp ==&gt; temp^t==a 若找到一个a，则满足假设，否则res不变</span></span><br><span class="line">        <span class="comment">#     for t in hashmap:</span></span><br><span class="line">        <span class="comment">#         if temp^t in hashmap:</span></span><br><span class="line">        <span class="comment">#             res = temp</span></span><br><span class="line">        <span class="comment">#             break</span></span><br><span class="line">        <span class="comment"># return res</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="720-词典中最长的单词"><a href="#720-词典中最长的单词" class="headerlink" title="720. 词典中最长的单词"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbG9uZ2VzdC13b3JkLWluLWRpY3Rpb25hcnkv" title="https://leetcode-cn.com/problems/longest-word-in-dictionary/">720. 词典中最长的单词<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestWord</span><span class="params">(self, words: List[str])</span> -&gt; str:</span></span><br><span class="line">        Trie = &#123;&#125;</span><br><span class="line">        <span class="comment"># 构建前缀树</span></span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            cur = Trie</span><br><span class="line">            <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">                cur = cur.setdefault(w,&#123;&#125;)</span><br><span class="line">            cur[<span class="string">'#'</span>] = word</span><br><span class="line">        <span class="comment"># 获得根结点</span></span><br><span class="line">        stack = list(Trie.values())</span><br><span class="line">        res = <span class="string">''</span></span><br><span class="line">        <span class="keyword">while</span> stack:</span><br><span class="line">            cur = stack.pop()</span><br><span class="line">            <span class="comment"># 如果'#'存在，则表明下一个单词有前缀单词，若无则跳过，去兄弟节点</span></span><br><span class="line">            <span class="keyword">if</span> <span class="string">'#'</span> <span class="keyword">in</span> cur:</span><br><span class="line">                <span class="comment"># 得到保存的单词</span></span><br><span class="line">                word = cur[<span class="string">'#'</span>]</span><br><span class="line">                <span class="comment"># 如果长度更长或者相等且字典序更小时，更新</span></span><br><span class="line">                <span class="keyword">if</span> len(word)&gt;len(res) <span class="keyword">or</span> (len(word)==len(res) <span class="keyword">and</span> word&lt;res):</span><br><span class="line">                    res = word</span><br><span class="line">                <span class="comment"># 向下查找它的子结点</span></span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> cur:</span><br><span class="line">                    <span class="keyword">if</span> i!=<span class="string">'#'</span>:</span><br><span class="line">                        stack.append(cur[i])</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        <span class="comment"># res = ''</span></span><br><span class="line">        <span class="comment"># words = set(words)</span></span><br><span class="line">        <span class="comment"># for word in words:</span></span><br><span class="line">        <span class="comment">#     if len(word)&gt;len(res) or (len(word)==len(res) and word&lt;res):</span></span><br><span class="line">        <span class="comment">#         if all(word[:i] in words for i in range(1,len(word))):</span></span><br><span class="line">        <span class="comment">#             res = word</span></span><br><span class="line">        <span class="comment"># return res</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment"># # 排序，第一顺序为长度，第二顺序是字典序</span></span><br><span class="line">        <span class="comment"># words.sort(key=lambda x:(-len(x),x))</span></span><br><span class="line">        <span class="comment"># wordsets = set(words)</span></span><br><span class="line">        <span class="comment"># for word in words:</span></span><br><span class="line">        <span class="comment">#     if all(word[:i] in wordsets for i in range(1,len(word))):</span></span><br><span class="line">        <span class="comment">#         return word</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="692-前K个高频单词"><a href="#692-前K个高频单词" class="headerlink" title="692. 前K个高频单词"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvdG9wLWstZnJlcXVlbnQtd29yZHMv" title="https://leetcode-cn.com/problems/top-k-frequent-words/">692. 前K个高频单词<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent</span><span class="params">(self, words: List[str], k: int)</span> -&gt; List[str]:</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line">        <span class="comment"># # hash</span></span><br><span class="line">        <span class="comment"># dics = Counter(words)</span></span><br><span class="line">        <span class="comment"># nums = list(dics.items())</span></span><br><span class="line">        <span class="comment"># nums.sort(key=lambda x:(-x[1],x[0]))</span></span><br><span class="line">        <span class="comment"># return [nums[i][0] for i in range(k)]</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># heap</span></span><br><span class="line">        <span class="keyword">import</span> heapq</span><br><span class="line">        dics = Counter(words)</span><br><span class="line">        nums = [(-v,k) <span class="keyword">for</span> k,v <span class="keyword">in</span> dics.items()]</span><br><span class="line">        heapq.heapify(nums)</span><br><span class="line">        <span class="keyword">return</span> [heapq.heappop(nums)[<span class="number">1</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(k)]</span><br></pre></td></tr></table></figure>
+
+<h5 id="648-单词替换"><a href="#648-单词替换" class="headerlink" title="648. 单词替换"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvcmVwbGFjZS13b3Jkcy8=" title="https://leetcode-cn.com/problems/replace-words/">648. 单词替换<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># class Solution:</span></span><br><span class="line"><span class="comment">#     def replaceWords(self, dict: List[str], sentence: str) -&gt; str:</span></span><br><span class="line"><span class="comment">#         # # hashmap</span></span><br><span class="line"><span class="comment">#         # dict = set(dict)</span></span><br><span class="line"><span class="comment">#         # sentence = sentence.split()</span></span><br><span class="line"><span class="comment">#         # for i,word in enumerate(sentence):</span></span><br><span class="line"><span class="comment">#         #     for j in range(1,len(word)):</span></span><br><span class="line"><span class="comment">#         #         if word[:j] in dict:</span></span><br><span class="line"><span class="comment">#         #             sentence[i] = word[:j]</span></span><br><span class="line"><span class="comment">#         #             break</span></span><br><span class="line"><span class="comment">#         # return " ".join(sentence)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#         # # hashmap</span></span><br><span class="line"><span class="comment">#         # dict.sort(key=lambda x:len(x))</span></span><br><span class="line"><span class="comment">#         # sentence = sentence.split()</span></span><br><span class="line"><span class="comment">#         # for i,word in enumerate(sentence):</span></span><br><span class="line"><span class="comment">#         #     for j in dict:</span></span><br><span class="line"><span class="comment">#         #         if word.startswith(j):</span></span><br><span class="line"><span class="comment">#         #             sentence[i] = j</span></span><br><span class="line"><span class="comment">#         #             break</span></span><br><span class="line"><span class="comment">#         # return " ".join(sentence)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#         # 前缀树</span></span><br><span class="line"><span class="comment">#         Trie = &#123;&#125;</span></span><br><span class="line"><span class="comment">#         for word in dict:</span></span><br><span class="line"><span class="comment">#             cur = Trie</span></span><br><span class="line"><span class="comment">#             for w in word:</span></span><br><span class="line"><span class="comment">#                 cur = cur.setdefault(w,&#123;&#125;)</span></span><br><span class="line"><span class="comment">#             cur['#'] = word</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">#         def startswith(word):</span></span><br><span class="line"><span class="comment">#             cur = Trie</span></span><br><span class="line"><span class="comment">#             for w in word:</span></span><br><span class="line"><span class="comment">#                 # 提前终止</span></span><br><span class="line"><span class="comment">#                 if w not in cur or '#' in cur:</span></span><br><span class="line"><span class="comment">#                     break</span></span><br><span class="line"><span class="comment">#                 cur = cur[w]</span></span><br><span class="line"><span class="comment">#             return cur.get('#')</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#         sentence = sentence.split()</span></span><br><span class="line"><span class="comment">#         for i,word in enumerate(sentence):</span></span><br><span class="line"><span class="comment">#             temp = startswith(word)</span></span><br><span class="line"><span class="comment">#             if temp:</span></span><br><span class="line"><span class="comment">#                 sentence[i] = temp</span></span><br><span class="line"><span class="comment">#         return " ".join(sentence)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">replaceWords</span><span class="params">(self, roots, sentence)</span>:</span></span><br><span class="line">        Trie = <span class="keyword">lambda</span>: collections.defaultdict(Trie)</span><br><span class="line">        trie = Trie()</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> roots:</span><br><span class="line">            reduce(dict.__getitem__, word, trie)[<span class="string">'#'</span>] = word</span><br><span class="line">            <span class="comment"># print(trie)</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">replace</span><span class="params">(word)</span>:</span></span><br><span class="line">            cur = trie</span><br><span class="line">            <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">                <span class="keyword">if</span> w <span class="keyword">not</span> <span class="keyword">in</span> cur <span class="keyword">or</span> <span class="string">'#'</span> <span class="keyword">in</span> cur:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                cur = cur[w]</span><br><span class="line">            <span class="keyword">return</span> cur.get(<span class="string">'#'</span>, word)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">" "</span>.join(map(replace, sentence.split()))</span><br></pre></td></tr></table></figure>
+
+<h5 id="面试题-17-17-多次搜索"><a href="#面试题-17-17-多次搜索" class="headerlink" title="面试题 17.17. 多次搜索"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbXVsdGktc2VhcmNoLWxjY2kv" title="https://leetcode-cn.com/problems/multi-search-lcci/">面试题 17.17. 多次搜索<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">multiSearch</span><span class="params">(self, big: str, smalls: List[str])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="comment"># res = []</span></span><br><span class="line">        <span class="comment"># for word in smalls:</span></span><br><span class="line">        <span class="comment">#     temp = []</span></span><br><span class="line">        <span class="comment">#     if word:</span></span><br><span class="line">        <span class="comment">#         for i in range(len(big)-len(word)+1):</span></span><br><span class="line">        <span class="comment">#             if big[i:].startswith(word):</span></span><br><span class="line">        <span class="comment">#                 temp.append(i)</span></span><br><span class="line">        <span class="comment">#     res.append(temp)</span></span><br><span class="line">        <span class="comment"># return res</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment"># res = []</span></span><br><span class="line">        <span class="comment"># hashmap = &#123;&#125;</span></span><br><span class="line">        <span class="comment"># for i,v in enumerate(big):</span></span><br><span class="line">        <span class="comment">#     if v not in hashmap:</span></span><br><span class="line">        <span class="comment">#         hashmap[v] = []</span></span><br><span class="line">        <span class="comment">#     hashmap[v].append(i)</span></span><br><span class="line">        <span class="comment"># for word in smalls:</span></span><br><span class="line">        <span class="comment">#     temp = []</span></span><br><span class="line">        <span class="comment">#     if word and word[0] in hashmap:</span></span><br><span class="line">        <span class="comment">#         for i in hashmap[word[0]]:</span></span><br><span class="line">        <span class="comment">#             if i&lt;=len(big)-len(word) and big[i:].startswith(word):</span></span><br><span class="line">        <span class="comment">#                 temp.append(i)</span></span><br><span class="line">        <span class="comment">#     res.append(temp)</span></span><br><span class="line">        <span class="comment"># return res</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Trie = <span class="keyword">lambda</span>: collections.defaultdict(Trie)</span><br><span class="line">        trie = Trie()</span><br><span class="line">        <span class="comment"># 结尾标志为下标</span></span><br><span class="line">        <span class="keyword">for</span> i,word <span class="keyword">in</span> enumerate(smalls):</span><br><span class="line">            reduce(dict.__getitem__,word,trie)[<span class="string">'#'</span>] = i</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(big)</span>:</span></span><br><span class="line">            res = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(smalls))]</span><br><span class="line">            <span class="comment"># 起始点</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(big)):</span><br><span class="line">                cur = trie</span><br><span class="line">                <span class="comment"># 结尾点</span></span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(i,len(big)):</span><br><span class="line">                    <span class="keyword">if</span> big[j] <span class="keyword">not</span> <span class="keyword">in</span> cur:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    cur = cur[big[j]]</span><br><span class="line">                    <span class="comment"># 如果找到了，则更新；不管是否更新，都会继续往下</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="string">'#'</span> <span class="keyword">in</span> cur:</span><br><span class="line">                        res[cur[<span class="string">'#'</span>]].append(i)</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">return</span> search(big)</span><br></pre></td></tr></table></figure>
+
+<h5 id="677-键值映射"><a href="#677-键值映射" class="headerlink" title="677. 键值映射"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbWFwLXN1bS1wYWlycy8=" title="https://leetcode-cn.com/problems/map-sum-pairs/">677. 键值映射<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># class MapSum:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#     def __init__(self):</span></span><br><span class="line"><span class="comment">#         """</span></span><br><span class="line"><span class="comment">#         Initialize your data structure here.</span></span><br><span class="line"><span class="comment">#         """</span></span><br><span class="line"><span class="comment">#         self.Trie = &#123;&#125;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">#     def insert(self, key: str, val: int) -&gt; None:</span></span><br><span class="line"><span class="comment">#         self.Trie[key] = val</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#     def sum(self, prefix: str) -&gt; int:</span></span><br><span class="line"><span class="comment">#         res = 0</span></span><br><span class="line"><span class="comment">#         for k,v in self.Trie.items():</span></span><br><span class="line"><span class="comment">#             if k.startswith(prefix):</span></span><br><span class="line"><span class="comment">#                 res += v</span></span><br><span class="line"><span class="comment">#         return res</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MapSum</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Initialize your data structure here.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.Trie = &#123;&#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, key: str, val: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        cur = self.Trie</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> key:</span><br><span class="line">            cur = cur.setdefault(k,&#123;&#125;)</span><br><span class="line">        cur[<span class="string">'#'</span>] = val</span><br><span class="line">        <span class="comment"># if key == "aewfwaefjeoawefjwoeajfowajfoewajfoawefjeowajfowaj":</span></span><br><span class="line">        <span class="comment">#     print(self.Trie['a'])</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(self, prefix: str)</span> -&gt; int:</span></span><br><span class="line">        <span class="comment"># # 递归</span></span><br><span class="line">        <span class="comment"># cur = self.Trie</span></span><br><span class="line">        <span class="comment"># for k in prefix:</span></span><br><span class="line">        <span class="comment">#     if k not in cur:</span></span><br><span class="line">        <span class="comment">#         return 0</span></span><br><span class="line">        <span class="comment">#     cur = cur[k]        </span></span><br><span class="line">        <span class="comment"># def helper(cur):</span></span><br><span class="line">        <span class="comment">#     nonlocal res</span></span><br><span class="line">        <span class="comment">#     for k in cur:                </span></span><br><span class="line">        <span class="comment">#         if k=='#':</span></span><br><span class="line">        <span class="comment">#             res += cur['#']</span></span><br><span class="line">        <span class="comment">#         else:</span></span><br><span class="line">        <span class="comment">#             helper(cur[k])</span></span><br><span class="line">        <span class="comment"># res = 0</span></span><br><span class="line">        <span class="comment"># helper(cur)</span></span><br><span class="line">        <span class="comment"># return res</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        <span class="comment"># 迭代</span></span><br><span class="line">        cur = self.Trie</span><br><span class="line">        <span class="keyword">for</span> i,k <span class="keyword">in</span> enumerate(prefix):</span><br><span class="line">            <span class="keyword">if</span> k <span class="keyword">not</span> <span class="keyword">in</span> cur:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            cur = cur[k]</span><br><span class="line">        <span class="comment"># stack = [i for i in cur.values() if isinstance(i,dict)]</span></span><br><span class="line">        <span class="comment"># res = sum([i for i in cur.values() if isinstance(i,int)])</span></span><br><span class="line">        stack = []</span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 可能出现cur为&#123;2,'a':&#123;...&#125;,...&#125;，这个时候的根结点和初值需要额外处理</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> cur.values():</span><br><span class="line">            <span class="keyword">if</span> isinstance(i,dict):</span><br><span class="line">                stack.append(i)</span><br><span class="line">            <span class="keyword">if</span> isinstance(i,int):</span><br><span class="line">                res += i</span><br><span class="line">        <span class="keyword">while</span> stack:</span><br><span class="line">            cur = stack.pop()</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'#'</span> <span class="keyword">in</span> cur:</span><br><span class="line">                res += cur[<span class="string">'#'</span>]</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> cur:</span><br><span class="line">                <span class="keyword">if</span> k!=<span class="string">'#'</span>:</span><br><span class="line">                    stack.append(cur[k])</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># Your MapSum object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = MapSum()</span></span><br><span class="line"><span class="comment"># obj.insert(key,val)</span></span><br><span class="line"><span class="comment"># param_2 = obj.sum(prefix)</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-其它\" rel="bookmark">编程-其它</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-滑动窗口\" rel="bookmark">滑动窗口</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-单调栈\" rel="bookmark">单调栈</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-图\" rel="bookmark">图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-树\" rel="bookmark">树</a></div>
+    </li>
+  </ul>
+<div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>lumosity
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%AD%97%E5%85%B8%E6%A0%91/" title="字典树">https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%AD%97%E5%85%B8%E6%A0%91/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%B1%82%E8%81%8C/" rel="tag"><i class="fa fa-tag"></i> 求职</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="next" title="滑动窗口">
+                  <i class="fa fa-chevron-left"></i> 滑动窗口
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%85%B6%E5%AE%83/" rel="prev" title="编程-其它">
+                  编程-其它 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字典树-前缀树"><span class="nav-number">1.</span> <span class="nav-text">字典树/前缀树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#208-实现-Trie-前缀树"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">208. 实现 Trie (前缀树)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#211-添加与搜索单词-数据结构设计"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">211. 添加与搜索单词 - 数据结构设计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#212-单词搜索-II"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">212. 单词搜索 II</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#336-回文对"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">336. 回文对</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#421-数组中两个数的最大异或值"><span class="nav-number">1.0.0.0.5.</span> <span class="nav-text">421. 数组中两个数的最大异或值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#720-词典中最长的单词"><span class="nav-number">1.0.0.0.6.</span> <span class="nav-text">720. 词典中最长的单词</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#692-前K个高频单词"><span class="nav-number">1.0.0.0.7.</span> <span class="nav-text">692. 前K个高频单词</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#648-单词替换"><span class="nav-number">1.0.0.0.8.</span> <span class="nav-text">648. 单词替换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面试题-17-17-多次搜索"><span class="nav-number">1.0.0.0.9.</span> <span class="nav-text">面试题 17.17. 多次搜索</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#677-键值映射"><span class="nav-number">1.0.0.0.10.</span> <span class="nav-text">677. 键值映射</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lumosity"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">lumosity</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2x1bW9zaXR5NHRwag==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lumosity4tpj"><i class="fa fa-fw fa-github"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnRhbmdwZWlqdW40QG91dGxvb2suY29t" title="E-Mail → mailto:tangpeijun4@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-moon-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lumosity</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">134k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout: 3000,
+        priority: true,
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%AD%97%E5%85%B8%E6%A0%91/',]
+      });
+      });
+  </script>
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8b56991ada74c93b8aea',
+      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
+      repo: 'lumosity4tpj.github.io',
+      owner: 'lumosity4tpj',
+      admin: ['lumosity4tpj'],
+      id: '1d8fd359154bdbf6bbd662d4f1ae19fd',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>

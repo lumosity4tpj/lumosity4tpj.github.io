@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: true,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="最短路算法dijkstra算法(有权图的单源最短路)==&amp;gt; 适用于所有边权为正值 朴素dijkstra算法(时间复杂度为O(n^2+m)，n为结点数，m为边数) 引进两个集合，一个记录已求出最短路径的顶点及对应长度，一个记录还未求出最短路径的顶点及该点到起点的距离 即找出路径最短的结点，再遍历其相邻结点，检查是否有更短的路径，若有则更新">
+<meta name="keywords" content="求职">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图">
+<meta property="og:url" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;08&#x2F;%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%9B%BE&#x2F;index.html">
+<meta property="og:site_name" content="拥">
+<meta property="og:description" content="最短路算法dijkstra算法(有权图的单源最短路)==&amp;gt; 适用于所有边权为正值 朴素dijkstra算法(时间复杂度为O(n^2+m)，n为结点数，m为边数) 引进两个集合，一个记录已求出最短路径的顶点及对应长度，一个记录还未求出最短路径的顶点及该点到起点的距离 即找出路径最短的结点，再遍历其相邻结点，检查是否有更短的路径，若有则更新">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-09-08T12:17:13.947Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%9B%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <title>图 | 拥</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c4ba07c82d0814584b2781aabe2701b3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">拥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">9</span></a>
+
+  </li>
+        <li class="menu-item menu-item-photo">
+
+    <a href="/photo/" rel="section"><i class="fa fa-fw fa-image"></i>相册</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="lumosity">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拥">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          图
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-08 20:07:29 / 修改时间：20:17:13" itemprop="dateCreated datePublished" datetime="2020-09-08T20:07:29+08:00">2020-09-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>18k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="最短路算法"><a href="#最短路算法" class="headerlink" title="最短路算法"></a>最短路算法</h1><h3 id="dijkstra算法-有权图的单源最短路-gt-适用于所有边权为正值"><a href="#dijkstra算法-有权图的单源最短路-gt-适用于所有边权为正值" class="headerlink" title="dijkstra算法(有权图的单源最短路)==&gt; 适用于所有边权为正值"></a>dijkstra算法(有权图的单源最短路)==&gt; 适用于所有边权为正值</h3><ul>
+<li><p><strong>朴素dijkstra算法(时间复杂度为O(n^2+m)，n为结点数，m为边数)</strong></p>
+<p>引进两个集合，一个记录已求出最短路径的顶点及对应长度，一个记录还未求出最短路径的顶点及该点到起点的距离</p>
+<p>即找出路径最短的结点，再遍历其相邻结点，检查是否有更短的路径，若有则更新</p>
+<a id="more"></a>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">n,m = map(int,input().split())</span><br><span class="line">graph = [[float(<span class="string">'inf'</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(m):</span><br><span class="line">    x,y,z = map(int,input().split())</span><br><span class="line">    graph[x<span class="number">-1</span>][y<span class="number">-1</span>] = min(graph[x<span class="number">-1</span>][y<span class="number">-1</span>],z) <span class="comment"># 对于重边只保存最小边</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 求0号点到n-1号点的最短路，如果不存在则返回-1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dijkstra</span><span class="params">(graph)</span>:</span> <span class="comment"># graph是邻接矩阵</span></span><br><span class="line">    n = len(graph)</span><br><span class="line">    dist = [float(<span class="string">'inf'</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 0号点到每个点的最短距离</span></span><br><span class="line">    dist[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    visited = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 记录是否已经被访问</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="comment"># 从未确定最短路的点中，寻找距离最小的点</span></span><br><span class="line">        t = <span class="number">-1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">if</span> visited[j]==<span class="number">0</span> <span class="keyword">and</span> (t==<span class="number">-1</span> <span class="keyword">or</span> dist[t]&gt;dist[j]):</span><br><span class="line">                t = j</span><br><span class="line">        <span class="comment"># 更新该点t到其它点的距离</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            dist[j] = min(dist[j],dist[t]+graph[t][j])</span><br><span class="line">        visited[t] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> dist[<span class="number">-1</span>] <span class="keyword">if</span> dist[<span class="number">-1</span>]!=float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line">    </span><br><span class="line">print(dijkstra(graph))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>堆优化版dijkstra算法(时间复杂度为O(mlogn))</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">n,m = map(int,input().split())</span><br><span class="line">adj = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(m):</span><br><span class="line">    x,y,z = map(int,input().split())</span><br><span class="line">    adj[x<span class="number">-1</span>].append((z,y<span class="number">-1</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dijkstra</span><span class="params">(adj)</span>:</span> <span class="comment"># adj为邻接表</span></span><br><span class="line">    <span class="keyword">import</span> heapq</span><br><span class="line">    n = len(adj)</span><br><span class="line">    dist = [float(<span class="string">'inf'</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 0号点到每个点的最短距离</span></span><br><span class="line">    dist[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    visited = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 记录是否已经被访问</span></span><br><span class="line">    prioqueue = [(<span class="number">0</span>,<span class="number">0</span>)] <span class="comment"># 第一个值存储距离，第二个值存储节点编号</span></span><br><span class="line">    <span class="keyword">while</span> prioqueue:</span><br><span class="line">        distance,t = heapq.heappop(prioqueue)</span><br><span class="line">        <span class="keyword">if</span> visited[t]==<span class="number">1</span>: <span class="comment">#因为是最小堆，所以之后的更大可以跳过</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        visited[t] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> d,j <span class="keyword">in</span> adj[t]:</span><br><span class="line">            <span class="keyword">if</span> dist[j]&gt;dist[t]+d:</span><br><span class="line">                dist[j] = dist[t]+d</span><br><span class="line">                heapq.heappush(prioqueue,(dist[j],j))</span><br><span class="line">    <span class="keyword">return</span> dist[<span class="number">-1</span>] <span class="keyword">if</span> dist[<span class="number">-1</span>]!=float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">print(dijkstra(adj))</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h3 id="Bellman-Ford算法-有权图的单源最短路，判断负环，在边数限制的情况下求最长路-gt-支持存在负权重的情况，但如果存在负环，则最短路失效"><a href="#Bellman-Ford算法-有权图的单源最短路，判断负环，在边数限制的情况下求最长路-gt-支持存在负权重的情况，但如果存在负环，则最短路失效" class="headerlink" title="Bellman-Ford算法(有权图的单源最短路，判断负环，在边数限制的情况下求最长路)==&gt;支持存在负权重的情况，但如果存在负环，则最短路失效"></a>Bellman-Ford算法(有权图的单源最短路，判断负环，在边数限制的情况下求最长路)==&gt;支持存在负权重的情况，但如果存在负环，则最短路失效</h3><p><strong>时间复杂度为O(nm)</strong></p>
+<p>贝尔曼-福特算法每次对所有的边进行松弛，每次松弛都会得到一条最短路径，所以总共需要要做的松弛操作是V - 1次。在完成这么多次松弛后如果还是可以松弛的话，那么就意味着，其中包含负环。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">n,m = map(int,input().split())</span><br><span class="line">edges = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(m):</span><br><span class="line">    x,y,z = map(int,input().split())</span><br><span class="line">    edges.append([x<span class="number">-1</span>,y<span class="number">-1</span>,z])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bellman_ford</span><span class="params">(edges,n,m)</span>:</span> <span class="comment"># edges中直接表示(x,y,z)即表示x-&gt;y的边的权重为z</span></span><br><span class="line">    dist = [float(<span class="string">'inf'</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 0号点到每个点的最短距离</span></span><br><span class="line">    dist[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 如果第n次迭代仍然会松弛三角不等式，就说明存在一条长度是n+1的最短路径，由抽屉原理，路径中至少存在两个相同的点，说明图中存在负权</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">            a,b,w = edges[j]</span><br><span class="line">            <span class="keyword">if</span> dist[b]&gt;dist[a]+w:</span><br><span class="line">                dist[b] = dist[a]+w</span><br><span class="line">    <span class="comment"># 执行n-1次迭代之后判断是否存在负环</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">        a,b,w = edges[j]</span><br><span class="line">        <span class="keyword">if</span> dist[b]&gt;dist[a]+w:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"存在负环"</span></span><br><span class="line">    <span class="keyword">return</span> dist[<span class="number">-1</span>] <span class="keyword">if</span> dist[<span class="number">-1</span>]!=float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line">    </span><br><span class="line">print(bellman_ford(edges,n,m))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="SPFA算法-队列优化的Bellman-Ford算法"><a href="#SPFA算法-队列优化的Bellman-Ford算法" class="headerlink" title="SPFA算法(队列优化的Bellman-Ford算法)"></a>SPFA算法(队列优化的Bellman-Ford算法)</h3><p><strong>平均时间复杂度为O(m)，最坏时间复杂度为O(nm)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">n,m = map(int,input().split())</span><br><span class="line">adj = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(m):</span><br><span class="line">    x,y,z = map(int,input().split())</span><br><span class="line">    adj[x<span class="number">-1</span>].append((z,y<span class="number">-1</span>))</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spfa</span><span class="params">(adj)</span>:</span></span><br><span class="line">    <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">    n = len(adj)</span><br><span class="line">    dist = [float(<span class="string">'inf'</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 0号点到每个点的最短距离</span></span><br><span class="line">    dist[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    visited = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 记录是否在队列中</span></span><br><span class="line">    visited[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">    queue = deque([<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        t = queue.popleft()</span><br><span class="line">        visited[t] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> d,j <span class="keyword">in</span> adj[t]:</span><br><span class="line">            <span class="keyword">if</span> dist[j]&gt;dist[t]+d:</span><br><span class="line">                dist[j] = dist[t]+d</span><br><span class="line">                <span class="keyword">if</span> visited[j]==<span class="number">0</span>: <span class="comment"># 如果队列中已经存在j，则不需要重复插入</span></span><br><span class="line">                    queue.append(j)</span><br><span class="line">                    visited[j] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> dist[<span class="number">-1</span>] <span class="keyword">if</span> dist[<span class="number">-1</span>]!=float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">print(spfa(adj))</span><br></pre></td></tr></table></figure>
+
+<p><strong>spfa算法判断负环(时间复杂度为O(nm))</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">n,m = map(int,input().split())</span><br><span class="line">adj = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(m):</span><br><span class="line">    x,y,z = map(int,input().split())</span><br><span class="line">    adj[x<span class="number">-1</span>].append((z,y<span class="number">-1</span>))</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 如果存在负环，则返回true，否则返回false</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spfa</span><span class="params">(adj)</span>:</span></span><br><span class="line">    <span class="comment"># 如果某条最短路径上有n个点（除了自己），那么加上自己之后一共有n+1个点，由抽屉原理一定有两个点相同，所以存在环。</span></span><br><span class="line">    <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">    n = len(adj)</span><br><span class="line">    dist = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 0号点到每个点的最短距离</span></span><br><span class="line">    cnt = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 0号点到每个点的最短距离的点数</span></span><br><span class="line">    visited = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 记录是否在队列中</span></span><br><span class="line">    queue = deque()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        queue.append(i)</span><br><span class="line">        visited[i] = <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        t = queue.popleft()</span><br><span class="line">        visited[t] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> d,j <span class="keyword">in</span> adj[t]:</span><br><span class="line">            <span class="keyword">if</span> dist[j]&gt;dist[t]+d:</span><br><span class="line">                dist[j] = dist[t]+d</span><br><span class="line">                cnt[j] = cnt[t]+<span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> cnt[j]&gt;=n: <span class="comment"># 包含的路径长度(不包含自身)&gt;=n，则有环</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">                <span class="keyword">if</span> visited[j]==<span class="number">0</span>: <span class="comment"># 如果队列中已经存在j，则不需要重复插入</span></span><br><span class="line">                    queue.append(j)</span><br><span class="line">                    visited[j] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">print(spfa(adj))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Floyd算法-有权图的多源最短路"><a href="#Floyd算法-有权图的多源最短路" class="headerlink" title="Floyd算法(有权图的多源最短路)"></a>Floyd算法(有权图的多源最短路)</h3><p><strong>时间复杂度为O(n^3)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">n,m = map(int,input().split())</span><br><span class="line">graph = [[float(<span class="string">'inf'</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(m):</span><br><span class="line">    x,y,z = map(int,input().split())</span><br><span class="line">    graph[x<span class="number">-1</span>][y<span class="number">-1</span>] = min(graph[x<span class="number">-1</span>][y<span class="number">-1</span>],z)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">floyd</span><span class="params">(graph)</span>:</span></span><br><span class="line">    n = len(graph)</span><br><span class="line">    dist = graph <span class="comment">#dist[i][j]表示i到j的最短距离</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        dist[i][i] = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                dist[i][j] = min(dist[i][j],dist[i][k]+dist[k][j])</span><br><span class="line">    <span class="keyword">return</span> dist[<span class="number">0</span>][<span class="number">-1</span>] <span class="keyword">if</span> dist[<span class="number">0</span>][<span class="number">-1</span>]!=float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">print(floyd(graph))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><h3 id="prim算法-加点法"><a href="#prim算法-加点法" class="headerlink" title="prim算法(加点法)"></a>prim算法(加点法)</h3><p><strong>朴素prime算法，时间复杂度为O(n\</strong>2+m)**</p>
+<p><strong>将所有节点划分为两类：selected_node和candidate_node</strong></p>
+<ul>
+<li>任取一节点加入selected_node，遍历头结点在selected_node，尾节点在candidate_node的边，选取符合条件的权重最小的边，加入最小生成树；</li>
+<li>将边的尾节点加入selected_node中，并在candidate_node中删除，直至candidate_node中无节点。循环条件为：所有节点都有边连接</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果图不连通，则返回-1, 否则返回最小生成树的树边权重之和</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prim</span><span class="params">(graph)</span>:</span></span><br><span class="line">    n = len(graph)</span><br><span class="line">    dist = [float(<span class="string">'inf'</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 0号点到每个点的最短距离</span></span><br><span class="line">    visited = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 记录是否已经被访问</span></span><br><span class="line">    res = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        t = <span class="number">-1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">if</span> visited[j]==<span class="number">0</span> <span class="keyword">and</span> (t==<span class="number">-1</span> <span class="keyword">or</span> dist[t]&gt;dist[j]):</span><br><span class="line">                t = j</span><br><span class="line">        <span class="keyword">if</span> i&gt;<span class="number">0</span> <span class="keyword">and</span> dist[t]==float(<span class="string">'inf'</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        <span class="keyword">if</span> i&gt;<span class="number">0</span>:</span><br><span class="line">            res += dist[t]</span><br><span class="line">        visited[t] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            dist[j] = min(dist[j],graph[t][j])</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<h3 id="kruskal算法-避圈法"><a href="#kruskal算法-避圈法" class="headerlink" title="kruskal算法(避圈法)"></a>kruskal算法(避圈法)</h3><p><strong>时间复杂度是 O(mlogm)</strong></p>
+<p>按照边的从小到大取边，并入边的两个节点，在这个过程中保证并入边后不构成圈，因此也称避圈法。<br>算法过程：<br>1）先对边按权重从小到大排序；<br>2）取权重最小的一条边，若该边两个节点均为不同分量，则加入最小生成树；<br>3）以此类推，直至遍历完所有的边。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h5 id="1162-地图分析"><a href="#1162-地图分析" class="headerlink" title="1162. 地图分析"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvYXMtZmFyLWZyb20tbGFuZC1hcy1wb3NzaWJsZS8=" title="https://leetcode-cn.com/problems/as-far-from-land-as-possible/">1162. 地图分析<i class="fa fa-external-link"></i></span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxDistance(self, grid: List[List[int]]) -&gt; int:</span><br><span class="line">        # if all(grid) or any(grid):</span><br><span class="line">        #     return -1</span><br><span class="line">        n = len(grid)</span><br><span class="line">        from collections import deque</span><br><span class="line">        queue = deque()</span><br><span class="line">        for i in range(n):</span><br><span class="line">            for j in range(n):</span><br><span class="line">                if grid[i][j] == 1:</span><br><span class="line">                    queue.append((i,j,0))</span><br><span class="line">        if len(queue)==0 or len(queue)==n*n:</span><br><span class="line">            return -1</span><br><span class="line">        while queue:</span><br><span class="line">            for _ in range(len(queue)):</span><br><span class="line">                i,j,depth = queue.popleft()</span><br><span class="line">                for x,y in [(i-1,j),(i+1,j),(i,j-1),(i,j+1)]:</span><br><span class="line">                    if x&gt;=0 and y&gt;=0 and x&lt;n and y&lt;n and grid[x][y]==0:</span><br><span class="line">                        grid[x][y] = -1</span><br><span class="line">                        queue.append((x,y,depth+1))</span><br><span class="line">        return depth</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="矩阵搜索-dfs-bfs-并查集"><a href="#矩阵搜索-dfs-bfs-并查集" class="headerlink" title="矩阵搜索(dfs/bfs/并查集)"></a>矩阵搜索(dfs/bfs/并查集)</h1><p>并查集：常用来查找图连通分量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">class UnionFind:</span><br><span class="line">    def __init__(self,n):</span><br><span class="line">        &quot;&quot;&quot;初始化并查集&quot;&quot;&quot;</span><br><span class="line">        #i=n为设置的特殊结点</span><br><span class="line">        self.parent = [i for i in range(n)] #即每个结点i的根结点初始时为i，即独立的,</span><br><span class="line">        self.rank = [0 for i in range(n)] #即每个结点合并的次数，可以理解为树的深度</span><br><span class="line">        self.size = [1 for i in range(n)] #即为每个结点为跟结点时的集合中的结点数</span><br><span class="line">        self.count = n #即团/连通分量的个数</span><br><span class="line">    </span><br><span class="line">    # #当要保存的结点稀疏的时候，改用字典保存     </span><br><span class="line">    # def __init__(self,nums):</span><br><span class="line">    #     self.parent = &#123;num:num for num in nums&#125;</span><br><span class="line">    #     self.rank = collections.defaultdict(lambda:1)</span><br><span class="line">    #     self.size = collections.defaultdict(lambda:1)</span><br><span class="line">        </span><br><span class="line">    def find(self,p):</span><br><span class="line">        &quot;&quot;&quot;找到p结点的根结点&quot;&quot;&quot;</span><br><span class="line">        # 当不为自身时，尾递归找根结点，即所有结点直接指向根结点</span><br><span class="line">        if self.parent[p]!=p:</span><br><span class="line">            self.parent[p] = self.find(self.parent[p])</span><br><span class="line">        return self.parent[p]</span><br><span class="line">    </span><br><span class="line">    def union(self,p,q):</span><br><span class="line">        &quot;&quot;&quot;将p结点和q结点合并&quot;&quot;&quot;</span><br><span class="line">        pr,qr = self.find(p),self.find(q) # 找到各自的根结点</span><br><span class="line">        if pr==qr:</span><br><span class="line">            return</span><br><span class="line">        # 当pr的深度/合并次数小于qr时，交换，即确保qr的&lt;=pr的</span><br><span class="line">        if self.rank[pr]&lt;self.rank[qr]:</span><br><span class="line">            pr,qr = qr,pr</span><br><span class="line">        if self.rank[pr]==self.rank[qr]:</span><br><span class="line">            self.rank[pr] += 1 #相同时才深度+1，否则还是为最大深度</span><br><span class="line">            </span><br><span class="line">        self.parent[qr] = pr # 将qr合并到pr处</span><br><span class="line">        self.size[pr] += self.size[qr] #合并后pr的集合大小增加</span><br><span class="line">        self.count -= 1 # 每次union意味着连通分量减少了一个</span><br><span class="line">        # union之后，路径压缩就失效了 eg: 1-&gt;2 4-&gt;3 ==&gt; 2&lt;-1-&gt;4-&gt;3</span><br><span class="line">        # 需要重新对小的qr的子结点更新，将其指向pr</span><br><span class="line">        # for k,v in self.parent.items():</span><br><span class="line">        #     if v==qr:</span><br><span class="line">        #         self.parent[k] = pr</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    def is_connect(self,p,q):</span><br><span class="line">        &quot;&quot;&quot;判断是否相连&quot;&quot;&quot;</span><br><span class="line">        return self.find(p)==self.find(q)</span><br></pre></td></tr></table></figure>
+
+<h5 id="79-单词搜索"><a href="#79-单词搜索" class="headerlink" title="79. 单词搜索"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvd29yZC1zZWFyY2gv" title="https://leetcode-cn.com/problems/word-search/">79. 单词搜索<i class="fa fa-external-link"></i></span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def exist(self, board: List[List[str]], word: str) -&gt; bool:</span><br><span class="line">        def dfs(i,j,word,count):</span><br><span class="line">            if count==len(word):</span><br><span class="line">                return True</span><br><span class="line">            if board[i][j]==1:</span><br><span class="line">                return False</span><br><span class="line">            # 标记为1则代表已经遍历过</span><br><span class="line">            val = board[i][j]</span><br><span class="line">            board[i][j] = 1</span><br><span class="line">            for (x,y) in [(i-1,j),(i+1,j),(i,j-1),(i,j+1)]:</span><br><span class="line">                if x&gt;=0 and y&gt;=0 and x&lt;m and y&lt;n and board[x][y]==word[count]:</span><br><span class="line">                    if dfs(x,y,word,count+1):</span><br><span class="line">                        return True</span><br><span class="line">            board[i][j] = val</span><br><span class="line">            return False</span><br><span class="line">        m,n = len(board),len(board[0])</span><br><span class="line">        for i in range(m):</span><br><span class="line">            for j in range(n):</span><br><span class="line">                if board[i][j]==word[0]:</span><br><span class="line">                    if dfs(i,j,word,1):</span><br><span class="line">                        return True</span><br><span class="line">        return False</span><br></pre></td></tr></table></figure>
+
+<h5 id="547-朋友圈"><a href="#547-朋友圈" class="headerlink" title="547. 朋友圈"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvZnJpZW5kLWNpcmNsZXMv" title="https://leetcode-cn.com/problems/friend-circles/">547. 朋友圈<i class="fa fa-external-link"></i></span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findCircleNum(self, M: List[List[int]]) -&gt; int:</span><br><span class="line">        # 并查集</span><br><span class="line">        class UnionFind:</span><br><span class="line">            def __init__(self,n):</span><br><span class="line">                self.parent = [i for i in range(n)]</span><br><span class="line">                self.rank = [0 for _ in range(n)]</span><br><span class="line">                self.size = [1 for _ in range(n)]</span><br><span class="line">                self.count = n</span><br><span class="line"></span><br><span class="line">            def find(self,p):</span><br><span class="line">                if self.parent[p]!=p:</span><br><span class="line">                    self.parent[p] = self.find(self.parent[p])</span><br><span class="line">                return self.parent[p]</span><br><span class="line"></span><br><span class="line">            def union(self,p,q):</span><br><span class="line">                proot,qroot = self.find(p),self.find(q)</span><br><span class="line">                if proot==qroot:</span><br><span class="line">                    return</span><br><span class="line">                if self.rank[proot]&lt;self.rank[qroot]:</span><br><span class="line">                    proot,qroot = qroot,proot</span><br><span class="line">                if self.rank[proot]==self.rank[qroot]:</span><br><span class="line">                    self.rank[proot] += 1</span><br><span class="line">                self.parent[qroot] = proot</span><br><span class="line">                self.size[proot] += self.size[qroot]</span><br><span class="line">                self.count -= 1</span><br><span class="line">            </span><br><span class="line">        m = len(M)</span><br><span class="line">        uf = UnionFind(m)</span><br><span class="line">        for i in range(m):</span><br><span class="line">            for j in range(i+1,m):</span><br><span class="line">                if M[i][j]==1:</span><br><span class="line">                    uf.union(i,j)</span><br><span class="line">        return uf.count</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # # dfs 每次将一个结点和其它与其相连的结点标记</span><br><span class="line">        # def dfs(i):</span><br><span class="line">        #     visited[i] = 1</span><br><span class="line">        #     for j in range(m):</span><br><span class="line">        #         if M[i][j]==1 and visited[j]==0:</span><br><span class="line">        #             dfs(j)</span><br><span class="line">        # m = len(M)</span><br><span class="line">        # visited = [0 for _ in range(m)]</span><br><span class="line">        # res = 0</span><br><span class="line">        # for i in range(m):</span><br><span class="line">        #     if visited[i]==0:</span><br><span class="line">        #         dfs(i)</span><br><span class="line">        #         res += 1</span><br><span class="line">        # return res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # # bfs</span><br><span class="line">        # def bfs(i):</span><br><span class="line">        #     queue = deque([i])</span><br><span class="line">        #     while queue:</span><br><span class="line">        #         i = queue.popleft()</span><br><span class="line">        #         for j in range(m):</span><br><span class="line">        #             if M[i][j]==1 and visited[j]==0:</span><br><span class="line">        #                 queue.append(j)</span><br><span class="line">        #                 visited[j] = 1</span><br><span class="line">        # from collections import deque</span><br><span class="line">        # m = len(M)</span><br><span class="line">        # visited = [0 for _ in range(m)]</span><br><span class="line">        # res = 0</span><br><span class="line">        # for i in range(m):</span><br><span class="line">        #     if visited[i]==0:</span><br><span class="line">        #         visited[i] = 1</span><br><span class="line">        #         bfs(i)</span><br><span class="line">        #         res += 1</span><br><span class="line">        # return res</span><br></pre></td></tr></table></figure>
+
+<h5 id="200-岛屿数量"><a href="#200-岛屿数量" class="headerlink" title="200. 岛屿数量"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbnVtYmVyLW9mLWlzbGFuZHMv" title="https://leetcode-cn.com/problems/number-of-islands/">200. 岛屿数量<i class="fa fa-external-link"></i></span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def numIslands(self, grid: List[List[str]]) -&gt; int:</span><br><span class="line">        # unionfind</span><br><span class="line">        class UnionFind:</span><br><span class="line">            def __init__(self,n):</span><br><span class="line">                # 多建一个结点n,与所有水域相连</span><br><span class="line">                self.parent = [i for i in range(n+1)]</span><br><span class="line">                # self.rank = [1 for _ in range(n+1)]</span><br><span class="line">                self.count = n #不包括n那个点</span><br><span class="line">            </span><br><span class="line">            def find(self,p):</span><br><span class="line">                if self.parent[p]!=p:</span><br><span class="line">                    self.parent[p] = self.find(self.parent[p])</span><br><span class="line">                return self.parent[p]</span><br><span class="line"></span><br><span class="line">            def union(self,p,q):</span><br><span class="line">                pr,qr = self.find(p),self.find(q)</span><br><span class="line">                if pr==qr:</span><br><span class="line">                    return</span><br><span class="line">                # if self.rank[pr]&lt;self.rank[qr]:</span><br><span class="line">                #     pr,qr = qr,pr</span><br><span class="line">                # if self.rank[pr]==self.rank[qr]:</span><br><span class="line">                #     self.rank[pr] += 1</span><br><span class="line">                self.parent[qr] = pr</span><br><span class="line">                self.count -= 1</span><br><span class="line"></span><br><span class="line">        if not grid:</span><br><span class="line">            return 0</span><br><span class="line">        m,n = len(grid),len(grid[0])</span><br><span class="line">        uf = UnionFind(m*n)</span><br><span class="line">        for i in range(m):</span><br><span class="line">            for j in range(n):</span><br><span class="line">                if grid[i][j]==&apos;0&apos;:</span><br><span class="line">                    uf.union(i*n+j,m*n)</span><br><span class="line">                else:</span><br><span class="line">                    # for x,y in [(i-1,j),(i+1,j),(i,j-1),(i,j+1)]:</span><br><span class="line">                    for x,y in [(i+1,j),(i,j+1)]:</span><br><span class="line">                        if x&gt;=0 and y&gt;=0 and x&lt;m and y&lt;n and grid[x][y]==&apos;1&apos;:</span><br><span class="line">                            uf.union(x*n+y,i*n+j)</span><br><span class="line">        return uf.count</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # # dfs 每次将一个团的所有1全部标记</span><br><span class="line">        # def dfs(i,j):</span><br><span class="line">        #     grid[i][j] = &apos;o&apos; #表示已经访问</span><br><span class="line">        #     for x,y in [(i-1,j),(i+1,j),(i,j-1),(i,j+1)]:</span><br><span class="line">        #         if x&gt;=0 and y&gt;=0 and x&lt;m and y&lt;n and grid[x][y]==&apos;1&apos;:</span><br><span class="line">        #             dfs(x,y)</span><br><span class="line">        # if not grid:</span><br><span class="line">        #     return 0</span><br><span class="line">        # m,n = len(grid),len(grid[0])</span><br><span class="line">        # res = 0</span><br><span class="line">        # for i in range(m):</span><br><span class="line">        #     for j in range(n):</span><br><span class="line">        #         if grid[i][j]==&apos;1&apos;:</span><br><span class="line">        #             dfs(i,j)</span><br><span class="line">        #             res += 1</span><br><span class="line">        # return res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # # bfs 将一个团的所有1全部标记</span><br><span class="line">        # def bfs(i,j):</span><br><span class="line">        #     queue = deque([(i,j)])</span><br><span class="line">        #     while queue:</span><br><span class="line">        #         i,j = queue.popleft()</span><br><span class="line">        #         for x,y in [(i-1,j),(i+1,j),(i,j-1),(i,j+1)]:</span><br><span class="line">        #             if x&gt;=0 and y&gt;=0 and x&lt;m and y&lt;n and grid[x][y]==&apos;1&apos;:</span><br><span class="line">        #                 queue.append((x,y))</span><br><span class="line">        #                 grid[x][y] = &apos;o&apos;</span><br><span class="line">        # if not grid:</span><br><span class="line">        #     return 0</span><br><span class="line">        # m,n = len(grid),len(grid[0])</span><br><span class="line">        # from collections import deque</span><br><span class="line">        # res = 0</span><br><span class="line">        # for i in range(m):</span><br><span class="line">        #     for j in range(n):</span><br><span class="line">        #         if grid[i][j]==&apos;1&apos;:</span><br><span class="line">        #             grid[i][j] = &apos;o&apos;</span><br><span class="line">        #             bfs(i,j)</span><br><span class="line">        #             res += 1</span><br><span class="line">        # return res</span><br></pre></td></tr></table></figure>
+
+<h5 id="130-被围绕的区域"><a href="#130-被围绕的区域" class="headerlink" title="130. 被围绕的区域"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc3Vycm91bmRlZC1yZWdpb25zLw==" title="https://leetcode-cn.com/problems/surrounded-regions/">130. 被围绕的区域<i class="fa fa-external-link"></i></span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def solve(self, board: List[List[str]]) -&gt; None:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        Do not return anything, modify board in-place instead.</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        class UnionFind:</span><br><span class="line">            def __init__(self,n):</span><br><span class="line">                # 多建一个n,表示边界上的O</span><br><span class="line">                self.parent = [i for i in range(n+1)]</span><br><span class="line">                self.rank = [0 for _ in range(n+1)]</span><br><span class="line"></span><br><span class="line">            def find(self,p):</span><br><span class="line">                if self.parent[p]!=p:</span><br><span class="line">                    self.parent[p] = self.find(self.parent[p])</span><br><span class="line">                return self.parent[p]</span><br><span class="line"></span><br><span class="line">            def union(self,p,q):</span><br><span class="line">                pr,qr = self.find(p),self.find(q)</span><br><span class="line">                if pr==qr:</span><br><span class="line">                    return</span><br><span class="line">                if self.rank[pr]&lt;self.rank[qr]:</span><br><span class="line">                    pr,qr = qr,pr</span><br><span class="line">                if self.rank[pr]==self.rank[qr]:</span><br><span class="line">                    self.rank[pr] += 1</span><br><span class="line">                self.parent[qr] = pr</span><br><span class="line"></span><br><span class="line">            def is_connect(self,p,q):</span><br><span class="line">                return self.find(p)==self.find(q)</span><br><span class="line"></span><br><span class="line">        if not board: return </span><br><span class="line">        m,n = len(board),len(board[0])</span><br><span class="line">        uf = UnionFind(m*n)</span><br><span class="line">        for i in range(m):</span><br><span class="line">            for j in range(n):</span><br><span class="line">                if board[i][j]==&apos;O&apos;:</span><br><span class="line">                    if (i==0 or i==m-1 or j==0 or j==n-1):</span><br><span class="line">                        uf.union(i*n+j,m*n)</span><br><span class="line">                    else:</span><br><span class="line">                        # 中间部分的O</span><br><span class="line">                        for (x,y) in [(i,j-1),(i,j+1),(i-1,j),(i+1,j)]:</span><br><span class="line">                            if board[x][y]==&apos;O&apos;:</span><br><span class="line">                                uf.union(i*n+j,x*n+y)</span><br><span class="line">        for i in range(m):</span><br><span class="line">            for j in range(n):</span><br><span class="line">                if board[i][j]==&apos;O&apos;:</span><br><span class="line">                    if not uf.is_connect(i*n+j,m*n):</span><br><span class="line">                        board[i][j] = &apos;X&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # # dfs 相当于找连通区域</span><br><span class="line">        # def dfs(i,j):</span><br><span class="line">        #     board[i][j] = &apos;#&apos;</span><br><span class="line">        #     for (x,y) in [(i,j-1),(i,j+1),(i-1,j),(i+1,j)]:</span><br><span class="line">        #         if x&gt;=0 and y&gt;=0 and x&lt;m and y&lt;n and board[x][y]==&apos;O&apos;:</span><br><span class="line">        #             dfs(x,y)</span><br><span class="line">        # if not board: return </span><br><span class="line">        # m,n = len(board),len(board[0])</span><br><span class="line">        # # 第一行/最后一行</span><br><span class="line">        # for i in [0,m-1]:</span><br><span class="line">        #     for j in range(n):</span><br><span class="line">        #         if board[i][j]==&apos;O&apos;:</span><br><span class="line">        #             dfs(i,j)</span><br><span class="line">        # # 第一列/最后一列</span><br><span class="line">        # for j in [0,n-1]:</span><br><span class="line">        #     for i in range(m):</span><br><span class="line">        #         if board[i][j]==&apos;O&apos;:</span><br><span class="line">        #             dfs(i,j)</span><br><span class="line">        # for i in range(m):</span><br><span class="line">        #     for j in range(n):</span><br><span class="line">        #         if board[i][j]==&apos;O&apos;:</span><br><span class="line">        #             board[i][j] = &apos;X&apos;</span><br><span class="line">        #         elif board[i][j]==&apos;#&apos;:</span><br><span class="line">        #             board[i][j] = &apos;O&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # # bfs</span><br><span class="line">        # def bfs(i,j):</span><br><span class="line">        #     queue = deque([(i,j)])</span><br><span class="line">        #     board[i][j] = &apos;#&apos;</span><br><span class="line">        #     while queue:</span><br><span class="line">        #         i,j = queue.popleft()</span><br><span class="line">        #         for (x,y) in [(i,j-1),(i,j+1),(i-1,j),(i+1,j)]:</span><br><span class="line">        #             if x&gt;=0 and y&gt;=0 and x&lt;m and y&lt;n and board[x][y]==&apos;O&apos;:</span><br><span class="line">        #                 queue.append((x,y))</span><br><span class="line">        #                 board[x][y] = &apos;#&apos;</span><br><span class="line">        # if not board: return</span><br><span class="line">        # m,n = len(board),len(board[0])</span><br><span class="line">        # for i in [0,m-1]:</span><br><span class="line">        #     for j in range(n):</span><br><span class="line">        #         if board[i][j]==&apos;O&apos;:</span><br><span class="line">        #             bfs(i,j)</span><br><span class="line">        # for j in [0,n-1]:</span><br><span class="line">        #     for i in range(m):</span><br><span class="line">        #         if board[i][j]==&apos;O&apos;:</span><br><span class="line">        #             bfs(i,j)</span><br><span class="line">        # for i in range(m):</span><br><span class="line">        #     for j in range(n):</span><br><span class="line">        #         if board[i][j]==&apos;O&apos;:</span><br><span class="line">        #             board[i][j] = &apos;X&apos;</span><br><span class="line">        #         elif board[i][j]==&apos;#&apos;:</span><br><span class="line">        #             board[i][j] = &apos;O&apos;</span><br></pre></td></tr></table></figure>
+
+<h5 id="128-最长连续序列"><a href="#128-最长连续序列" class="headerlink" title="128. 最长连续序列"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbG9uZ2VzdC1jb25zZWN1dGl2ZS1zZXF1ZW5jZS8=" title="https://leetcode-cn.com/problems/longest-consecutive-sequence/">128. 最长连续序列<i class="fa fa-external-link"></i></span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def longestConsecutive(self, nums: List[int]) -&gt; int:</span><br><span class="line">        # # 排序 O(nlogn)</span><br><span class="line">        # if not nums:</span><br><span class="line">        #     return 0</span><br><span class="line">        # nums.sort()</span><br><span class="line">        # res = 1</span><br><span class="line">        # temp = 1</span><br><span class="line">        # for i in range(len(nums)-1):</span><br><span class="line">        #     # 相等时则跳过</span><br><span class="line">        #     if nums[i]==nums[i+1]:</span><br><span class="line">        #         continue</span><br><span class="line">        #     # 满足连续时更新，否则返回初值</span><br><span class="line">        #     if nums[i]+1==nums[i+1]:</span><br><span class="line">        #         temp += 1</span><br><span class="line">        #     else:</span><br><span class="line">        #         res = max(res,temp)</span><br><span class="line">        #         temp = 1</span><br><span class="line">        # return max(res,temp)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # # hash O(n)</span><br><span class="line">        # if not nums:</span><br><span class="line">        #     return 0</span><br><span class="line">        # nums = set(nums)</span><br><span class="line">        # res = 1</span><br><span class="line">        # for num in nums:</span><br><span class="line">        #     # 如果存在则肯定更长，所以当前可以跳过</span><br><span class="line">        #     if num-1 in nums:</span><br><span class="line">        #         continue</span><br><span class="line">        #     temp = 1</span><br><span class="line">        #     while num+1 in nums:</span><br><span class="line">        #         temp += 1</span><br><span class="line">        #         num += 1</span><br><span class="line">        #     res = max(res,temp)</span><br><span class="line">        # return res</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        # # hash</span><br><span class="line">        # from collections import defaultdict</span><br><span class="line">        # dics = defaultdict(lambda:0)</span><br><span class="line">        # res = 0</span><br><span class="line">        # for i in nums:</span><br><span class="line">        #     if dics[i]==0:</span><br><span class="line">        #         dics[i] = dics[i-1]+dics[i+1]+1</span><br><span class="line">        #         # 头尾设置新的最大长度</span><br><span class="line">        #         dics[i-dics[i-1]] = dics[i]</span><br><span class="line">        #         dics[i+dics[i+1]] = dics[i]</span><br><span class="line">        #         res = max(res,dics[i])</span><br><span class="line">        # return res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # UnionFind</span><br><span class="line">        class UnionFind:</span><br><span class="line">            def __init__(self,nums):</span><br><span class="line">                self.parent = &#123;num:num for num in nums&#125;</span><br><span class="line">                self.rank = collections.defaultdict(lambda:1)</span><br><span class="line">                self.size = collections.defaultdict(lambda:1)</span><br><span class="line"></span><br><span class="line">            def find(self,p):</span><br><span class="line">                if self.parent[p]!=p:</span><br><span class="line">                    self.parent[p] = self.find(self.parent[p])</span><br><span class="line">                return self.parent[p]</span><br><span class="line"></span><br><span class="line">            def union(self,p,q):</span><br><span class="line">                pr,qr = self.find(p),self.find(q)</span><br><span class="line">                if pr==qr:</span><br><span class="line">                    return</span><br><span class="line">                if self.rank[pr]&lt;self.rank[qr]:</span><br><span class="line">                    pr,qr = qr,pr</span><br><span class="line">                if self.rank[pr]==self.rank[qr]:</span><br><span class="line">                    self.rank[pr] += 1</span><br><span class="line">                self.parent[qr] = self.parent[pr]</span><br><span class="line">                self.size[pr] += self.size[qr]</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        if not nums:</span><br><span class="line">            return 0</span><br><span class="line">        uf = UnionFind(nums)</span><br><span class="line">        flag = 1</span><br><span class="line">        for num in nums:</span><br><span class="line">            if num+1 in uf.parent:</span><br><span class="line">                flag = 0</span><br><span class="line">                uf.union(num,num+1)</span><br><span class="line">        # 若flag==1,说明没有执行union，否则取最大的size</span><br><span class="line">        return 1 if flag==1 else max(uf.size.values())</span><br></pre></td></tr></table></figure>
+
+<h5 id="695-岛屿的最大面积"><a href="#695-岛屿的最大面积" class="headerlink" title="695. 岛屿的最大面积"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbWF4LWFyZWEtb2YtaXNsYW5kLw==" title="https://leetcode-cn.com/problems/max-area-of-island/">695. 岛屿的最大面积<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxAreaOfIsland</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        <span class="comment"># # dfs</span></span><br><span class="line">        <span class="comment"># if not grid: return 0</span></span><br><span class="line">        <span class="comment"># m,n = len(grid),len(grid[0])</span></span><br><span class="line">        <span class="comment"># def helper(i,j):</span></span><br><span class="line">        <span class="comment">#     count = 1</span></span><br><span class="line">        <span class="comment">#     for (x,y) in [(i-1,j),(i+1,j),(i,j-1),(i,j+1)]:</span></span><br><span class="line">        <span class="comment">#         if x&gt;=0 and x&lt;m and y&gt;=0 and y&lt;n and grid[x][y]:</span></span><br><span class="line">        <span class="comment">#             grid[x][y] = 0</span></span><br><span class="line">        <span class="comment">#             count += helper(x,y)</span></span><br><span class="line">        <span class="comment">#     return count</span></span><br><span class="line">        <span class="comment"># res = 0</span></span><br><span class="line">        <span class="comment"># for i in range(m):</span></span><br><span class="line">        <span class="comment">#     for j in range(n):</span></span><br><span class="line">        <span class="comment">#         if grid[i][j]==1:</span></span><br><span class="line">        <span class="comment">#             grid[i][j] = 0</span></span><br><span class="line">        <span class="comment">#             res = max(res,helper(i,j))</span></span><br><span class="line">        <span class="comment"># return res</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment"># bfs</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> grid: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        m,n = len(grid),len(grid[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(i,j)</span>:</span></span><br><span class="line">            queue = deque([(i,j)])</span><br><span class="line">            grid[i][j] = <span class="number">0</span></span><br><span class="line">            count = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> queue:</span><br><span class="line">                i,j = queue.popleft()</span><br><span class="line">                count += <span class="number">1</span></span><br><span class="line">                <span class="keyword">for</span> x,y <span class="keyword">in</span> [(i<span class="number">-1</span>,j),(i+<span class="number">1</span>,j),(i,j<span class="number">-1</span>),(i,j+<span class="number">1</span>)]:</span><br><span class="line">                    <span class="keyword">if</span> x&gt;=<span class="number">0</span> <span class="keyword">and</span> x&lt;m <span class="keyword">and</span> y&gt;=<span class="number">0</span> <span class="keyword">and</span> y&lt;n <span class="keyword">and</span> grid[x][y]:</span><br><span class="line">                        grid[x][y] = <span class="number">0</span></span><br><span class="line">                        queue.append((x,y))</span><br><span class="line">            <span class="keyword">return</span> count</span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> grid[i][j]:</span><br><span class="line">                    res = max(res,helper(i,j))</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p>主要应用在有向图(判断是否有环)</p>
+<p>dfs解法：</p>
+<ul>
+<li><p>从每一个结点开始，由深度优先搜索：</p>
+<p>每次经过一个结点，则将该结点的状态置为1；若在遍历的过程中再次经过到达这个结点，则说明有环；若没有，则将该结点状态置为-1，表示已访问且无环</p>
+</li>
+</ul>
+<p>bfs解法：</p>
+<ul>
+<li>选择一个入度为0的顶点并输出；</li>
+<li>从网中删除此顶点及所有出边</li>
+<li>重复上述步骤，若循环结束时输出的顶点数小于网中的顶点数，则说明有环</li>
+</ul>
+<h5 id="207-课程表"><a href="#207-课程表" class="headerlink" title="207. 课程表"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY291cnNlLXNjaGVkdWxlLw==" title="https://leetcode-cn.com/problems/course-schedule/">207. 课程表<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canFinish</span><span class="params">(self, numCourses: int, prerequisites: List[List[int]])</span> -&gt; bool:</span></span><br><span class="line">        edges = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)] <span class="comment"># 出边</span></span><br><span class="line">        <span class="keyword">for</span> i,j <span class="keyword">in</span> prerequisites:</span><br><span class="line">            edges[j].append(i)</span><br><span class="line">        visited = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)]</span><br><span class="line">        <span class="comment"># dfs</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(i)</span>:</span></span><br><span class="line">            <span class="comment"># 上一轮访问过，则认为为真</span></span><br><span class="line">            <span class="keyword">if</span> visited[i]==<span class="number">-1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="comment"># 当前轮再次被访问，则有环，认为为假</span></span><br><span class="line">            <span class="keyword">if</span> visited[i]==<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            visited[i] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> edges[i]:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> dfs(j):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            visited[i] = <span class="number">-1</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(numCourses):</span><br><span class="line">            <span class="keyword">if</span> visited[i]==<span class="number">-1</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> dfs(i):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment"># degree = [0 for _ in range(numCourses)] # 入度</span></span><br><span class="line">        <span class="comment"># edges = [[] for _ in range(numCourses)] # 出边</span></span><br><span class="line">        <span class="comment"># for i,j in prerequisites:</span></span><br><span class="line">        <span class="comment">#     degree[i] += 1</span></span><br><span class="line">        <span class="comment">#     edges[j].append(i)</span></span><br><span class="line">        <span class="comment"># # bfs</span></span><br><span class="line">        <span class="comment"># from collections import deque</span></span><br><span class="line">        <span class="comment"># queue = deque()</span></span><br><span class="line">        <span class="comment"># for i in range(numCourses):</span></span><br><span class="line">        <span class="comment">#     if degree[i]==0:</span></span><br><span class="line">        <span class="comment">#         queue.append(i)</span></span><br><span class="line">        <span class="comment"># learned = [] # 保存学过的课程,只有先修课程学完才能保存</span></span><br><span class="line">        <span class="comment"># while queue:</span></span><br><span class="line">        <span class="comment">#     i = queue.popleft()</span></span><br><span class="line">        <span class="comment">#     learned.append(i)</span></span><br><span class="line">        <span class="comment">#     for j in edges[i]:</span></span><br><span class="line">        <span class="comment">#         degree[j] -= 1</span></span><br><span class="line">        <span class="comment">#         # 先修课程学完再加入</span></span><br><span class="line">        <span class="comment">#         if degree[j]==0:</span></span><br><span class="line">        <span class="comment">#             queue.append(j)</span></span><br><span class="line">        <span class="comment"># return len(learned)==numCourses</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="210-课程表-II"><a href="#210-课程表-II" class="headerlink" title="210. 课程表 II"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY291cnNlLXNjaGVkdWxlLWlpLw==" title="https://leetcode-cn.com/problems/course-schedule-ii/">210. 课程表 II<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findOrder</span><span class="params">(self,numCourses:int,prerequisites:List[List[int]])</span>-&gt;List[int]:</span></span><br><span class="line">        <span class="comment"># # 保存每个结点的出边结点</span></span><br><span class="line">        <span class="comment"># adj = [[] for _ in range(numCourses)]</span></span><br><span class="line">        <span class="comment"># for i,j in prerequisites:</span></span><br><span class="line">        <span class="comment">#     adj[j].append(i)</span></span><br><span class="line">        <span class="comment"># # 记录每个结点的状态，0未访问，1当前轮遍历时被访问，-1之前轮被访问</span></span><br><span class="line">        <span class="comment"># visited = [0 for _ in range(numCourses)]</span></span><br><span class="line">        <span class="comment"># def dfs(i,learned):</span></span><br><span class="line">        <span class="comment">#     # 之前已被访问，且无环</span></span><br><span class="line">        <span class="comment">#     if visited[i]==-1:</span></span><br><span class="line">        <span class="comment">#         return True</span></span><br><span class="line">        <span class="comment">#     # 当前轮再次被访问，说明有环</span></span><br><span class="line">        <span class="comment">#     if visited[i]==1:</span></span><br><span class="line">        <span class="comment">#         return False</span></span><br><span class="line">        <span class="comment">#     visited[i] = 1</span></span><br><span class="line">        <span class="comment">#     if adj[i]:</span></span><br><span class="line">        <span class="comment">#         for j in adj[i]:</span></span><br><span class="line">        <span class="comment">#             # 如果子结点发现有环</span></span><br><span class="line">        <span class="comment">#             if not dfs(j,learned):</span></span><br><span class="line">        <span class="comment">#                 return False</span></span><br><span class="line">        <span class="comment">#     learned.append(i)</span></span><br><span class="line">        <span class="comment">#     visited[i] = -1</span></span><br><span class="line">        <span class="comment">#     return True</span></span><br><span class="line">        <span class="comment"># # 对每个结点</span></span><br><span class="line">        <span class="comment"># learned = []</span></span><br><span class="line">        <span class="comment"># for i in range(numCourses):</span></span><br><span class="line">        <span class="comment">#     # 若发现有环，则直接返回[]</span></span><br><span class="line">        <span class="comment">#     if not dfs(i,learned):</span></span><br><span class="line">        <span class="comment">#         return []</span></span><br><span class="line">        <span class="comment"># return learned[::-1] #反序(因为dfs先加入的是叶结点)</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 计算每个结点的入度</span></span><br><span class="line">        degree = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)]</span><br><span class="line">        <span class="comment"># 保存每个结点的出边结点</span></span><br><span class="line">        adj = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)]</span><br><span class="line">        <span class="keyword">for</span> i,j <span class="keyword">in</span> prerequisites:</span><br><span class="line">            degree[i] += <span class="number">1</span></span><br><span class="line">            adj[j].append(i)</span><br><span class="line">        <span class="comment"># queue</span></span><br><span class="line">        <span class="keyword">from</span> collections imprt deque</span><br><span class="line">        queue = deque()</span><br><span class="line">        <span class="comment"># 将入度为0的结点作为起始点</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(numCourses):</span><br><span class="line">            <span class="keyword">if</span> degree[i]==<span class="number">0</span>:</span><br><span class="line">                queue.append(i)</span><br><span class="line">        <span class="comment"># 记录已选的课程</span></span><br><span class="line">        learned = []</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            lens = len(queue)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(lens):</span><br><span class="line">                i = queue.popleft()</span><br><span class="line">                learned.append(i)</span><br><span class="line">                <span class="comment"># 若存在出边</span></span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> adj[i]:</span><br><span class="line">                    degree[j] -= <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> degree[j]==<span class="number">0</span>:</span><br><span class="line">                        queue.append(j)</span><br><span class="line">        <span class="keyword">return</span> learned <span class="keyword">if</span> len(learned)==numCourses <span class="keyword">else</span> []</span><br></pre></td></tr></table></figure>
+
+<h5 id="630-课程表-III"><a href="#630-课程表-III" class="headerlink" title="630. 课程表 III"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY291cnNlLXNjaGVkdWxlLWlpaS8=" title="https://leetcode-cn.com/problems/course-schedule-iii/">630. 课程表 III<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">scheduleCourse</span><span class="params">(self, courses: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">import</span> heapq</span><br><span class="line">        <span class="comment"># 按照结束时间排序</span></span><br><span class="line">        courses.sort(key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line">        learned = []</span><br><span class="line">        cur = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> t,d <span class="keyword">in</span> courses:</span><br><span class="line">            <span class="comment"># 当选择的课程超过结束时间，则把之前最耗时的课程取消，否则直接加入</span></span><br><span class="line">            <span class="keyword">if</span> cur+t&lt;=d:</span><br><span class="line">                cur += t</span><br><span class="line">                heapq.heappush(learned,-t)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> learned <span class="keyword">and</span> -learned[<span class="number">0</span>]&gt;t:</span><br><span class="line">                    cur += learned[<span class="number">0</span>] + t</span><br><span class="line">                    heapq.heapreplace(learned,-t)</span><br><span class="line">        <span class="keyword">return</span> len(learned)</span><br></pre></td></tr></table></figure>
+
+<h5 id="310-最小高度树"><a href="#310-最小高度树" class="headerlink" title="310. 最小高度树"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbWluaW11bS1oZWlnaHQtdHJlZXMv" title="https://leetcode-cn.com/problems/minimum-height-trees/">310. 最小高度树<i class="fa fa-external-link"></i></span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMinHeightTrees</span><span class="params">(self, n: int, edges: List[List[int]])</span> -&gt; List[int]:</span></span><br><span class="line">        <span class="comment"># # 暴力解法 超时</span></span><br><span class="line">        <span class="comment"># adj = [[] for _ in range(n)]</span></span><br><span class="line">        <span class="comment"># for i,j in edges:</span></span><br><span class="line">        <span class="comment">#     adj[i].append(j)</span></span><br><span class="line">        <span class="comment">#     adj[j].append(i)</span></span><br><span class="line">        <span class="comment"># from collections import deque</span></span><br><span class="line">        <span class="comment"># def helper(i):</span></span><br><span class="line">        <span class="comment">#     queue = deque([(i,0)])</span></span><br><span class="line">        <span class="comment">#     visited = [0 for _ in range(n)]</span></span><br><span class="line">        <span class="comment">#     while queue:</span></span><br><span class="line">        <span class="comment">#         i,depth = queue.popleft()</span></span><br><span class="line">        <span class="comment">#         visited[i] = 1</span></span><br><span class="line">        <span class="comment">#         for j in adj[i]:</span></span><br><span class="line">        <span class="comment">#             if visited[j]==0:</span></span><br><span class="line">        <span class="comment">#                 queue.append((j,depth+1))</span></span><br><span class="line">        <span class="comment">#     return depth</span></span><br><span class="line">        <span class="comment"># res = []</span></span><br><span class="line">        <span class="comment"># MIN = n</span></span><br><span class="line">        <span class="comment"># for i in range(n):</span></span><br><span class="line">        <span class="comment">#     temp = helper(i)</span></span><br><span class="line">        <span class="comment">#     if temp&lt;MIN:</span></span><br><span class="line">        <span class="comment">#         MIN = temp</span></span><br><span class="line">        <span class="comment">#         res = [i]</span></span><br><span class="line">        <span class="comment">#     elif temp==MIN:</span></span><br><span class="line">        <span class="comment">#         res.append(i)</span></span><br><span class="line">        <span class="comment"># return res</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 贪心 每次删除边缘节点(即度为1的节点,类似于找树的重心？)</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> edges: <span class="keyword">return</span> [<span class="number">0</span>]</span><br><span class="line">        adj = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">        <span class="keyword">for</span> i,j <span class="keyword">in</span> edges:</span><br><span class="line">            adj[i].append(j)</span><br><span class="line">            adj[j].append(i)</span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        queue = deque()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">if</span> len(adj[i])==<span class="number">1</span>:</span><br><span class="line">                queue.append(i)</span><br><span class="line">        <span class="comment"># 最后可能的结果为1个数或者两个数</span></span><br><span class="line">        <span class="keyword">while</span> n&gt;<span class="number">2</span>:</span><br><span class="line">            n -= len(queue)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(queue)):</span><br><span class="line">                i = queue.popleft()</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> adj[i]:</span><br><span class="line">                    adj[j].remove(i)</span><br><span class="line">                    <span class="keyword">if</span> len(adj[j])==<span class="number">1</span>:</span><br><span class="line">                        queue.append(j)</span><br><span class="line">        <span class="keyword">return</span> list(queue)</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-其它\" rel="bookmark">编程-其它</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-字典树\" rel="bookmark">字典树</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-滑动窗口\" rel="bookmark">滑动窗口</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-单调栈\" rel="bookmark">单调栈</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\08\求职-编程-树\" rel="bookmark">树</a></div>
+    </li>
+  </ul>
+<div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>lumosity
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%9B%BE/" title="图">https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%9B%BE/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%B1%82%E8%81%8C/" rel="tag"><i class="fa fa-tag"></i> 求职</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E6%A0%91/" rel="next" title="树">
+                  <i class="fa fa-chevron-left"></i> 树
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%8D%95%E8%B0%83%E6%A0%88/" rel="prev" title="单调栈">
+                  单调栈 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最短路算法"><span class="nav-number">1.</span> <span class="nav-text">最短路算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dijkstra算法-有权图的单源最短路-gt-适用于所有边权为正值"><span class="nav-number">1.0.1.</span> <span class="nav-text">dijkstra算法(有权图的单源最短路)==&gt; 适用于所有边权为正值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bellman-Ford算法-有权图的单源最短路，判断负环，在边数限制的情况下求最长路-gt-支持存在负权重的情况，但如果存在负环，则最短路失效"><span class="nav-number">1.0.2.</span> <span class="nav-text">Bellman-Ford算法(有权图的单源最短路，判断负环，在边数限制的情况下求最长路)==&gt;支持存在负权重的情况，但如果存在负环，则最短路失效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SPFA算法-队列优化的Bellman-Ford算法"><span class="nav-number">1.0.3.</span> <span class="nav-text">SPFA算法(队列优化的Bellman-Ford算法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Floyd算法-有权图的多源最短路"><span class="nav-number">1.0.4.</span> <span class="nav-text">Floyd算法(有权图的多源最短路)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最小生成树"><span class="nav-number">2.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#prim算法-加点法"><span class="nav-number">2.0.1.</span> <span class="nav-text">prim算法(加点法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kruskal算法-避圈法"><span class="nav-number">2.0.2.</span> <span class="nav-text">kruskal算法(避圈法)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图"><span class="nav-number">3.</span> <span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1162-地图分析"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">1162. 地图分析</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵搜索-dfs-bfs-并查集"><span class="nav-number">4.</span> <span class="nav-text">矩阵搜索(dfs/bfs/并查集)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#79-单词搜索"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">79. 单词搜索</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#547-朋友圈"><span class="nav-number">4.0.0.0.2.</span> <span class="nav-text">547. 朋友圈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#200-岛屿数量"><span class="nav-number">4.0.0.0.3.</span> <span class="nav-text">200. 岛屿数量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#130-被围绕的区域"><span class="nav-number">4.0.0.0.4.</span> <span class="nav-text">130. 被围绕的区域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#128-最长连续序列"><span class="nav-number">4.0.0.0.5.</span> <span class="nav-text">128. 最长连续序列</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#695-岛屿的最大面积"><span class="nav-number">4.0.0.0.6.</span> <span class="nav-text">695. 岛屿的最大面积</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拓扑排序"><span class="nav-number">5.</span> <span class="nav-text">拓扑排序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#207-课程表"><span class="nav-number">5.0.0.0.1.</span> <span class="nav-text">207. 课程表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#210-课程表-II"><span class="nav-number">5.0.0.0.2.</span> <span class="nav-text">210. 课程表 II</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#630-课程表-III"><span class="nav-number">5.0.0.0.3.</span> <span class="nav-text">630. 课程表 III</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#310-最小高度树"><span class="nav-number">5.0.0.0.4.</span> <span class="nav-text">310. 最小高度树</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lumosity"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">lumosity</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2x1bW9zaXR5NHRwag==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lumosity4tpj"><i class="fa fa-fw fa-github"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnRhbmdwZWlqdW40QG91dGxvb2suY29t" title="E-Mail → mailto:tangpeijun4@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-moon-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lumosity</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">134k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout: 3000,
+        priority: true,
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://lumosity4tpj.github.io/2020/09/08/%E6%B1%82%E8%81%8C-%E7%BC%96%E7%A8%8B-%E5%9B%BE/',]
+      });
+      });
+  </script>
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8b56991ada74c93b8aea',
+      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
+      repo: 'lumosity4tpj.github.io',
+      owner: 'lumosity4tpj',
+      admin: ['lumosity4tpj'],
+      id: '2ee208f2c461de069baed140d0e413fa',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>
