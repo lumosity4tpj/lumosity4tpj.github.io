@@ -57,15 +57,15 @@
 
   <meta name="description" content="言之命至">
 <meta property="og:type" content="website">
-<meta property="og:title" content="分	类">
-<meta property="og:url" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;categories&#x2F;index.html">
+<meta property="og:title" content="timeline">
+<meta property="og:url" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;timeline&#x2F;index.html">
 <meta property="og:site_name" content="Lumosity&#39;s Blog">
 <meta property="og:description" content="言之命至">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-09-09T16:19:30.181Z">
+<meta property="og:updated_time" content="2020-09-09T14:41:38.652Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://lumosity4tpj.github.io/categories/">
+<link rel="canonical" href="https://lumosity4tpj.github.io/timeline/">
 
 
 <script id="page-configurations">
@@ -92,7 +92,7 @@
   padding: 1px 4px;
 }
 </style>
-  <title>分	类 | Lumosity's Blog
+  <title>timeline | Lumosity's Blog
   </title>
   
 
@@ -253,7 +253,7 @@
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">分	类
+<h2 class="post-title" itemprop="name headline">timeline
 </h2>
 
 <div class="post-meta">
@@ -267,15 +267,7 @@
       
       
       <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 1 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
-        
+          
       </div>
       
       
@@ -291,6 +283,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
         </div>
           
@@ -527,7 +520,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
       quicklink({
         timeout: 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://lumosity4tpj.github.io/categories/',]
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://lumosity4tpj.github.io/timeline/',]
       });
       });
   </script>
@@ -558,6 +551,23 @@ if (document.querySelectorAll('pre.mermaid').length) {
         pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8b56991ada74c93b8aea',
+      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
+      repo: 'lumosity4tpj.github.io',
+      owner: 'lumosity4tpj',
+      admin: ['lumosity4tpj'],
+      id: 'e221a36d65619888d3bdefe70313e091',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
 </body>
 </html>
