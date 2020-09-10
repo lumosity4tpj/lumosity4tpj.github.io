@@ -55,20 +55,20 @@
   };
 </script>
 
-  <meta name="description" content="利用GAN网络去进行非配对训练的超分方法">
+  <meta name="description" content="伪监督的非配对图像的超分辨率方法">
 <meta name="keywords" content="论文阅读">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision">
 <meta property="og:url" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;10&#x2F;%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision&#x2F;index.html">
 <meta property="og:site_name" content="Lumosity&#39;s Blog">
-<meta property="og:description" content="利用GAN网络去进行非配对训练的超分方法">
+<meta property="og:description" content="伪监督的非配对图像的超分辨率方法">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;10&#x2F;%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision&#x2F;1599704646816.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;10&#x2F;%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision&#x2F;1599699070996.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;10&#x2F;%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision&#x2F;1599699544705.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;10&#x2F;%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision&#x2F;1599702852283.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;10&#x2F;%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision&#x2F;1599704534305.png">
-<meta property="og:updated_time" content="2020-09-10T08:42:56.075Z">
+<meta property="og:updated_time" content="2020-09-10T13:59:15.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;10&#x2F;%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision&#x2F;1599704646816.png">
 
@@ -185,7 +185,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -195,7 +195,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-photo">
@@ -281,7 +281,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-10 10:44:32 / 修改时间：16:42:56" itemprop="dateCreated datePublished" datetime="2020-09-10T10:44:32+08:00">2020-09-10</time>
+              <time title="创建时间：2020-09-10 10:44:32 / 修改时间：21:59:15" itemprop="dateCreated datePublished" datetime="2020-09-10T10:44:32+08:00">2020-09-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -310,7 +310,7 @@
                 <span class="post-meta-item-text">本文字数：</span>
               <span>4.2k</span>
             </span>
-            <div class="post-description">利用GAN网络去进行非配对训练的超分方法</div>
+            <div class="post-description">伪监督的非配对图像的超分辨率方法</div>
 
         </div>
       </header>
@@ -421,8 +421,7 @@
 </li>
 </ul>
 <h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><ul>
-<li>两个经典GAN的损失</li>
-</ul>
+<li><p>两个经典GAN的损失</p>
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="48.917ex" height="7.843ex" style="vertical-align: -3.338ex;" viewbox="0 -1939.5 21061.4 3376.7" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">
 \begin{array}{c}
@@ -817,9 +816,8 @@
 </g>
 </g>
 </g>
-</svg></span><ul>
-<li>cyclegan的循环一致性损失</li>
-</ul>
+</svg></span></li>
+<li><p>cyclegan的循环一致性损失</p>
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="46.706ex" height="3.676ex" style="vertical-align: -1.338ex;" viewbox="0 -1006.6 20109.6 1582.7" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-3-Title">
 <title id="MathJax-SVG-3-Title">
 \mathcal{L}_{c y c}\left(G_{Y_{\downarrow} X}, G_{X Y_{\downarrow}}\right)=\left\|G_{X Y_{\downarrow}} \circ G_{Y_{\downarrow} X}\left(y_{\downarrow}\right)-y_{\downarrow}\right\|_{1}</title>
@@ -917,9 +915,8 @@
  <use transform="scale(0.707)" xlink:href="#E3-MJMAIN-31" x="14878" y="-641"/>
 </g>
 </g>
-</svg></span><ul>
-<li>身份匹配损失：(避免色差等，其实就是为了避免经过去噪网络后像素差异过大)</li>
-</ul>
+</svg></span></li>
+<li><p>身份匹配损失：(避免色差等，其实就是为了避免经过去噪网络后像素差异过大)</p>
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="32.766ex" height="3.676ex" style="vertical-align: -1.338ex;" viewbox="0 -1006.6 14107.7 1582.7" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-4-Title">
 <title id="MathJax-SVG-4-Title">
 \mathcal{L}_{i d t}\left(G_{X Y_{\downarrow}}\right)=\left\|G_{X Y_{\downarrow}}\left(y_{\downarrow}\right)-y_{\downarrow}\right\|_{1}</title>
@@ -999,9 +996,8 @@
  <use transform="scale(0.707)" xlink:href="#E4-MJMAIN-31" x="10347" y="-641"/>
 </g>
 </g>
-</svg></span><ul>
-<li>几何损失：为了保证旋转和翻转后的图片不会改变结果，其实就是约束去噪过程的一致性，可以理解为一张图片，经过八组不同的改变，经过Gxy，最后结果是一致的</li>
-</ul>
+</svg></span></li>
+<li><p>几何损失：为了保证旋转和翻转后的图片不会改变结果，其实就是约束去噪过程的一致性，可以理解为一张图片，经过八组不同的改变，再经过Gxy，最后结果是一致的</p>
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="55.416ex" height="7.509ex" style="vertical-align: -3.171ex;" viewbox="0 -1867.7 23859.5 3233.2" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-5-Title">
 <title id="MathJax-SVG-5-Title">
 \mathcal{L}_{g e o}\left(G_{X Y_{\downarrow}}\right)=\left\|G_{X Y_{\downarrow}}(x)-\sum_{i=1}^{8} T_{i}^{-1}\left(G_{X Y_{\downarrow}}\left(T_{i}(x)\right)\right) / 8\right\|_{1}</title>
@@ -1127,9 +1123,8 @@
  <use transform="scale(0.707)" xlink:href="#E5-MJMAIN-31" x="23936" y="-1780"/>
 </g>
 </g>
-</svg></span><ul>
-<li>总的损失：</li>
-</ul>
+</svg></span></li>
+<li><p>总的损失：</p>
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="44.191ex" height="21.509ex" style="vertical-align: -10.171ex;" viewbox="0 -4881.6 19026.7 9260.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-6-Title">
 <title id="MathJax-SVG-6-Title">
 \begin{aligned}
@@ -1429,9 +1424,8 @@
 </g>
 </g>
 </g>
-</svg></span><ul>
-<li>L1损失：</li>
-</ul>
+</svg></span></li>
+<li><p>L1损失：</p>
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="24.745ex" height="4.843ex" style="vertical-align: -1.838ex;" viewbox="0 -1293.7 10654.2 2085" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-7-Title">
 <title id="MathJax-SVG-7-Title">
 \mathcal{L}_{r e c}=\left\|U_{Y_{\downarrow} Y}\left(\stackrel{\circ}{y_{\downarrow}}\right)-y\right\|_{1}</title>
@@ -1493,7 +1487,9 @@
  <use transform="scale(0.707)" xlink:href="#E7-MJMAIN-31" x="10069" y="-970"/>
 </g>
 </g>
-</svg></span><h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/1599702852283.png" alt></p>
+</svg></span></li>
+</ul>
+<h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/1599702852283.png" alt></p>
 <p>通过对比其它的方法，在DIV2K数据集上可以看出，在峰值信噪比和结构化相似度上均具有最好的值(值越大说明失真度越小)，同时在图片质量上可以看出去噪能力更强</p>
 <p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/1599704534305.png" alt></p>
 <p>对比其它的基于GAN的非配对超分方法，可以看出在FID上的实验效果也是最好的</p>
@@ -1508,6 +1504,9 @@
   <ul class="popular-posts">
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\09\10\论文阅读-image-matting-Attention-Guided-Hierarchical-Structure-Aggregation-for-Image-Matting\" rel="bookmark">论文阅读-image matting-Attention-Guided Hierarchical Structure Aggregation for Image Matting</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\10\论文阅读-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation\" rel="bookmark">论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation</a></div>
     </li>
   </ul>
 <div class="post-widgets">
@@ -1611,14 +1610,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1651,6 +1650,10 @@
       </div>
       <ul class="links-of-blogroll-list">
         
+        
+          <li>
+            <a href="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/" title="论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation" target="_blank">论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation</a>
+          </li>
         
           <li>
             <a href="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-matting-Attention-Guided-Hierarchical-Structure-Aggregation-for-Image-Matting/" title="论文阅读-image matting-Attention-Guided Hierarchical Structure Aggregation for Image Matting" target="_blank">论文阅读-image matting-Attention-Guided Hierarchical Structure Aggregation for Image Matting</a>
@@ -1693,7 +1696,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">23k</span>
+    <span title="站点总字数">26k</span>
 </div>
 
         
