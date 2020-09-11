@@ -177,7 +177,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">4</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-photo">
@@ -247,6 +247,340 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/" class="post-title-link" itemprop="url">论文阅读-scene graph-Bridging Knowledge Graphs to Generate Scene Graphs</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-11 20:46:47 / 修改时间：20:49:01" itemprop="dateCreated datePublished" datetime="2020-09-11T20:46:47+08:00">2020-09-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/scene-graph/" itemprop="url" rel="index">
+                    <span itemprop="name">scene graph</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.4k</span>
+            </span>
+            <div class="post-description">连接知识图生成场景图</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/1599790201168.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li>场景图将图像解析为语义元素，例如对象及它们之间的相互关系等，有助于视觉理解和可解释推理；常识图则编码世界是如何构造的以及一般概念是如何交互的；</li>
+<li>本文希望能在这两种构造之间搭建一个桥梁，将场景图看作是一个常识性知识图在图像条件下的实例，将场景图的生成重新表述为场景图和常识图之间的桥梁推理，其中场景图中的每个实体或谓词实例都必须链接到常识图中对应的实体或谓词类。</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>提出了一种新的基于图的神经网络，它在两个图之间以及每个图之间迭代地传播信息，同时在每次迭代中逐步完善它们之间的桥梁。</li>
+<li>提出的图桥接网络GB-Net，通过连续推断边和节点，允许同时开发和细化相互连接的场景图和常识图的丰富的、异构的结构。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/" class="post-title-link" itemprop="url">论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-11 20:43:32 / 修改时间：20:46:13" itemprop="dateCreated datePublished" datetime="2020-09-11T20:43:32+08:00">2020-09-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/image-editing/" itemprop="url" rel="index">
+                    <span itemprop="name">image editing</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.6k</span>
+            </span>
+            <div class="post-description">CAFE-GAN：附加注意特征的任意面部属性编辑</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/1599800755503.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li>目前的多域编辑方法经常会导致面部区域出现意想不到的变化，即生成器改变了与指定属性无关的区域；</li>
+<li>注意分支网络(ABN)将基于响应的视觉解释扩展到注意力机制，但是基于响应的视觉解释方法只能提取图像中已经存在的属性的注意力特征图。</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>基于互补注意特征(CAFE)的概念(同时考虑目标属性和“互补属性”来识别需要转换的面部区域，“互补属性”定义为输入面部图像中缺失的那些属性)，本文提出了一种新的面部属性编辑方法，旨在仅编辑与目标属性相关的面部部分；</li>
+<li>引入了一个互补的特征匹配损失设计来帮助训练生成器合成图像与给定的属性呈现准确和在适当的面部区域。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -274,7 +608,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-10 22:02:18 / 修改时间：22:04:49" itemprop="dateCreated datePublished" datetime="2020-09-10T22:02:18+08:00">2020-09-10</time>
+              <time title="创建时间：2020-09-10 22:02:18 / 修改时间：22:09:43" itemprop="dateCreated datePublished" datetime="2020-09-10T22:02:18+08:00">2020-09-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1022,14 +1356,14 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1064,6 +1398,14 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
         
         
           <li>
+            <a href="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/" title="论文阅读-scene graph-Bridging Knowledge Graphs to Generate Scene Graphs" target="_blank">论文阅读-scene graph-Bridging Knowledge Graphs to Generate Scene Graphs</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/" title="论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature" target="_blank">论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/" title="论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation" target="_blank">论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation</a>
           </li>
         
@@ -1073,10 +1415,6 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
         
           <li>
             <a href="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/" title="论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision" target="_blank">论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/09/%E7%BC%96%E7%A8%8B-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%91/" title="编程-数据结构与算法-树" target="_blank">编程-数据结构与算法-树</a>
           </li>
         
       </ul>
@@ -1108,7 +1446,7 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">40k</span>
 </div>
 
         
