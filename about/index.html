@@ -370,23 +370,23 @@
         
         
           <li>
-            <a href="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/" title="论文阅读-scene graph-Bridging Knowledge Graphs to Generate Scene Graphs" target="_blank">论文阅读-scene graph-Bridging Knowledge Graphs to Generate Scene Graphs</a>
+            <a href="/2020/09/11/a54b211e.html" title="论文阅读-scene graph-Bridging Knowledge Graphs to Generate Scene Graphs" target="_blank">论文阅读-scene graph-Bridging Knowledge Graphs to Generate Scene Graphs</a>
           </li>
         
           <li>
-            <a href="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/" title="论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature" target="_blank">论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature</a>
+            <a href="/2020/09/11/bac9cc5c.html" title="论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature" target="_blank">论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature</a>
           </li>
         
           <li>
-            <a href="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/" title="论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation" target="_blank">论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation</a>
+            <a href="/2020/09/10/3ef91696.html" title="论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation" target="_blank">论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation</a>
           </li>
         
           <li>
-            <a href="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-matting-Attention-Guided-Hierarchical-Structure-Aggregation-for-Image-Matting/" title="论文阅读-image matting-Attention-Guided Hierarchical Structure Aggregation for Image Matting" target="_blank">论文阅读-image matting-Attention-Guided Hierarchical Structure Aggregation for Image Matting</a>
+            <a href="/2020/09/10/4c74d48f.html" title="论文阅读-image matting-Attention-Guided Hierarchical Structure Aggregation for Image Matting" target="_blank">论文阅读-image matting-Attention-Guided Hierarchical Structure Aggregation for Image Matting</a>
           </li>
         
           <li>
-            <a href="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/" title="论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision" target="_blank">论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision</a>
+            <a href="/2020/09/10/43377067.html" title="论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision" target="_blank">论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision</a>
           </li>
         
       </ul>
@@ -572,6 +572,33 @@ if (document.querySelectorAll('pre.mermaid').length) {
         pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+
+
+<script>
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'HVHJvnw60uAa9EnVUQSa92Rg-gzGzoHsz',
+    appKey: 'NdsFzEfN98UQFu9xdanPnfsj',
+    placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+    avatar: 'wavatar',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

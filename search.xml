@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>论文阅读-scene graph-Bridging Knowledge Graphs to Generate Scene Graphs</title>
-    <url>/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/</url>
+    <url>/2020/09/11/a54b211e.html</url>
     <content><![CDATA[<html><head><style type="text/css">
                             .mjpage .MJX-monospace {
                             font-family: monospace
@@ -75,7 +75,7 @@
                             min-width: 0;
                             min-height: 0;
                             width: 100%
-                            }</style></head><body><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/1599790201168.png" alt></p>
+                            }</style></head><body><p><img src="/2020/09/11/a54b211e.htm/1599790201168.png" alt></p>
 <h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
 <li>场景图将图像解析为语义元素，例如对象及它们之间的相互关系等，有助于视觉理解和可解释推理；常识图则编码世界是如何构造的以及一般概念是如何交互的；</li>
 <li>本文希望能在这两种构造之间搭建一个桥梁，将场景图看作是一个常识性知识图在图像条件下的实例，将场景图的生成重新表述为场景图和常识图之间的桥梁推理，其中场景图中的每个实体或谓词实例都必须链接到常识图中对应的实体或谓词类。</li>
@@ -562,7 +562,7 @@
 </g>
 </g>
 </svg></span>为由两个场景实体节点和一个场景谓词节点组成的所有可能的三元组的集合。</p>
-<p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/1599804552368.png" alt="1599804552368"></p>
+<p><img src="/2020/09/11/a54b211e.htm/1599804552368.png" alt="1599804552368"></p>
 <p>上图显示了场景图和常识图的示例，以便更清楚地显示它们的相似性。这里假设每个场景图节点都有一个存在于常识图中的标签，因为在现实中一些对象和谓词可能属于背景类，所以将一个特殊的常识图节点视为背景实体，另一个作为背景谓词。</p>
 <h3 id="Bridging-knowledge-graphs"><a href="#Bridging-knowledge-graphs" class="headerlink" title="Bridging knowledge graphs"></a>Bridging knowledge graphs</h3><p>考虑到常识图公式与场景图公式的相似性，本文对公式进行了细微的改进，以实现这两种图之间的连接。具体来说，将类从SE和SP节点中移除，而将其编码为一组连接边<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.707ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 1165.5 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-12-Title">
 <title id="MathJax-SVG-12-Title">\mathcal{E}_B</title>
@@ -1004,7 +1004,7 @@ p\left(\mathcal{E}_{\mathrm{B}} \mid I, \mathcal{N}_{\mathrm{CE}}, \mathcal{N}_{
 </g>
 </g>
 </svg></span>；第二项是由本文提出的GB-NET来实现的(通过场景结构和常识图来推导连接边)。</p>
-<h3 id="本文的方法"><a href="#本文的方法" class="headerlink" title="本文的方法"></a>本文的方法</h3><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/1599806251652.png" alt="1599806251652"></p>
+<h3 id="本文的方法"><a href="#本文的方法" class="headerlink" title="本文的方法"></a>本文的方法</h3><p><img src="/2020/09/11/a54b211e.htm/1599806251652.png" alt="1599806251652"></p>
 <p>如上图所示，给定一幅图像，首先应用Faster R-CNN来检测物体，并将它们表示为场景实体(SE)节点。它还为每个实体创建一个场景谓词(SP)节点，形成一个有待分类的场景图候选。给定这个图和一个背景常识图，这两个图的内部连接固定，本文的目标是在这两个图之间创建连接每个实例(SE和SP节点)与其对应的类(CE和CP节点)的连接边。</p>
 <p>为此，本文的模型通过连接SE与Faster R-CNN预测的标签相匹配的CE来初始化实体连接，并通过消息传播网络来更新节点表示，并使用它们来计算每个SP节点和CP节点的成对相似度，找到最大相似对并通过谓语连接去连接场景谓词和它对应的类，对于实体节点也执行相同的操作来优化实体连接，不断重复这两个过程，最后的连接将决定每个节点的类，从而产生输出场景图</p>
 <h4 id="Graph-initialization"><a href="#Graph-initialization" class="headerlink" title="Graph initialization"></a>Graph initialization</h4><p>对象检测器输出n个检测对象的集合，每个检测对象有一个边界框<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.907ex" height="2.843ex" style="vertical-align: -1.005ex;" viewbox="0 -791.3 821.2 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-18-Title">
@@ -2484,8 +2484,8 @@ p\left(\mathcal{E}_{\mathrm{B}} \mid I, \mathcal{N}_{\mathrm{CE}}, \mathcal{N}_{
 </g>
 </g>
 </svg></span>是本文模型的输出,可以用来分类场景图中的每个实体和谓词。</p>
-<h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/1599827405180.png" alt></p>
-<p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-scene-graph-Bridging-Knowledge-Graphs-to-Generate-Scene-Graphs/1599827427237.png" alt></p>
+<h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/11/a54b211e.htm/1599827405180.png" alt></p>
+<p><img src="/2020/09/11/a54b211e.htm/1599827427237.png" alt></p>
 </body></html>]]></content>
       <categories>
         <category>scene graph</category>
@@ -2496,7 +2496,7 @@ p\left(\mathcal{E}_{\mathrm{B}} \mid I, \mathcal{N}_{\mathrm{CE}}, \mathcal{N}_{
   </entry>
   <entry>
     <title>论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature</title>
-    <url>/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/</url>
+    <url>/2020/09/11/bac9cc5c.html</url>
     <content><![CDATA[<html><head><style type="text/css">
                             .mjpage .MJX-monospace {
                             font-family: monospace
@@ -2569,7 +2569,7 @@ p\left(\mathcal{E}_{\mathrm{B}} \mid I, \mathcal{N}_{\mathrm{CE}}, \mathcal{N}_{
                             min-width: 0;
                             min-height: 0;
                             width: 100%
-                            }</style></head><body><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/1599800755503.png" alt></p>
+                            }</style></head><body><p><img src="/2020/09/11/bac9cc5c.htm/1599800755503.png" alt></p>
 <h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
 <li>目前的多域编辑方法经常会导致面部区域出现意想不到的变化，即生成器改变了与指定属性无关的区域；</li>
 <li>注意分支网络(ABN)将基于响应的视觉解释扩展到注意力机制，但是基于响应的视觉解释方法只能提取图像中已经存在的属性的注意力特征图。</li>
@@ -2579,7 +2579,7 @@ p\left(\mathcal{E}_{\mathrm{B}} \mid I, \mathcal{N}_{\mathrm{CE}}, \mathcal{N}_{
 <li>引入了一个互补的特征匹配损失设计来帮助训练生成器合成图像与给定的属性呈现准确和在适当的面部区域。</li>
 </ul>
 <a id="more"></a>
-<h3 id="本文的方法"><a href="#本文的方法" class="headerlink" title="本文的方法"></a>本文的方法</h3><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/1599792923306.png" alt></p>
+<h3 id="本文的方法"><a href="#本文的方法" class="headerlink" title="本文的方法"></a>本文的方法</h3><p><img src="/2020/09/11/bac9cc5c.htm/1599792923306.png" alt></p>
 <h4 id="判别器"><a href="#判别器" class="headerlink" title="判别器"></a>判别器</h4><p>判别器由三个主要部分组成，即<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.214ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 1814.2 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">D_{att}</title>
 <defs aria-hidden="true">
@@ -2770,7 +2770,7 @@ f_{i}^{\prime \prime} &amp;=f \cdot M_{i}^{c}
 </g>
 </g>
 </g>
-</svg></span><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/1599794233623.png" alt></p>
+</svg></span><p><img src="/2020/09/11/bac9cc5c.htm/1599794233623.png" alt></p>
 <p><strong>AB</strong>：中层特征f经过卷积层生成一个h*w*k的注意力特征(AF)，k对应着属性数，一方面<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.543ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 1094.8 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-9-Title">
 <title id="MathJax-SVG-9-Title">A_i</title>
 <defs aria-hidden="true">
@@ -3838,7 +3838,7 @@ y=G_{d e c}\left(z, v_{d}\right)
  <use xlink:href="#E35-MJSZ2-5D" x="20292" y="-1"/>
 </g>
 </g>
-</svg></span><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/1599799921249.png" alt></p>
+</svg></span><p><img src="/2020/09/11/bac9cc5c.htm/1599799921249.png" alt></p>
 <p>虽然判别器中的<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.214ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 1814.2 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-36-Title">
 <title id="MathJax-SVG-36-Title">D_{att}</title>
 <defs aria-hidden="true">
@@ -4504,9 +4504,9 @@ y=G_{d e c}\left(z, v_{d}\right)
 </g>
 </g>
 </g>
-</svg></span><h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/1599824286570.png" alt></p>
-<p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/1599824322726.png" alt></p>
-<p><img src="/2020/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-editing-CAFE-GAN-Arbitrary-Face-Attribute-Editing-with-Complementary-Attention-Feature/1599824355485.png" alt></p>
+</svg></span><h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/11/bac9cc5c.htm/1599824286570.png" alt></p>
+<p><img src="/2020/09/11/bac9cc5c.htm/1599824322726.png" alt></p>
+<p><img src="/2020/09/11/bac9cc5c.htm/1599824355485.png" alt></p>
 </body></html>]]></content>
       <categories>
         <category>image editing</category>
@@ -4517,7 +4517,7 @@ y=G_{d e c}\left(z, v_{d}\right)
   </entry>
   <entry>
     <title>论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation</title>
-    <url>/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/</url>
+    <url>/2020/09/10/3ef91696.html</url>
     <content><![CDATA[<html><head><style type="text/css">
                             .mjpage .MJX-monospace {
                             font-family: monospace
@@ -4590,21 +4590,21 @@ y=G_{d e c}\left(z, v_{d}\right)
                             min-width: 0;
                             min-height: 0;
                             width: 100%
-                            }</style></head><body><p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/1599729595297.png" alt></p>
+                            }</style></head><body><p><img src="/2020/09/10/3ef91696.htm/1599729595297.png" alt></p>
 <h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
 <li><p>基于类别标签的弱监督语义分割通常使用CAM作为基础方法，CAM通常只覆盖物品最具识别性的部分，并且当图像经过仿射变换做数据增强时，生成的CAM并不一致，如下图所示。</p>
 </li>
 <li><p>原因是强监督与弱监督的语义分割之间存在较大的监督差异，对于强监督语义分割，在数据增强阶段，像素级标签和输入图像经过相同的仿射变换，因而隐式的包含了这种等变性约束，而由类别标签生成的CAM时，类别标签没有变化，因而会影响CAM的训练过程，导致CAM无法很好的贴合目标边界；</p>
 </li>
 </ul>
-<p>  <img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/1599738939441.png" alt></p>
+<p>  <img src="/2020/09/10/3ef91696.htm/1599738939441.png" alt></p>
 <h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
 <li>本文提出一种自监督的等变注意力机制(SEAM)，将等变正则化和像素相关模块(PCM)结合，来弥补监督信号之间的差异；</li>
 <li>Siamese网络结构的设计与等变交叉正则化(ECR)损失有效地耦合PCM和自我监督，产生的CAM有较少的过激活和欠激活区域；</li>
 <li>实验表明，在仅使用图像级标签的情况下就能达到最先进的性能。</li>
 </ul>
 <a id="more"></a>
-<h3 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h3><p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/1599739866187.png" alt></p>
+<h3 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h3><p><img src="/2020/09/10/3ef91696.htm/1599739866187.png" alt></p>
 <p><strong>Equivariant Regularization</strong></p>
 <p>在全监督语义分割的数据增强期，对像素级标签采用与输入图像相同的仿射变换。它为网络引入了隐式等变约束。但是，考虑到WSSS只能访问图像级分类标签，这里没有隐含的约束。因此，本文提出以下等变正则化方法:</p>
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="30.572ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 13163 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
@@ -4654,7 +4654,7 @@ y=G_{d e c}\left(z, v_{d}\right)
 </g>
 </svg></span><p>F表示这个网络，而A表示空间仿射变换，为了将正则化整合到原始分割网络中，本文将网络扩展为一个权值共享的孪生网络，其中一个分支将该变换应用于网络输出，另一个分支在网络前馈前，对图像进行相同的变换，正则化两个分支的输出激活图，以保证CAM的一致性。</p>
 <p><strong>Pixel Correlation Module</strong></p>
-<p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/1599741401896.png" alt></p>
+<p><img src="/2020/09/10/3ef91696.htm/1599741401896.png" alt></p>
 <p>同时文中引入第二种约束进行自监督，通过PCM利用像素间的相似度去重建原始的类激活图。通过整合每个像素的底层特征来进一步利用上下文信息来细化原始CAM，本文使用归一化特征空间的内积来计算当前像素i和其他像素j之间的相似关系。</p>
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="45.214ex" height="7.676ex" style="vertical-align: -3.338ex;" viewbox="0 -1867.7 19467.1 3304.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-2-Title">
 <title id="MathJax-SVG-2-Title">
@@ -5168,13 +5168,13 @@ y=G_{d e c}\left(z, v_{d}\right)
 </g>
 </svg></span></li>
 </ul>
-<h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/1599745601494.png" alt></p>
+<h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/10/3ef91696.htm/1599745601494.png" alt></p>
 <p>消融实验以及基于语义分割度量的各种弱监督定位方法的评价</p>
-<p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/1599745444661.png" alt></p>
+<p><img src="/2020/09/10/3ef91696.htm/1599745444661.png" alt></p>
 <p>可以看出本文提出的方法在图像覆盖上有一个更好的效果</p>
-<p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/1599745894539.png" alt></p>
+<p><img src="/2020/09/10/3ef91696.htm/1599745894539.png" alt></p>
 <p>做数据增强时不同方法的网络保持等变一致性的能力</p>
-<p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-semantic-segmentation-Self-supervised-Equivariant-Attention-Mechanism-for-Weakly-Supervised-Semantic-Segmentation/1599745839181.png" alt></p>
+<p><img src="/2020/09/10/3ef91696.htm/1599745839181.png" alt></p>
 <p>在PASCAL VOC 2012数据集上跟其它弱监督学习方法的比较</p>
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8xMzEzNDk4MjE=" title="https://zhuanlan.zhihu.com/p/131349821">自监督等变注意力机制<i class="fa fa-external-link"></i></span></p>
 </body></html>]]></content>
@@ -5187,7 +5187,7 @@ y=G_{d e c}\left(z, v_{d}\right)
   </entry>
   <entry>
     <title>论文阅读-image matting-Attention-Guided Hierarchical Structure Aggregation for Image Matting</title>
-    <url>/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-matting-Attention-Guided-Hierarchical-Structure-Aggregation-for-Image-Matting/</url>
+    <url>/2020/09/10/4c74d48f.html</url>
     <content><![CDATA[<html><head><style type="text/css">
                             .mjpage .MJX-monospace {
                             font-family: monospace
@@ -5260,7 +5260,7 @@ y=G_{d e c}\left(z, v_{d}\right)
                             min-width: 0;
                             min-height: 0;
                             width: 100%
-                            }</style></head><body><p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-matting-Attention-Guided-Hierarchical-Structure-Aggregation-for-Image-Matting/1599715745034.png" alt></p>
+                            }</style></head><body><p><img src="/2020/09/10/4c74d48f.htm/1599715745034.png" alt></p>
 <h3 id="图像抠图介绍"><a href="#图像抠图介绍" class="headerlink" title="图像抠图介绍"></a>图像抠图介绍</h3><p>通常而言，对于一张图像，需要求解出它的前景，背景及alpha matte，基于alpha通道则可以将前景与任意背景进行组合得到新的图像，因此alpha matte是一个与原图同大小的一个单通道图像，每个像素对应于原RGB图像相同位置像素的alpha值。</p>
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="37.742ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 16250.2 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">
@@ -5410,7 +5410,7 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
 <p>完整的对象FG应该由两部分组成：表示FG类别和配置文件的主体，位于过渡区域的纹理和边界细节；前者可以通过高级语义提出，而后者通常来自输入图像或低层次CNN特征，称为外观线索，两者结合可以得到alpha mattes。</p>
 <p>本文认为高级语义特征和外观线索在结合前需要通过注意力机制等进行适当的处理。首先，自然图像抠图应该处理不同类型的FG对象，这意味着我们应该提取高级语义来处理FG信息，并适当地抑制它们，以降低它们对对象类的敏感性。其次，外观线索涉及到不必要的BG细节，需要在alpha mattes中去除。</p>
 <p>基于以上分析，本文方法的核心思想是选择与抠图相适应的语义信息，并去除外观线索中多余的BG纹理，然后将它们聚合起来预测alpha mattes。</p>
-<p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-matting-Attention-Guided-Hierarchical-Structure-Aggregation-for-Image-Matting/1599720750885.png" alt></p>
+<p><img src="/2020/09/10/4c74d48f.htm/1599720750885.png" alt></p>
 <p><strong>网络结构</strong></p>
 <p>输入的图像经过ResNeXt提取特征，将高层特征输入到ASPP模块，以获取多尺度语义特征，再基于通道注意力机制进行过滤，同时将低层特征作为外观线索，并基于空间注意力机制，同时去除FG外的图像纹理细节。此外，参照PatchGAN的鉴别器网络来提高alpha mattes的视觉质量。</p>
 <p><strong>Pyramidal features distillation</strong></p>
@@ -5812,8 +5812,8 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
 <p>绝对差之和(SAD)，均方误差(MSE)，梯度(Grad)和连通性(Conn)，均越小越好</p>
 </li>
 </ul>
-<p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-matting-Attention-Guided-Hierarchical-Structure-Aggregation-for-Image-Matting/1599726697888.png" alt></p>
-<p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-image-matting-Attention-Guided-Hierarchical-Structure-Aggregation-for-Image-Matting/1599726716569.png" alt></p>
+<p><img src="/2020/09/10/4c74d48f.htm/1599726697888.png" alt></p>
+<p><img src="/2020/09/10/4c74d48f.htm/1599726716569.png" alt></p>
 <p>Late Fusion和HAttMatting只以RGB图像作为输入，其他方法需要trimap辅助来保证alpha mattes的准确性。CA表示通道注意力，SA表示空间注意力，Low表示低层特征，SSIM表示结构相似性损失。</p>
 </body></html>]]></content>
       <categories>
@@ -5825,7 +5825,7 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
   </entry>
   <entry>
     <title>论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision</title>
-    <url>/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/</url>
+    <url>/2020/09/10/43377067.html</url>
     <content><![CDATA[<html><head><style type="text/css">
                             .mjpage .MJX-monospace {
                             font-family: monospace
@@ -5898,7 +5898,7 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
                             min-width: 0;
                             min-height: 0;
                             width: 100%
-                            }</style></head><body><p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/1599704646816.png" alt></p>
+                            }</style></head><body><p><img src="/2020/09/10/43377067.htm/1599704646816.png" alt></p>
 <h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
 <li>现有的图像超分，一般使用确定的操作对高分辨率图像进行降采样得到配对的数据，但这样的方法使得得到的低分辨率图像跟真实世界的低分辨率图像差异很大；</li>
 <li>对于非配对的方法则存在不同程度的缺点。</li>
@@ -5913,8 +5913,8 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
 <li>第一种是直接方法：由生成器学习LR到HR的图像，然后跟真实的HR图像送入判别器判别，缺点是不能使用像素级的loss来训练生成器，导致生成的HR图像效果不佳；</li>
 <li>第二种是非直接方法：由真实的HR图像通过生成器生成LR图像，再通过与真实的LR图像进行判别，同时另一个生成器学习从逼近的真实的LR图像到HR图像的生成，缺点是如果生成器生成的LR图像与真实世界的LR图像差别较大，则会导致测试时生成的HR图像效果不佳</li>
 </ul>
-<p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/1599699070996.png" alt></p>
-<h3 id="本文的方法"><a href="#本文的方法" class="headerlink" title="本文的方法"></a>本文的方法</h3><p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/1599699544705.png" alt></p>
+<p><img src="/2020/09/10/43377067.htm/1599699070996.png" alt></p>
+<h3 id="本文的方法"><a href="#本文的方法" class="headerlink" title="本文的方法"></a>本文的方法</h3><p><img src="/2020/09/10/43377067.htm/1599699544705.png" alt></p>
 <p>同时克服了上述两种方法的缺点，将整个网络分离为一个未配对的核/噪声校正网络和一个伪配对的SR网络(图3)。</p>
 <ul>
 <li><p><strong>校正网络</strong>(基于cyclegan)</p>
@@ -6994,9 +6994,9 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
 </g>
 </svg></span></li>
 </ul>
-<h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/1599702852283.png" alt></p>
+<h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><img src="/2020/09/10/43377067.htm/1599702852283.png" alt></p>
 <p>通过对比其它的方法，在DIV2K数据集上可以看出，在峰值信噪比和结构化相似度上均具有最好的值(值越大说明失真度越小)，同时在图片质量上可以看出去噪能力更强</p>
-<p><img src="/2020/09/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-super-resolution-Unpaired-Image-Super-Resolution-using-Pseudo-Supervision/1599704534305.png" alt></p>
+<p><img src="/2020/09/10/43377067.htm/1599704534305.png" alt></p>
 <p>对比其它的基于GAN的非配对超分方法，可以看出在FID上的实验效果也是最好的</p>
 </body></html>]]></content>
       <categories>
@@ -7008,7 +7008,7 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
   </entry>
   <entry>
     <title>编程-数据结构与算法-树</title>
-    <url>/2020/09/09/%E7%BC%96%E7%A8%8B-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%91/</url>
+    <url>/2020/09/09/bb19986e.html</url>
     <content><![CDATA[<p><img src="https://s1.ax1x.com/2020/09/09/w8UKTU.jpg" alt></p>
 <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
