@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="二分查找-python">
+  <meta name="description" content="图判环的方法-python">
 <meta name="keywords" content="数据结构与算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编程-数据结构与算法-二分查找">
-<meta property="og:url" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;13&#x2F;e704e60e.html&#x2F;index.html">
+<meta property="og:title" content="编程-数据结构与算法-图判环的方法及拓扑排序">
+<meta property="og:url" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;13&#x2F;8e0a31c6.html&#x2F;index.html">
 <meta property="og:site_name" content="Lumosity&#39;s Blog">
-<meta property="og:description" content="二分查找-python">
+<meta property="og:description" content="图判环的方法-python">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-09-13T08:16:15.160Z">
+<meta property="og:updated_time" content="2020-09-13T14:57:50.407Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/">
+<link rel="canonical" href="https://lumosity4tpj.github.io/2020/09/13/8e0a31c6.html/">
 
 
 <script id="page-configurations">
@@ -93,7 +93,7 @@
   padding: 1px 4px;
 }
 </style>
-  <title>编程-数据结构与算法-二分查找 | Lumosity's Blog</title>
+  <title>编程-数据结构与算法-图判环的方法及拓扑排序 | Lumosity's Blog</title>
   
 
 
@@ -256,7 +256,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/13/8e0a31c6.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/photos/t1.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          编程-数据结构与算法-二分查找
+          编程-数据结构与算法-图判环的方法及拓扑排序
         </h2>
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-13 15:56:12 / 修改时间：16:16:15" itemprop="dateCreated datePublished" datetime="2020-09-13T15:56:12+08:00">2020-09-13</time>
+              <time title="创建时间：2020-09-13 22:55:31 / 修改时间：22:57:50" itemprop="dateCreated datePublished" datetime="2020-09-13T22:55:31+08:00">2020-09-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,8 +290,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" itemprop="url" rel="index">
-                    <span itemprop="name">二分查找</span>
+                  <a href="/categories/%E5%9B%BE/" itemprop="url" rel="index">
+                    <span itemprop="name">图</span>
                   </a>
                 </span>
             </span>
@@ -312,8 +312,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/09/13/e704e60e.html/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/13/e704e60e.html/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/13/8e0a31c6.html/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/13/8e0a31c6.html/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -323,16 +323,16 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
-            <div class="post-description">二分查找-python</div>
+            <div class="post-description">图判环的方法-python</div>
 
         </div>
       </header>
@@ -343,37 +343,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <html><head></head><body><h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><blockquote>
-<p>把待搜索的目标值留在最后判断，在循环体内不断地把不符合题目要求的子区间排除掉，在退出循环以后，因为只剩下1个数没有看到，它要么是目标元素，要么不是目标元素，单独判断即可</p>
-</blockquote>
-<h3 id="基础模板"><a href="#基础模板" class="headerlink" title="基础模板"></a>基础模板</h3><p>模板的主要目的是避免死循环</p>
-<p><strong>left+1==right时取左边点时</strong></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line"><span class="keyword">while</span> left&lt;right:</span><br><span class="line">    mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> check(mid):</span><br><span class="line">        left = mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        right = mid</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>left+1==right时取右边点时</strong></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line"><span class="keyword">while</span> left&lt;right:</span><br><span class="line">    mid = (left+right+<span class="number">1</span>)&gt;&gt;<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> check(mid):</span><br><span class="line">        right = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        left = mid</span><br></pre></td></tr></tbody></table></figure>
+        <html><head></head><body><h1 id="有向图判环-拓扑排序"><a href="#有向图判环-拓扑排序" class="headerlink" title="有向图判环-拓扑排序"></a>有向图判环-拓扑排序</h1><h3 id="dfs解法"><a href="#dfs解法" class="headerlink" title="dfs解法"></a>dfs解法</h3><ul>
+<li><p>从每一个结点开始，由深度优先搜索：</p>
+<p>每次经过一个结点，则将该结点的状态置为1；若在遍历的过程中再次经过到达这个结点，则说明有环；若没有，则将该结点状态置为-1，表示已访问且无环</p>
 <a id="more"></a>
-<p><strong>例子</strong></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对于旋转数组</span></span><br><span class="line"><span class="comment"># 当nums[left]&lt;=nums[mid] or nums[mid]&gt;nums[right] 则知道[left,mid]有序</span></span><br><span class="line"><span class="comment"># 当nums[left]&gt;nums[mid] or nums[mid]&lt;=nums[right] 则知道[mid,right]有序</span></span><br></pre></td></tr></tbody></table></figure>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc2VhcmNoLWluLXJvdGF0ZWQtc29ydGVkLWFycmF5Lw==" title="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">33. 搜索旋转排序数组<i class="fa fa-external-link"></i></span></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums: <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="comment"># [mid,right]有序</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid]&lt;nums[left]:</span><br><span class="line">                <span class="comment"># 在右侧</span></span><br><span class="line">                <span class="keyword">if</span> nums[mid]&lt;target <span class="keyword">and</span> target&lt;nums[left]:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    right = mid</span><br><span class="line">            <span class="comment"># [left,mid]有序</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 在左侧</span></span><br><span class="line">                <span class="keyword">if</span> nums[mid]&gt;=target <span class="keyword">and</span> target&gt;=nums[left]:</span><br><span class="line">                    right = mid</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> left <span class="keyword">if</span> nums[left]==target <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></tbody></table></figure>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc2VhcmNoLWluLXJvdGF0ZWQtc29ydGVkLWFycmF5LWlpLw==" title="https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/">81. 搜索旋转排序数组 II<i class="fa fa-external-link"></i></span></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="comment"># 跟上一题的不同之处在于重复元素时，不能判断是哪一部分，故缩减范围</span></span><br><span class="line">            <span class="keyword">if</span> nums[left]==nums[mid]==nums[right]:</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> nums[left]&lt;=nums[mid]:</span><br><span class="line">                <span class="keyword">if</span> nums[left]&lt;=target <span class="keyword">and</span> target&lt;=nums[mid]:</span><br><span class="line">                    right = mid</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[left]&gt;nums[mid]:</span><br><span class="line">                <span class="keyword">if</span> nums[left]&gt;target <span class="keyword">and</span> target&gt;nums[mid]:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    right = mid</span><br><span class="line">        <span class="keyword">return</span> nums[left]==target</span><br></pre></td></tr></tbody></table></figure>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvZmluZC1taW5pbXVtLWluLXJvdGF0ZWQtc29ydGVkLWFycmF5Lw==" title="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">153. 寻找旋转排序数组中的最小值<i class="fa fa-external-link"></i></span></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMin</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line">        <span class="comment"># 有序</span></span><br><span class="line">        <span class="keyword">if</span> nums[left]&lt;=nums[right]:</span><br><span class="line">            <span class="keyword">return</span> nums[left]</span><br><span class="line">        <span class="comment"># while left&lt;right:</span></span><br><span class="line">        <span class="comment">#     mid = (left+right+1)&gt;&gt;1</span></span><br><span class="line">        <span class="comment">#     if nums[left]&gt;nums[mid]:</span></span><br><span class="line">        <span class="comment">#         right = mid - 1</span></span><br><span class="line">        <span class="comment">#     else:</span></span><br><span class="line">        <span class="comment">#         left = mid</span></span><br><span class="line">        <span class="comment"># return nums[left+1]</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid]&gt;nums[right]:</span><br><span class="line">                left = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right = mid</span><br><span class="line">        <span class="keyword">return</span> nums[left]</span><br></pre></td></tr></tbody></table></figure>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvZmluZC1taW5pbXVtLWluLXJvdGF0ZWQtc29ydGVkLWFycmF5LWlpLw==" title="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/">154. 寻找旋转排序数组中的最小值 II<i class="fa fa-external-link"></i></span></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMin</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line">        <span class="keyword">if</span> nums[left]&lt;nums[right]:</span><br><span class="line">            <span class="keyword">return</span> nums[left]</span><br><span class="line">        <span class="comment"># 只能保证是最小值，不能保证是旋转点</span></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid]&gt;nums[right]:</span><br><span class="line">                left = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[mid]&lt;nums[right]:</span><br><span class="line">                right = mid</span><br><span class="line">            <span class="comment"># 当相等时如[1,0,1,1,1]和[1,1,1,0,1]判断不了区间</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> nums[left]</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvYmluYXJ5LXNlYXJjaC8=" title="https://leetcode-cn.com/problems/binary-search/">704. 二分查找<i class="fa fa-external-link"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvZmluZC1maXJzdC1hbmQtbGFzdC1wb3NpdGlvbi1vZi1lbGVtZW50LWluLXNvcnRlZC1hcnJheS8=" title="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/">34. 在排序数组中查找元素的第一个和最后一个位置<i class="fa fa-external-link"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbG9uZ2VzdC1pbmNyZWFzaW5nLXN1YnNlcXVlbmNlLw==" title="https://leetcode-cn.com/problems/longest-increasing-subsequence/">300. 最长上升子序列<i class="fa fa-external-link"></i></span></p>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvaC1pbmRleC1paS8=" title="https://leetcode-cn.com/problems/h-index-ii/">275. H指数 II<i class="fa fa-external-link"></i></span></p>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMva29rby1lYXRpbmctYmFuYW5hcy8=" title="https://leetcode-cn.com/problems/koko-eating-bananas/">875. 爱吃香蕉的珂珂<i class="fa fa-external-link"></i></span></p>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY2FwYWNpdHktdG8tc2hpcC1wYWNrYWdlcy13aXRoaW4tZC1kYXlzLw==" title="https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/">1011. 在 D 天内送达包裹的能力<i class="fa fa-external-link"></i></span></p>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbWVkaWFuLW9mLXR3by1zb3J0ZWQtYXJyYXlzLw==" title="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/">4. 寻找两个正序数组的中位数<i class="fa fa-external-link"></i></span></p>
-<p><strong>参考</strong></p>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc2VhcmNoLWluc2VydC1wb3NpdGlvbi9zb2x1dGlvbi90ZS1iaWUtaGFvLXlvbmctZGUtZXItZmVuLWNoYS1mYS1mYS1tby1iYW4tcHl0aG9uLS8=" title="https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/">写对二分查找不能靠模板，需要理解加练习 （附练习题，持续更新）<i class="fa fa-external-link"></i></span></li>
+</li>
 </ul>
-</body></html>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 有向图，通过拓扑排序</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canFinish</span><span class="params">(self, numCourses: int, prerequisites: List[List[int]])</span> -&gt; bool:</span></span><br><span class="line">        adj = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)]</span><br><span class="line">        <span class="keyword">for</span> i,j <span class="keyword">in</span> prerequisites:</span><br><span class="line">            adj[j].append(i)</span><br><span class="line">        visited = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)]</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(i)</span>:</span></span><br><span class="line">            <span class="comment"># 上一轮访问过，则认为为真</span></span><br><span class="line">            <span class="keyword">if</span> visited[i]==<span class="number">-1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="comment"># 当前轮再次被访问，则有环，认为为假</span></span><br><span class="line">            <span class="keyword">if</span> visited[i]==<span class="number">1</span>: </span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            visited[i] = <span class="number">1</span> <span class="comment">#每次置1，若再次出现1则说明有环</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> adj[i]:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> dfs(j):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            visited[i] = <span class="number">-1</span> <span class="comment">#正确则重新变为-1</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(numCourses):</span><br><span class="line">            <span class="keyword">if</span> visited[i]==<span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> dfs(i):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="bfs解法"><a href="#bfs解法" class="headerlink" title="bfs解法"></a>bfs解法</h3><ul>
+<li>选择一个入度为0的顶点并输出；</li>
+<li>从网中删除此顶点及所有出边</li>
+<li>重复上述步骤，若循环结束时输出的顶点数小于网中的顶点数，则说明有环</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 有向图，通过拓扑排序</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canFinish</span><span class="params">(self, numCourses: int, prerequisites: List[List[int]])</span> -&gt; bool:</span></span><br><span class="line">        adj = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)] <span class="comment"># 出边</span></span><br><span class="line">        degrees = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)] <span class="comment"># 入度</span></span><br><span class="line">        <span class="keyword">for</span> i,j <span class="keyword">in</span> prerequisites:</span><br><span class="line">            adj[j].append(i)</span><br><span class="line">            degrees[i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        queue = deque()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(numCourses):</span><br><span class="line">            <span class="keyword">if</span> degrees[i]==<span class="number">0</span>:</span><br><span class="line">                queue.append(i)</span><br><span class="line">        visited = set() <span class="comment"># 保存已遍历的节点</span></span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            i = queue.popleft()</span><br><span class="line">            visited.add(i)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> adj[i]:</span><br><span class="line">                degrees[j] -= <span class="number">1</span></span><br><span class="line">                <span class="comment"># 入度为0再加入</span></span><br><span class="line">                <span class="keyword">if</span> degrees[j]==<span class="number">0</span>:</span><br><span class="line">                    queue.append(j)</span><br><span class="line">        <span class="keyword">return</span> len(visited)==numCourses</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>例子</strong></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbWluaW11bS1oZWlnaHQtdHJlZXMv" title="https://leetcode-cn.com/problems/minimum-height-trees/">310. 最小高度树<i class="fa fa-external-link"></i></span></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMinHeightTrees</span><span class="params">(self, n: int, edges: List[List[int]])</span> -&gt; List[int]:</span></span><br><span class="line">        <span class="comment"># # 暴力解法 超时</span></span><br><span class="line">        <span class="comment"># adj = [[] for _ in range(n)]</span></span><br><span class="line">        <span class="comment"># for i,j in edges:</span></span><br><span class="line">        <span class="comment">#     adj[i].append(j)</span></span><br><span class="line">        <span class="comment">#     adj[j].append(i)</span></span><br><span class="line">        <span class="comment"># from collections import deque</span></span><br><span class="line">        <span class="comment"># def helper(i):</span></span><br><span class="line">        <span class="comment">#     queue = deque([(i,0)])</span></span><br><span class="line">        <span class="comment">#     visited = [0 for _ in range(n)]</span></span><br><span class="line">        <span class="comment">#     while queue:</span></span><br><span class="line">        <span class="comment">#         i,depth = queue.popleft()</span></span><br><span class="line">        <span class="comment">#         visited[i] = 1</span></span><br><span class="line">        <span class="comment">#         for j in adj[i]:</span></span><br><span class="line">        <span class="comment">#             if visited[j]==0:</span></span><br><span class="line">        <span class="comment">#                 queue.append((j,depth+1))</span></span><br><span class="line">        <span class="comment">#     return depth</span></span><br><span class="line">        <span class="comment"># res = []</span></span><br><span class="line">        <span class="comment"># MIN = n</span></span><br><span class="line">        <span class="comment"># for i in range(n):</span></span><br><span class="line">        <span class="comment">#     temp = helper(i)</span></span><br><span class="line">        <span class="comment">#     if temp&lt;MIN:</span></span><br><span class="line">        <span class="comment">#         MIN = temp</span></span><br><span class="line">        <span class="comment">#         res = [i]</span></span><br><span class="line">        <span class="comment">#     elif temp==MIN:</span></span><br><span class="line">        <span class="comment">#         res.append(i)</span></span><br><span class="line">        <span class="comment"># return res</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 贪心 每次删除边缘节点(即度为1的节点,类似于找树的重心？)</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> edges: <span class="keyword">return</span> [<span class="number">0</span>]</span><br><span class="line">        adj = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">        <span class="keyword">for</span> i,j <span class="keyword">in</span> edges:</span><br><span class="line">            adj[i].append(j)</span><br><span class="line">            adj[j].append(i)</span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        queue = deque()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">if</span> len(adj[i])==<span class="number">1</span>:</span><br><span class="line">                queue.append(i)</span><br><span class="line">        <span class="comment"># 最后可能的结果为1个数或者两个数</span></span><br><span class="line">        <span class="keyword">while</span> n&gt;<span class="number">2</span>:</span><br><span class="line">            n -= len(queue)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(queue)):</span><br><span class="line">                i = queue.popleft()</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> adj[i]:</span><br><span class="line">                    adj[j].remove(i)</span><br><span class="line">                    <span class="keyword">if</span> len(adj[j])==<span class="number">1</span>:</span><br><span class="line">                        queue.append(j)</span><br><span class="line">        <span class="keyword">return</span> list(queue)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY291cnNlLXNjaGVkdWxlLw==" title="https://leetcode-cn.com/problems/course-schedule/">207. 课程表<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY291cnNlLXNjaGVkdWxlLWlpLw==" title="https://leetcode-cn.com/problems/course-schedule-ii/">210. 课程表 II<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY291cnNlLXNjaGVkdWxlLWlpaS8=" title="https://leetcode-cn.com/problems/course-schedule-iii/">630. 课程表 III<i class="fa fa-external-link"></i></span></p>
+<h1 id="无向图判环"><a href="#无向图判环" class="headerlink" title="无向图判环"></a>无向图判环</h1><blockquote>
+<p>如果存在回路，则必存在一个子图，是一个环路。环路中所有顶点的度&gt;=2。</p>
+</blockquote>
+<p>算法：</p>
+<ul>
+<li><p>第一步：删除所有度&lt;=1的顶点及相关的边，并将另外与这些边相关的其它顶点的度减一。</p>
+</li>
+<li><p>第二步：将度数变为1的顶点排入队列，并从该队列中取出一个顶点重复步骤一。</p>
+</li>
+<li><p>如果最后还有未删除顶点，则存在环，否则没有环。</p>
+</li>
+</ul>
+<p>由于有m条边，n个顶点。如果m&gt;=n，则根据图论知识可直接判断存在环路。（证明：如果没有环路，则该图必然是k棵树 k&gt;=1。根据树的性质，边的数目m = n-k。k&gt;=1，所以：m&lt;n）</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canFinish</span><span class="params">(self, numCourses: int, prerequisites: List[List[int]])</span> -&gt; bool:</span></span><br><span class="line">        adj = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)]</span><br><span class="line">        degrees = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(numCourses)]</span><br><span class="line">        <span class="keyword">for</span> i,j <span class="keyword">in</span> prerequisites:</span><br><span class="line">            adj[j].append(i)</span><br><span class="line">            adj[i].append(j)</span><br><span class="line">            degrees[i] += <span class="number">1</span></span><br><span class="line">            degrees[j] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        queue = deque()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(numCourses):</span><br><span class="line">            <span class="keyword">if</span> degrees[i]&lt;=<span class="number">1</span>:</span><br><span class="line">                queue.append(i)</span><br><span class="line">        visited = set()</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            i = queue.popleft()</span><br><span class="line">            visited.add(i)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> adj[i]:</span><br><span class="line">                <span class="keyword">if</span> j <span class="keyword">not</span> <span class="keyword">in</span> visited: <span class="comment"># 应该也可以不加</span></span><br><span class="line">                    degrees[j] -= <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> degrees[j]==<span class="number">1</span>:</span><br><span class="line">                        queue.append(j)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> len(visited)==numCourses</span><br></pre></td></tr></tbody></table></figure></body></html>
     </div>
 
     
@@ -389,13 +391,13 @@
       <div class="popular-posts-title"><a href="\2020\09\13\dcd6562a.html\" rel="bookmark">编程-数据结构与算法-单调栈</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\13\8e0a31c6.html\" rel="bookmark">编程-数据结构与算法-图判环的方法及拓扑排序</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\09\13\55311236.html\" rel="bookmark">编程-数据结构与算法-图的最短路</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\09\13\915e9a7a.html\" rel="bookmark">编程-数据结构与算法-图的最小生成树</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\13\d8929f06.html\" rel="bookmark">编程-数据结构与算法-十大排序</a></div>
     </li>
   </ul>
 <div class="post-widgets">
@@ -414,7 +416,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/" title="编程-数据结构与算法-二分查找">https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/</a>
+    <a href="https://lumosity4tpj.github.io/2020/09/13/8e0a31c6.html/" title="编程-数据结构与算法-图判环的方法及拓扑排序">https://lumosity4tpj.github.io/2020/09/13/8e0a31c6.html/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -433,17 +435,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2020/09/13/dcd6562a.html/" rel="next" title="编程-数据结构与算法-单调栈">
-                  <i class="fa fa-chevron-left"></i> 编程-数据结构与算法-单调栈
+                <a href="/2020/09/13/f9084e9.html/" rel="next" title="编程-数据结构与算法-并查集">
+                  <i class="fa fa-chevron-left"></i> 编程-数据结构与算法-并查集
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2020/09/13/bd8d8bcd.html/" rel="prev" title="编程-数据结构与算法-背包问题">
-                  编程-数据结构与算法-背包问题 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -512,7 +511,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二分查找"><span class="nav-number">1.</span> <span class="nav-text">二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础模板"><span class="nav-number">1.0.1.</span> <span class="nav-text">基础模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习题"><span class="nav-number">1.0.2.</span> <span class="nav-text">练习题</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图判环-拓扑排序"><span class="nav-number">1.</span> <span class="nav-text">有向图判环-拓扑排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dfs解法"><span class="nav-number">1.0.1.</span> <span class="nav-text">dfs解法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bfs解法"><span class="nav-number">1.0.2.</span> <span class="nav-text">bfs解法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习题"><span class="nav-number">1.0.3.</span> <span class="nav-text">练习题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无向图判环"><span class="nav-number">2.</span> <span class="nav-text">无向图判环</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -745,7 +744,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
       quicklink({
         timeout: 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/',]
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://lumosity4tpj.github.io/2020/09/13/8e0a31c6.html/',]
       });
       });
   </script>
@@ -786,7 +785,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
       repo: 'lumosity4tpj.github.io',
       owner: 'lumosity4tpj',
       admin: ['lumosity4tpj'],
-      id: '920789855492edc655a44bda0cf03e4f',
+      id: 'c6d82f667ec673e630f9faa52befe162',
         language: '',
       distractionFreeMode: 'true'
     });

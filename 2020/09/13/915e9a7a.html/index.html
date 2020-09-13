@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="二分查找-python">
+  <meta name="description" content="图-最小生成树算法-python">
 <meta name="keywords" content="数据结构与算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编程-数据结构与算法-二分查找">
-<meta property="og:url" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;13&#x2F;e704e60e.html&#x2F;index.html">
+<meta property="og:title" content="编程-数据结构与算法-图的最小生成树">
+<meta property="og:url" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;13&#x2F;915e9a7a.html&#x2F;index.html">
 <meta property="og:site_name" content="Lumosity&#39;s Blog">
-<meta property="og:description" content="二分查找-python">
+<meta property="og:description" content="图-最小生成树算法-python">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-09-13T08:16:15.160Z">
+<meta property="og:updated_time" content="2020-09-13T13:44:50.509Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/">
+<link rel="canonical" href="https://lumosity4tpj.github.io/2020/09/13/915e9a7a.html/">
 
 
 <script id="page-configurations">
@@ -93,7 +93,7 @@
   padding: 1px 4px;
 }
 </style>
-  <title>编程-数据结构与算法-二分查找 | Lumosity's Blog</title>
+  <title>编程-数据结构与算法-图的最小生成树 | Lumosity's Blog</title>
   
 
 
@@ -256,7 +256,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/13/915e9a7a.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/photos/t1.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          编程-数据结构与算法-二分查找
+          编程-数据结构与算法-图的最小生成树
         </h2>
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-13 15:56:12 / 修改时间：16:16:15" itemprop="dateCreated datePublished" datetime="2020-09-13T15:56:12+08:00">2020-09-13</time>
+              <time title="创建时间：2020-09-13 21:41:35 / 修改时间：21:44:50" itemprop="dateCreated datePublished" datetime="2020-09-13T21:41:35+08:00">2020-09-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,8 +290,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" itemprop="url" rel="index">
-                    <span itemprop="name">二分查找</span>
+                  <a href="/categories/%E5%9B%BE/" itemprop="url" rel="index">
+                    <span itemprop="name">图</span>
                   </a>
                 </span>
             </span>
@@ -312,8 +312,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/09/13/e704e60e.html/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/13/e704e60e.html/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/13/915e9a7a.html/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/13/915e9a7a.html/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -323,16 +323,16 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
-            <div class="post-description">二分查找-python</div>
+            <div class="post-description">图-最小生成树算法-python</div>
 
         </div>
       </header>
@@ -343,36 +343,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <html><head></head><body><h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><blockquote>
-<p>把待搜索的目标值留在最后判断，在循环体内不断地把不符合题目要求的子区间排除掉，在退出循环以后，因为只剩下1个数没有看到，它要么是目标元素，要么不是目标元素，单独判断即可</p>
+        <html><head></head><body><h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><blockquote>
+<p>一个连通图的最小生成树是原图的极小连通子图，即包含原图中的所有结点，并且有保持图连通的总权值之和最小的边</p>
 </blockquote>
-<h3 id="基础模板"><a href="#基础模板" class="headerlink" title="基础模板"></a>基础模板</h3><p>模板的主要目的是避免死循环</p>
-<p><strong>left+1==right时取左边点时</strong></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line"><span class="keyword">while</span> left&lt;right:</span><br><span class="line">    mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> check(mid):</span><br><span class="line">        left = mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        right = mid</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>left+1==right时取右边点时</strong></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line"><span class="keyword">while</span> left&lt;right:</span><br><span class="line">    mid = (left+right+<span class="number">1</span>)&gt;&gt;<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> check(mid):</span><br><span class="line">        right = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        left = mid</span><br></pre></td></tr></tbody></table></figure>
-<a id="more"></a>
-<p><strong>例子</strong></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对于旋转数组</span></span><br><span class="line"><span class="comment"># 当nums[left]&lt;=nums[mid] or nums[mid]&gt;nums[right] 则知道[left,mid]有序</span></span><br><span class="line"><span class="comment"># 当nums[left]&gt;nums[mid] or nums[mid]&lt;=nums[right] 则知道[mid,right]有序</span></span><br></pre></td></tr></tbody></table></figure>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc2VhcmNoLWluLXJvdGF0ZWQtc29ydGVkLWFycmF5Lw==" title="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">33. 搜索旋转排序数组<i class="fa fa-external-link"></i></span></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums: <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="comment"># [mid,right]有序</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid]&lt;nums[left]:</span><br><span class="line">                <span class="comment"># 在右侧</span></span><br><span class="line">                <span class="keyword">if</span> nums[mid]&lt;target <span class="keyword">and</span> target&lt;nums[left]:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    right = mid</span><br><span class="line">            <span class="comment"># [left,mid]有序</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 在左侧</span></span><br><span class="line">                <span class="keyword">if</span> nums[mid]&gt;=target <span class="keyword">and</span> target&gt;=nums[left]:</span><br><span class="line">                    right = mid</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> left <span class="keyword">if</span> nums[left]==target <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></tbody></table></figure>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc2VhcmNoLWluLXJvdGF0ZWQtc29ydGVkLWFycmF5LWlpLw==" title="https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/">81. 搜索旋转排序数组 II<i class="fa fa-external-link"></i></span></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="comment"># 跟上一题的不同之处在于重复元素时，不能判断是哪一部分，故缩减范围</span></span><br><span class="line">            <span class="keyword">if</span> nums[left]==nums[mid]==nums[right]:</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> nums[left]&lt;=nums[mid]:</span><br><span class="line">                <span class="keyword">if</span> nums[left]&lt;=target <span class="keyword">and</span> target&lt;=nums[mid]:</span><br><span class="line">                    right = mid</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[left]&gt;nums[mid]:</span><br><span class="line">                <span class="keyword">if</span> nums[left]&gt;target <span class="keyword">and</span> target&gt;nums[mid]:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    right = mid</span><br><span class="line">        <span class="keyword">return</span> nums[left]==target</span><br></pre></td></tr></tbody></table></figure>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvZmluZC1taW5pbXVtLWluLXJvdGF0ZWQtc29ydGVkLWFycmF5Lw==" title="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">153. 寻找旋转排序数组中的最小值<i class="fa fa-external-link"></i></span></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMin</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line">        <span class="comment"># 有序</span></span><br><span class="line">        <span class="keyword">if</span> nums[left]&lt;=nums[right]:</span><br><span class="line">            <span class="keyword">return</span> nums[left]</span><br><span class="line">        <span class="comment"># while left&lt;right:</span></span><br><span class="line">        <span class="comment">#     mid = (left+right+1)&gt;&gt;1</span></span><br><span class="line">        <span class="comment">#     if nums[left]&gt;nums[mid]:</span></span><br><span class="line">        <span class="comment">#         right = mid - 1</span></span><br><span class="line">        <span class="comment">#     else:</span></span><br><span class="line">        <span class="comment">#         left = mid</span></span><br><span class="line">        <span class="comment"># return nums[left+1]</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid]&gt;nums[right]:</span><br><span class="line">                left = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right = mid</span><br><span class="line">        <span class="keyword">return</span> nums[left]</span><br></pre></td></tr></tbody></table></figure>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvZmluZC1taW5pbXVtLWluLXJvdGF0ZWQtc29ydGVkLWFycmF5LWlpLw==" title="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/">154. 寻找旋转排序数组中的最小值 II<i class="fa fa-external-link"></i></span></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMin</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        left,right = <span class="number">0</span>,len(nums)<span class="number">-1</span></span><br><span class="line">        <span class="keyword">if</span> nums[left]&lt;nums[right]:</span><br><span class="line">            <span class="keyword">return</span> nums[left]</span><br><span class="line">        <span class="comment"># 只能保证是最小值，不能保证是旋转点</span></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid]&gt;nums[right]:</span><br><span class="line">                left = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[mid]&lt;nums[right]:</span><br><span class="line">                right = mid</span><br><span class="line">            <span class="comment"># 当相等时如[1,0,1,1,1]和[1,1,1,0,1]判断不了区间</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> nums[left]</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvYmluYXJ5LXNlYXJjaC8=" title="https://leetcode-cn.com/problems/binary-search/">704. 二分查找<i class="fa fa-external-link"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvZmluZC1maXJzdC1hbmQtbGFzdC1wb3NpdGlvbi1vZi1lbGVtZW50LWluLXNvcnRlZC1hcnJheS8=" title="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/">34. 在排序数组中查找元素的第一个和最后一个位置<i class="fa fa-external-link"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbG9uZ2VzdC1pbmNyZWFzaW5nLXN1YnNlcXVlbmNlLw==" title="https://leetcode-cn.com/problems/longest-increasing-subsequence/">300. 最长上升子序列<i class="fa fa-external-link"></i></span></p>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvaC1pbmRleC1paS8=" title="https://leetcode-cn.com/problems/h-index-ii/">275. H指数 II<i class="fa fa-external-link"></i></span></p>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMva29rby1lYXRpbmctYmFuYW5hcy8=" title="https://leetcode-cn.com/problems/koko-eating-bananas/">875. 爱吃香蕉的珂珂<i class="fa fa-external-link"></i></span></p>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY2FwYWNpdHktdG8tc2hpcC1wYWNrYWdlcy13aXRoaW4tZC1kYXlzLw==" title="https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/">1011. 在 D 天内送达包裹的能力<i class="fa fa-external-link"></i></span></p>
-<p>*<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbWVkaWFuLW9mLXR3by1zb3J0ZWQtYXJyYXlzLw==" title="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/">4. 寻找两个正序数组的中位数<i class="fa fa-external-link"></i></span></p>
-<p><strong>参考</strong></p>
+<h3 id="prim算法-加点法"><a href="#prim算法-加点法" class="headerlink" title="prim算法(加点法)"></a>prim算法(加点法)</h3><p>朴素prime算法，时间复杂度为O(n**2+m)</p>
+<p>思路：将所有节点划分为两类：已选择的节点和候选节点，每次选择最短的边的候选节点，所以称为加点法</p>
+<p>算法步骤：</p>
 <ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc2VhcmNoLWluc2VydC1wb3NpdGlvbi9zb2x1dGlvbi90ZS1iaWUtaGFvLXlvbmctZGUtZXItZmVuLWNoYS1mYS1mYS1tby1iYW4tcHl0aG9uLS8=" title="https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/">写对二分查找不能靠模板，需要理解加练习 （附练习题，持续更新）<i class="fa fa-external-link"></i></span></li>
+<li>初始状态时任选一节点加入已选择节点集合，遍历头结点在已选择节点集合，尾结点在候选节点集合的边，选取权重最小的边，加入最小生成树中；</li>
+<li>同时将该边的尾节点从候选节点集合删除并加入到已选择节点集合，然后循环</li>
+<li>循环停止的条件是所有节点均被选择</li>
 </ul>
+<a id="more"></a>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果图不连通，则返回-1, 否则返回最小生成树的树边权重之和</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prim</span><span class="params">(graph)</span>:</span></span><br><span class="line">    n = len(graph)</span><br><span class="line">    dist = [float(<span class="string">'inf'</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 记录其他点到当前最小生成树的距离</span></span><br><span class="line">    visited = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="comment"># 记录是否已经被访问</span></span><br><span class="line">    res = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="comment"># 找到距离最短的未添加的点</span></span><br><span class="line">        t = <span class="number">-1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">if</span> visited[j]==<span class="number">0</span> <span class="keyword">and</span> (t==<span class="number">-1</span> <span class="keyword">or</span> dist[t]&gt;dist[j]):</span><br><span class="line">                t = j</span><br><span class="line">        <span class="comment"># 因为第一次就是初始点，还没开始选边，所以i&gt;0才开始判断</span></span><br><span class="line">        <span class="keyword">if</span> i&gt;<span class="number">0</span> <span class="keyword">and</span> dist[t]==float(<span class="string">'inf'</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        <span class="keyword">if</span> i&gt;<span class="number">0</span>:</span><br><span class="line">            res += dist[t]</span><br><span class="line">        visited[t] = <span class="number">1</span></span><br><span class="line">        <span class="comment"># 更新其他点到新的最小生成树的最短距离</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            dist[j] = min(dist[j],graph[t][j])</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="kruskal算法-避圈法-加边法"><a href="#kruskal算法-避圈法-加边法" class="headerlink" title="kruskal算法(避圈法/加边法)"></a>kruskal算法(避圈法/加边法)</h3><p>时间复杂度是 O(mlogm)</p>
+<p>思路：按照边的从小到大取边，并入边的两个节点，在这个过程中保证并入边后不构成圈，因此也称避圈法。</p>
+<p>算法步骤：</p>
+<ul>
+<li>先对边按权重从小到大排序；</li>
+<li>取权重最小的一条边，若该边两个节点均为不同分量，则加入最小生成树；</li>
+<li>以此类推，直至遍历完所有的边。</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果图不连通，则返回-1, 否则返回最小生成树的树边权重之和</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kruskal</span><span class="params">(edges,n)</span>:</span> <span class="comment"># edges是保存[a,b,w]即a,b之间的边的长度为w，n是节点个数</span></span><br><span class="line">    edges.sort() <span class="comment"># 排好序的边集</span></span><br><span class="line">    m = len(edges)</span><br><span class="line">    <span class="comment"># 初始化并查集</span></span><br><span class="line">    parent = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 并查集查找根结点</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_find</span><span class="params">(p)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> parent[p]!=p:</span><br><span class="line">            parent[p] = _find(parent[p])</span><br><span class="line">        <span class="keyword">return</span> parent[p]</span><br><span class="line"></span><br><span class="line">    res = <span class="number">0</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        a,b,w = edges[i]</span><br><span class="line">        <span class="comment"># 如果两个连通块不连通，则将这两个连通块合并，即加边的过程</span></span><br><span class="line">        a,b = _find(a),_find(b)</span><br><span class="line">        <span class="keyword">if</span> a!=b:</span><br><span class="line">            parent[a] = b</span><br><span class="line">            res += w</span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span> <span class="keyword">if</span> count&lt;n<span class="number">-1</span> <span class="keyword">else</span> res</span><br></pre></td></tr></tbody></table></figure>
 </body></html>
     </div>
 
@@ -395,7 +387,7 @@
       <div class="popular-posts-title"><a href="\2020\09\13\55311236.html\" rel="bookmark">编程-数据结构与算法-图的最短路</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\13\915e9a7a.html\" rel="bookmark">编程-数据结构与算法-图的最小生成树</a></div>
+      <div class="popular-posts-title"><a href="\2020\09\13\d8929f06.html\" rel="bookmark">编程-数据结构与算法-十大排序</a></div>
     </li>
   </ul>
 <div class="post-widgets">
@@ -414,7 +406,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/" title="编程-数据结构与算法-二分查找">https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/</a>
+    <a href="https://lumosity4tpj.github.io/2020/09/13/915e9a7a.html/" title="编程-数据结构与算法-图的最小生成树">https://lumosity4tpj.github.io/2020/09/13/915e9a7a.html/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -433,16 +425,16 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2020/09/13/dcd6562a.html/" rel="next" title="编程-数据结构与算法-单调栈">
-                  <i class="fa fa-chevron-left"></i> 编程-数据结构与算法-单调栈
+                <a href="/2020/09/13/55311236.html/" rel="next" title="编程-数据结构与算法-图的最短路">
+                  <i class="fa fa-chevron-left"></i> 编程-数据结构与算法-图的最短路
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2020/09/13/bd8d8bcd.html/" rel="prev" title="编程-数据结构与算法-背包问题">
-                  编程-数据结构与算法-背包问题 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/09/13/f9084e9.html/" rel="prev" title="编程-数据结构与算法-并查集">
+                  编程-数据结构与算法-并查集 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -512,7 +504,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二分查找"><span class="nav-number">1.</span> <span class="nav-text">二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础模板"><span class="nav-number">1.0.1.</span> <span class="nav-text">基础模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习题"><span class="nav-number">1.0.2.</span> <span class="nav-text">练习题</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最小生成树"><span class="nav-number">1.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#prim算法-加点法"><span class="nav-number">1.0.1.</span> <span class="nav-text">prim算法(加点法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kruskal算法-避圈法-加边法"><span class="nav-number">1.0.2.</span> <span class="nav-text">kruskal算法(避圈法/加边法)</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -745,7 +737,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
       quicklink({
         timeout: 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://lumosity4tpj.github.io/2020/09/13/e704e60e.html/',]
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://lumosity4tpj.github.io/2020/09/13/915e9a7a.html/',]
       });
       });
   </script>
@@ -786,7 +778,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
       repo: 'lumosity4tpj.github.io',
       owner: 'lumosity4tpj',
       admin: ['lumosity4tpj'],
-      id: '920789855492edc655a44bda0cf03e4f',
+      id: '22e58f71de59ba44babaf171ccb88d9b',
         language: '',
       distractionFreeMode: 'true'
     });
