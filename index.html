@@ -177,7 +177,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">14</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">17</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -254,6 +254,344 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/15/c2e55472.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/15/c2e55472.html/" class="post-title-link" itemprop="url">编程-数据结构与算法-前缀和</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-15 00:03:44 / 修改时间：00:08:29" itemprop="dateCreated datePublished" datetime="2020-09-15T00:03:44+08:00">2020-09-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%BC%80%E5%92%8C/" itemprop="url" rel="index">
+                    <span itemprop="name">前缀和</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+            <div class="post-description">前缀和-python</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><h1 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h1><p>常见思路：典型的利用空间换时间的方法，即在遍历的同时一边用hashmap保存相关键值对(key为前缀和值,value为下标)，一边查找hashmap中是否存在满足条件的值</p>
+<p>一般场景：适用于连续子数组中，找到满足某种条件下的值，一般需要转换去找到两个下标<code>i</code>,<code>j</code>对应的前缀和<code>f[i]</code>和<code>f[j]</code>之间的关系</p>
+<p>一维前缀和：</p>
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="41.59ex" height="7.509ex" style="vertical-align: -3.338ex;" viewbox="0 -1796 17906.7 3233.2" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">
+f[i]=\sum_{j=0}^ia[j]\ ==&gt;\ f[i]=f[i-1]+a[i]</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMATHI-66" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"/>
+<path stroke-width="1" id="E1-MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"/>
+<path stroke-width="1" id="E1-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/>
+<path stroke-width="1" id="E1-MJMAIN-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"/>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E1-MJSZ2-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"/>
+<path stroke-width="1" id="E1-MJMATHI-6A" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"/>
+<path stroke-width="1" id="E1-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/>
+<path stroke-width="1" id="E1-MJMAIN-3E" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"/>
+<path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
+<path stroke-width="1" id="E1-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+<path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-MJMATHI-66" x="0" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5B" x="550" y="0"/>
+ <use xlink:href="#E1-MJMATHI-69" x="829" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5D" x="1174" y="0"/>
+ <use xlink:href="#E1-MJMAIN-3D" x="1730" y="0"/>
+<g transform="translate(2787,0)">
+ <use xlink:href="#E1-MJSZ2-2211" x="0" y="0"/>
+<g transform="translate(124,-1090)">
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-6A" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-3D" x="412" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-30" x="1191" y="0"/>
+</g>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-69" x="848" y="1627"/>
+</g>
+ <use xlink:href="#E1-MJMATHI-61" x="4398" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5B" x="4927" y="0"/>
+ <use xlink:href="#E1-MJMATHI-6A" x="5206" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5D" x="5618" y="0"/>
+<g transform="translate(6425,0)">
+ <use xlink:href="#E1-MJMAIN-3D"/>
+ <use xlink:href="#E1-MJMAIN-3D" x="778" y="0"/>
+ <use xlink:href="#E1-MJMAIN-3E" x="1557" y="0"/>
+</g>
+ <use xlink:href="#E1-MJMATHI-66" x="9288" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5B" x="9838" y="0"/>
+ <use xlink:href="#E1-MJMATHI-69" x="10117" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5D" x="10462" y="0"/>
+ <use xlink:href="#E1-MJMAIN-3D" x="11019" y="0"/>
+ <use xlink:href="#E1-MJMATHI-66" x="12075" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5B" x="12625" y="0"/>
+ <use xlink:href="#E1-MJMATHI-69" x="12904" y="0"/>
+ <use xlink:href="#E1-MJMAIN-2212" x="13472" y="0"/>
+ <use xlink:href="#E1-MJMAIN-31" x="14472" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5D" x="14973" y="0"/>
+ <use xlink:href="#E1-MJMAIN-2B" x="15474" y="0"/>
+ <use xlink:href="#E1-MJMATHI-61" x="16474" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5B" x="17004" y="0"/>
+ <use xlink:href="#E1-MJMATHI-69" x="17282" y="0"/>
+ <use xlink:href="#E1-MJMAIN-5D" x="17628" y="0"/>
+</g>
+</svg></span><p>二维前缀和：</p>
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="87.24ex" height="7.343ex" style="vertical-align: -3.005ex;" viewbox="0 -1867.7 37561.7 3161.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-2-Title">
+<title id="MathJax-SVG-2-Title">
+f[i][j]=\sum_{m=0}^i\sum_{n=0}^ja[m][n]\ ==&gt;\ f[i][j]=f[i-1][j]+f[i][j-1]-f[i-1][j-1]+a[i][j]</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E2-MJMATHI-66" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"/>
+<path stroke-width="1" id="E2-MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"/>
+<path stroke-width="1" id="E2-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/>
+<path stroke-width="1" id="E2-MJMAIN-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"/>
+<path stroke-width="1" id="E2-MJMATHI-6A" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"/>
+<path stroke-width="1" id="E2-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E2-MJSZ2-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"/>
+<path stroke-width="1" id="E2-MJMATHI-6D" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+<path stroke-width="1" id="E2-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+<path stroke-width="1" id="E2-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/>
+<path stroke-width="1" id="E2-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/>
+<path stroke-width="1" id="E2-MJMAIN-3E" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"/>
+<path stroke-width="1" id="E2-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
+<path stroke-width="1" id="E2-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+<path stroke-width="1" id="E2-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E2-MJMATHI-66" x="0" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="550" y="0"/>
+ <use xlink:href="#E2-MJMATHI-69" x="829" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="1174" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="1453" y="0"/>
+ <use xlink:href="#E2-MJMATHI-6A" x="1731" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="2144" y="0"/>
+ <use xlink:href="#E2-MJMAIN-3D" x="2700" y="0"/>
+<g transform="translate(3756,0)">
+ <use xlink:href="#E2-MJSZ2-2211" x="40" y="0"/>
+<g transform="translate(0,-1090)">
+ <use transform="scale(0.707)" xlink:href="#E2-MJMATHI-6D" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E2-MJMAIN-3D" x="878" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E2-MJMAIN-30" x="1657" y="0"/>
+</g>
+ <use transform="scale(0.707)" xlink:href="#E2-MJMATHI-69" x="905" y="1627"/>
+</g>
+<g transform="translate(5448,0)">
+ <use xlink:href="#E2-MJSZ2-2211" x="0" y="0"/>
+<g transform="translate(57,-1090)">
+ <use transform="scale(0.707)" xlink:href="#E2-MJMATHI-6E" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E2-MJMAIN-3D" x="600" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E2-MJMAIN-30" x="1379" y="0"/>
+</g>
+ <use transform="scale(0.707)" xlink:href="#E2-MJMATHI-6A" x="815" y="1707"/>
+</g>
+ <use xlink:href="#E2-MJMATHI-61" x="7059" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="7589" y="0"/>
+ <use xlink:href="#E2-MJMATHI-6D" x="7867" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="8746" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="9024" y="0"/>
+ <use xlink:href="#E2-MJMATHI-6E" x="9303" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="9903" y="0"/>
+<g transform="translate(10710,0)">
+ <use xlink:href="#E2-MJMAIN-3D"/>
+ <use xlink:href="#E2-MJMAIN-3D" x="778" y="0"/>
+ <use xlink:href="#E2-MJMAIN-3E" x="1557" y="0"/>
+</g>
+ <use xlink:href="#E2-MJMATHI-66" x="13573" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="14124" y="0"/>
+ <use xlink:href="#E2-MJMATHI-69" x="14402" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="14748" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="15026" y="0"/>
+ <use xlink:href="#E2-MJMATHI-6A" x="15305" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="15717" y="0"/>
+ <use xlink:href="#E2-MJMAIN-3D" x="16273" y="0"/>
+ <use xlink:href="#E2-MJMATHI-66" x="17330" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="17880" y="0"/>
+ <use xlink:href="#E2-MJMATHI-69" x="18159" y="0"/>
+ <use xlink:href="#E2-MJMAIN-2212" x="18726" y="0"/>
+ <use xlink:href="#E2-MJMAIN-31" x="19727" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="20228" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="20506" y="0"/>
+ <use xlink:href="#E2-MJMATHI-6A" x="20785" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="21197" y="0"/>
+ <use xlink:href="#E2-MJMAIN-2B" x="21698" y="0"/>
+ <use xlink:href="#E2-MJMATHI-66" x="22698" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="23249" y="0"/>
+ <use xlink:href="#E2-MJMATHI-69" x="23527" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="23873" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="24151" y="0"/>
+ <use xlink:href="#E2-MJMATHI-6A" x="24430" y="0"/>
+ <use xlink:href="#E2-MJMAIN-2212" x="25065" y="0"/>
+ <use xlink:href="#E2-MJMAIN-31" x="26065" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="26566" y="0"/>
+ <use xlink:href="#E2-MJMAIN-2212" x="27067" y="0"/>
+ <use xlink:href="#E2-MJMATHI-66" x="28067" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="28618" y="0"/>
+ <use xlink:href="#E2-MJMATHI-69" x="28896" y="0"/>
+ <use xlink:href="#E2-MJMAIN-2212" x="29464" y="0"/>
+ <use xlink:href="#E2-MJMAIN-31" x="30465" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="30965" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="31244" y="0"/>
+ <use xlink:href="#E2-MJMATHI-6A" x="31522" y="0"/>
+ <use xlink:href="#E2-MJMAIN-2212" x="32157" y="0"/>
+ <use xlink:href="#E2-MJMAIN-31" x="33158" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="33658" y="0"/>
+ <use xlink:href="#E2-MJMAIN-2B" x="34159" y="0"/>
+ <use xlink:href="#E2-MJMATHI-61" x="35160" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="35689" y="0"/>
+ <use xlink:href="#E2-MJMATHI-69" x="35968" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="36313" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5B" x="36592" y="0"/>
+ <use xlink:href="#E2-MJMATHI-6A" x="36870" y="0"/>
+ <use xlink:href="#E2-MJMAIN-5D" x="37283" y="0"/>
+</g>
+</svg></span></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/15/c2e55472.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/14/c333d08c.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -279,18 +617,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-09-14 21:58:19 / 修改时间：22:04:33" itemprop="dateCreated datePublished" datetime="2020-09-14T21:58:19+08:00">2020-09-14</time>
+              <time title="创建时间：2020-09-14 21:58:19" itemprop="dateCreated datePublished" datetime="2020-09-14T21:58:19+08:00">2020-09-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 00:10:17" itemprop="dateModified" datetime="2020-09-15T00:10:17+08:00">2020-09-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/contrast-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">contrast learning</span>
+                  <a href="/categories/contrastive-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">contrastive learning</span>
                   </a>
                 </span>
             </span>
@@ -1385,104 +1729,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/13/ae349ca.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/13/ae349ca.html/" class="post-title-link" itemprop="url">编程-数据结构与算法-滑动窗口</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-09-13 14:33:42 / 修改时间：16:16:21" itemprop="dateCreated datePublished" datetime="2020-09-13T14:33:42+08:00">2020-09-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" itemprop="url" rel="index">
-                    <span itemprop="name">滑动窗口</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-            <div class="post-description">滑动窗口-python</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><h1 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h1><p>一般思路：通过两个指针设置一段区间，正常情况下右指针一直向右移动，当区间不满足条件时，左指针也应向右移动，直至满足条件，但有时真的慢，注意跟单调栈的结合，同时有时需要转换题目求解的思路</p>
-<p>一般场景：适用于求某个区间，找到满足某种条件下的最值</p>
-<h3 id="基础模板"><a href="#基础模板" class="headerlink" title="基础模板"></a>基础模板</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">slidingWindow</span><span class="params">(s)</span>:</span></span><br><span class="line">    windows = {} <span class="comment"># 构建窗口</span></span><br><span class="line">    l,r = <span class="number">0</span>,<span class="number">0</span> <span class="comment"># 窗口的左右指针</span></span><br><span class="line">    whilr r&lt;len(s):</span><br><span class="line">        ... <span class="comment"># 窗口内进行一系列更新        </span></span><br><span class="line">        r += <span class="number">1</span> <span class="comment"># 右指针右移</span></span><br><span class="line">        <span class="comment"># 判断窗口是否需要收缩，一般当满足某个条件时</span></span><br><span class="line">        <span class="keyword">while</span> (window needs shrink):</span><br><span class="line">            ... <span class="comment"># 窗口内进行一系列更新</span></span><br><span class="line">            l += <span class="number">1</span> <span class="comment"># 左指针右移</span></span><br></pre></td></tr></tbody></table></figure></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/13/ae349ca.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1533,14 +1779,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1575,6 +1821,10 @@
         
         
           <li>
+            <a href="/2020/09/15/c2e55472.html/" title="编程-数据结构与算法-前缀和" target="_blank">编程-数据结构与算法-前缀和</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/14/c333d08c.html/" title="论文阅读-contrast-learning-Momentum Contrast for Unsupervised Visual Representation Learning" target="_blank">论文阅读-contrast-learning-Momentum Contrast for Unsupervised Visual Representation Learning</a>
           </li>
         
@@ -1588,10 +1838,6 @@
         
           <li>
             <a href="/2020/09/13/915e9a7a.html/" title="编程-数据结构与算法-图的最小生成树" target="_blank">编程-数据结构与算法-图的最小生成树</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/13/55311236.html/" title="编程-数据结构与算法-图的最短路" target="_blank">编程-数据结构与算法-图的最短路</a>
           </li>
         
       </ul>
@@ -1623,12 +1869,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">70k</span>
+    <span title="站点总字数">72k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:04</span>
+    <span title="站点阅读时长">1:06</span>
 </div>
 
         
