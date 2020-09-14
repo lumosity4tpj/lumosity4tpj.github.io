@@ -1924,7 +1924,7 @@
 </g>
 </g>
 </svg></span>为由两个场景实体节点和一个场景谓词节点组成的所有可能的三元组的集合。</p>
-<p><img src="/2020/09/11/a54b211e.html/1599804552368.png" alt="1599804552368"></p>
+<p><img src="/2020/09/11/a54b211e.html/1599804552368.png" alt></p>
 <p>上图显示了场景图和常识图的示例，以便更清楚地显示它们的相似性。这里假设每个场景图节点都有一个存在于常识图中的标签，因为在现实中一些对象和谓词可能属于背景类，所以将一个特殊的常识图节点视为背景实体，另一个作为背景谓词。</p>
 <h3 id="Bridging-knowledge-graphs"><a href="#Bridging-knowledge-graphs" class="headerlink" title="Bridging knowledge graphs"></a>Bridging knowledge graphs</h3><p>考虑到常识图公式与场景图公式的相似性，本文对公式进行了细微的改进，以实现这两种图之间的连接。具体来说，将类从SE和SP节点中移除，而将其编码为一组连接边<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.707ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 1165.5 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-12-Title">
 <title id="MathJax-SVG-12-Title">\mathcal{E}_B</title>
@@ -2366,7 +2366,7 @@ p\left(\mathcal{E}_{\mathrm{B}} \mid I, \mathcal{N}_{\mathrm{CE}}, \mathcal{N}_{
 </g>
 </g>
 </svg></span>；第二项是由本文提出的GB-NET来实现的(通过场景结构和常识图来推导连接边)。</p>
-<h3 id="本文的方法"><a href="#本文的方法" class="headerlink" title="本文的方法"></a>本文的方法</h3><p><img src="/2020/09/11/a54b211e.html/1599806251652.png" alt="1599806251652"></p>
+<h3 id="本文的方法"><a href="#本文的方法" class="headerlink" title="本文的方法"></a>本文的方法</h3><p><img src="/2020/09/11/a54b211e.html/1599806251652.png" alt></p>
 <p>如上图所示，给定一幅图像，首先应用Faster R-CNN来检测物体，并将它们表示为场景实体(SE)节点。它还为每个实体创建一个场景谓词(SP)节点，形成一个有待分类的场景图候选。给定这个图和一个背景常识图，这两个图的内部连接固定，本文的目标是在这两个图之间创建连接每个实例(SE和SP节点)与其对应的类(CE和CP节点)的连接边。</p>
 <p>为此，本文的模型通过连接SE与Faster R-CNN预测的标签相匹配的CE来初始化实体连接，并通过消息传播网络来更新节点表示，并使用它们来计算每个SP节点和CP节点的成对相似度，找到最大相似对并通过谓语连接去连接场景谓词和它对应的类，对于实体节点也执行相同的操作来优化实体连接，不断重复这两个过程，最后的连接将决定每个节点的类，从而产生输出场景图</p>
 <h4 id="Graph-initialization"><a href="#Graph-initialization" class="headerlink" title="Graph initialization"></a>Graph initialization</h4><p>对象检测器输出n个检测对象的集合，每个检测对象有一个边界框<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.907ex" height="2.843ex" style="vertical-align: -1.005ex;" viewbox="0 -791.3 821.2 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-18-Title">
