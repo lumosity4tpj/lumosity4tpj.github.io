@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>编程-数据结构与算法-回溯算法</title>
+    <url>/2020/09/18/3882eaa9.html/</url>
+    <content><![CDATA[<html><head></head><body><h1 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h1><blockquote>
+<p>回溯思想是一种暴力试错的想法，通过将问题分解去找到解决方法，如果发现该分步结束了都找不到想要的解答时，则通过退回分步之前的步骤，再通过其它的分步来继续寻找问题答案。 </p>
+<p>所以回溯与深度优先遍历很像，都是不到最后不回头的思想，但回溯强调的是回退的这个概念，同时需要注意模型的剪枝方法(可能需要通过事先的排序，已访问的列表等等来进行剪枝避免超时)</p>
+</blockquote>
+<p>回溯的一般用法是使用在排列问题中，比如求满足某个条件的子序列(注意子串/子数组和子序列的区别，一般子串/子数组是连续的，常用滑动窗口等方法，而子序列是指可以不连续，是从中选择一部分来满足条件，暴力方法则就是回溯，优化方法则通过各种条件剪枝)；在思考问题时尽量先构建一颗树，试几个例子来想清楚什么条件下需要回退。</p>
+<h3 id="回溯的基本模板"><a href="#回溯的基本模板" class="headerlink" title="回溯的基本模板"></a>回溯的基本模板</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">result = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtrack</span><span class="params">(路径, 选择列表)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> 满足结束条件:</span><br><span class="line">        result.add(路径)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> 选择 <span class="keyword">in</span> 选择列表:</span><br><span class="line">        <span class="comment"># 做选择</span></span><br><span class="line">        将该选择从选择列表移除</span><br><span class="line">        路径.add(选择)</span><br><span class="line">        backtrack(路径, 选择列表)</span><br><span class="line">        <span class="comment"># 撤销选择</span></span><br><span class="line">        路径.remove(选择)</span><br><span class="line">        将该选择再加入选择列表</span><br></pre></td></tr></tbody></table></figure>
+<p>1、路径：也就是已经做出的选择。</p>
+<p>2、选择列表：也就是你当前可以做的选择。</p>
+<p>3、结束条件：也就是到达决策树底层，无法再做选择的条件。</p>
+<p>上述模板来源于：<span class="exturl" data-url="aHR0cHM6Ly9tcC53ZWl4aW4ucXEuY29tL3Mvbk1VSHF2d3pHMkxtV0E5ak1JSHdRUQ==" title="https://mp.weixin.qq.com/s/nMUHqvwzG2LmWA9jMIHwQQ">回溯算法详解（修订版）<i class="fa fa-external-link"></i></span></p>
+<p><strong>当只需要找到一种方法即可时，提前剪枝</strong></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 函数找到一个答案后就返回</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtrack</span><span class="params">(路径)</span>:</span></span><br><span class="line">    <span class="comment"># 触发结束条件</span></span><br><span class="line">    <span class="keyword">if</span> 满足结束条件:</span><br><span class="line">        result.add(路径)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">for</span> 选择 <span class="keyword">in</span> 选择列表:</span><br><span class="line">        将该选择从选择列表移除</span><br><span class="line">        <span class="comment"># 只要有满足条件的，就提前结束for循环跳出</span></span><br><span class="line">        <span class="keyword">if</span> backtrack(选择):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        将该选择再加入选择列表</span><br><span class="line">    <span class="comment"># 所有的都不满足</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<p><strong>例子</strong></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvcGVybXV0YXRpb25zLw==" title="https://leetcode-cn.com/problems/permutations/">46. 全排列<i class="fa fa-external-link"></i></span></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">permute</span><span class="params">(self, nums: List[int])</span> -&gt; List[List[int]]:</span>        </span><br><span class="line">        visited = set()</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(path)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> len(visited)==len(nums):</span><br><span class="line">                res.append(path)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">                <span class="keyword">if</span> j <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                    visited.add(j)</span><br><span class="line">                    helper(path+[nums[j]])</span><br><span class="line">                    visited.remove(j)</span><br><span class="line">        res = []</span><br><span class="line">        helper([])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvcGVybXV0YXRpb25zLWlpLw==" title="https://leetcode-cn.com/problems/permutations-ii/">47. 全排列 II<i class="fa fa-external-link"></i></span></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">permuteUnique</span><span class="params">(self, nums: List[int])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        res = []</span><br><span class="line">        nums.sort()</span><br><span class="line">        visited = set()</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(path)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> len(path)==len(nums):</span><br><span class="line">                res.append(path)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">                <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                    <span class="comment"># 对于重复元素跳过</span></span><br><span class="line">                    <span class="keyword">if</span> i&gt;<span class="number">0</span> <span class="keyword">and</span> nums[i]==nums[i<span class="number">-1</span>] <span class="keyword">and</span> i<span class="number">-1</span> <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                       <span class="keyword">continue</span></span><br><span class="line">                    visited.add(i)</span><br><span class="line">                    helper(path+[nums[i]])</span><br><span class="line">                    visited.remove(i)</span><br><span class="line">        helper([])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbi1xdWVlbnMv" title="https://leetcode-cn.com/problems/n-queens/">51. N皇后<i class="fa fa-external-link"></i></span></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solveNQueens</span><span class="params">(self, n: int)</span> -&gt; List[List[str]]:</span></span><br><span class="line">        <span class="comment"># 即每次从行中选择列的位置去放置</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">backtrack</span><span class="params">(row,matrix)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> row==n:</span><br><span class="line">                temp = [<span class="string">""</span>.join(matrix[i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">                res.append(temp)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">for</span> col <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> isvalid(row,col):</span><br><span class="line">                    matrix[row][col] = <span class="string">'Q'</span></span><br><span class="line">                    backtrack(row+<span class="number">1</span>,matrix)</span><br><span class="line">                    matrix[row][col] = <span class="string">'.'</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 行已经是合法的，且当前只有上方的行有值，故判断列上方，左上方向，右上方向</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">isvalid</span><span class="params">(row,col)</span>:</span></span><br><span class="line">            <span class="comment"># 列</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(row):</span><br><span class="line">                <span class="keyword">if</span> matrix[i][col]==<span class="string">'Q'</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="comment"># 左上</span></span><br><span class="line">            i,j = row<span class="number">-1</span>,col<span class="number">-1</span></span><br><span class="line">            <span class="keyword">while</span> i&gt;=<span class="number">0</span> <span class="keyword">and</span> j&gt;=<span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> matrix[i][j]==<span class="string">'Q'</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">                i -= <span class="number">1</span></span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">            <span class="comment"># 右上</span></span><br><span class="line">            i,j = row<span class="number">-1</span>,col+<span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> i&gt;=<span class="number">0</span> <span class="keyword">and</span> j&lt;n:</span><br><span class="line">                <span class="keyword">if</span> matrix[i][j]==<span class="string">'Q'</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">                i -= <span class="number">1</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">        matrix = [[<span class="string">'.'</span>]*n <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">        backtrack(<span class="number">0</span>,matrix)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY29tYmluYXRpb24tc3VtLw==" title="https://leetcode-cn.com/problems/combination-sum/">39. 组合总和<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvY29tYmluYXRpb24tc3VtLWlpLw==" title="https://leetcode-cn.com/problems/combination-sum-ii/">40. 组合总和 II<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc3Vic2V0cy8=" title="https://leetcode-cn.com/problems/subsets/">78. 子集<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc3Vic2V0cy1paS8=" title="https://leetcode-cn.com/problems/subsets-ii/">90. 子集 II<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbGV0dGVyLWNhc2UtcGVybXV0YXRpb24v" title="https://leetcode-cn.com/problems/letter-case-permutation/">784. 字母大小写全排列<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvc3Vycm91bmRlZC1yZWdpb25zLw==" title="https://leetcode-cn.com/problems/surrounded-regions/">130. 被围绕的区域<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvd29yZC1zZWFyY2gv" title="https://leetcode-cn.com/problems/word-search/">79. 单词搜索<i class="fa fa-external-link"></i></span></p>
+</body></html>]]></content>
+      <categories>
+        <category>回溯算法</category>
+      </categories>
+      <tags>
+        <tag>数据结构与算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>论文阅读-disentanglement-weakly supervised disentanglement with guarantees</title>
     <url>/2020/09/17/e56a8bbc.html/</url>
     <content><![CDATA[<html><head><style type="text/css">
@@ -12840,88 +12878,108 @@ y=G_{d e c}\left(z, v_{d}\right)
 </g>
 </svg></span><p>这里A(·)是一个仿射变换，它已经被应用到siamese网络的变换分支的输入图像上。</p>
 </li>
-<li><p>The equivariant cross regularization (ECR) loss：此外，为了进一步提高网络的等变学习能力，将浅层原始CAMs和特征输入PCM进行细化。直观的想法是在修正的CAMs yo和yt之间引入等变正则化，但作者发现PCM的输出映射很快陷入局部最小值，图像中的所有像素都被预测为同一类，所以使用了一种等变交叉正则化损失。</p>
-<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="40.466ex" height="3.509ex" style="vertical-align: -1.171ex;" viewbox="0 -1006.6 17422.8 1510.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-6-Title">
-<title id="MathJax-SVG-6-Title">
-\mathcal{L}_{E C R}=\left\|A\left(\mathrm{y}^{o}\right)-\hat{\mathrm{y}}^{t}\right\|_{1}+\left\|A\left(\hat{\mathrm{y}}^{o}\right)-\mathrm{y}^{t}\right\|_{1}</title>
+<li><p>The equivariant cross regularization (ECR) loss：此外，为了进一步提高网络的等变学习能力，将浅层原始CAMs和特征输入PCM进行细化。直观的想法是在修正的CAM<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.19ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 943 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-6-Title">
+<title id="MathJax-SVG-6-Title">y^o</title>
 <defs aria-hidden="true">
-<path stroke-width="1" id="E6-MJCAL-4C" d="M62 -22T47 -22T32 -11Q32 -1 56 24T83 55Q113 96 138 172T180 320T234 473T323 609Q364 649 419 677T531 705Q559 705 578 696T604 671T615 645T618 623V611Q618 582 615 571T598 548Q581 531 558 520T518 509Q503 509 503 520Q503 523 505 536T507 560Q507 590 494 610T452 630Q423 630 410 617Q367 578 333 492T271 301T233 170Q211 123 204 112L198 103L224 102Q281 102 369 79T509 52H523Q535 64 544 87T579 128Q616 152 641 152Q656 152 656 142Q656 101 588 40T433 -22Q381 -22 289 1T156 28L141 29L131 20Q111 0 87 -11Z"/>
-<path stroke-width="1" id="E6-MJMATHI-45" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"/>
-<path stroke-width="1" id="E6-MJMATHI-43" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"/>
-<path stroke-width="1" id="E6-MJMATHI-52" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"/>
-<path stroke-width="1" id="E6-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
-<path stroke-width="1" id="E6-MJMAIN-2225" d="M133 736Q138 750 153 750Q164 750 170 739Q172 735 172 250T170 -239Q164 -250 152 -250Q144 -250 138 -244L137 -243Q133 -241 133 -179T132 250Q132 731 133 736ZM329 739Q334 750 346 750Q353 750 361 744L362 743Q366 741 366 679T367 250T367 -178T362 -243L361 -244Q355 -250 347 -250Q335 -250 329 -239Q327 -235 327 250T329 739Z"/>
-<path stroke-width="1" id="E6-MJMATHI-41" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/>
-<path stroke-width="1" id="E6-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
-<path stroke-width="1" id="E6-MJMAIN-79" d="M69 -66Q91 -66 104 -80T118 -116Q118 -134 109 -145T91 -160Q84 -163 97 -166Q104 -168 111 -168Q131 -168 148 -159T175 -138T197 -106T213 -75T225 -43L242 0L170 183Q150 233 125 297Q101 358 96 368T80 381Q79 382 78 382Q66 385 34 385H19V431H26L46 430Q65 430 88 429T122 428Q129 428 142 428T171 429T200 430T224 430L233 431H241V385H232Q183 385 185 366L286 112Q286 113 332 227L376 341V350Q376 365 366 373T348 383T334 385H331V431H337H344Q351 431 361 431T382 430T405 429T422 429Q477 429 503 431H508V385H497Q441 380 422 345Q420 343 378 235T289 9T227 -131Q180 -204 113 -204Q69 -204 44 -177T19 -116Q19 -89 35 -78T69 -66Z"/>
+<path stroke-width="1" id="E6-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
 <path stroke-width="1" id="E6-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"/>
-<path stroke-width="1" id="E6-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
-<path stroke-width="1" id="E6-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
-<path stroke-width="1" id="E6-MJMAIN-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"/>
-<path stroke-width="1" id="E6-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
-<path stroke-width="1" id="E6-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
-<path stroke-width="1" id="E6-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/>
 </defs>
 <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#E6-MJCAL-4C" x="0" y="0"/>
-<g transform="translate(690,-155)">
- <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-45" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-43" x="764" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-52" x="1525" y="0"/>
+ <use xlink:href="#E6-MJMATHI-79" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-6F" x="706" y="513"/>
 </g>
- <use xlink:href="#E6-MJMAIN-3D" x="2683" y="0"/>
+</svg></span>和<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.986ex" height="2.843ex" style="vertical-align: -0.671ex;" viewbox="0 -934.9 855.3 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-7-Title">
+<title id="MathJax-SVG-7-Title">y^t</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E7-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+<path stroke-width="1" id="E7-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E7-MJMATHI-79" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E7-MJMATHI-74" x="706" y="513"/>
+</g>
+</svg></span>之间引入等变正则化，但作者发现PCM的输出映射很快陷入局部最小值，图像中的所有像素都被预测为同一类，所以使用了一种等变交叉正则化损失。</p>
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="40.466ex" height="3.509ex" style="vertical-align: -1.171ex;" viewbox="0 -1006.6 17422.8 1510.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-8-Title">
+<title id="MathJax-SVG-8-Title">
+\mathcal{L}_{E C R}=\left\|A\left(\mathrm{y}^{o}\right)-\hat{\mathrm{y}}^{t}\right\|_{1}+\left\|A\left(\hat{\mathrm{y}}^{o}\right)-\mathrm{y}^{t}\right\|_{1}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E8-MJCAL-4C" d="M62 -22T47 -22T32 -11Q32 -1 56 24T83 55Q113 96 138 172T180 320T234 473T323 609Q364 649 419 677T531 705Q559 705 578 696T604 671T615 645T618 623V611Q618 582 615 571T598 548Q581 531 558 520T518 509Q503 509 503 520Q503 523 505 536T507 560Q507 590 494 610T452 630Q423 630 410 617Q367 578 333 492T271 301T233 170Q211 123 204 112L198 103L224 102Q281 102 369 79T509 52H523Q535 64 544 87T579 128Q616 152 641 152Q656 152 656 142Q656 101 588 40T433 -22Q381 -22 289 1T156 28L141 29L131 20Q111 0 87 -11Z"/>
+<path stroke-width="1" id="E8-MJMATHI-45" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"/>
+<path stroke-width="1" id="E8-MJMATHI-43" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"/>
+<path stroke-width="1" id="E8-MJMATHI-52" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"/>
+<path stroke-width="1" id="E8-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+<path stroke-width="1" id="E8-MJMAIN-2225" d="M133 736Q138 750 153 750Q164 750 170 739Q172 735 172 250T170 -239Q164 -250 152 -250Q144 -250 138 -244L137 -243Q133 -241 133 -179T132 250Q132 731 133 736ZM329 739Q334 750 346 750Q353 750 361 744L362 743Q366 741 366 679T367 250T367 -178T362 -243L361 -244Q355 -250 347 -250Q335 -250 329 -239Q327 -235 327 250T329 739Z"/>
+<path stroke-width="1" id="E8-MJMATHI-41" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/>
+<path stroke-width="1" id="E8-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
+<path stroke-width="1" id="E8-MJMAIN-79" d="M69 -66Q91 -66 104 -80T118 -116Q118 -134 109 -145T91 -160Q84 -163 97 -166Q104 -168 111 -168Q131 -168 148 -159T175 -138T197 -106T213 -75T225 -43L242 0L170 183Q150 233 125 297Q101 358 96 368T80 381Q79 382 78 382Q66 385 34 385H19V431H26L46 430Q65 430 88 429T122 428Q129 428 142 428T171 429T200 430T224 430L233 431H241V385H232Q183 385 185 366L286 112Q286 113 332 227L376 341V350Q376 365 366 373T348 383T334 385H331V431H337H344Q351 431 361 431T382 430T405 429T422 429Q477 429 503 431H508V385H497Q441 380 422 345Q420 343 378 235T289 9T227 -131Q180 -204 113 -204Q69 -204 44 -177T19 -116Q19 -89 35 -78T69 -66Z"/>
+<path stroke-width="1" id="E8-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"/>
+<path stroke-width="1" id="E8-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
+<path stroke-width="1" id="E8-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
+<path stroke-width="1" id="E8-MJMAIN-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"/>
+<path stroke-width="1" id="E8-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+<path stroke-width="1" id="E8-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+<path stroke-width="1" id="E8-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E8-MJCAL-4C" x="0" y="0"/>
+<g transform="translate(690,-155)">
+ <use transform="scale(0.707)" xlink:href="#E8-MJMATHI-45" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMATHI-43" x="764" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMATHI-52" x="1525" y="0"/>
+</g>
+ <use xlink:href="#E8-MJMAIN-3D" x="2683" y="0"/>
 <g transform="translate(3739,0)">
 <g transform="translate(0,874)">
- <use xlink:href="#E6-MJMAIN-2225" x="0" y="-751"/>
- <use xlink:href="#E6-MJMAIN-2225" x="0" y="-999"/>
+ <use xlink:href="#E8-MJMAIN-2225" x="0" y="-751"/>
+ <use xlink:href="#E8-MJMAIN-2225" x="0" y="-999"/>
 </g>
- <use xlink:href="#E6-MJMATHI-41" x="500" y="0"/>
+ <use xlink:href="#E8-MJMATHI-41" x="500" y="0"/>
 <g transform="translate(1417,0)">
- <use xlink:href="#E6-MJMAIN-28" x="0" y="0"/>
+ <use xlink:href="#E8-MJMAIN-28" x="0" y="0"/>
 <g transform="translate(389,0)">
- <use xlink:href="#E6-MJMAIN-79" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-6F" x="747" y="583"/>
+ <use xlink:href="#E8-MJMAIN-79" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMATHI-6F" x="747" y="583"/>
 </g>
- <use xlink:href="#E6-MJMAIN-29" x="1361" y="0"/>
+ <use xlink:href="#E8-MJMAIN-29" x="1361" y="0"/>
 </g>
- <use xlink:href="#E6-MJMAIN-2212" x="3390" y="0"/>
+ <use xlink:href="#E8-MJMAIN-2212" x="3390" y="0"/>
 <g transform="translate(4391,0)">
- <use xlink:href="#E6-MJMAIN-79" x="0" y="0"/>
- <use xlink:href="#E6-MJMAIN-5E" x="14" y="9"/>
- <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-74" x="747" y="610"/>
+ <use xlink:href="#E8-MJMAIN-79" x="0" y="0"/>
+ <use xlink:href="#E8-MJMAIN-5E" x="14" y="9"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMATHI-74" x="747" y="610"/>
 </g>
 <g transform="translate(5275,874)">
- <use xlink:href="#E6-MJMAIN-2225" x="0" y="-751"/>
- <use xlink:href="#E6-MJMAIN-2225" x="0" y="-999"/>
+ <use xlink:href="#E8-MJMAIN-2225" x="0" y="-751"/>
+ <use xlink:href="#E8-MJMAIN-2225" x="0" y="-999"/>
 </g>
- <use transform="scale(0.707)" xlink:href="#E6-MJMAIN-31" x="8168" y="-581"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMAIN-31" x="8168" y="-581"/>
 </g>
- <use xlink:href="#E6-MJMAIN-2B" x="10192" y="0"/>
+ <use xlink:href="#E8-MJMAIN-2B" x="10192" y="0"/>
 <g transform="translate(11192,0)">
 <g transform="translate(0,856)">
- <use xlink:href="#E6-MJMAIN-2225" x="0" y="-751"/>
- <use xlink:href="#E6-MJMAIN-2225" x="0" y="-962"/>
+ <use xlink:href="#E8-MJMAIN-2225" x="0" y="-751"/>
+ <use xlink:href="#E8-MJMAIN-2225" x="0" y="-962"/>
 </g>
- <use xlink:href="#E6-MJMATHI-41" x="500" y="0"/>
+ <use xlink:href="#E8-MJMATHI-41" x="500" y="0"/>
 <g transform="translate(1417,0)">
- <use xlink:href="#E6-MJMAIN-28" x="0" y="0"/>
+ <use xlink:href="#E8-MJMAIN-28" x="0" y="0"/>
 <g transform="translate(389,0)">
- <use xlink:href="#E6-MJMAIN-79" x="0" y="0"/>
- <use xlink:href="#E6-MJMAIN-5E" x="14" y="9"/>
- <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-6F" x="747" y="610"/>
+ <use xlink:href="#E8-MJMAIN-79" x="0" y="0"/>
+ <use xlink:href="#E8-MJMAIN-5E" x="14" y="9"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMATHI-6F" x="747" y="610"/>
 </g>
- <use xlink:href="#E6-MJMAIN-29" x="1361" y="0"/>
+ <use xlink:href="#E8-MJMAIN-29" x="1361" y="0"/>
 </g>
- <use xlink:href="#E6-MJMAIN-2212" x="3390" y="0"/>
+ <use xlink:href="#E8-MJMAIN-2212" x="3390" y="0"/>
 <g transform="translate(4391,0)">
- <use xlink:href="#E6-MJMAIN-79" x="0" y="0"/>
- <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-74" x="747" y="583"/>
+ <use xlink:href="#E8-MJMAIN-79" x="0" y="0"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMATHI-74" x="747" y="583"/>
 </g>
 <g transform="translate(5275,856)">
- <use xlink:href="#E6-MJMAIN-2225" x="0" y="-751"/>
- <use xlink:href="#E6-MJMAIN-2225" x="0" y="-962"/>
+ <use xlink:href="#E8-MJMAIN-2225" x="0" y="-751"/>
+ <use xlink:href="#E8-MJMAIN-2225" x="0" y="-962"/>
 </g>
- <use transform="scale(0.707)" xlink:href="#E6-MJMAIN-31" x="8168" y="-554"/>
+ <use transform="scale(0.707)" xlink:href="#E8-MJMAIN-31" x="8168" y="-554"/>
 </g>
 </g>
 </svg></span></li>
@@ -13183,7 +13241,7 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
 <p>通道注意力机制可以选择适合于图像抠图的金字塔特征，并保留图像轮廓及类别属性等。</p>
 </li>
 </ul>
-<p><strong>Appearance cues ﬁltration</strong></p>
+<p><strong>Appearance cues filtration</strong></p>
 <ul>
 <li><p>原因</p>
 <p>图像抠图要求精确的FG边界，而高层的金字塔特征无法提供这样的纹理细节，因此需要用于生成alpha matte的外观线索，同时希望过滤BG内的外观线索。</p>
@@ -13677,7 +13735,7 @@ I_{z}=\alpha_{z} F_{z}+\left(1-\alpha_{z}\right) B_{z}, \quad \alpha_{z} \in[0,1
 <ul>
 <li><p><strong>校正网络</strong>(基于cyclegan)</p>
 <p>真实的HR的图像经过下采样和添加高斯模糊核等生成一个clean LR，然后通过Gyx与真实的LR图像对抗训练(相当于Gyx在进行内核校正和添加噪声，使得生成的LR图像和真实的LR图像在各个位置上的模糊程度和噪声基本相同)；</p>
-<p>然后利用Gxy生成伪clean LR图像并与clean LR图像对抗训练(相当于Gxy学习去噪和去模糊的过程)</p>
+<p>然后Gxy由真实的LR图像生成伪clean LR图像并与clean LR图像对抗训练(相当于Gxy学习去噪和去模糊的过程)</p>
 </li>
 <li><p><strong>超分网络</strong></p>
 <p>将生成的伪clean LR图像输入一个上采样网络去生成SR图像，同时利用了真实的HR图像退化后的LR图像生成伪clean LR图像再上采样得到HR图像，可以引入像素的损失，同时做对抗训练，希望生成的SR图像跟真实世界的SR图像相似</p>
