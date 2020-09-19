@@ -198,7 +198,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">23</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">25</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -1047,6 +1047,12 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\19\e1772285.html\" rel="bookmark">论文阅读-disentanglement-ClusterGAN_Latent Space Clustering in Generative Adversarial Networks</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\09\18\fb8732b7.html\" rel="bookmark">论文阅读-disentanglement-InfoGAN_Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\09\17\e56a8bbc.html\" rel="bookmark">论文阅读-disentanglement-weakly supervised disentanglement with guarantees</a></div>
     </li>
     <li class="popular-posts-item">
@@ -1054,12 +1060,6 @@
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\09\15\e3036d93.html\" rel="bookmark">论文阅读-disentanglement-Demystifying inter-class disentanglement</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\15\235e7a8b.html\" rel="bookmark">论文阅读-contrastive-learning-Supervised Contrastive Learning</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\14\c333d08c.html\" rel="bookmark">论文阅读-contrast-learning-Momentum Contrast for Unsupervised Visual Representation Learning</a></div>
     </li>
   </ul>
 <div class="post-widgets">
@@ -1124,15 +1124,15 @@
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-valine">valine</a></li>
             <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane valine" id="comment-valine">
-              <div class="comments" id="comments"></div>
-            </div>
             <div class="tab-pane gitalk" id="comment-gitalk">
               <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="comments"></div>
             </div>
         </div>
       </div>
@@ -1192,7 +1192,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1234,6 +1234,14 @@
         
         
           <li>
+            <a href="/2020/09/19/e1772285.html/" title="论文阅读-disentanglement-ClusterGAN_Latent Space Clustering in Generative Adversarial Networks" target="_blank">论文阅读-disentanglement-ClusterGAN_Latent Space Clustering in Generative Adversarial Networks</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/18/fb8732b7.html/" title="论文阅读-disentanglement-InfoGAN_Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets" target="_blank">论文阅读-disentanglement-InfoGAN_Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/18/3882eaa9.html/" title="编程-数据结构与算法-回溯算法" target="_blank">编程-数据结构与算法-回溯算法</a>
           </li>
         
@@ -1243,14 +1251,6 @@
         
           <li>
             <a href="/2020/09/16/e99a9bbc.html/" title="论文阅读-disentanglement-Disentangling factors of variation using few labels" target="_blank">论文阅读-disentanglement-Disentangling factors of variation using few labels</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/15/e3036d93.html/" title="论文阅读-disentanglement-Demystifying inter-class disentanglement" target="_blank">论文阅读-disentanglement-Demystifying inter-class disentanglement</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/15/235e7a8b.html/" title="论文阅读-contrastive-learning-Supervised Contrastive Learning" target="_blank">论文阅读-contrastive-learning-Supervised Contrastive Learning</a>
           </li>
         
       </ul>
@@ -1282,12 +1282,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">93k</span>
+    <span title="站点总字数">99k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:25</span>
+    <span title="站点阅读时长">1:30</span>
 </div>
 
         
@@ -1440,6 +1440,24 @@ if (document.querySelectorAll('pre.mermaid').length) {
         pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8b56991ada74c93b8aea',
+      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
+      repo: 'lumosity4tpj.github.io',
+      owner: 'lumosity4tpj',
+      admin: ['lumosity4tpj'],
+      id: '8f136cd1e243bbce3018439c0a22ddac',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
 
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
@@ -1465,24 +1483,6 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
     serverURLs: ''
   });
 }, window.Valine);
-</script>
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID: '8b56991ada74c93b8aea',
-      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
-      repo: 'lumosity4tpj.github.io',
-      owner: 'lumosity4tpj',
-      admin: ['lumosity4tpj'],
-      id: '8f136cd1e243bbce3018439c0a22ddac',
-        language: '',
-      distractionFreeMode: 'true'
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
 </script>
 
 </body>
