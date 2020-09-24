@@ -6602,7 +6602,9 @@ x_{i}=G_{\theta}\left(e_{y_{i}}, 0, c_{i}\right)</title>
  <use xlink:href="#E43-MJMAIN-29" x="8226" y="0"/>
 </g>
 </g>
-</svg></span><h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><strong>数据集</strong></p>
+</svg></span><p><strong>补充：由代码得到的框架图：</strong></p>
+<p><img src="/2020/09/15/e3036d93.html/20200924170918.png" alt></p>
+<h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><strong>数据集</strong></p>
 <p><code>Cars3D</code>(类标签：汽车模型，内容标签：方位角和仰角)；</p>
 <p><code>SmallNorb</code>(类标签：目标类别x照明x仰角，内容标签：方位角)；</p>
 <p><code>CelebA</code>(类标签：身份，内容标签：其它无标签的面部属性，如头部姿势，表情)；</p>
