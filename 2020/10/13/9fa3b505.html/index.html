@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="Lumosity&#39;s Blog">
 <meta property="og:description" content="离散的解纠缠评测方法(基于ClusterGAN)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-13T16:51:11.138Z">
+<meta property="og:updated_time" content="2020-10-13T17:00:52.200Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://lumosity4tpj.github.io/2020/10/13/9fa3b505.html/">
@@ -179,7 +179,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">19</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -288,7 +288,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-14 00:51:11" itemprop="dateModified" datetime="2020-10-14T00:51:11+08:00">2020-10-14</time>
+                <time title="修改时间：2020-10-14 01:00:52" itemprop="dateModified" datetime="2020-10-14T01:00:52+08:00">2020-10-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -296,8 +296,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%A7%A3%E7%BA%A0%E7%BC%A0%E8%AF%84%E6%B5%8B%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">解纠缠评测方法</span>
+                  <a href="/categories/disentanglement/" itemprop="url" rel="index">
+                    <span itemprop="name">disentanglement</span>
                   </a>
                 </span>
             </span>
@@ -1471,15 +1471,15 @@ H(V) = - \sum_{j=1}^{|V|}P'(j)\log(P'(j))</title>
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-valine">valine</a></li>
             <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane valine" id="comment-valine">
-              <div class="comments" id="comments"></div>
-            </div>
             <div class="tab-pane gitalk" id="comment-gitalk">
               <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="comments"></div>
             </div>
         </div>
       </div>
@@ -1546,7 +1546,7 @@ H(V) = - \sum_{j=1}^{|V|}P'(j)\log(P'(j))</title>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1787,6 +1787,24 @@ if (document.querySelectorAll('pre.mermaid').length) {
         pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8b56991ada74c93b8aea',
+      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
+      repo: 'lumosity4tpj.github.io',
+      owner: 'lumosity4tpj',
+      admin: ['lumosity4tpj'],
+      id: 'cf4657271ecd114e1892fb43bc268ecb',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
 
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
@@ -1812,24 +1830,6 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
     serverURLs: ''
   });
 }, window.Valine);
-</script>
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID: '8b56991ada74c93b8aea',
-      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
-      repo: 'lumosity4tpj.github.io',
-      owner: 'lumosity4tpj',
-      admin: ['lumosity4tpj'],
-      id: 'cf4657271ecd114e1892fb43bc268ecb',
-        language: '',
-      distractionFreeMode: 'true'
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
 </script>
 
 </body>
