@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">28</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">29</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -250,6 +250,186 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/10/18/7c65f86a.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/18/7c65f86a.html/" class="post-title-link" itemprop="url">论文阅读-disentanglement-Disentangling Factors of Variation by Mixing Them</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-18 20:42:58 / 修改时间：20:46:08" itemprop="dateCreated datePublished" datetime="2020-10-18T20:42:58+08:00">2020-10-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/disentanglement/" itemprop="url" rel="index">
+                    <span itemprop="name">disentanglement</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+            <div class="post-description">通过混合来分离变化因子-CVPR2018</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2020/10/18/7c65f86a.html/1603011101574.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li><p>当图像的变化因子被解纠缠，它的表征可以被用来开发各种计算机视觉任务，在图像级别可以实现属性的转移，在特征层可以用来做图像检索或者分类；</p>
+</li>
+<li><p>之前的解纠缠方法，如<code>autoencoder</code>,<code>GAN</code>相关的一些方法，通常使用手动注释，来自训练数据的标签信息或者外部模型的指导；</p>
+</li>
+<li>对于无监督的方法，如<code>InfoGAN</code>不包含编码阶段，不能将输入图像恢复为解纠缠的表征，更不能进行属性交换与融合；对于<code>beta-VAE</code>,<code>DIP-VAE</code>则建立在<code>VAE</code>的基础上，通过<code>KL</code>散度约束变化因子前后分布之间的相似性，同时特征块是一维的。</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>提出一种完全无监督的方法(不使用任何注释或数据域的知识)来学习由变化的解纠缠因子组成的图像表征，它将特征向量分割成多个块，每个块代表一个变化因子，使得用户可以指定特征块去混合和分离图像属性；</li>
+<li>提出了一种新的不变性损失函数来鼓励对图像属性和特征块分别进行不变性编码和译码；提出了一种新的分类约束函数，确保每个特征块的表示的是被表示图像一致的且可识别的变化因子；</li>
+<li>在<code>MNIST</code>、<code>Sprites</code>和<code>CelebA</code>数据集上证明了本文方法的有效性。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/18/7c65f86a.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -2024,182 +2204,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/15/235e7a8b.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/15/235e7a8b.html/" class="post-title-link" itemprop="url">论文阅读-contrastive-learning-Supervised Contrastive Learning</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-09-15 14:03:15 / 修改时间：14:12:23" itemprop="dateCreated datePublished" datetime="2020-09-15T14:03:15+08:00">2020-09-15</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/contrastive-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">contrastive learning</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-            <div class="post-description">有监督对比学习</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head><style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
-
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
-
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
-
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
-
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
-
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
-
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
-
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head><body><p><img src="/2020/09/15/235e7a8b.html/1600135404702.png" alt></p>
-<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
-<li>交叉熵损失是有监督分类模型中应用最广泛的损失函数，但交叉熵损失对噪声标签不鲁棒，且存在poor margins的可能性，而导致泛化性不好，而现有的改进方法不能很好的用于imagenet等数据集。</li>
-</ul>
-<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>提出了一种新的对比损失函数，它允许对于每个anchor有更多的正样本，因此将对比学习应用在了有监督的学习；</li>
-<li>同时实验证明，与交叉熵相比，这种新的损失提供了更好的准确性和鲁棒性；本文新的损失对超参数的敏感性不如交叉熵，是因为在嵌入空间，将同一类的点聚类在一起，对于不同类别的样本则分开，更有效地利用了标签地信息；</li>
-<li>通过分析可以发现，本文的损失函数鼓励去学习hard positives and negatives，同时证明triplet损失是本文损失的一种特殊情况(当只有单个正负样本时)。</li>
-</ul></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/15/235e7a8b.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2250,7 +2254,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2292,6 +2296,10 @@
         
         
           <li>
+            <a href="/2020/10/18/7c65f86a.html/" title="论文阅读-disentanglement-Disentangling Factors of Variation by Mixing Them" target="_blank">论文阅读-disentanglement-Disentangling Factors of Variation by Mixing Them</a>
+          </li>
+        
+          <li>
             <a href="/2020/10/14/d54d43fe.html/" title="深度学习-连续的解纠缠评测方法(基于各种VAE)" target="_blank">深度学习-连续的解纠缠评测方法(基于各种VAE)</a>
           </li>
         
@@ -2305,10 +2313,6 @@
         
           <li>
             <a href="/2020/09/19/e1772285.html/" title="论文阅读-disentanglement-ClusterGAN_Latent Space Clustering in Generative Adversarial Networks" target="_blank">论文阅读-disentanglement-ClusterGAN_Latent Space Clustering in Generative Adversarial Networks</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/18/fb8732b7.html/" title="论文阅读-disentanglement-InfoGAN_Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets" target="_blank">论文阅读-disentanglement-InfoGAN_Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets</a>
           </li>
         
       </ul>
@@ -2340,12 +2344,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">115k</span>
+    <span title="站点总字数">120k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:45</span>
+    <span title="站点阅读时长">1:49</span>
 </div>
 
         
