@@ -307,7 +307,14 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/image-editing/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/scene-graph/</loc>
+    <lastmod>2020-10-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lumosity4tpj.github.io/categories/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
     <lastmod>2020-10-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -321,14 +328,7 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/scene-graph/</loc>
-    <lastmod>2020-10-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lumosity4tpj.github.io/categories/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/image-editing/</loc>
     <lastmod>2020-10-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
