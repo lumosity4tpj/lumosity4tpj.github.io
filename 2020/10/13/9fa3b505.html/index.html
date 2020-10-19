@@ -189,7 +189,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">29</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">30</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -1471,15 +1471,15 @@ H(V) = - \sum_{j=1}^{|V|}P'(j)\log(P'(j))</title>
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-valine">valine</a></li>
             <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane valine" id="comment-valine">
-              <div class="comments" id="comments"></div>
-            </div>
             <div class="tab-pane gitalk" id="comment-gitalk">
               <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="comments"></div>
             </div>
         </div>
       </div>
@@ -1539,7 +1539,7 @@ H(V) = - \sum_{j=1}^{|V|}P'(j)\log(P'(j))</title>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1581,6 +1581,10 @@ H(V) = - \sum_{j=1}^{|V|}P'(j)\log(P'(j))</title>
         
         
           <li>
+            <a href="/2020/10/19/dee6659d.html/" title="论文阅读-disentanglement-InfoGAN-CR and ModelCentrality_Self-supervised Model Training and Selection for Disentangling GANs" target="_blank">论文阅读-disentanglement-InfoGAN-CR and ModelCentrality_Self-supervised Model Training and Selection for Disentangling GANs</a>
+          </li>
+        
+          <li>
             <a href="/2020/10/18/7c65f86a.html/" title="论文阅读-disentanglement-Disentangling Factors of Variation by Mixing Them" target="_blank">论文阅读-disentanglement-Disentangling Factors of Variation by Mixing Them</a>
           </li>
         
@@ -1594,10 +1598,6 @@ H(V) = - \sum_{j=1}^{|V|}P'(j)\log(P'(j))</title>
         
           <li>
             <a href="/2020/10/05/18d7c473.html/" title="pytorch-分布式并行训练" target="_blank">pytorch-分布式并行训练</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/19/e1772285.html/" title="论文阅读-disentanglement-ClusterGAN_Latent Space Clustering in Generative Adversarial Networks" target="_blank">论文阅读-disentanglement-ClusterGAN_Latent Space Clustering in Generative Adversarial Networks</a>
           </li>
         
       </ul>
@@ -1629,12 +1629,12 @@ H(V) = - \sum_{j=1}^{|V|}P'(j)\log(P'(j))</title>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">120k</span>
+    <span title="站点总字数">124k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:49</span>
+    <span title="站点阅读时长">1:53</span>
 </div>
 
         
@@ -1787,6 +1787,24 @@ if (document.querySelectorAll('pre.mermaid').length) {
         pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8b56991ada74c93b8aea',
+      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
+      repo: 'lumosity4tpj.github.io',
+      owner: 'lumosity4tpj',
+      admin: ['lumosity4tpj'],
+      id: 'cf4657271ecd114e1892fb43bc268ecb',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
 
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
@@ -1812,24 +1830,6 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
     serverURLs: ''
   });
 }, window.Valine);
-</script>
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID: '8b56991ada74c93b8aea',
-      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
-      repo: 'lumosity4tpj.github.io',
-      owner: 'lumosity4tpj',
-      admin: ['lumosity4tpj'],
-      id: 'cf4657271ecd114e1892fb43bc268ecb',
-        language: '',
-      distractionFreeMode: 'true'
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
 </script>
 
 </body>
