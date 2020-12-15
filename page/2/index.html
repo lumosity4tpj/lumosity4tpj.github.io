@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">39</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">40</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -250,6 +250,184 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/10/19/dee6659d.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/19/dee6659d.html/" class="post-title-link" itemprop="url">论文阅读-disentanglement-InfoGAN-CR and ModelCentrality_Self-supervised Model Training and Selection for Disentangling GANs</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-19 17:09:14 / 修改时间：17:14:10" itemprop="dateCreated datePublished" datetime="2020-10-19T17:09:14+08:00">2020-10-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/disentanglement/" itemprop="url" rel="index">
+                    <span itemprop="name">disentanglement</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+            <div class="post-description">InfoGAN-CR与模型中心性:自监督模型训练与选择的解纠缠GAN-ICML2020</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2020/10/19/dee6659d.html/1603078097195.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li>设计解纠缠生成模型时，存在两个主要障碍：设计具有良好解纠缠性和良好样本质量的架构，和给定一个固定的架构，进行超参数调整和模型选择；</li>
+<li>对于第一个问题，<code>VAE</code>的方法(如<code>beta-vae</code>、<code>factor-vae</code>)主要通过正则化总相关性来促进不相关性，以牺牲图像质量来获取更好的解纠缠分数，而<code>GAN</code>的方法(如<code>infogan</code>)通过增加隐编码的输入，并对损失函数增加一个额外的正则化来促进信息性，尽管样本质量更好，但解纠缠分数较低，这导致在<code>GAN</code>网络上的解纠缠进展较慢；</li>
+<li>对于第二个问题，当前超参数调优的常见做法是通过交叉验证标记了真实潜在编码的数据集，即样本用已知的解纠缠的隐编码进行标记，这极大的限制了对于真实数据集未知标签的有效性。</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>设计了一种新的解纠缠的<code>GAN</code>的架构<code>InfoGAN-CR</code>，它增加了一个对比正则化器，它结合了自监督和解纠缠的自然方法：潜在遍历；</li>
+<li>引入了一种新的基于自监督的模型选择方法<code>ModelCentrality</code>，它基于一个假设：良好解纠缠的模型是相近的，其相近程度由一种解纠缠度量方法来度量。文章对这个假设进行数值验证并将<code>ModelCentrality</code>定义为在这个解纠缠度量下的一系列模型的多维概化，它根据与其它模型的相近程度定义自监督标签，为每个模型分配相应的分数；</li>
+<li>实验证明比目前的<code>VAE</code>和<code>GAN</code>方法，文章在不使用监督数据的情况下显著提升了解纠缠的分数。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/19/dee6659d.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -2022,188 +2200,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/15/e3036d93.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/15/e3036d93.html/" class="post-title-link" itemprop="url">论文阅读-disentanglement-Demystifying inter-class disentanglement</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-15 17:36:36" itemprop="dateCreated datePublished" datetime="2020-09-15T17:36:36+08:00">2020-09-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-24 17:18:26" itemprop="dateModified" datetime="2020-09-24T17:18:26+08:00">2020-09-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/disentanglement/" itemprop="url" rel="index">
-                    <span itemprop="name">disentanglement</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-            <div class="post-description">揭秘类间解纠缠</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head><style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
-
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
-
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
-
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
-
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
-
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
-
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
-
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head><body><p><img src="/2020/09/15/e3036d93.html/1600151220627.png" alt></p>
-<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
-<li>对于人工智能来说，学会区分观测数据的不同属性(称为解纠缠)是一项关键任务；</li>
-<li>作者分析类别和内容表征中包含的信息，表明当前的方法允许信息在表征之间泄漏，从而导致不完美的解纠缠。</li>
-</ul>
-<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>提出了一种新的非对抗性方法LORD来实现对象的类和特定样本内容之间的解纠缠，通过共享潜在优化和非对称正则化改进以往方法的缺点；</li>
-<li>实验证明本文的方法比相同监督条件下的对抗性方法和对抗性方法中取得了最好的解纠缠性能，同时可以基于聚类方法去应用在无监督的域转换的任务中去。</li>
-</ul></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/15/e3036d93.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2254,7 +2250,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2296,6 +2292,10 @@
         
         
           <li>
+            <a href="/2020/12/15/ced51ba0.html/" title="论文阅读-contrastive-learning-Improved Baselines with Momentum Contrastive Learning" target="_blank">论文阅读-contrastive-learning-Improved Baselines with Momentum Contrastive Learning</a>
+          </li>
+        
+          <li>
             <a href="/2020/12/15/c92b6d57.html/" title="论文阅读-contrastive-learning-A Simple Framework for Contrastive Learning of Visual Representations" target="_blank">论文阅读-contrastive-learning-A Simple Framework for Contrastive Learning of Visual Representations</a>
           </li>
         
@@ -2309,10 +2309,6 @@
         
           <li>
             <a href="/2020/12/10/adeb2f59.html/" title="论文阅读-domain-adaptive-Self-paced Contrastive Learning with Hybrid Memory for Domain Adaptive Object Re-ID" target="_blank">论文阅读-domain-adaptive-Self-paced Contrastive Learning with Hybrid Memory for Domain Adaptive Object Re-ID</a>
-          </li>
-        
-          <li>
-            <a href="/2020/12/09/6fa9e3a6.html/" title="论文阅读-contrastive-learning-Exploring Simple Siamese Representation Learning" target="_blank">论文阅读-contrastive-learning-Exploring Simple Siamese Representation Learning</a>
           </li>
         
       </ul>
@@ -2344,12 +2340,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">170k</span>
+    <span title="站点总字数">171k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:34</span>
+    <span title="站点阅读时长">2:36</span>
 </div>
 
         
