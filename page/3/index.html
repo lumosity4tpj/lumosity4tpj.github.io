@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -250,6 +250,182 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/15/235e7a8b.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/15/235e7a8b.html/" class="post-title-link" itemprop="url">论文阅读-contrastive-learning-Supervised Contrastive Learning</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-15 14:03:15 / 修改时间：14:12:23" itemprop="dateCreated datePublished" datetime="2020-09-15T14:03:15+08:00">2020-09-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/contrastive-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">contrastive learning</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+            <div class="post-description">有监督对比学习</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2020/09/15/235e7a8b.html/1600135404702.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li>交叉熵损失是有监督分类模型中应用最广泛的损失函数，但交叉熵损失对噪声标签不鲁棒，且存在poor margins的可能性，而导致泛化性不好，而现有的改进方法不能很好的用于imagenet等数据集。</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>提出了一种新的对比损失函数，它允许对于每个anchor有更多的正样本，因此将对比学习应用在了有监督的学习；</li>
+<li>同时实验证明，与交叉熵相比，这种新的损失提供了更好的准确性和鲁棒性；本文新的损失对超参数的敏感性不如交叉熵，是因为在嵌入空间，将同一类的点聚类在一起，对于不同类别的样本则分开，更有效地利用了标签地信息；</li>
+<li>通过分析可以发现，本文的损失函数鼓励去学习hard positives and negatives，同时证明triplet损失是本文损失的一种特殊情况(当只有单个正负样本时)。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/15/235e7a8b.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -1633,102 +1809,6 @@ f[i][j]=\sum_{m=0}^i\sum_{n=0}^ja[m][n]\ ==&gt;\ f[i][j]=f[i-1][j]+f[i][j-1]-f[i
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/13/d8929f06.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/13/d8929f06.html/" class="post-title-link" itemprop="url">编程-数据结构与算法-十大排序</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-09-13 14:48:38 / 修改时间：16:16:28" itemprop="dateCreated datePublished" datetime="2020-09-13T14:48:38+08:00">2020-09-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8E%92%E5%BA%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">排序</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-            <div class="post-description">排序-python</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><p><img src="/2020/09/13/d8929f06.html/1583201065811.png" alt="该图来自 ：https://mp.weixin.qq.com/s/S-kjeYix4Put6XqAx_fSbA"></p></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/13/d8929f06.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1779,7 +1859,7 @@ f[i][j]=\sum_{m=0}^i\sum_{n=0}^ja[m][n]\ ==&gt;\ f[i][j]=f[i-1][j]+f[i][j-1]-f[i
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1821,6 +1901,10 @@ f[i][j]=\sum_{m=0}^i\sum_{n=0}^ja[m][n]\ ==&gt;\ f[i][j]=f[i-1][j]+f[i][j-1]-f[i
         
         
           <li>
+            <a href="/2020/12/15/c92b6d57.html/" title="论文阅读-contrastive-learning-A Simple Framework for Contrastive Learning of Visual Representations" target="_blank">论文阅读-contrastive-learning-A Simple Framework for Contrastive Learning of Visual Representations</a>
+          </li>
+        
+          <li>
             <a href="/2020/12/14/8adb2b5e.html/" title="论文阅读-contrastive-learning-Bootstrap Your Own Latent A New Approach to Self-Supervised Learning" target="_blank">论文阅读-contrastive-learning-Bootstrap Your Own Latent A New Approach to Self-Supervised Learning</a>
           </li>
         
@@ -1834,10 +1918,6 @@ f[i][j]=\sum_{m=0}^i\sum_{n=0}^ja[m][n]\ ==&gt;\ f[i][j]=f[i-1][j]+f[i][j-1]-f[i
         
           <li>
             <a href="/2020/12/09/6fa9e3a6.html/" title="论文阅读-contrastive-learning-Exploring Simple Siamese Representation Learning" target="_blank">论文阅读-contrastive-learning-Exploring Simple Siamese Representation Learning</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/30/66c004b1.html/" title="论文阅读-visual relationship detection-Hierarchical Graph Attention Network for Visual Relationship Detection" target="_blank">论文阅读-visual relationship detection-Hierarchical Graph Attention Network for Visual Relationship Detection</a>
           </li>
         
       </ul>
@@ -1869,12 +1949,12 @@ f[i][j]=\sum_{m=0}^i\sum_{n=0}^ja[m][n]\ ==&gt;\ f[i][j]=f[i-1][j]+f[i][j-1]-f[i
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">166k</span>
+    <span title="站点总字数">170k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:31</span>
+    <span title="站点阅读时长">2:34</span>
 </div>
 
         
@@ -2028,6 +2108,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
 
+
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
@@ -2053,7 +2134,6 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
   });
 }, window.Valine);
 </script>
-
 
 </body>
 </html>

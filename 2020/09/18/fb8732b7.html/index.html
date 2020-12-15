@@ -194,7 +194,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -1770,6 +1770,9 @@ L_{I}(G, Q) &amp;=E_{c \sim P(c), x \sim G(z, c)}[\log Q(c \mid x)]+H(c) \\
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\12\15\c92b6d57.html\" rel="bookmark">论文阅读-contrastive-learning-A Simple Framework for Contrastive Learning of Visual Representations</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\12\14\8adb2b5e.html\" rel="bookmark">论文阅读-contrastive-learning-Bootstrap Your Own Latent A New Approach to Self-Supervised Learning</a></div>
     </li>
     <li class="popular-posts-item">
@@ -1780,9 +1783,6 @@ L_{I}(G, Q) &amp;=E_{c \sim P(c), x \sim G(z, c)}[\log Q(c \mid x)]+H(c) \\
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\12\09\6fa9e3a6.html\" rel="bookmark">论文阅读-contrastive-learning-Exploring Simple Siamese Representation Learning</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\11\30\66c004b1.html\" rel="bookmark">论文阅读-visual relationship detection-Hierarchical Graph Attention Network for Visual Relationship Detection</a></div>
     </li>
   </ul>
 <div class="post-widgets">
@@ -1847,15 +1847,15 @@ L_{I}(G, Q) &amp;=E_{c \sim P(c), x \sim G(z, c)}[\log Q(c \mid x)]+H(c) \\
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-valine">valine</a></li>
             <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane valine" id="comment-valine">
-              <div class="comments" id="comments"></div>
-            </div>
             <div class="tab-pane gitalk" id="comment-gitalk">
               <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="comments"></div>
             </div>
         </div>
       </div>
@@ -1915,7 +1915,7 @@ L_{I}(G, Q) &amp;=E_{c \sim P(c), x \sim G(z, c)}[\log Q(c \mid x)]+H(c) \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1957,6 +1957,10 @@ L_{I}(G, Q) &amp;=E_{c \sim P(c), x \sim G(z, c)}[\log Q(c \mid x)]+H(c) \\
         
         
           <li>
+            <a href="/2020/12/15/c92b6d57.html/" title="论文阅读-contrastive-learning-A Simple Framework for Contrastive Learning of Visual Representations" target="_blank">论文阅读-contrastive-learning-A Simple Framework for Contrastive Learning of Visual Representations</a>
+          </li>
+        
+          <li>
             <a href="/2020/12/14/8adb2b5e.html/" title="论文阅读-contrastive-learning-Bootstrap Your Own Latent A New Approach to Self-Supervised Learning" target="_blank">论文阅读-contrastive-learning-Bootstrap Your Own Latent A New Approach to Self-Supervised Learning</a>
           </li>
         
@@ -1970,10 +1974,6 @@ L_{I}(G, Q) &amp;=E_{c \sim P(c), x \sim G(z, c)}[\log Q(c \mid x)]+H(c) \\
         
           <li>
             <a href="/2020/12/09/6fa9e3a6.html/" title="论文阅读-contrastive-learning-Exploring Simple Siamese Representation Learning" target="_blank">论文阅读-contrastive-learning-Exploring Simple Siamese Representation Learning</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/30/66c004b1.html/" title="论文阅读-visual relationship detection-Hierarchical Graph Attention Network for Visual Relationship Detection" target="_blank">论文阅读-visual relationship detection-Hierarchical Graph Attention Network for Visual Relationship Detection</a>
           </li>
         
       </ul>
@@ -2005,12 +2005,12 @@ L_{I}(G, Q) &amp;=E_{c \sim P(c), x \sim G(z, c)}[\log Q(c \mid x)]+H(c) \\
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">166k</span>
+    <span title="站点总字数">170k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:31</span>
+    <span title="站点阅读时长">2:34</span>
 </div>
 
         
@@ -2163,6 +2163,24 @@ if (document.querySelectorAll('pre.mermaid').length) {
         pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8b56991ada74c93b8aea',
+      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
+      repo: 'lumosity4tpj.github.io',
+      owner: 'lumosity4tpj',
+      admin: ['lumosity4tpj'],
+      id: 'e18e62e7425659d4107145b3c6c06917',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
 
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
@@ -2188,24 +2206,6 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
     serverURLs: ''
   });
 }, window.Valine);
-</script>
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID: '8b56991ada74c93b8aea',
-      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
-      repo: 'lumosity4tpj.github.io',
-      owner: 'lumosity4tpj',
-      admin: ['lumosity4tpj'],
-      id: 'e18e62e7425659d4107145b3c6c06917',
-        language: '',
-      distractionFreeMode: 'true'
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
 </script>
 
 </body>
