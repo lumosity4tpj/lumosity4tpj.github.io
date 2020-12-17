@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lumosity4tpj.github.io/2020/12/17/eefde034.html/</loc>
+    
+    <lastmod>2020-12-17</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lumosity4tpj.github.io/2020/12/13/f8e24fa7.html/</loc>
     
     <lastmod>2020-12-17</lastmod>
@@ -367,6 +374,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://lumosity4tpj.github.io/tags/%E8%AE%BA%E6%96%87%E7%BB%BC%E8%BF%B0/</loc>
+    <lastmod>2020-12-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -461,14 +475,14 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/%E5%89%8D%E7%BC%80%E5%92%8C/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/contrastive-learning/</loc>
     <lastmod>2020-12-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/contrastive-learning/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/%E5%89%8D%E7%BC%80%E5%92%8C/</loc>
     <lastmod>2020-12-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
