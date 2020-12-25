@@ -287,7 +287,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-25 12:58:24" itemprop="dateModified" datetime="2020-12-25T12:58:24+08:00">2020-12-25</time>
+                <time title="修改时间：2020-12-25 18:31:04" itemprop="dateModified" datetime="2020-12-25T18:31:04+08:00">2020-12-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -407,7 +407,7 @@
 <li>数据增强在训练分类器这样的判别语义信息任务上是有效的(数据增强导致这些语义保持失真的不变性增加)，但简单的数据增强在生成样本中会导致“泄漏”(即<code>GAN</code>会学习生成增强的数据分布，如：噪声增大会导致有噪声的结果，即使数据集中没有噪声)。</li>
 </ul>
 <h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>演示了如何使用各种各样的增强来防止判别器过拟合，同时确保不会有任何增强泄露到生成的图像中；</li>
+<li>演示了如何使用各种各样的增强来防止判别器过拟合，同时确保不会有任何增强泄漏到生成的图像中；</li>
 <li>提出了一种自适应判别器增强机制，在有限的数据下能够稳定训练，且有较好的生成质量，该方法不需要改变损失函数或者网络结构。</li>
 </ul></body></html>
           <!--noindex-->
@@ -2713,6 +2713,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
 
+
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
@@ -2738,7 +2739,6 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
   });
 }, window.Valine);
 </script>
-
 
 </body>
 </html>
