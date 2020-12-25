@@ -73,7 +73,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;12&#x2F;24&#x2F;27a46076.html&#x2F;1608791697215.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;12&#x2F;24&#x2F;27a46076.html&#x2F;1608791755785.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;12&#x2F;24&#x2F;27a46076.html&#x2F;1608791937379.png">
-<meta property="og:updated_time" content="2020-12-24T06:55:01.561Z">
+<meta property="og:updated_time" content="2020-12-25T04:58:24.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;12&#x2F;24&#x2F;27a46076.html&#x2F;1608620851940.png">
 
@@ -291,10 +291,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-12-24 14:51:41 / 修改时间：14:55:01" itemprop="dateCreated datePublished" datetime="2020-12-24T14:51:41+08:00">2020-12-24</time>
+              <time title="创建时间：2020-12-24 14:51:41" itemprop="dateCreated datePublished" datetime="2020-12-24T14:51:41+08:00">2020-12-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-25 12:58:24" itemprop="dateModified" datetime="2020-12-25T12:58:24+08:00">2020-12-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -334,7 +340,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4k</span>
+              <span>4.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -441,7 +447,7 @@
 <h4 id="随机判别器增强"><a href="#随机判别器增强" class="headerlink" title="随机判别器增强"></a>随机判别器增强</h4><p>根据定义，任何应用到训练数据集的增强都将继承到生成的图像。而最近的平衡一致性正则化<code>bCR</code>希望增强不会”泄漏”到生成图像，它认为将两组增强应用在相同的输入图像，应该产生相同的输出。其对判别器损失添加上一致性正则项，并对真实图像和生成图像强制执行判别一致性，而在训练生成器时则不应用数据增强或一致性损失。该方法希望使得判别器对于使用的增强视而不见而成为一般化的判别器，但是<code>bCR</code>的生成器可以自由地生成包含增强的图像而不受到任何惩罚，故其效果与数据集增强相似。</p>
 <p>本文的方法类似于<code>bCR</code>，对判别器的所有图像应用一组增强，但没有添加一致性正则化损失，而是仅使用增强图像来训练判别器，并且在生成器时也这样做。可能会怀疑这种方法的判别器没有看到真实的训练图像，能否正确指导生成器而是否有效，为此本文研究了这种方法不会“泄漏”到生成图像的增强的条件。</p>
 <p><img src="/2020/12/24/27a46076.html/1608725903311.png" alt></p>
-<h4 id="设计不泄漏的增强"><a href="#设计不泄漏的增强" class="headerlink" title="设计不泄漏的增强"></a>设计不泄漏的增强</h4><p>判别器增强对应着给予判别器失真甚至损坏的图像，并要求生成器产生与训练集无法区分的样本。<code>Bora et al.</code>表明只要破坏过程表示为数据空间上概率分布的可逆变换，则训练可以隐式地消除破坏并找到正确的分布。本文称这种数据增强操作非”泄漏”。</p>
+<h4 id="设计不泄漏的增强"><a href="#设计不泄漏的增强" class="headerlink" title="设计不泄漏的增强"></a>设计不泄漏的增强</h4><p>判别器增强意思是给予判别器失真甚至损坏的图像，但要求生成器产生与训练集无法区分的样本。<code>Bora et al.</code>表明只要破坏过程表示为数据空间上概率分布的可逆变换，则训练可以隐式地消除破坏并找到正确的分布。本文称这种数据增强操作非”泄漏”。</p>
 <p>这种可逆变换允许仅观察增强集就可以得出有关基础集的相等或不等的结论，这并不意味着在单个图像上执行的增强操作必须是可撤销的，如将输入图像<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.261ex" height="2.343ex" style="vertical-align: -0.338ex;" viewbox="0 -863.1 1834.5 1008.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">90\%</title>
 <defs aria-hidden="true">
@@ -995,7 +1001,7 @@ r_{v}=\frac{\mathbb{E}\left[D_{\text {train }}\right]-\mathbb{E}\left[D_{\text {
  <use xlink:href="#E32-MJMATHI-72" x="0" y="0"/>
  <use transform="scale(0.707)" xlink:href="#E32-MJMATHI-74" x="638" y="-213"/>
 </g>
-</svg></span>估计训练集中获得正向判别器输出的部分，与直接查看<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="9.275ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 3993.2 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-33-Title">
+</svg></span>估计训练集中获得正向判别器输出的部分(即判别器输出为真的部分)，与直接查看<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="9.275ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 3993.2 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-33-Title">
 <title id="MathJax-SVG-33-Title">\mathbb{E}(D_{train})</title>
 <defs aria-hidden="true">
 <path stroke-width="1" id="E33-MJAMS-45" d="M12 666Q12 675 24 683H582Q590 680 593 672V588Q593 514 591 502T575 490Q567 490 563 495T555 517Q552 556 517 590Q486 623 445 634T340 648H282Q266 636 264 620T260 492V370H277Q329 375 358 391T404 439Q420 480 420 506Q420 529 436 529Q445 529 451 521Q455 517 455 361Q455 333 455 298T456 253Q456 217 453 207T437 197Q420 196 420 217Q420 240 406 270Q377 328 284 335H260V201Q261 174 261 134Q262 73 264 61T278 38Q281 36 282 35H331Q400 35 449 50Q571 93 602 179Q605 203 622 203Q629 203 634 197T640 183Q638 181 624 95T604 3L600 -1H24Q12 5 12 16Q12 35 51 35Q92 38 97 52Q102 60 102 341T97 632Q91 645 51 648Q12 648 12 666ZM137 341Q137 131 136 89T130 37Q129 36 129 35H235Q233 41 231 48L226 61V623L231 635L235 648H129Q132 641 133 638T135 603T137 517T137 341ZM557 603V648H504Q504 646 515 639Q527 634 542 619L557 603ZM420 317V397L406 383Q394 370 380 363L366 355Q373 350 382 346Q400 333 409 328L420 317ZM582 61L586 88Q585 88 582 83Q557 61 526 46L511 37L542 35H577Q577 36 578 39T580 49T582 61Z"/>
