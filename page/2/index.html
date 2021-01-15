@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">45</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">46</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -250,6 +250,184 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/12/10/adeb2f59.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/10/adeb2f59.html/" class="post-title-link" itemprop="url">论文阅读-domain-adaptive-Self-paced Contrastive Learning with Hybrid Memory for Domain Adaptive Object Re-ID</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-12-10 15:08:04 / 修改时间：15:12:16" itemprop="dateCreated datePublished" datetime="2020-12-10T15:08:04+08:00">2020-12-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/domain-adaptive/" itemprop="url" rel="index">
+                    <span itemprop="name">domain adaptive</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+            <div class="post-description">用于领域自适应目标重识别的带混合记忆的自步对比学习-NIPS2020</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2020/12/10/adeb2f59.html/1607512195005.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li>现有的领域自适应的目标重识别方法通常采用基于聚类的伪标签方法，该方法由于域间的差异和聚类性能不佳，没有充分利用所有有价值的信息；</li>
+<li>一是在目标域微调的过程中，要么忽略了源域数据(仅用于预训练)，要么由于方法设计的局限性，会对性能造成损害；</li>
+<li>二是在聚类过程中可能产生离群值，现有的方法通常将离群值丢弃而不用于训练，但这些离群值可能是目标域中困难但有价值的样本，而在训练早期通常有大量离群值，若简单地丢弃会损害最终性能。</li>
+</ul>
+<p><img src="/2020/12/10/adeb2f59.html/1607515128917.png" alt></p>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>提出了一个统一的对比学习框架，将源域和目标域的所有可用信息纳入到联合特征学习中，并利用混合记忆模型<code>Hybrid Memory</code>来提供三种监督：<code>class-level</code>、<code>cluster-level</code>、<code>instance-level</code>(分别对应源域、目标域聚类、目标域离群值)；</li>
+<li>设计了一种新的带有聚类可靠性准则的自步对比学习策略，以防止伪标签噪声导致的训练误差被放大，它逐渐生成更可靠的目标域聚类，用于在混合记忆模型中学习更好的特征，进而提高聚类能力。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/10/adeb2f59.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -2028,120 +2206,6 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/10/05/18d7c473.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/05/18d7c473.html/" class="post-title-link" itemprop="url">pytorch-分布式并行训练</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-10-05 16:59:53 / 修改时间：17:06:59" itemprop="dateCreated datePublished" datetime="2020-10-05T16:59:53+08:00">2020-10-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">分布式训练方法</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-            <div class="post-description">DDP training-pytorch</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><h5 id="Distributed-Data-Parallel-Training-DDP"><a href="#Distributed-Data-Parallel-Training-DDP" class="headerlink" title="Distributed Data-Parallel Training(DDP)"></a><code>Distributed Data-Parallel Training(DDP)</code></h5><blockquote>
-<p>模型被复制到每个进程中，其中每个模型副本获得一组不同的输入数据样本，<code>DDP</code> 主要负责梯度通信，保持模型副本同步，并将其与梯度计算重叠，以加快计算速度。</p>
-</blockquote>
-<p><strong>单机多<code>gpu</code>训练<code>DataParallel</code></strong></p>
-<blockquote>
-<p>易于使用，但单进程多线程的特性容易受到<code>GIL</code>的限制，速度较慢且容易出现显存不均匀等问题</p>
-</blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">gpus = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">model = torch.nn.DataParallel(model,device_ids=gpus,output_device=gpus[<span class="number">0</span>])</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>单机多<code>gpu</code>训练<code>DistributedDataParallel</code></strong></p>
-<blockquote>
-<p>通过<code>MPI</code>实现<code>CPU</code>通信，通过<code>NCCL</code>实现<code>GPU</code>通信，自动将代码分配给多个进程，分别在多个<code>gpu</code>上运行。</p>
-</blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.distributed <span class="keyword">as</span> dist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置GPU之间通信使用的后端及端口</span></span><br><span class="line">dist.init_process_group(backend=<span class="string">'nccl'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对数据集进行划分，即将每个batch划分为几个partition</span></span><br><span class="line">train_dataset = ...</span><br><span class="line">train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)</span><br><span class="line">train_loader = torch.utils.data.DataLoader(train_dataset,sampler=train_sampler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包装模型，将不同GPU上求得的梯度进行汇总并同步计算结果</span></span><br><span class="line">model = ... </span><br><span class="line">model = torch.nn.parallel.DistributedDataParallel(model, device_ids=list(range(torch.cuda.device_count())))</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在执行时，需要调用启动器启动，在执行过程中启动器将当前进程的index传递给python</span></span><br><span class="line">CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 main.py</span><br></pre></td></tr></tbody></table></figure>
-<p>也可使用<code>torch.multiprocessing</code>来替代这个启动器，见下文。</p>
-<p><strong><code>TorchElastic</code></strong></p>
-<blockquote>
-<p>为了避免多进程时，由于某个进程出现故障导致不同步或者崩溃等，若预计在训练过程中会发生故障或者资源会动态离开或者加入，则可使用<code>torchelastic</code>。</p>
-</blockquote></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/05/18d7c473.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2192,7 +2256,7 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2234,6 +2298,10 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
         
         
           <li>
+            <a href="/2021/01/15/7e57f04f.html/" title="论文阅读-disentanglement-GAN-Control-Explicitly Controllable GANs" target="_blank">论文阅读-disentanglement-GAN-Control-Explicitly Controllable GANs</a>
+          </li>
+        
+          <li>
             <a href="/2020/12/26/a9b1325e.html/" title="论文阅读-contrastive-learning-Contrastive Learning with Hard Negative Samples" target="_blank">论文阅读-contrastive-learning-Contrastive Learning with Hard Negative Samples</a>
           </li>
         
@@ -2247,10 +2315,6 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
         
           <li>
             <a href="/2020/12/17/eefde034.html/" title="论文综述-contrastive-learning-自监督对比学习" target="_blank">论文综述-contrastive-learning-自监督对比学习</a>
-          </li>
-        
-          <li>
-            <a href="/2020/12/16/fccd875f.html/" title="论文阅读-contrastive-learning-Big Self-Supervised Models are Strong Semi-Supervised Learners" target="_blank">论文阅读-contrastive-learning-Big Self-Supervised Models are Strong Semi-Supervised Learners</a>
           </li>
         
       </ul>
@@ -2272,8 +2336,8 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-moon-o"></i>
   </span>
@@ -2282,12 +2346,12 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">214k</span>
+    <span title="站点总字数">217k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:15</span>
+    <span title="站点阅读时长">3:18</span>
 </div>
 
         

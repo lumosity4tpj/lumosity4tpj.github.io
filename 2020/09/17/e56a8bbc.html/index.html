@@ -71,7 +71,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;17&#x2F;e56a8bbc.html&#x2F;1600311866442.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;17&#x2F;e56a8bbc.html&#x2F;1600312051860.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;17&#x2F;e56a8bbc.html&#x2F;1600312122550.png">
-<meta property="og:updated_time" content="2020-09-17T06:16:15.118Z">
+<meta property="og:updated_time" content="2021-01-15T02:51:50.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2020&#x2F;09&#x2F;17&#x2F;e56a8bbc.html&#x2F;1600233783389.png">
 
@@ -198,7 +198,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">45</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">46</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -289,10 +289,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-09-17 11:27:04 / 修改时间：14:16:15" itemprop="dateCreated datePublished" datetime="2020-09-17T11:27:04+08:00">2020-09-17</time>
+              <time title="创建时间：2020-09-17 11:27:04" itemprop="dateCreated datePublished" datetime="2020-09-17T11:27:04+08:00">2020-09-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-15 10:51:50" itemprop="dateModified" datetime="2021-01-15T10:51:50+08:00">2021-01-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -559,8 +565,8 @@
 </svg></span>，但是，仅仅匹配数据的边缘分布是不够的。</p>
 <p>所以目前的方法转变为弱监督，其中数据生成过程的信息是通过额外的观测来传递的，通过在增广空间上(而不是观测X)上执行分布匹配来保证表征学习的监督。</p>
 <h4 id="现有的弱监督方法的形式"><a href="#现有的弱监督方法的形式" class="headerlink" title="现有的弱监督方法的形式"></a>现有的弱监督方法的形式</h4><p><img src="/2020/09/17/e56a8bbc.html/1600237188101.png" alt></p>
-<p>所有这些监督形式可以被认为是原始联合分布的增广形式，将隐变量划分为<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="14.329ex" height="3.343ex" style="vertical-align: -1.171ex;" viewbox="0 -934.9 6169.4 1439.2" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-8-Title">
-<title id="MathJax-SVG-8-Title">S=\left(S_{I}, S_{\backslash I}\right)​​</title>
+<p>所有这些监督形式可以被认为是原始联合分布的增广形式，将隐变量划分为<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="13.555ex" height="3.343ex" style="vertical-align: -1.171ex;" viewbox="0 -934.9 5836.1 1439.2" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-8-Title">
+<title id="MathJax-SVG-8-Title">S=\left(S_{I}, S_{\backslash I}\right)</title>
 <defs aria-hidden="true">
 <path stroke-width="1" id="E8-MJMATHI-53" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"/>
 <path stroke-width="1" id="E8-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
@@ -592,7 +598,7 @@
  <use xlink:href="#E8-MJSZ1-29" x="3398" y="-1"/>
 </g>
 </g>
-</svg></span>，要么管擦隐变量的一个子集，要么在多个样本中共享隐变量。</p>
+</svg></span>，要么观察隐变量的一个子集，要么在多个样本中共享隐变量。</p>
 <p><strong>restricted labeling</strong></p>
 <p>通过观测真实因子的一个子集，即<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.486ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 1070.2 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-9-Title">
 <title id="MathJax-SVG-9-Title">S_I​</title>
@@ -2602,6 +2608,9 @@ s_{\backslash I}, s_{\backslash I}^{\prime} \stackrel{\mathrm{iid}}{\sim} p^{*}\
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\01\15\7e57f04f.html\" rel="bookmark">论文阅读-disentanglement-GAN-Control-Explicitly Controllable GANs</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\12\26\a9b1325e.html\" rel="bookmark">论文阅读-contrastive-learning-Contrastive Learning with Hard Negative Samples</a></div>
     </li>
     <li class="popular-posts-item">
@@ -2612,9 +2621,6 @@ s_{\backslash I}, s_{\backslash I}^{\prime} \stackrel{\mathrm{iid}}{\sim} p^{*}\
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2020\12\16\fccd875f.html\" rel="bookmark">论文阅读-contrastive-learning-Big Self-Supervised Models are Strong Semi-Supervised Learners</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\12\15\ced51ba0.html\" rel="bookmark">论文阅读-contrastive-learning-Improved Baselines with Momentum Contrastive Learning</a></div>
     </li>
   </ul>
 <div class="post-widgets">
@@ -2747,7 +2753,7 @@ s_{\backslash I}, s_{\backslash I}^{\prime} \stackrel{\mathrm{iid}}{\sim} p^{*}\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2789,6 +2795,10 @@ s_{\backslash I}, s_{\backslash I}^{\prime} \stackrel{\mathrm{iid}}{\sim} p^{*}\
         
         
           <li>
+            <a href="/2021/01/15/7e57f04f.html/" title="论文阅读-disentanglement-GAN-Control-Explicitly Controllable GANs" target="_blank">论文阅读-disentanglement-GAN-Control-Explicitly Controllable GANs</a>
+          </li>
+        
+          <li>
             <a href="/2020/12/26/a9b1325e.html/" title="论文阅读-contrastive-learning-Contrastive Learning with Hard Negative Samples" target="_blank">论文阅读-contrastive-learning-Contrastive Learning with Hard Negative Samples</a>
           </li>
         
@@ -2802,10 +2812,6 @@ s_{\backslash I}, s_{\backslash I}^{\prime} \stackrel{\mathrm{iid}}{\sim} p^{*}\
         
           <li>
             <a href="/2020/12/17/eefde034.html/" title="论文综述-contrastive-learning-自监督对比学习" target="_blank">论文综述-contrastive-learning-自监督对比学习</a>
-          </li>
-        
-          <li>
-            <a href="/2020/12/16/fccd875f.html/" title="论文阅读-contrastive-learning-Big Self-Supervised Models are Strong Semi-Supervised Learners" target="_blank">论文阅读-contrastive-learning-Big Self-Supervised Models are Strong Semi-Supervised Learners</a>
           </li>
         
       </ul>
@@ -2827,8 +2833,8 @@ s_{\backslash I}, s_{\backslash I}^{\prime} \stackrel{\mathrm{iid}}{\sim} p^{*}\
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-moon-o"></i>
   </span>
@@ -2837,12 +2843,12 @@ s_{\backslash I}, s_{\backslash I}^{\prime} \stackrel{\mathrm{iid}}{\sim} p^{*}\
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">214k</span>
+    <span title="站点总字数">217k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:15</span>
+    <span title="站点阅读时长">3:18</span>
 </div>
 
         
