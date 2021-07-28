@@ -67,7 +67,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;07&#x2F;27&#x2F;e7b29a67.html&#x2F;1627345310112.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;07&#x2F;27&#x2F;e7b29a67.html&#x2F;1627345418554.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;07&#x2F;27&#x2F;e7b29a67.html&#x2F;1627345839516.png">
-<meta property="og:updated_time" content="2021-07-28T13:53:06.648Z">
+<meta property="og:updated_time" content="2021-07-28T14:54:20.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;07&#x2F;27&#x2F;e7b29a67.html&#x2F;1627346798368.png">
 
@@ -293,7 +293,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-28 21:53:06" itemprop="dateModified" datetime="2021-07-28T21:53:06+08:00">2021-07-28</time>
+                <time title="修改时间：2021-07-28 22:54:20" itemprop="dateModified" datetime="2021-07-28T22:54:20+08:00">2021-07-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -334,7 +334,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
+              <span>4.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -427,7 +427,7 @@
                             width: 100%
                             }</style></head><body><p><img src="/2021/07/27/e7b29a67.html/1627346798368.png" alt></p>
 <a id="more"></a>
-<h2 id="原始Word2Vec的细节"><a href="#原始Word2Vec的细节" class="headerlink" title="原始Word2Vec的细节"></a>原始<code>Word2Vec</code>的细节</h2><blockquote>
+<h3 id="原始Word2Vec的细节"><a href="#原始Word2Vec的细节" class="headerlink" title="原始Word2Vec的细节"></a>原始<code>Word2Vec</code>的细节</h3><blockquote>
 <p><code>Word2Vec</code>通过最大化目标函数来使得拉近相似的<code>word vectors</code></p>
 </blockquote>
 <p>为什么使用两个<code>vector</code>：数学上更容易进行优化，可以在最后对两个<code>vector</code>进行平均得到一个<code>vector</code>。</p>
@@ -436,7 +436,7 @@
 <li><code>Skip-gram model</code>：从给定的<code>center word</code>预测<code>context words</code> </li>
 <li><code>Continuous Bag of Words</code>：从一系列的<code>context words</code>中预测<code>center word</code></li>
 </ul>
-<h2 id="原始Word2Vec的优化问题"><a href="#原始Word2Vec的优化问题" class="headerlink" title="原始Word2Vec的优化问题"></a>原始<code>Word2Vec</code>的优化问题</h2><p>虽然使用随机梯度下降<code>SGD</code>更新，但仍存在两个问题导致模型效率低下。</p>
+<h3 id="原始Word2Vec的优化问题"><a href="#原始Word2Vec的优化问题" class="headerlink" title="原始Word2Vec的优化问题"></a>原始<code>Word2Vec</code>的优化问题</h3><p>虽然使用随机梯度下降<code>SGD</code>更新，但仍存在两个问题导致模型效率低下。</p>
 <ul>
 <li>每次梯度更新时，仅更新<code>window</code>中的<code>word vector</code>，但计算梯度时计算的整个参数矩阵，如果这个<code>word</code>未出现在<code>window</code>中，其偏导为0，则梯度矩阵非常稀疏；</li>
 <li>目标函数中计算条件概率<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.336ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 2728 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
@@ -1266,7 +1266,7 @@ J_{neg-sample}(\mathbf{o,v_c,U}) = -\log(\sigma(\mathbf{u_o^Tv_c})) - \sum_{k=1,
 </g>
 </svg></span></li>
 </ul>
-<h2 id="如何构建共现矩阵-X-？"><a href="#如何构建共现矩阵-X-？" class="headerlink" title="如何构建共现矩阵$X$？"></a><strong>如何构建共现矩阵<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.98ex" height="2.176ex" style="vertical-align: -0.338ex;" viewbox="0 -791.3 852.5 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-23-Title">
+<h3 id="如何构建共现矩阵-X-？"><a href="#如何构建共现矩阵-X-？" class="headerlink" title="如何构建共现矩阵$X$？"></a>如何构建共现矩阵<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.98ex" height="2.176ex" style="vertical-align: -0.338ex;" viewbox="0 -791.3 852.5 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-23-Title">
 <title id="MathJax-SVG-23-Title">X</title>
 <defs aria-hidden="true">
 <path stroke-width="1" id="E23-MJMATHI-58" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"/>
@@ -1274,7 +1274,7 @@ J_{neg-sample}(\mathbf{o,v_c,U}) = -\log(\sigma(\mathbf{u_o^Tv_c})) - \sum_{k=1,
 <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
  <use xlink:href="#E23-MJMATHI-58" x="0" y="0"/>
 </g>
-</svg></span>？</strong></h2><ul>
+</svg></span>？</h3><ul>
 <li><p><code>word-document co-occurrence matrix</code>：假设同一篇文章中出现的单词有可能互相关联，元素<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.401ex" height="2.843ex" style="vertical-align: -1.005ex;" viewbox="0 -791.3 1464.5 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-24-Title">
 <title id="MathJax-SVG-24-Title">X_{ij}</title>
 <defs aria-hidden="true">
@@ -1359,7 +1359,7 @@ J_{neg-sample}(\mathbf{o,v_c,U}) = -\log(\sigma(\mathbf{u_o^Tv_c})) - \sum_{k=1,
 </svg></span>个值。</p>
 </li>
 </ul>
-<h2 id="Count-based和direct-prediction的比较"><a href="#Count-based和direct-prediction的比较" class="headerlink" title="Count based和direct prediction的比较"></a>Count based和direct prediction的比较</h2><ul>
+<h3 id="Count-based和direct-prediction的比较"><a href="#Count-based和direct-prediction的比较" class="headerlink" title="Count based和direct prediction的比较"></a>Count based和direct prediction的比较</h3><ul>
 <li><p><code>Count based</code>(<code>SVD</code>)：</p>
 <p><strong>优点：</strong>训练快速，且有效利用了统计信息；</p>
 <p><strong>缺点：</strong>偏向于高频词，仅能概括<code>word</code>的相关性。</p>
@@ -1369,7 +1369,7 @@ J_{neg-sample}(\mathbf{o,v_c,U}) = -\log(\sigma(\mathbf{u_o^Tv_c})) - \sum_{k=1,
 <p><strong>缺点：</strong>受限于语料库的大小，对统计信息利用不够充分。</p>
 </li>
 </ul>
-<h2 id="GloVe"><a href="#GloVe" class="headerlink" title="GloVe"></a>GloVe</h2><blockquote>
+<h3 id="GloVe"><a href="#GloVe" class="headerlink" title="GloVe"></a>GloVe</h3><blockquote>
 <p>结合<code>Count based Model</code>和<code>Direct Prediction Model</code>的优势。</p>
 <p>优点：训练更快；可扩展到大型语料库；在小的语料库和<code>vector</code>上也有较好的效果。</p>
 </blockquote>
@@ -1662,7 +1662,7 @@ J_{neg-sample}(\mathbf{o,v_c,U}) = -\log(\sigma(\mathbf{u_o^Tv_c})) - \sum_{k=1,
 </g>
 </g>
 </svg></span>能够反映<code>word</code><span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.794ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 1203.2 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-48-Title">
-<title id="MathJax-SVG-48-Title">i,j</title>
+<title id="MathJax-SVG-48-Title">i,j​</title>
 <defs aria-hidden="true">
 <path stroke-width="1" id="E48-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/>
 <path stroke-width="1" id="E48-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
@@ -1674,7 +1674,7 @@ J_{neg-sample}(\mathbf{o,v_c,U}) = -\log(\sigma(\mathbf{u_o^Tv_c})) - \sum_{k=1,
  <use xlink:href="#E48-MJMATHI-6A" x="790" y="0"/>
 </g>
 </svg></span>之间的相关性。</p>
-<h3 id="怎样在词向量空间中计算共现概率的比值？"><a href="#怎样在词向量空间中计算共现概率的比值？" class="headerlink" title="怎样在词向量空间中计算共现概率的比值？"></a><strong>怎样在词向量空间中计算共现概率的比值？</strong></h3><ul>
+<h4 id="怎样在词向量空间中计算共现概率的比值？"><a href="#怎样在词向量空间中计算共现概率的比值？" class="headerlink" title="怎样在词向量空间中计算共现概率的比值？"></a>怎样在词向量空间中计算共现概率的比值？</h4><ul>
 <li><p>假设对于<code>word vector</code><span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="9.858ex" height="2.343ex" style="vertical-align: -1.005ex;" viewbox="0 -576.1 4244.6 1008.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-49-Title">
 <title id="MathJax-SVG-49-Title">w_i,w_j,w_k</title>
 <defs aria-hidden="true">
@@ -2663,7 +2663,13 @@ J = \sum_{i,k=1}^Vf(i,k)(w_i^Tw_k + b_i + b_k - \log X_{ik})^2</title>
 <p><img src="/2021/07/27/e7b29a67.html/1627345839516.png" alt></p>
 </li>
 </ul>
-<p>参考文献：<span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC82MDIwODQ4MA==" title="https://zhuanlan.zhihu.com/p/60208480">CS224N笔记(二)：GloVe - 知乎 (zhihu.com)<i class="fa fa-external-link"></i></span></p>
+<p>参考文献：</p>
+<ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC82MDIwODQ4MA==" title="https://zhuanlan.zhihu.com/p/60208480">CS224N笔记(二)：GloVe - 知乎 (zhihu.com)<i class="fa fa-external-link"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dlZWtfaGNoL2FydGljbGUvZGV0YWlscy8xMDQyOTEyODI=" title="https://blog.csdn.net/geek_hch/article/details/104291282">cs224n学习笔记L2:word vectors and word senses_三七的博客-CSDN博客<i class="fa fa-external-link"></i></span></p>
+</li>
+</ul>
 </body></html>
     </div>
 
@@ -2788,7 +2794,7 @@ J = \sum_{i,k=1}^Vf(i,k)(w_i^Tw_k + b_i + b_k - \log X_{ik})^2</title>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原始Word2Vec的细节"><span class="nav-number">1.</span> <span class="nav-text">原始Word2Vec的细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原始Word2Vec的优化问题"><span class="nav-number">2.</span> <span class="nav-text">原始Word2Vec的优化问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何构建共现矩阵-X-？"><span class="nav-number">3.</span> <span class="nav-text">如何构建共现矩阵
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始Word2Vec的细节"><span class="nav-number">1.</span> <span class="nav-text">原始Word2Vec的细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原始Word2Vec的优化问题"><span class="nav-number">2.</span> <span class="nav-text">原始Word2Vec的优化问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何构建共现矩阵-X-？"><span class="nav-number">3.</span> <span class="nav-text">如何构建共现矩阵
 X
 
 
@@ -2796,7 +2802,7 @@ X
 
  
 
-？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Count-based和direct-prediction的比较"><span class="nav-number">4.</span> <span class="nav-text">Count based和direct prediction的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GloVe"><span class="nav-number">5.</span> <span class="nav-text">GloVe</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#怎样在词向量空间中计算共现概率的比值？"><span class="nav-number">5.1.</span> <span class="nav-text">怎样在词向量空间中计算共现概率的比值？</span></a></li></ol></li></ol></div>
+？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Count-based和direct-prediction的比较"><span class="nav-number">4.</span> <span class="nav-text">Count based和direct prediction的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GloVe"><span class="nav-number">5.</span> <span class="nav-text">GloVe</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#怎样在词向量空间中计算共现概率的比值？"><span class="nav-number">5.1.</span> <span class="nav-text">怎样在词向量空间中计算共现概率的比值？</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

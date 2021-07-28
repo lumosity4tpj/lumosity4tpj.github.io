@@ -70,7 +70,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;07&#x2F;21&#x2F;f840de4e.html&#x2F;1626878790071.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;07&#x2F;21&#x2F;f840de4e.html&#x2F;1626878834342.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;07&#x2F;21&#x2F;f840de4e.html&#x2F;1626878854346.png">
-<meta property="og:updated_time" content="2021-07-22T13:23:21.548Z">
+<meta property="og:updated_time" content="2021-07-28T14:52:57.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;07&#x2F;21&#x2F;f840de4e.html&#x2F;1626878234460.png">
 
@@ -296,7 +296,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-22 21:23:21" itemprop="dateModified" datetime="2021-07-22T21:23:21+08:00">2021-07-22</time>
+                <time title="修改时间：2021-07-28 22:52:57" itemprop="dateModified" datetime="2021-07-28T22:52:57+08:00">2021-07-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -430,7 +430,7 @@
                             min-height: 0;
                             width: 100%
                             }</style></head><body><p><img src="/2021/07/21/f840de4e.html/1626878234460.png" alt></p>
-<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><ul>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
 <li>在序列建模与转换任务中，主流的模型是基于复杂的RNN的递归模型，其通常沿输入和输出序列的符号位置进行因子计算(即生成一系列隐藏状态<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.165ex" height="2.509ex" style="vertical-align: -0.671ex;" viewbox="0 -791.3 932.1 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
 <title id="MathJax-SVG-1-Title">h_t</title>
 <defs aria-hidden="true">
@@ -470,12 +470,12 @@
 </svg></span>和当前输入生成)，这种内部的固有顺序阻碍了训练样本的并行化(在序列较长时，由于内存限制会限制样本间的批处理)。</li>
 <li>注意力机制允许对依赖关系建模，而不考虑它们在输入或输出序列中的距离，但目前注意力机制通常与递归网络相结合使用。</li>
 </ul>
-<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
 <li>提出了一种新的简单的网络架构<code>Transformer</code>，完全避免循环和卷积网络，只基于<code>Attention</code>机制来建模输入和输出之间的全局依赖关系。</li>
 <li>在两个翻译任务上，模型质量更好、且具有更高的并行性，且训练所需要的时间更少。</li>
 </ul>
 <a id="more"></a>
-<h2 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h2><p><img src="/2021/07/21/f840de4e.html/1626878271965.png" alt></p>
+<h3 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h3><p><img src="/2021/07/21/f840de4e.html/1626878271965.png" alt></p>
 <p>如上图所示，使用<code>encoder-decoder</code>架构，其中<code>encoder</code>将符号表示的输入序列<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="11.92ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 5132 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-4-Title">
 <title id="MathJax-SVG-4-Title">(x_1,…,x_n)</title>
 <defs aria-hidden="true">
@@ -1613,7 +1613,7 @@ PE(pos,2i+1) = cos(pos/10000^{2i/d_{model}})</title>
  <use xlink:href="#E40-MJMATHI-70" x="0" y="0"/>
 </g>
 </svg></span>的向量的线性变换，这提供了表达相对位置信息的可能性。</p>
-<h2 id="self-attention的优点"><a href="#self-attention的优点" class="headerlink" title="self-attention的优点"></a>self-attention的优点</h2><p><img src="/2021/07/21/f840de4e.html/1626878762813.png" alt></p>
+<h3 id="self-attention的优点"><a href="#self-attention的优点" class="headerlink" title="self-attention的优点"></a>self-attention的优点</h3><p><img src="/2021/07/21/f840de4e.html/1626878762813.png" alt></p>
 <p>上图是<code>self-attention</code>跟<code>rnn</code>和<code>cnn</code>的比较，即将一个可变长度的序列<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="11.92ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 5132 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-41-Title">
 <title id="MathJax-SVG-41-Title">(x_1,…,x_n)</title>
 <defs aria-hidden="true">
@@ -1748,7 +1748,7 @@ PE(pos,2i+1) = cos(pos/10000^{2i/d_{model}})</title>
 </svg></span>）。</li>
 </ul>
 <p>且作者发现，<code>self-attention</code>可以产生更多可解释的模型，<code>attention</code>结果的分布表明每个<code>attention head</code>不仅可以学习到执行不同的任务，还表现出和句子句法与语义结构相关的行为。</p>
-<h2 id="训练过程"><a href="#训练过程" class="headerlink" title="训练过程"></a>训练过程</h2><p>数据集：<code>WMT 2014 English-German dataset</code>和<code>WMT 2014 English-French dataset</code></p>
+<h3 id="训练过程"><a href="#训练过程" class="headerlink" title="训练过程"></a>训练过程</h3><p>数据集：<code>WMT 2014 English-German dataset</code>和<code>WMT 2014 English-French dataset</code></p>
 <p>优化器：<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="38.441ex" height="2.843ex" style="vertical-align: -0.838ex;" viewbox="0 -863.1 16550.8 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-49-Title">
 <title id="MathJax-SVG-49-Title">Adam(\beta_1=0.9,\beta_2=0.98,\epsilon=1e-9)</title>
 <defs aria-hidden="true">
@@ -1983,7 +1983,7 @@ lrate = d_{model}^{−0.5}\cdot \text{min}(step{\_}num^{−0.5},step{\_}num·war
 </g>
 </svg></span>的标签平滑，这会给模型带来不确定性，但会提高<code>accuracy</code>和<code>BLEU</code>分数。</li>
 </ul>
-<h2 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h2><p><strong>机器翻译任务：</strong></p>
+<h3 id="部分实验结果"><a href="#部分实验结果" class="headerlink" title="部分实验结果"></a>部分实验结果</h3><p><strong>机器翻译任务：</strong></p>
 <p><img src="/2021/07/21/f840de4e.html/1626878790071.png" alt></p>
 <p><strong>模型不同组件的作用：</strong></p>
 <p><img src="/2021/07/21/f840de4e.html/1626878834342.png" alt></p>
@@ -1999,19 +1999,19 @@ lrate = d_{model}^{−0.5}\cdot \text{min}(step{\_}num^{−0.5},step{\_}num·war
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\12\16\fccd875f.html\" rel="bookmark">论文阅读-contrastive-learning-Big Self-Supervised Models are Strong Semi-Supervised Learners</a></div>
+      <div class="popular-posts-title"><a href="\2020\10\21\1a19c141.html\" rel="bookmark">论文阅读-disentanglement-Disentangling GAN with One-Hot Sampling and Orthogonal Regularization</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\10\3ef91696.html\" rel="bookmark">论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation</a></div>
+      <div class="popular-posts-title"><a href="\2021\01\19\32ba6985.html\" rel="bookmark">论文阅读-disentanglement-Disentangling 3D Prototypical Networks For Few-Shot Concept Learning</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\10\43377067.html\" rel="bookmark">论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision</a></div>
+      <div class="popular-posts-title"><a href="\2020\12\26\a9b1325e.html\" rel="bookmark">论文阅读-contrastive-learning-Contrastive Learning with Hard Negative Samples</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\11\bac9cc5c.html\" rel="bookmark">论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature</a></div>
+      <div class="popular-posts-title"><a href="\2020\12\24\27a46076.html\" rel="bookmark">论文阅读-image-generation-Training Generative Adversarial Networks with Limited Data</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\15\235e7a8b.html\" rel="bookmark">论文阅读-contrastive-learning-Supervised Contrastive Learning</a></div>
+      <div class="popular-posts-title"><a href="\2020\12\21\c9072139.html\" rel="bookmark">论文阅读-image-generation-Denoising Diffusion Probabilistic Models</a></div>
     </li>
   </ul>
 <div class="post-widgets">
@@ -2128,7 +2128,7 @@ lrate = d_{model}^{−0.5}\cdot \text{min}(step{\_}num^{−0.5},step{\_}num·war
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动机"><span class="nav-number">1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贡献"><span class="nav-number">2.</span> <span class="nav-text">贡献</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型结构"><span class="nav-number">3.</span> <span class="nav-text">模型结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Attention-Mechanism"><span class="nav-number">3.0.1.</span> <span class="nav-text">Attention Mechanism</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Position-wise-Feed-Forward-Networks"><span class="nav-number">3.0.2.</span> <span class="nav-text">Position-wise Feed-Forward Networks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Embedding-and-Softmax"><span class="nav-number">3.0.3.</span> <span class="nav-text">Embedding and Softmax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Positional-Encoding"><span class="nav-number">3.0.4.</span> <span class="nav-text">Positional Encoding</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#self-attention的优点"><span class="nav-number">4.</span> <span class="nav-text">self-attention的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练过程"><span class="nav-number">5.</span> <span class="nav-text">训练过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部分实验结果"><span class="nav-number">6.</span> <span class="nav-text">部分实验结果</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#动机"><span class="nav-number">1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贡献"><span class="nav-number">2.</span> <span class="nav-text">贡献</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型结构"><span class="nav-number">3.</span> <span class="nav-text">模型结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Attention-Mechanism"><span class="nav-number">3.1.</span> <span class="nav-text">Attention Mechanism</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Position-wise-Feed-Forward-Networks"><span class="nav-number">3.2.</span> <span class="nav-text">Position-wise Feed-Forward Networks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Embedding-and-Softmax"><span class="nav-number">3.3.</span> <span class="nav-text">Embedding and Softmax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Positional-Encoding"><span class="nav-number">3.4.</span> <span class="nav-text">Positional Encoding</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#self-attention的优点"><span class="nav-number">4.</span> <span class="nav-text">self-attention的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练过程"><span class="nav-number">5.</span> <span class="nav-text">训练过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分实验结果"><span class="nav-number">6.</span> <span class="nav-text">部分实验结果</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

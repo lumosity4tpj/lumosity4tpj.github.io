@@ -70,7 +70,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;01&#x2F;19&#x2F;32ba6985.html&#x2F;1610957373392.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;01&#x2F;19&#x2F;32ba6985.html&#x2F;1610957420223.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;01&#x2F;19&#x2F;32ba6985.html&#x2F;1610957519589.png">
-<meta property="og:updated_time" content="2021-01-19T05:02:11.447Z">
+<meta property="og:updated_time" content="2021-07-28T14:51:31.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;lumosity4tpj.github.io&#x2F;2021&#x2F;01&#x2F;19&#x2F;32ba6985.html&#x2F;1610954917982.png">
 
@@ -288,10 +288,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-01-19 12:57:17 / 修改时间：13:02:11" itemprop="dateCreated datePublished" datetime="2021-01-19T12:57:17+08:00">2021-01-19</time>
+              <time title="创建时间：2021-01-19 12:57:17" itemprop="dateCreated datePublished" datetime="2021-01-19T12:57:17+08:00">2021-01-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-28 22:51:31" itemprop="dateModified" datetime="2021-07-28T22:51:31+08:00">2021-07-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -431,8 +437,8 @@
 <li>提出了一种解纠缠神经网络<code>D3DP-Nets</code>，将<code>RGB-D</code>图像解纠缠为目标的形状、风格和背景图等，并探索了其在<code>few-shot 3D</code>目标检测和<code>few-shot</code>概念分类的应用。</li>
 </ul>
 <a id="more"></a>
-<h3 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h3><h5 id="Few-shot-concept-learning"><a href="#Few-shot-concept-learning" class="headerlink" title="Few-shot concept learning"></a><code>Few-shot concept learning</code></h5><p>少镜头学习方法试图在测试时从一个或几个注释示例中学习新概念，但在训练时仍然需要标记的数据集，本文提出的模型通过预测视图来预训练，不需要对对象类或属性进行注释。本文的方法与部分方法有相似之处，即计算到通过对少数标记示例特征平均得到的原型的距离来分类，不同之处是在解纠缠的形状和风格编码基础上学习的概念原型取决于概念的语义而不是纠缠的<code>2D CNN</code>特征，且使用<code>3D</code>视觉特征空间的目标形状和<code>3D</code>旋转感知实例原型匹配，而不是一维嵌入的内积。</p>
-<h5 id="Learning-neural-scene-representation"><a href="#Learning-neural-scene-representation" class="headerlink" title="Learning neural scene representation"></a><code>Learning neural scene representation</code></h5><p>本文方法的场景编码器、解码器、视图预测目标等与<code>Tung</code>等人提出的几何感知神经网络相似，但本文的模型旨在学习特征表示，检测目标的姿态、比例等变化，并使它们用于概念学习，形状和风格的解纠缠则使用了<code>AdaIN</code>。</p>
+<h3 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h3><h4 id="Few-shot-concept-learning"><a href="#Few-shot-concept-learning" class="headerlink" title="Few-shot concept learning"></a><code>Few-shot concept learning</code></h4><p>少镜头学习方法试图在测试时从一个或几个注释示例中学习新概念，但在训练时仍然需要标记的数据集，本文提出的模型通过预测视图来预训练，不需要对对象类或属性进行注释。本文的方法与部分方法有相似之处，即计算到通过对少数标记示例特征平均得到的原型的距离来分类，不同之处是在解纠缠的形状和风格编码基础上学习的概念原型取决于概念的语义而不是纠缠的<code>2D CNN</code>特征，且使用<code>3D</code>视觉特征空间的目标形状和<code>3D</code>旋转感知实例原型匹配，而不是一维嵌入的内积。</p>
+<h4 id="Learning-neural-scene-representation"><a href="#Learning-neural-scene-representation" class="headerlink" title="Learning neural scene representation"></a><code>Learning neural scene representation</code></h4><p>本文方法的场景编码器、解码器、视图预测目标等与<code>Tung</code>等人提出的几何感知神经网络相似，但本文的模型旨在学习特征表示，检测目标的姿态、比例等变化，并使它们用于概念学习，形状和风格的解纠缠则使用了<code>AdaIN</code>。</p>
 <h3 id="本文的方法"><a href="#本文的方法" class="headerlink" title="本文的方法"></a>本文的方法</h3><p><img src="/2021/01/19/32ba6985.html/1610955309714.png" alt></p>
 <p>如上图，<code>D3DP-Nets</code>包含两个主要部分：一个图像到场景的<code>encoder-decoder</code>，一个目标形状/风格解纠缠<code>encoder-decoder</code>。</p>
 <h4 id="IMAGE-TO-SCENE-ENCODER-DECODER"><a href="#IMAGE-TO-SCENE-ENCODER-DECODER" class="headerlink" title="IMAGE-TO-SCENE ENCODER-DECODER"></a><code>IMAGE-TO-SCENE ENCODER-DECODER</code></h4><p><code>2D-to-3D</code>的场景可微分编码器<span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.298ex" height="2.343ex" style="vertical-align: -0.338ex;" viewbox="0 -863.1 1420 1008.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
@@ -2559,19 +2565,19 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\12\16\fccd875f.html\" rel="bookmark">论文阅读-contrastive-learning-Big Self-Supervised Models are Strong Semi-Supervised Learners</a></div>
+      <div class="popular-posts-title"><a href="\2020\10\21\1a19c141.html\" rel="bookmark">论文阅读-disentanglement-Disentangling GAN with One-Hot Sampling and Orthogonal Regularization</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\10\3ef91696.html\" rel="bookmark">论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation</a></div>
+      <div class="popular-posts-title"><a href="\2021\07\21\f840de4e.html\" rel="bookmark">论文阅读-machine-translation-Attention Is All You Need</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\10\43377067.html\" rel="bookmark">论文阅读-super-resolution-Unpaired Image Super-Resolution using Pseudo-Supervision</a></div>
+      <div class="popular-posts-title"><a href="\2020\12\26\a9b1325e.html\" rel="bookmark">论文阅读-contrastive-learning-Contrastive Learning with Hard Negative Samples</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\11\bac9cc5c.html\" rel="bookmark">论文阅读-image editing-CAFE-GAN Arbitrary Face Attribute Editing with Complementary Attention Feature</a></div>
+      <div class="popular-posts-title"><a href="\2020\12\24\27a46076.html\" rel="bookmark">论文阅读-image-generation-Training Generative Adversarial Networks with Limited Data</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\09\15\235e7a8b.html\" rel="bookmark">论文阅读-contrastive-learning-Supervised Contrastive Learning</a></div>
+      <div class="popular-posts-title"><a href="\2020\12\21\c9072139.html\" rel="bookmark">论文阅读-image-generation-Denoising Diffusion Probabilistic Models</a></div>
     </li>
   </ul>
 <div class="post-widgets">
@@ -2688,7 +2694,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#动机"><span class="nav-number">1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贡献"><span class="nav-number">2.</span> <span class="nav-text">贡献</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关工作"><span class="nav-number">3.</span> <span class="nav-text">相关工作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Few-shot-concept-learning"><span class="nav-number">3.0.1.</span> <span class="nav-text">Few-shot concept learning</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Learning-neural-scene-representation"><span class="nav-number">3.0.2.</span> <span class="nav-text">Learning neural scene representation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文的方法"><span class="nav-number">4.</span> <span class="nav-text">本文的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IMAGE-TO-SCENE-ENCODER-DECODER"><span class="nav-number">4.1.</span> <span class="nav-text">IMAGE-TO-SCENE ENCODER-DECODER</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OBJECT-SHAPE-STYLE-DISENTANGLEMENT"><span class="nav-number">4.2.</span> <span class="nav-text">OBJECT SHAPE/STYLE DISENTANGLEMENT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3D-DISENTANGLED-PROTOTYPE-LEARNIN"><span class="nav-number">4.3.</span> <span class="nav-text">3D DISENTANGLED PROTOTYPE LEARNIN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分实验结果"><span class="nav-number">5.</span> <span class="nav-text">部分实验结果</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#动机"><span class="nav-number">1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贡献"><span class="nav-number">2.</span> <span class="nav-text">贡献</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关工作"><span class="nav-number">3.</span> <span class="nav-text">相关工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Few-shot-concept-learning"><span class="nav-number">3.1.</span> <span class="nav-text">Few-shot concept learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Learning-neural-scene-representation"><span class="nav-number">3.2.</span> <span class="nav-text">Learning neural scene representation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文的方法"><span class="nav-number">4.</span> <span class="nav-text">本文的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IMAGE-TO-SCENE-ENCODER-DECODER"><span class="nav-number">4.1.</span> <span class="nav-text">IMAGE-TO-SCENE ENCODER-DECODER</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OBJECT-SHAPE-STYLE-DISENTANGLEMENT"><span class="nav-number">4.2.</span> <span class="nav-text">OBJECT SHAPE/STYLE DISENTANGLEMENT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3D-DISENTANGLED-PROTOTYPE-LEARNIN"><span class="nav-number">4.3.</span> <span class="nav-text">3D DISENTANGLED PROTOTYPE LEARNIN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分实验结果"><span class="nav-number">5.</span> <span class="nav-text">部分实验结果</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
