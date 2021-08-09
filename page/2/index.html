@@ -177,17 +177,17 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">24</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">25</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">50</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">51</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -250,6 +250,189 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/12/16/fccd875f.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/16/fccd875f.html/" class="post-title-link" itemprop="url">论文阅读-contrastive-learning-Big Self-Supervised Models are Strong Semi-Supervised Learners</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-16 14:22:42" itemprop="dateCreated datePublished" datetime="2020-12-16T14:22:42+08:00">2020-12-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-17 14:42:48" itemprop="dateModified" datetime="2020-12-17T14:42:48+08:00">2020-12-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/contrastive-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">contrastive learning</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+            <div class="post-description">大的自监督模型是强的半监督学习者-NIPS2020</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2020/12/16/fccd875f.html/1608038241941.png" alt></p>
+<p><strong><code>SimCLR v1</code>链接：</strong><a href="https://peijun.rocks/2020/12/15/c92b6d57.html/" target="_blank" rel="noopener">论文阅读-contrastive-learning-A Simple Framework for Contrastive Learning of Visual Representations</a></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li>视觉表示的自监督学习进展较快，想要探讨半监督训练(少量有标签数据，大量无标签数据)的方法，并探讨一系列模型结构选择是否有利于有监督微调和半监督学习。</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>实验表明，半监督学习(通过<code>task-agnostic</code>使用无标签数据)，标签越少，越可能受益于一个更大的模型，更大的自监督模型具有更高的标签有效性，即使它们更可能潜在过拟合，但当只对少量标签示例进行微调时，它们的表现会显著更好。</li>
+<li>尽管大模型对于学习一般表征很重要，但当涉及特定目标任务时，额外的容量可能不是必要的，因此针对特定任务的无标签数据的使用，可以进一步提高模型的预测性能，并迁移到更小的网络中。</li>
+<li>进一步证明了非线性变换(即投影头)的重要性，更深的投影头不仅可以提高线性评估的表征质量，还能提高从投影头中间层进行微调时的半监督性能。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/16/fccd875f.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -1851,188 +2034,11 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/10/21/1a19c141.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/21/1a19c141.html/" class="post-title-link" itemprop="url">论文阅读-disentanglement-Disentangling GAN with One-Hot Sampling and Orthogonal Regularization</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-10-21 14:15:08 / 修改时间：14:19:08" itemprop="dateCreated datePublished" datetime="2020-10-21T14:15:08+08:00">2020-10-21</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/disentanglement/" itemprop="url" rel="index">
-                    <span itemprop="name">disentanglement</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-            <div class="post-description">用独热采样和正交正则化方法对GAN解纠缠-AAAI2020</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head><style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
-
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
-
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
-
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
-
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
-
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
-
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
-
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head><body><p><img src="/2020/10/21/1a19c141.html/1603244362911.png" alt></p>
-<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
-<li>虽然解纠缠对下游任务的学习表示受到了质疑，但解纠缠对于人类可控数据生成、模型可解释性等等仍具有重要的意义；</li>
-<li>现有的<code>VAE</code>方法需要平衡解纠缠能力和生成能力，且学习到的潜在表示的边际分布使得优化过程隐式且复杂；</li>
-<li><code>GAN</code>的生成能力更强，但目前对于<code>GAN</code>在无监督解纠缠任务中关注较少。</li>
-</ul>
-<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>提出了一种基于<code>GAN</code>的基于<code>one-hot</code>采样和正交正则化的解纠缠框架。该框架提出一个交替的<code>one-hot</code>采样，通过将一个<code>one-hot</code>向量作为潜在表示来强制排他性，并鼓励每个维度捕获不同的语义特征，同时不牺牲潜在空间的连续性，并对模型权重采用正交正则化来更好的实现解纠缠的目的；</li>
-<li>发现了InfoGAN和类似结构的相关模型的一个弱点，文章将其归纳为竞争和冲突问题，并提出了一个模型结构的改变来解决它，此外，针对模型中生成部分的解纠缠问题，提出了一个新的度量方法。</li>
-</ul></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/21/1a19c141.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2078,20 +2084,20 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-count">51</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -2120,6 +2126,10 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
         
         
           <li>
+            <a href="/2021/08/10/41908160.html/" title="论文-代码-工程相关-样本不均衡问题" target="_blank">论文-代码-工程相关-样本不均衡问题</a>
+          </li>
+        
+          <li>
             <a href="/2021/07/27/e7b29a67.html/" title="课程学习-CS224n-Lecture 2 Word Vectors 2 and Word Senses" target="_blank">课程学习-CS224n-Lecture 2 Word Vectors 2 and Word Senses</a>
           </li>
         
@@ -2133,10 +2143,6 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
         
           <li>
             <a href="/2021/01/19/32ba6985.html/" title="论文阅读-disentanglement-Disentangling 3D Prototypical Networks For Few-Shot Concept Learning" target="_blank">论文阅读-disentanglement-Disentangling 3D Prototypical Networks For Few-Shot Concept Learning</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/15/7e57f04f.html/" title="论文阅读-disentanglement-GAN-Control-Explicitly Controllable GANs" target="_blank">论文阅读-disentanglement-GAN-Control-Explicitly Controllable GANs</a>
           </li>
         
       </ul>
@@ -2168,12 +2174,12 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">235k</span>
+    <span title="站点总字数">239k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:34</span>
+    <span title="站点阅读时长">3:37</span>
 </div>
 
         
