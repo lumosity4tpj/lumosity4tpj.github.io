@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lumosity4tpj.github.io/2021/12/05/98b8c0f5.html/</loc>
+    
+    <lastmod>2021-12-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lumosity4tpj.github.io/2021/07/21/f840de4e.html/</loc>
     
     <lastmod>2021-12-05</lastmod>
@@ -384,7 +391,7 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/super-resolution/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/contrastive-learning/</loc>
     <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -398,13 +405,6 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/contrastive-learning/</loc>
-    <lastmod>2021-12-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lumosity4tpj.github.io/categories/disentanglement/</loc>
     <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
@@ -412,7 +412,21 @@
   </url>
   
   <url>
+    <loc>https://lumosity4tpj.github.io/categories/super-resolution/</loc>
+    <lastmod>2021-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lumosity4tpj.github.io/categories/CS224n/</loc>
+    <lastmod>2021-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lumosity4tpj.github.io/categories/pretrained-language-model/</loc>
     <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -461,14 +475,14 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/image-generation/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/language-model/</loc>
     <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/language-model/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/image-generation/</loc>
     <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
