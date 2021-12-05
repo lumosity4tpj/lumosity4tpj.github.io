@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">42</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">43</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -250,6 +250,120 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/10/05/18d7c473.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/05/18d7c473.html/" class="post-title-link" itemprop="url">pytorch-分布式并行训练</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-05 16:59:53 / 修改时间：17:06:59" itemprop="dateCreated datePublished" datetime="2020-10-05T16:59:53+08:00">2020-10-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">分布式训练方法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+            <div class="post-description">DDP training-pytorch</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head></head><body><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><h5 id="Distributed-Data-Parallel-Training-DDP"><a href="#Distributed-Data-Parallel-Training-DDP" class="headerlink" title="Distributed Data-Parallel Training(DDP)"></a><code>Distributed Data-Parallel Training(DDP)</code></h5><blockquote>
+<p>模型被复制到每个进程中，其中每个模型副本获得一组不同的输入数据样本，<code>DDP</code> 主要负责梯度通信，保持模型副本同步，并将其与梯度计算重叠，以加快计算速度。</p>
+</blockquote>
+<p><strong>单机多<code>gpu</code>训练<code>DataParallel</code></strong></p>
+<blockquote>
+<p>易于使用，但单进程多线程的特性容易受到<code>GIL</code>的限制，速度较慢且容易出现显存不均匀等问题</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">gpus = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">model = torch.nn.DataParallel(model,device_ids=gpus,output_device=gpus[<span class="number">0</span>])</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>单机多<code>gpu</code>训练<code>DistributedDataParallel</code></strong></p>
+<blockquote>
+<p>通过<code>MPI</code>实现<code>CPU</code>通信，通过<code>NCCL</code>实现<code>GPU</code>通信，自动将代码分配给多个进程，分别在多个<code>gpu</code>上运行。</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.distributed <span class="keyword">as</span> dist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置GPU之间通信使用的后端及端口</span></span><br><span class="line">dist.init_process_group(backend=<span class="string">'nccl'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对数据集进行划分，即将每个batch划分为几个partition</span></span><br><span class="line">train_dataset = ...</span><br><span class="line">train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)</span><br><span class="line">train_loader = torch.utils.data.DataLoader(train_dataset,sampler=train_sampler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包装模型，将不同GPU上求得的梯度进行汇总并同步计算结果</span></span><br><span class="line">model = ... </span><br><span class="line">model = torch.nn.parallel.DistributedDataParallel(model, device_ids=list(range(torch.cuda.device_count())))</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在执行时，需要调用启动器启动，在执行过程中启动器将当前进程的index传递给python</span></span><br><span class="line">CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 main.py</span><br></pre></td></tr></tbody></table></figure>
+<p>也可使用<code>torch.multiprocessing</code>来替代这个启动器，见下文。</p>
+<p><strong><code>TorchElastic</code></strong></p>
+<blockquote>
+<p>为了避免多进程时，由于某个进程出现故障导致不同步或者崩溃等，若预计在训练过程中会发生故障或者资源会动态离开或者加入，则可使用<code>torchelastic</code>。</p>
+</blockquote></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/05/18d7c473.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -1888,192 +2002,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/09/10/3ef91696.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/10/3ef91696.html/" class="post-title-link" itemprop="url">论文阅读-semantic segmentation-Self-supervised Equivariant Attention Mechanism for Weakly Supervised Semantic Segmentation</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-10 22:02:18" itemprop="dateCreated datePublished" datetime="2020-09-10T22:02:18+08:00">2020-09-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-18 09:25:47" itemprop="dateModified" datetime="2020-09-18T09:25:47+08:00">2020-09-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/semantic-segmentation/" itemprop="url" rel="index">
-                    <span itemprop="name">semantic segmentation</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-            <div class="post-description">弱监督语义分割的自监督等变注意机制</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head><style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
-
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
-
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
-
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
-
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
-
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
-
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
-
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head><body><p><img src="/2020/09/10/3ef91696.html/1599729595297.png" alt></p>
-<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
-<li><p>基于类别标签的弱监督语义分割通常使用CAM作为基础方法，CAM通常只覆盖物品最具识别性的部分，并且当图像经过仿射变换做数据增强时，生成的CAM并不一致，如下图所示。</p>
-</li>
-<li><p>原因是强监督与弱监督的语义分割之间存在较大的监督差异，对于强监督语义分割，在数据增强阶段，像素级标签和输入图像经过相同的仿射变换，因而隐式的包含了这种等变性约束，而由类别标签生成的CAM时，类别标签没有变化，因而会影响CAM的训练过程，导致CAM无法很好的贴合目标边界；</p>
-</li>
-</ul>
-<p>  <img src="/2020/09/10/3ef91696.html/1599738939441.png" alt></p>
-<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>本文提出一种自监督的等变注意力机制(SEAM)，将等变正则化和像素相关模块(PCM)结合，来弥补监督信号之间的差异；</li>
-<li>Siamese网络结构的设计与等变交叉正则化(ECR)损失有效地耦合PCM和自我监督，产生的CAM有较少的过激活和欠激活区域；</li>
-<li>实验表明，在仅使用图像级标签的情况下就能达到最先进的性能。</li>
-</ul></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/10/3ef91696.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2124,7 +2052,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2166,6 +2094,10 @@
         
         
           <li>
+            <a href="/2021/12/05/ef930e71.html/" title="论文阅读-disentanglement-Zero-shot Synthesis with Group-Supervised Learning" target="_blank">论文阅读-disentanglement-Zero-shot Synthesis with Group-Supervised Learning</a>
+          </li>
+        
+          <li>
             <a href="/2021/12/05/e57bf805.html/" title="论文阅读-unsupervised representation learning-A Large-Scale Study on Unsupervised Spatiotemporal Representation Learning" target="_blank">论文阅读-unsupervised representation learning-A Large-Scale Study on Unsupervised Spatiotemporal Representation Learning</a>
           </li>
         
@@ -2179,10 +2111,6 @@
         
           <li>
             <a href="/2021/08/23/e6de0703.html/" title="课程学习-CS224n-Lecture-3-Word Window Classification and Neural Networks" target="_blank">课程学习-CS224n-Lecture-3-Word Window Classification and Neural Networks</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/10/41908160.html/" title="论文-代码-工程相关-样本不均衡问题" target="_blank">论文-代码-工程相关-样本不均衡问题</a>
           </li>
         
       </ul>
@@ -2214,12 +2142,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">204k</span>
+    <span title="站点总字数">207k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:05</span>
+    <span title="站点阅读时长">3:08</span>
 </div>
 
         

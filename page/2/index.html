@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">42</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">43</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -250,6 +250,184 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2021/01/15/7e57f04f.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/15/7e57f04f.html/" class="post-title-link" itemprop="url">论文阅读-disentanglement-GAN-Control-Explicitly Controllable GANs</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-15 10:54:15 / 修改时间：10:58:07" itemprop="dateCreated datePublished" datetime="2021-01-15T10:54:15+08:00">2021-01-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/disentanglement/" itemprop="url" rel="index">
+                    <span itemprop="name">disentanglement</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+            <div class="post-description">显式可控的GAN-Amazon One</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2021/01/15/7e57f04f.html/1610678602844.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li>目前大多数编辑生成图像的方法都是通过利用标准GAN训练后隐式获得的潜在空间解纠缠特性来实现部分控制，不能显式地设置某些属性地值；</li>
+<li>最近提出的方法可以显式地控制人脸属性，其利用可变形地3D人脸模型来使得GAN具有细粒度控制能力，但不能扩展到人脸领域外。</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li><p>使用对比学习得到一个解纠缠的GAN，保证其生成高质量且可控的图像；</p>
+</li>
+<li><p>解纠缠的GAN被用来训练编码器将人类可解释的输入映射到合适的隐向量，从而允许显式控制。</p>
+</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/15/7e57f04f.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -2233,184 +2411,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/12/10/adeb2f59.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/10/adeb2f59.html/" class="post-title-link" itemprop="url">论文阅读-domain-adaptive-Self-paced Contrastive Learning with Hybrid Memory for Domain Adaptive Object Re-ID</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-12-10 15:08:04 / 修改时间：15:12:16" itemprop="dateCreated datePublished" datetime="2020-12-10T15:08:04+08:00">2020-12-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/domain-adaptive/" itemprop="url" rel="index">
-                    <span itemprop="name">domain adaptive</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>6.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
-            </span>
-            <div class="post-description">用于领域自适应目标重识别的带混合记忆的自步对比学习-NIPS2020</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head><style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
-
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
-
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
-
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
-
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
-
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
-
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
-
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head><body><p><img src="/2020/12/10/adeb2f59.html/1607512195005.png" alt></p>
-<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
-<li>现有的领域自适应的目标重识别方法通常采用基于聚类的伪标签方法，该方法由于域间的差异和聚类性能不佳，没有充分利用所有有价值的信息；</li>
-<li>一是在目标域微调的过程中，要么忽略了源域数据(仅用于预训练)，要么由于方法设计的局限性，会对性能造成损害；</li>
-<li>二是在聚类过程中可能产生离群值，现有的方法通常将离群值丢弃而不用于训练，但这些离群值可能是目标域中困难但有价值的样本，而在训练早期通常有大量离群值，若简单地丢弃会损害最终性能。</li>
-</ul>
-<p><img src="/2020/12/10/adeb2f59.html/1607515128917.png" alt></p>
-<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>提出了一个统一的对比学习框架，将源域和目标域的所有可用信息纳入到联合特征学习中，并利用混合记忆模型<code>Hybrid Memory</code>来提供三种监督：<code>class-level</code>、<code>cluster-level</code>、<code>instance-level</code>(分别对应源域、目标域聚类、目标域离群值)；</li>
-<li>设计了一种新的带有聚类可靠性准则的自步对比学习策略，以防止伪标签噪声导致的训练误差被放大，它逐渐生成更可靠的目标域聚类，用于在混合记忆模型中学习更好的特征，进而提高聚类能力。</li>
-</ul></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/12/10/adeb2f59.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2461,7 +2461,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2503,6 +2503,10 @@
         
         
           <li>
+            <a href="/2021/12/05/ef930e71.html/" title="论文阅读-disentanglement-Zero-shot Synthesis with Group-Supervised Learning" target="_blank">论文阅读-disentanglement-Zero-shot Synthesis with Group-Supervised Learning</a>
+          </li>
+        
+          <li>
             <a href="/2021/12/05/e57bf805.html/" title="论文阅读-unsupervised representation learning-A Large-Scale Study on Unsupervised Spatiotemporal Representation Learning" target="_blank">论文阅读-unsupervised representation learning-A Large-Scale Study on Unsupervised Spatiotemporal Representation Learning</a>
           </li>
         
@@ -2516,10 +2520,6 @@
         
           <li>
             <a href="/2021/08/23/e6de0703.html/" title="课程学习-CS224n-Lecture-3-Word Window Classification and Neural Networks" target="_blank">课程学习-CS224n-Lecture-3-Word Window Classification and Neural Networks</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/10/41908160.html/" title="论文-代码-工程相关-样本不均衡问题" target="_blank">论文-代码-工程相关-样本不均衡问题</a>
           </li>
         
       </ul>
@@ -2551,12 +2551,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">204k</span>
+    <span title="站点总字数">207k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:05</span>
+    <span title="站点阅读时长">3:08</span>
 </div>
 
         
