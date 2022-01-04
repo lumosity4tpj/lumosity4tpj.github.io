@@ -177,7 +177,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">18</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">19</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">49</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">50</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -250,6 +250,183 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2022/01/04/dd1c99d7.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/04/dd1c99d7.html/" class="post-title-link" itemprop="url">论文阅读-视觉自监督-Masked Autoencoders Are Scalable Vision Learners</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-04 22:57:10 / 修改时间：23:00:27" itemprop="dateCreated datePublished" datetime="2022-01-04T22:57:10+08:00">2022-01-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%A7%86%E8%A7%89%E8%87%AA%E7%9B%91%E7%9D%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">视觉自监督</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+            <div class="post-description">Masked Autoencoder-FAIR-2021</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2022/01/04/dd1c99d7.html/1641307824919.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li>随着算力和模型的增长，需要大量的数据，但通常无法获得大量的有标签数据，而<code>NLP</code>则通过自监督预训练获得成功；</li>
+<li><code>masked autoencoder</code>是一种更一般的<code>denoising autoencoder</code>，该方法优先在<code>CV</code>中提出，但<code>CV</code>中的相关发展却落后于<code>NLP</code>，作者试图发问：是什么导致了<code>masked autoencoder</code>在<code>vision</code>和<code>language</code>的不同；</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>尝试从几个方面回答<code>masked autoencoder</code>在<code>vision</code>和<code>language</code>的不同，并提出了一种新的视觉表征学习方法<code>MAE</code>，该方法在输入图像中<code>mask</code>随机<code>patches</code>，并在像素空间中重建被<code>mask</code>的<code>patches</code>；</li>
+<li><code>MAE</code>设计了非对称的编码器-解码器架构，并发现高比例的<code>mask</code>具有更好的效果，可以加快训练速度并提高准确性；</li>
+<li>通过<code>MAE</code>预训练，可以在<code>ImageNet-1K</code>数据上训练<code>ViT-Large/-Huge</code>，比先前所有使用相同数据的方法更好，并且可以在目标检测、实例分隔、语义分割上进行应用。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/04/dd1c99d7.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -1853,183 +2030,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2021/12/05/98b8c0f5.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/05/98b8c0f5.html/" class="post-title-link" itemprop="url">论文阅读-pretrained-language-model-Improving Language Understanding with Unsupervised Learning</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-12-05 16:02:43 / 修改时间：17:24:30" itemprop="dateCreated datePublished" datetime="2021-12-05T16:02:43+08:00">2021-12-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/pretrained-language-model/" itemprop="url" rel="index">
-                    <span itemprop="name">pretrained language model</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-            <div class="post-description">GPTv1-2018</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head><style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
-
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
-
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
-
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
-
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
-
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
-
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
-
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head><body><p><img src="/2021/12/05/98b8c0f5.html/1638690820023.png" alt></p>
-<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
-<li><code>nlp</code>中有丰富的无标注的文本语料，而从丰富的语料中学习语言表示可以为各种场景提供显著的提升，但现有方法仅依靠词级别的信息；</li>
-<li>如何利用无标记数据训练模型是非常有挑战性的，一是不清楚哪种类型的优化目标在学习对迁移有用的文本表示时最有效，二是对于如何最有效地将这些学习到的表征转化为目标任务，目前还没有共识。</li>
-</ul>
-<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>为自然语言理解任务探索了一种半监督方法，它由无监督预训练和有监督微调构成，即使用语言模型为目标在未标注的数据上训练神经网络，再基于特定任务进行有监督微调；</li>
-<li>在迁移到下游任务时，采用<code>traversal-style</code>方法派生的特定于任务的输入自适应方法，对预训练模型结构更改较小；</li>
-<li>在四种类型的语言理解任务中，均证实了预训练模型能够为下游任务提供有用的语义信息。</li>
-</ul></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/12/05/98b8c0f5.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2080,14 +2080,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -2122,6 +2122,10 @@
         
         
           <li>
+            <a href="/2022/01/04/dd1c99d7.html/" title="论文阅读-视觉自监督-Masked Autoencoders Are Scalable Vision Learners" target="_blank">论文阅读-视觉自监督-Masked Autoencoders Are Scalable Vision Learners</a>
+          </li>
+        
+          <li>
             <a href="/2021/12/25/35731182.html/" title="论文阅读-pretrained-language-model-ERNIE 3.0: Large-Scale Knowledge Enhanced Pre-Training for Language Understanding and Generation" target="_blank">论文阅读-pretrained-language-model-ERNIE 3.0: Large-Scale Knowledge Enhanced Pre-Training for Language Understanding and Generation</a>
           </li>
         
@@ -2135,10 +2139,6 @@
         
           <li>
             <a href="/2021/12/18/fa646ceb.html/" title="论文阅读-pretrained-language-model-XLNet: Generalized Autoregressive Pretraining for Language Understanding" target="_blank">论文阅读-pretrained-language-model-XLNet: Generalized Autoregressive Pretraining for Language Understanding</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/18/e6b51c67.html/" title="论文阅读-pretrained-language-model-ERNIE: Enhanced Representation through Knowledge Integration" target="_blank">论文阅读-pretrained-language-model-ERNIE: Enhanced Representation through Knowledge Integration</a>
           </li>
         
       </ul>
@@ -2161,7 +2161,7 @@
 <div class="copyright">
   
   &copy; 2020 – 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-moon-o"></i>
   </span>
@@ -2170,12 +2170,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">239k</span>
+    <span title="站点总字数">242k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:38</span>
+    <span title="站点阅读时长">3:40</span>
 </div>
 
         
