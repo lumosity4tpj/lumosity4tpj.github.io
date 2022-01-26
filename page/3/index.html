@@ -177,7 +177,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">20</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">51</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -250,6 +250,187 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/12/26/a9b1325e.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/26/a9b1325e.html/" class="post-title-link" itemprop="url">论文阅读-contrastive-learning-Contrastive Learning with Hard Negative Samples</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-12-26 16:47:23 / 修改时间：16:50:29" itemprop="dateCreated datePublished" datetime="2020-12-26T16:47:23+08:00">2020-12-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/contrastive-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">contrastive learning</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+            <div class="post-description">用困难的负样本进行对比学习-ICLR2021</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2020/12/26/a9b1325e.html/1608873194326.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li><p>现有的对比学习方法都致力于研究正对方面的选择(即不同的数据增强方法)，负对的选择的研究少得多；</p>
+</li>
+<li><p>作者认为，类似度量学习，学习对比表征也会从<code>hard negative samples</code>中受益，使用<code>hard  negatives</code>的关键挑战是对比方法必须保证无监督，这使得采用现有的使用标签信息的负采样策略失效。</p>
+</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li><p>构建了一个用于对比表征学习的<code>hard negative pairs</code>的采样分布(偏好当前表征非常相似的负对)，并在缺乏真正不相似信息情况下(无监督情况下)提出了一个有效的采样策略；</p>
+</li>
+<li><p>从理论上分析了目标函数和最优表征的性质，其将相似的输入放在紧密的簇类中，同时将不同簇类分隔得尽可能远；</p>
+</li>
+<li>实验上观测到所提出的采样方法提高了图像、图、文本数据的下游任务性能。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/26/a9b1325e.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -2230,190 +2411,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2020/12/09/6fa9e3a6.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/09/6fa9e3a6.html/" class="post-title-link" itemprop="url">论文阅读-contrastive-learning-Exploring Simple Siamese Representation Learning</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-09 15:08:58" itemprop="dateCreated datePublished" datetime="2020-12-09T15:08:58+08:00">2020-12-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-10 13:49:25" itemprop="dateModified" datetime="2020-12-10T13:49:25+08:00">2020-12-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/contrastive-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">contrastive learning</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-            <div class="post-description">探索简单的孪生表征学习</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head><style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
-
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
-
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
-
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
-
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
-
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
-
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
-
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head><body><p><img src="/2020/12/09/6fa9e3a6.html/1607410541425.png" alt></p>
-<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
-<li>孪生网络是无监督/自监督表征学习模型中常见的结构，最近方法的输入为一个图像的两个增强图像，在不同的条件下最大化两个增强图像之间的相似性以避免崩溃解；</li>
-<li>孪生网络的一个不希望的解决方案是所有输出崩溃为一个常数，<code>SimCLR</code>通过对比学习的思想，拉近正对排斥负对，负对排除了解空间中的常量输出；<code>SwAV</code>将<code>online clustering</code>整合到孪生网络中；<code>BYOL</code>则在使用动量编码器的条件下只依赖正对。</li>
-</ul>
-<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>通过实验结果表明，即使不使用1)<code>negative sample pairs</code>; 2)<code>large
-batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到有意义的表征，即直接最大化一个图像的两个视图的相似性，既不使用负对也不使用动量编码器；</li>
-<li>通过实验证明，对于损失和结构而言，存在崩溃解问题，但是<code>stop-gradient</code>操作在防止崩溃解中发挥了关键的作用；</li>
-<li>证明了由于孪生网络具有的建模不变性的特征，是目前的表达学习方法成功的关键原因所在，这也是表达学习的核心所在。</li>
-</ul></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/12/09/6fa9e3a6.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2464,14 +2461,14 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -2506,6 +2503,10 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
         
         
           <li>
+            <a href="/2022/01/26/a99a58ed.html/" title="论文阅读-text2image synthesis-ERNIE-VILG: Unified Generative Pre-training for Bidirectional Vision-Language Generation" target="_blank">论文阅读-text2image synthesis-ERNIE-VILG: Unified Generative Pre-training for Bidirectional Vision-Language Generation</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/16/54885544.html/" title="论文阅读-knowledge graph reasoning-Probabilistic Logic Neural Networks for Reasoning" target="_blank">论文阅读-knowledge graph reasoning-Probabilistic Logic Neural Networks for Reasoning</a>
           </li>
         
@@ -2519,10 +2520,6 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
         
           <li>
             <a href="/2021/12/25/a27a3515.html/" title="论文阅读-pretrained-language-model-ERNIE 2.0: A Continual Pre-Training Framework for Language Understanding" target="_blank">论文阅读-pretrained-language-model-ERNIE 2.0: A Continual Pre-Training Framework for Language Understanding</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/18/12b11a94.html/" title="论文综述-contrastive learning-对比损失" target="_blank">论文综述-contrastive learning-对比损失</a>
           </li>
         
       </ul>
@@ -2554,12 +2551,12 @@ batches</code>; 3) <code>momentum encoders</code>，孪生网络也可以学到�
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">252k</span>
+    <span title="站点总字数">257k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:49</span>
+    <span title="站点阅读时长">3:53</span>
 </div>
 
         
@@ -2713,7 +2710,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
 
-
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
@@ -2739,6 +2735,7 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
   });
 }, window.Valine);
 </script>
+
 
 </body>
 </html>

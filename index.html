@@ -177,7 +177,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">20</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">51</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -254,6 +254,184 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2022/01/26/a99a58ed.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/photos/t1.jpg">
+      <meta itemprop="name" content="tangpeijun">
+      <meta itemprop="description" content="言之命至">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lumosity's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/26/a99a58ed.html/" class="post-title-link" itemprop="url">论文阅读-text2image synthesis-ERNIE-VILG: Unified Generative Pre-training for Bidirectional Vision-Language Generation</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-26 09:21:10 / 修改时间：09:24:15" itemprop="dateCreated datePublished" datetime="2022-01-26T09:21:10+08:00">2022-01-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/text2image-synthesis/" itemprop="url" rel="index">
+                    <span itemprop="name">text2image synthesis</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+            <div class="post-description">ERNIE-VILG-Baidu</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><p><img src="/2022/01/26/a99a58ed.html/1643159618204.png" alt></p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
+<li><p>图像-文本生成任务是双向的，但由于语言生成和图像生成的架构不同，通常将两个任务分开处理，设计特定于任务的框架；</p>
+</li>
+<li><p>近年来，视觉语言预训练模型大幅提高图像到文本生成任务的性能，但大规模的文本到图像生成任务预训练模型仍处于开发阶段。</p>
+</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>提出一种生成预训练框架<code>ERNIE ViLG</code>，适用于双向图像-文本生成任务，并采用端到端的训练方式联合学习视觉序列生成器和图像重构器；</li>
+<li><code>ERNIE ViLG</code>在<code>text-to-image synthesis</code>和<code>image captioning</code>任务上有着优越的性能，表明双向生成模型可捕捉对齐视觉和语言模态的复杂语义。</li>
+</ul></body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/26/a99a58ed.html/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2022/01/16/54885544.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -281,7 +459,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-16 10:57:17 / 修改时间：11:04:54" itemprop="dateCreated datePublished" datetime="2022-01-16T10:57:17+08:00">2022-01-16</time>
+              <time title="创建时间：2022-01-16 10:57:17 / 修改时间：11:06:10" itemprop="dateCreated datePublished" datetime="2022-01-16T10:57:17+08:00">2022-01-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1855,182 +2033,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lumosity4tpj.github.io/2021/12/05/e57bf805.html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photos/t1.jpg">
-      <meta itemprop="name" content="tangpeijun">
-      <meta itemprop="description" content="言之命至">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lumosity's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/05/e57bf805.html/" class="post-title-link" itemprop="url">论文阅读-unsupervised representation learning-A Large-Scale Study on Unsupervised Spatiotemporal Representation Learning</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-12-05 16:47:05 / 修改时间：17:01:04" itemprop="dateCreated datePublished" datetime="2021-12-05T16:47:05+08:00">2021-12-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/unsupervised-representation-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">unsupervised representation learning</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-            <div class="post-description">在视频上的无监督预训练方法-CVPR2021</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head><style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
-
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
-
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
-
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
-
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
-
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
-
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
-
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head><body><p><img src="/2021/12/05/e57bf805.html/1621411052345.png" alt></p>
-<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><ul>
-<li>最近的一系列基于图像的无监督表征学习的方法均是最大化同一图像的不同视图的相似性，视频可以在各种变化因素(如运动、遮挡、光照等)下提供视觉内容的自然增强，本工作旨在将基于图像的方法推广到时空中；</li>
-<li>视觉内容通常会在视频中的一段时间持续存在，可能包含一个动作(一个人跳舞)，一个物体(一个人完成跑步到走路的过渡)，一个场景(一个有人在移动的房间)，这种持续性覆盖不同的时间跨度，具有不同层次的视觉不变性(动作，物体，场景)。文章鼓励同一视频的不同<code>clip</code>中的视觉表示是相似的，并在<code>MoCo</code>、<code>SimCLR</code>、<code>BYOL</code>和<code>SwAV</code>中都能很好地工作。</li>
-</ul>
-<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>提出了一种在视频上的无监督时空表征学习的大规模研究，通过对四种基于图像的框架的分析，这些方法都具有共同的目标：学习空间输入图像的跨不同视图的不变特征。文章将这一思想推广到时域，核心思想是学习一个时空编码器，在同一视频中多个不同的<code>clips</code>中提取的嵌入特征在时空上是持续性的；</li>
-<li>文章方法的目标是鼓励同一视频中的时间持续性特征，并且在1）不同的无监督框架、2）预训练数据集、3）下游数据集、4）骨架网络上都取得了比较好的结果。</li>
-</ul></body></html>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/12/05/e57bf805.html/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2081,14 +2083,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -2123,6 +2125,10 @@
         
         
           <li>
+            <a href="/2022/01/26/a99a58ed.html/" title="论文阅读-text2image synthesis-ERNIE-VILG: Unified Generative Pre-training for Bidirectional Vision-Language Generation" target="_blank">论文阅读-text2image synthesis-ERNIE-VILG: Unified Generative Pre-training for Bidirectional Vision-Language Generation</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/16/54885544.html/" title="论文阅读-knowledge graph reasoning-Probabilistic Logic Neural Networks for Reasoning" target="_blank">论文阅读-knowledge graph reasoning-Probabilistic Logic Neural Networks for Reasoning</a>
           </li>
         
@@ -2136,10 +2142,6 @@
         
           <li>
             <a href="/2021/12/25/a27a3515.html/" title="论文阅读-pretrained-language-model-ERNIE 2.0: A Continual Pre-Training Framework for Language Understanding" target="_blank">论文阅读-pretrained-language-model-ERNIE 2.0: A Continual Pre-Training Framework for Language Understanding</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/18/12b11a94.html/" title="论文综述-contrastive learning-对比损失" target="_blank">论文综述-contrastive learning-对比损失</a>
           </li>
         
       </ul>
@@ -2171,12 +2173,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">252k</span>
+    <span title="站点总字数">257k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:49</span>
+    <span title="站点阅读时长">3:53</span>
 </div>
 
         
@@ -2330,7 +2332,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
 
-
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
@@ -2356,6 +2357,7 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
   });
 }, window.Valine);
 </script>
+
 
 </body>
 </html>
