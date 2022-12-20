@@ -187,7 +187,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">53</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -264,6 +264,26 @@
     <div class="collection-year">
       <h2 class="collection-header">2022</h2>
     </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2022-12-20T15:05:14+08:00"
+              content="2022-12-20">
+          12-20
+        </time>
+      </div>
+
+      <h3 class="post-title">
+          <a class="post-title-link" href="/2022/12/20/7813b3f6.html/" itemprop="url">
+            <span itemprop="name">论文阅读-text2image-synthesis-ReCo: Region-Controlled Text-to-Image Generation</span>
+          </a>
+      </h3>
+
+    </header>
+  </article>
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -448,26 +468,6 @@
     </header>
   </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-12-05T17:07:55+08:00"
-              content="2021-12-05">
-          12-05
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/2021/12/05/ef930e71.html/" itemprop="url">
-            <span itemprop="name">论文阅读-disentanglement-Zero-shot Synthesis with Group-Supervised Learning</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
     </div>
   </div>
   
@@ -522,7 +522,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -564,6 +564,10 @@
         
         
           <li>
+            <a href="/2022/12/20/7813b3f6.html/" title="论文阅读-text2image-synthesis-ReCo: Region-Controlled Text-to-Image Generation" target="_blank">论文阅读-text2image-synthesis-ReCo: Region-Controlled Text-to-Image Generation</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/29/b13cf27c.html/" title="论文阅读-pretrained language model-Unified Language Model Pre-training for Natural Language Understanding and Generation" target="_blank">论文阅读-pretrained language model-Unified Language Model Pre-training for Natural Language Understanding and Generation</a>
           </li>
         
@@ -577,10 +581,6 @@
         
           <li>
             <a href="/2022/01/04/dd1c99d7.html/" title="论文阅读-视觉自监督-Masked Autoencoders Are Scalable Vision Learners" target="_blank">论文阅读-视觉自监督-Masked Autoencoders Are Scalable Vision Learners</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/25/35731182.html/" title="论文阅读-pretrained-language-model-ERNIE 3.0: Large-Scale Knowledge Enhanced Pre-Training for Language Understanding and Generation" target="_blank">论文阅读-pretrained-language-model-ERNIE 3.0: Large-Scale Knowledge Enhanced Pre-Training for Language Understanding and Generation</a>
           </li>
         
       </ul>
@@ -612,12 +612,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">259k</span>
+    <span title="站点总字数">263k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:56</span>
+    <span title="站点阅读时长">3:59</span>
 </div>
 
         
@@ -743,33 +743,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
       });
       });
   </script>
-<!-- calendar widget -->
-
-    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
-    <script>
-    $(function() {
-        $('#CloudCalendar').aCalendar('zh-CN',
-            $.extend(
-                '', {
-                    single:true,
-                    root:'/calendar/'
-                }
-            )
-        );
-    });
-    </script>
-
-
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
-  <script>
-      pbOptions = {};
-        pbOptions.iconStyle = "box";
-        pbOptions.boxForm = "horizontal";
-        pbOptions.position = "bottomCenter";
-        pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-  </script>
 
 
 <script>
@@ -797,6 +770,33 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
   });
 }, window.Valine);
 </script>
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
 
 </body>
 </html>

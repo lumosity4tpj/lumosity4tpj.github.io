@@ -198,7 +198,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">53</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -2777,16 +2777,16 @@ e_{k l}^t=\left\{\begin{array}{ll}
       <div class="popular-posts-title"><a href="\2020\12\15\c92b6d57.html\" rel="bookmark">论文阅读-contrastive-learning-A Simple Framework for Contrastive Learning of Visual Representations</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2022\01\29\b13cf27c.html\" rel="bookmark">论文阅读-pretrained language model-Unified Language Model Pre-training for Natural Language Understanding and Generation</a></div>
+      <div class="popular-posts-title"><a href="\2022\12\20\7813b3f6.html\" rel="bookmark">论文阅读-text2image-synthesis-ReCo: Region-Controlled Text-to-Image Generation</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\01\26\a99a58ed.html\" rel="bookmark">论文阅读-text2image synthesis-ERNIE-VILG: Unified Generative Pre-training for Bidirectional Vision-Language Generation</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2022\01\16\54885544.html\" rel="bookmark">论文阅读-knowledge graph reasoning-Probabilistic Logic Neural Networks for Reasoning</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2022\01\04\dd1c99d7.html\" rel="bookmark">论文阅读-视觉自监督-Masked Autoencoders Are Scalable Vision Learners</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\12\25\35731182.html\" rel="bookmark">论文阅读-pretrained-language-model-ERNIE 3.0: Large-Scale Knowledge Enhanced Pre-Training for Language Understanding and Generation</a></div>
     </li>
   </ul>
 <div class="post-widgets">
@@ -2851,15 +2851,15 @@ e_{k l}^t=\left\{\begin{array}{ll}
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
             <li class="tab"><a href="#comment-valine">valine</a></li>
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane gitalk" id="comment-gitalk">
-              <div class="comments" id="gitalk-container"></div>
-            </div>
             <div class="tab-pane valine" id="comment-valine">
               <div class="comments" id="comments"></div>
+            </div>
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
             </div>
         </div>
       </div>
@@ -2919,7 +2919,7 @@ e_{k l}^t=\left\{\begin{array}{ll}
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2961,6 +2961,10 @@ e_{k l}^t=\left\{\begin{array}{ll}
         
         
           <li>
+            <a href="/2022/12/20/7813b3f6.html/" title="论文阅读-text2image-synthesis-ReCo: Region-Controlled Text-to-Image Generation" target="_blank">论文阅读-text2image-synthesis-ReCo: Region-Controlled Text-to-Image Generation</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/29/b13cf27c.html/" title="论文阅读-pretrained language model-Unified Language Model Pre-training for Natural Language Understanding and Generation" target="_blank">论文阅读-pretrained language model-Unified Language Model Pre-training for Natural Language Understanding and Generation</a>
           </li>
         
@@ -2974,10 +2978,6 @@ e_{k l}^t=\left\{\begin{array}{ll}
         
           <li>
             <a href="/2022/01/04/dd1c99d7.html/" title="论文阅读-视觉自监督-Masked Autoencoders Are Scalable Vision Learners" target="_blank">论文阅读-视觉自监督-Masked Autoencoders Are Scalable Vision Learners</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/25/35731182.html/" title="论文阅读-pretrained-language-model-ERNIE 3.0: Large-Scale Knowledge Enhanced Pre-Training for Language Understanding and Generation" target="_blank">论文阅读-pretrained-language-model-ERNIE 3.0: Large-Scale Knowledge Enhanced Pre-Training for Language Understanding and Generation</a>
           </li>
         
       </ul>
@@ -3009,12 +3009,12 @@ e_{k l}^t=\left\{\begin{array}{ll}
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">259k</span>
+    <span title="站点总字数">263k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:56</span>
+    <span title="站点阅读时长">3:59</span>
 </div>
 
         
@@ -3140,6 +3140,33 @@ if (document.querySelectorAll('pre.mermaid').length) {
       });
       });
   </script>
+
+
+<script>
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'HVHJvnw60uAa9EnVUQSa92Rg-gzGzoHsz',
+    appKey: 'NdsFzEfN98UQFu9xdanPnfsj',
+    placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+    avatar: 'wavatar',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 <!-- calendar widget -->
 
     <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
@@ -3183,33 +3210,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
     });
     gitalk.render('gitalk-container');
   }, window.Gitalk);
-</script>
-
-
-<script>
-NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(item => {
-    return GUEST.includes(item);
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: 'HVHJvnw60uAa9EnVUQSa92Rg-gzGzoHsz',
-    appKey: 'NdsFzEfN98UQFu9xdanPnfsj',
-    placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
-    avatar: 'wavatar',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: false,
-    lang: 'zh-cn' || 'zh-cn',
-    path: location.pathname,
-    recordIP: false,
-    serverURLs: ''
-  });
-}, window.Valine);
 </script>
 
 </body>
