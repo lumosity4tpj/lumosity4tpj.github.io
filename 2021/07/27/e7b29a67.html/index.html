@@ -194,7 +194,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">58</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">59</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -2748,15 +2748,15 @@ J = \sum_{i,k=1}^Vf(i,k)(w_i^Tw_k + b_i + b_k - \log X_{ik})^2</title>
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
             <li class="tab"><a href="#comment-valine">valine</a></li>
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane gitalk" id="comment-gitalk">
-              <div class="comments" id="gitalk-container"></div>
-            </div>
             <div class="tab-pane valine" id="comment-valine">
               <div class="comments" id="comments"></div>
+            </div>
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
             </div>
         </div>
       </div>
@@ -2824,7 +2824,7 @@ X
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2866,6 +2866,10 @@ X
         
         
           <li>
+            <a href="/2023/02/05/3993066b.html/" title="论文阅读-视觉自监督-Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture" target="_blank">论文阅读-视觉自监督-Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture</a>
+          </li>
+        
+          <li>
             <a href="/2023/02/02/b37e7ed0.html/" title="论文阅读-diffusion model-Improved Denoising Diffusion Probabilistic Models" target="_blank">论文阅读-diffusion model-Improved Denoising Diffusion Probabilistic Models</a>
           </li>
         
@@ -2879,10 +2883,6 @@ X
         
           <li>
             <a href="/2022/12/20/55719795.html/" title="论文阅读-image generation-Neural Discrete Representation Learning" target="_blank">论文阅读-image generation-Neural Discrete Representation Learning</a>
-          </li>
-        
-          <li>
-            <a href="/2022/12/20/7813b3f6.html/" title="论文阅读-text2image synthesis-ReCo: Region-Controlled Text-to-Image Generation" target="_blank">论文阅读-text2image synthesis-ReCo: Region-Controlled Text-to-Image Generation</a>
           </li>
         
       </ul>
@@ -2914,12 +2914,12 @@ X
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">281k</span>
+    <span title="站点总字数">284k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:15</span>
+    <span title="站点阅读时长">4:19</span>
 </div>
 
         
@@ -3072,24 +3072,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
         pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID: '8b56991ada74c93b8aea',
-      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
-      repo: 'lumosity4tpj.github.io',
-      owner: 'lumosity4tpj',
-      admin: ['lumosity4tpj'],
-      id: '62ee851259dbb8374c1444f3fdfcde98',
-        language: '',
-      distractionFreeMode: 'true'
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-</script>
-
 
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
@@ -3115,6 +3097,24 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
     serverURLs: ''
   });
 }, window.Valine);
+</script>
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8b56991ada74c93b8aea',
+      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
+      repo: 'lumosity4tpj.github.io',
+      owner: 'lumosity4tpj',
+      admin: ['lumosity4tpj'],
+      id: '62ee851259dbb8374c1444f3fdfcde98',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
 </script>
 
 </body>
