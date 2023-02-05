@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lumosity4tpj.github.io/2023/02/02/10682b54.html/</loc>
+    
+    <lastmod>2023-02-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lumosity4tpj.github.io/2023/02/05/3993066b.html/</loc>
     
     <lastmod>2023-02-05</lastmod>
@@ -17,13 +24,6 @@
   
   <url>
     <loc>https://lumosity4tpj.github.io/2023/02/02/c758ab55.html/</loc>
-    
-    <lastmod>2023-02-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lumosity4tpj.github.io/2023/02/02/10682b54.html/</loc>
     
     <lastmod>2023-02-02</lastmod>
     
@@ -510,14 +510,14 @@
 
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/semantic-segmentation/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/image-matting/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/image-matting/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/semantic-segmentation/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -531,14 +531,14 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/contrastive-learning/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/image-editing/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/image-editing/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/contrastive-learning/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -559,6 +559,13 @@
   </url>
   
   <url>
+    <loc>https://lumosity4tpj.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2023-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lumosity4tpj.github.io/categories/image-classification/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
@@ -573,7 +580,7 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%9B%B8%E5%85%B3/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/unsupervised-representation-learning/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -581,13 +588,6 @@
   
   <url>
     <loc>https://lumosity4tpj.github.io/categories/%E8%A7%86%E8%A7%89%E8%87%AA%E7%9B%91%E7%9D%A3/</loc>
-    <lastmod>2023-02-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lumosity4tpj.github.io/categories/diffusion-model/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -608,7 +608,7 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/unsupervised-representation-learning/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/diffusion-model/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -636,14 +636,14 @@
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/domain-adaptive/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/visual-relationship-detection/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lumosity4tpj.github.io/categories/visual-relationship-detection/</loc>
+    <loc>https://lumosity4tpj.github.io/categories/domain-adaptive/</loc>
     <lastmod>2023-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

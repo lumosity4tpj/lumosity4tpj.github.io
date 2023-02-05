@@ -2151,15 +2151,15 @@ lrate = d_{model}^{−0.5}\cdot \text{min}(\text{step_num}^{−0.5},\text{step_n
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-valine">valine</a></li>
             <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane valine" id="comment-valine">
-              <div class="comments" id="comments"></div>
-            </div>
             <div class="tab-pane gitalk" id="comment-gitalk">
               <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="comments"></div>
             </div>
         </div>
       </div>
@@ -2467,6 +2467,24 @@ if (document.querySelectorAll('pre.mermaid').length) {
         pbOptions.networks = "Wechat,Weibo,QQZone,Douban,Twitter,Facebook,Mailto";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8b56991ada74c93b8aea',
+      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
+      repo: 'lumosity4tpj.github.io',
+      owner: 'lumosity4tpj',
+      admin: ['lumosity4tpj'],
+      id: '48df0425741ab9b6a750209ae2a6a335',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
 
 <script>
 NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
@@ -2492,24 +2510,6 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () =>
     serverURLs: ''
   });
 }, window.Valine);
-</script>
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID: '8b56991ada74c93b8aea',
-      clientSecret: '34cd47cbe96ac746de8d674ca01955d67b744152',
-      repo: 'lumosity4tpj.github.io',
-      owner: 'lumosity4tpj',
-      admin: ['lumosity4tpj'],
-      id: '48df0425741ab9b6a750209ae2a6a335',
-        language: '',
-      distractionFreeMode: 'true'
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
 </script>
 
 </body>
